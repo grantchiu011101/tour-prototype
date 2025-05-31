@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Privacy & Security</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-50 min-h-screen flex flex-col">
+  <main class="flex-1 flex flex-col px-4 pt-8 pb-24 max-w-md mx-auto w-full">
+    <h1 class="text-xl font-semibold text-gray-800 mb-6">Privacy & Security</h1>
+    <form class="flex flex-col gap-8">
+      <!-- Profile Visibility -->
+      <div>
+        <label class="block text-gray-700 font-medium mb-1">Profile Visibility</label>
+        <select class="w-full px-3 py-2 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-200 mb-1">
+          <option>Public</option>
+          <option>Friends Only</option>
+          <option>Private</option>
+        </select>
+        <div class="text-xs text-gray-500">Who can see your profile and content.</div>
+      </div>
+      <!-- Searchability -->
+      <div class="flex items-center gap-3">
+        <input type="checkbox" id="searchable" checked class="accent-blue-500" />
+        <div class="flex flex-col">
+          <label for="searchable" class="text-gray-700 font-medium">Allow others to find me in search</label>
+          <span class="text-xs text-gray-500">Let others find you by email/username.</span>
+        </div>
+      </div>
+      <!-- Blocked Users -->
+      <div class="flex items-center justify-between">
+        <span class="text-gray-700 font-medium">Blocked Users</span>
+        <a href="#" class="text-blue-500 text-sm font-medium hover:underline">Manage</a>
+      </div>
+      <!-- Delete Account -->
+      <button type="button" class="bg-red-100 text-red-600 px-4 py-2 rounded-lg font-medium hover:bg-red-200 transition mt-8">Delete My Account</button>
+    </form>
+  </main>
+</body>
+</html> 

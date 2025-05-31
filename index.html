@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>Travel Audio Guide Prototype</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="index-body">
+
+    <div class="mobile-frame">
+        <div class="status-bar">
+            <span class="time" id="current-time">9:41 AM</span>
+            <div>
+                <i class="fas fa-signal"></i>
+                <i class="fas fa-wifi ml-1"></i>
+                <i class="fas fa-battery-full ml-1"></i>
+            </div>
+        </div>
+
+        <div id="app-iframe-container">
+            <iframe src="login.html" id="app-frame" name="app-frame"></iframe>
+        </div>
+
+        <div id="bottom-nav" class="bottom-navigation">
+            <div class="nav-item active" data-page="home.html">
+                <i class="fas fa-home"></i>
+                <span>首页</span>
+            </div>
+            <div class="nav-item" data-page="search.html">
+                <i class="fas fa-search"></i>
+                <span>发现</span>
+            </div>
+            <div class="nav-item" data-page="map.html">
+                <i class="fas fa-map-marked-alt"></i>
+                <span>地图</span>
+            </div>
+            <div class="nav-item" data-page="profile.html">
+                <i class="fas fa-user-circle"></i>
+                <span>我的</span>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const iframe = document.getElementById('app-frame');
+        const navItems = document.querySelectorAll('.nav-item');
+        const bottomNav = document.getElementById('bottom-nav');
+
+        // Initially load home.html if user is considered "logged in" for prototype flow,
+        // otherwise start with login.html by default in iframe src.
+        // For this setup, we assume login.html is the default start and home.html
+        // will be loaded after a mock login from login.html.
+        // The bottom nav will be hidden by default and shown by pages that need it (e.g. home.html)
+        // OR controlled by login state.
+        // For simplicity now, we will show bottom nav by default for iframe view but it will cover content of login/signup.
+        // Better: iframe.src = 'login.html'; bottomNav.style.display = 'none';
+        // Then after login: iframe.src = 'home.html'; bottomNav.style.display = 'flex';
+        
+        // Default to home.html in iframe, and make bottom nav visible initially
+        iframe.src = 'home.html';
+
+        navItems.forEach(item => {
+            item.addEventListener('click', function() {
+                navItems.forEach(i => i.classList.remove('active'));
+                this.classList.add('active');
+                const page = this.getAttribute('data-page');
+                iframe.src = page;
+            });
+        });
+
+        function updateTime() {
+            const timeElement = document.getElementById('current-time');
+            if (timeElement) {
+                const now = new Date();
+                timeElement.textContent = now.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit', hour12: true });
+            }
+        }
+        setInterval(updateTime, 1000 * 60);
+        updateTime();
+
+        // Function for iframe content to call to show/hide bottom nav
+        // e.g., login.html would call parent.hideBottomNav();
+        // home.html would call parent.showBottomNav();
+        window.showBottomNav = function() {
+            if (bottomNav) bottomNav.style.display = 'flex';
+        }
+        window.hideBottomNav = function() {
+            if (bottomNav) bottomNav.style.display = 'none';
+        }
+
+        // Initially set nav for home.html
+        document.querySelector('.nav-item[data-page="home.html"]').classList.add('active');
+        // Call showBottomNav for the initial load of home.html
+        showBottomNav();
+
+    </script>
+</body>
+</html> 

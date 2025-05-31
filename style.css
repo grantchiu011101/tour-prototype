@@ -1,0 +1,207 @@
+body {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    background-color: #f0f2f5; /* Light gray background for pages that are not index.html */
+    margin: 0;
+    padding: 0; /* Reset padding for individual pages */
+}
+
+/* Styles for index.html mobile frame and global elements */
+.index-body {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start; 
+    min-height: 100vh;
+    background-color: #f0f2f5;
+    margin: 0;
+    padding-top: 20px; 
+    padding-bottom: 20px;
+}
+
+.mobile-frame {
+    width: 390px; 
+    height: 844px; 
+    background-color: #ffffff;
+    border-radius: 36px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    position: relative;
+}
+
+.status-bar {
+    height: 44px; 
+    background-color: #ffffff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+    font-size: 14px;
+    font-weight: 500;
+    color: #1f2937; 
+    border-bottom: 1px solid #e5e7eb; 
+    z-index: 100;
+    flex-shrink: 0;
+}
+
+.status-bar .time {
+    font-weight: 600;
+}
+
+#app-iframe-container {
+    flex-grow: 1;
+    overflow: hidden; /* The iframe itself will scroll */
+    position: relative;
+}
+
+#app-frame {
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+/* Styles for content within the iframe or individual pages */
+.screen-content-body {
+    padding-bottom: 85px; /* Default padding for bottom nav, adjust if nav height changes */
+    background-color: #ffffff; /* Default screen background */
+}
+
+.screen-content-body.bg-gray-50 {
+    background-color: #f9fafb; /* For screens like profile, settings if they have a light gray bg */
+}
+
+.fixed-header {
+    position: sticky;
+    top: 0;
+    background-color: white;
+    z-index: 50;
+    border-bottom: 1px solid #e5e7eb;
+    padding: 16px;
+}
+
+.content-area {
+     padding: 16px;
+}
+
+.card {
+    background-color: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    margin-bottom: 16px;
+    overflow: hidden;
+}
+
+.card img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+}
+
+.card-content {
+    padding: 12px;
+}
+
+.audio-player {
+    padding: 16px;
+    border-top: 1px solid #e5e7eb;
+    margin-top: 16px;
+    background-color: #f9fafb; /* Light gray for audio player bg */
+}
+
+.form-input {
+    border: 1px solid #d1d5db;
+    border-radius: 8px;
+    padding: 10px 12px;
+    width: 100%;
+    margin-bottom: 12px;
+    font-size: 1rem;
+}
+
+.btn {
+    padding: 10px 16px;
+    border-radius: 8px;
+    font-weight: 500;
+    cursor: pointer;
+    text-align: center;
+    transition: background-color 0.2s;
+}
+
+.btn-primary {
+    background-color: #3b82f6; 
+    color: white;
+}
+.btn-primary:hover {
+    background-color: #2563eb; 
+}
+
+.btn-secondary {
+    background-color: #e5e7eb; 
+    color: #374151; 
+}
+.btn-secondary:hover {
+    background-color: #d1d5db; 
+}
+
+.btn-full {
+    width: 100%;
+}
+
+.icon-btn {
+    background: none;
+    border: none;
+    color: #6b7280; 
+    font-size: 1.25rem;
+    cursor: pointer;
+    padding: 4px; /* Added some padding for easier clicking */
+}
+.icon-btn:hover {
+    color: #3b82f6; 
+}
+
+.bottom-navigation {
+    height: 70px;
+    background-color: #ffffff;
+    border-top: 1px solid #e5e7eb;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    flex-shrink: 0;
+}
+
+.nav-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #6b7280; 
+    cursor: pointer;
+    padding: 8px;
+    font-size: 0.75rem; 
+    flex-grow: 1; /* Allow items to grow and fill space */
+    justify-content: center; /* Center content vertically */
+}
+
+.nav-item i {
+    font-size: 1.25rem; 
+    margin-bottom: 2px;
+}
+
+.nav-item.active {
+    color: #3b82f6; 
+}
+
+/* Custom scrollbar for screen content if needed */
+.screen-content-body::-webkit-scrollbar {
+    width: 5px;
+}
+.screen-content-body::-webkit-scrollbar-thumb {
+    background-color: #cbd5e1; 
+    border-radius: 10px;
+}
+.screen-content-body::-webkit-scrollbar-track {
+    background-color: #f8fafc; 
+} 

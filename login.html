@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Travel Audio Guide</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Specific styles for login page if needed, or can be in style.css */
+        body {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh; /* Full viewport height */
+            padding: 20px;
+            box-sizing: border-box;
+        }
+    </style>
+</head>
+<body class="screen-content-body">
+
+    <div class="flex flex-col justify-center items-center p-8 w-full max-w-md">
+        <i class="fas fa-mountain-sun text-6xl text-blue-500 mb-6"></i>
+        <h1 class="text-3xl font-bold text-gray-800 mb-2">欢迎回来</h1>
+        <p class="text-gray-600 mb-8">登录以继续您的旅程</p>
+        
+        <input type="email" placeholder="电子邮件" class="form-input">
+        <input type="password" placeholder="密码" class="form-input">
+        
+        <button class="btn btn-primary btn-full mt-4" onclick="navigateToHome()">登录</button>
+        
+        <p class="text-sm text-gray-500 mt-6">
+            没有账户? <a href="signup.html" class="text-blue-500 hover:underline">立即注册</a>
+        </p>
+        <div class="mt-6 text-center">
+            <p class="text-sm text-gray-500 mb-2">或使用以下方式登录</p>
+            <div class="flex justify-center space-x-4">
+                <button class="icon-btn text-2xl"><i class="fab fa-google"></i></button>
+                <button class="icon-btn text-2xl"><i class="fab fa-apple"></i></button>
+                <button class="icon-btn text-2xl"><i class="fab fa-weixin"></i></button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function navigateToHome() {
+            // In a real app, you'd validate credentials first
+            // Then navigate to home and tell the parent (index.html) to show bottom nav
+            window.parent.location.href = 'index.html'; // Reload index, which defaults to home.html
+            if (window.parent && typeof window.parent.showBottomNav === 'function') {
+                // Ensure home.html (or whatever index.html loads by default) then calls parent.showBottomNav()
+            }
+            // More directly, change iframe src and manage nav from parent
+            // For now, we assume index.html default load sequence is fine
+             window.parent.document.getElementById('app-frame').src = 'home.html';
+             if (window.parent && typeof window.parent.showBottomNav === 'function') {
+                window.parent.showBottomNav();
+                // Also, ensure the "Home" nav item in parent is set to active
+                window.parent.document.querySelectorAll('.nav-item').forEach(item => item.classList.remove('active'));
+                const homeNavItem = window.parent.document.querySelector('.nav-item[data-page="home.html"]');
+                if (homeNavItem) homeNavItem.classList.add('active');
+            }
+        }
+
+        // When login screen loads in iframe, tell parent to hide bottom navigation
+        // if (window.parent && typeof window.parent.hideBottomNav === 'function') {
+        //     window.parent.hideBottomNav();
+        // }
+    </script>
+</body>
+</html> 

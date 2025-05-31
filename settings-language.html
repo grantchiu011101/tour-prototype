@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Language Settings</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-50 min-h-screen flex flex-col">
+  <main class="flex-1 flex flex-col px-4 pt-8 pb-24 max-w-md mx-auto w-full">
+    <div class="flex items-center justify-between mb-6">
+      <h1 class="text-xl font-semibold text-gray-800">Language Settings</h1>
+      <button type="submit" form="languageForm" class="text-blue-600 font-medium text-base bg-transparent hover:underline px-2 py-1 rounded transition">Save</button>
+    </div>
+    <form id="languageForm" class="flex flex-col gap-6">
+      <div class="bg-white rounded-xl shadow overflow-hidden divide-y divide-gray-200">
+        <button type="button" class="flex items-center justify-between w-full px-4 py-4 focus:outline-none">
+          <span class="font-semibold text-gray-900">English</span>
+          <span class="text-blue-500"><i class="fas fa-check"></i></span>
+        </button>
+        <button type="button" class="flex items-center justify-between w-full px-4 py-4 focus:outline-none">
+          <span class="text-gray-800">中文</span>
+        </button>
+        <button type="button" class="flex items-center justify-between w-full px-4 py-4 focus:outline-none">
+          <span class="text-gray-800">日本語</span>
+        </button>
+        <button type="button" class="flex items-center justify-between w-full px-4 py-4 focus:outline-none">
+          <span class="text-gray-800">Français</span>
+        </button>
+      </div>
+    </form>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/js/all.min.js"></script>
+  </main>
+</body>
+</html> 

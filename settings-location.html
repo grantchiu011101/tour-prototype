@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Location Services</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-50 min-h-screen flex flex-col">
+  <main class="flex-1 flex flex-col px-4 pt-8 pb-24 max-w-md mx-auto w-full">
+    <div class="flex items-center justify-between mb-6">
+      <h1 class="text-xl font-semibold text-gray-800">Location Services</h1>
+      <button type="submit" form="locationForm" class="text-blue-600 font-medium text-base bg-transparent hover:underline px-2 py-1 rounded transition">Save</button>
+    </div>
+    <form id="locationForm" class="flex flex-col gap-6">
+      <div class="flex flex-col divide-y divide-gray-200 rounded-lg overflow-hidden bg-white shadow">
+        <button type="button" class="flex items-center justify-between px-4 py-3 focus:outline-none w-full bg-blue-50">
+          <span class="text-gray-800">Enabled</span>
+          <span class="text-blue-500"><i class="fas fa-check"></i></span>
+        </button>
+        <button type="button" class="flex items-center justify-between px-4 py-3 focus:outline-none w-full">
+          <span class="text-gray-800">Disabled</span>
+        </button>
+      </div>
+    </form>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/js/all.min.js"></script>
+  </main>
+</body>
+</html> 

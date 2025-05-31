@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Signup - Travel Audio Guide</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="screen-content-body">
+    <div class="fixed-header w-full bg-white p-4 flex items-center">
+        <button class="icon-btn mr-4" onclick="goBackToLogin()"><i class="fas fa-arrow-left"></i></button>
+        <h1 class="text-xl font-semibold text-gray-800">创建账户</h1>
+    </div>
+    <div class="content-area pt-20"> <!-- pt-20 to account for fixed-header -->
+        <input type="text" placeholder="全名" class="form-input">
+        <input type="email" placeholder="电子邮件" class="form-input">
+        <input type="password" placeholder="密码" class="form-input">
+        <input type="password" placeholder="确认密码" class="form-input">
+        <button class="btn btn-primary btn-full mt-4" onclick="navigateToHomeAfterSignup()">注册</button>
+        <p class="text-sm text-gray-500 mt-6 text-center">
+            已有账户? <a href="login.html" class="text-blue-500 hover:underline">登录</a>
+        </p>
+    </div>
+
+    <script>
+        function navigateToHomeAfterSignup() {
+            // In a real app, you'd validate and create account
+            // Then navigate to home and tell the parent (index.html) to show bottom nav
+            window.parent.document.getElementById('app-frame').src = 'home.html';
+            if (window.parent && typeof window.parent.showBottomNav === 'function') {
+                window.parent.showBottomNav();
+                 // Also, ensure the "Home" nav item in parent is set to active
+                window.parent.document.querySelectorAll('.nav-item').forEach(item => item.classList.remove('active'));
+                const homeNavItem = window.parent.document.querySelector('.nav-item[data-page="home.html"]');
+                if (homeNavItem) homeNavItem.classList.add('active');
+            }
+        }
+
+        function goBackToLogin() {
+            window.location.href = 'login.html';
+        }
+
+        // When signup screen loads in iframe, tell parent to hide bottom navigation
+        // if (window.parent && typeof window.parent.hideBottomNav === 'function') {
+        //     window.parent.hideBottomNav();
+        // }
+    </script>
+</body>
+</html> 

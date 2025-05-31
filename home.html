@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Home - Travel Audio Guide</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-50 min-h-screen flex flex-col">
+  <!-- Top Navigation Bar -->
+  <nav class="flex items-center justify-between px-4 py-3 bg-white shadow-sm sticky top-0 z-10">
+    <div class="flex items-center gap-2">
+      <img src="logo.png" alt="App Logo" class="h-8 w-8 rounded" />
+      <span class="font-bold text-lg text-blue-600">Roam</span>
+    </div>
+    <button aria-label="Profile" class="focus:outline-none">
+      <img src="avatar.png" alt="Profile" class="h-8 w-8 rounded-full border border-gray-200" />
+    </button>
+  </nav>
+
+  <!-- Main Content -->
+  <main class="flex-1 flex flex-col gap-4 px-4 pb-24 max-w-md mx-auto w-full">
+    <!-- Welcome Banner -->
+    <section class="mt-4">
+      <div class="bg-gradient-to-r from-blue-100 to-blue-50 rounded-xl p-4 flex items-center gap-3">
+        <img src="https://cdn-icons-png.flaticon.com/512/869/869869.png" alt="Wave" class="h-10 w-10" />
+        <div>
+          <div class="text-gray-700 text-lg font-semibold">Good morning, Alex!</div>
+          <div class="text-gray-500 text-sm">Ready to explore?</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Search Bar -->
+    <section>
+      <form class="flex items-center gap-2 bg-white rounded-lg shadow px-3 py-2">
+        <svg class="w-5 h-5 text-gray-400" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-4.35-4.35m0 0A7.5 7.5 0 104.5 4.5a7.5 7.5 0 0012.15 12.15z"/></svg>
+        <input type="text" placeholder="Search attractions, guides, or cities…" class="flex-1 bg-transparent outline-none text-base" aria-label="Search" />
+      </form>
+    </section>
+
+    <!-- Quick Actions -->
+    <section>
+      <div class="flex gap-4 overflow-x-auto no-scrollbar py-1">
+        <button class="flex flex-col items-center min-w-[64px]" aria-label="Nearby">
+          <span class="bg-blue-100 text-blue-600 p-3 rounded-full mb-1"><i class="fas fa-location-arrow"></i></span>
+          <span class="text-xs text-gray-700">Nearby</span>
+        </button>
+        <button class="flex flex-col items-center min-w-[64px]" aria-label="Favorites">
+          <span class="bg-pink-100 text-pink-500 p-3 rounded-full mb-1"><i class="fas fa-heart"></i></span>
+          <span class="text-xs text-gray-700">Favorites</span>
+        </button>
+        <button class="flex flex-col items-center min-w-[64px]" aria-label="Map">
+          <span class="bg-green-100 text-green-600 p-3 rounded-full mb-1"><i class="fas fa-map-marked-alt"></i></span>
+          <span class="text-xs text-gray-700">Map</span>
+        </button>
+        <button class="flex flex-col items-center min-w-[64px]" aria-label="Audio Guides">
+          <span class="bg-yellow-100 text-yellow-600 p-3 rounded-full mb-1"><i class="fas fa-headphones"></i></span>
+          <span class="text-xs text-gray-700">Audio Guides</span>
+        </button>
+        <button class="flex flex-col items-center min-w-[64px]" aria-label="Categories">
+          <span class="bg-purple-100 text-purple-600 p-3 rounded-full mb-1"><i class="fas fa-th-large"></i></span>
+          <span class="text-xs text-gray-700">Categories</span>
+        </button>
+      </div>
+    </section>
+
+    <!-- Featured Destinations -->
+    <section>
+      <div class="flex items-center justify-between mb-2">
+        <h2 class="text-base font-semibold text-gray-800">Featured Destinations</h2>
+        <a href="#" class="text-xs text-blue-500">See all</a>
+      </div>
+      <div class="flex gap-4 overflow-x-auto no-scrollbar">
+        <div class="min-w-[200px] bg-white rounded-xl shadow flex-shrink-0">
+          <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=400&q=80" alt="Yosemite" class="h-28 w-full object-cover rounded-t-xl" />
+          <div class="p-3">
+            <div class="font-semibold text-gray-800">Yosemite</div>
+            <div class="text-xs text-gray-500">California, USA</div>
+          </div>
+        </div>
+        <div class="min-w-[200px] bg-white rounded-xl shadow flex-shrink-0">
+          <img src="https://images.unsplash.com/photo-1465101046530-73398c7f28ca?auto=format&fit=crop&w=400&q=80" alt="Kyoto" class="h-28 w-full object-cover rounded-t-xl" />
+          <div class="p-3">
+            <div class="font-semibold text-gray-800">Kyoto</div>
+            <div class="text-xs text-gray-500">Japan</div>
+          </div>
+        </div>
+        <div class="min-w-[200px] bg-white rounded-xl shadow flex-shrink-0">
+          <img src="https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?auto=format&fit=crop&w=400&q=80" alt="Paris" class="h-28 w-full object-cover rounded-t-xl" />
+          <div class="p-3">
+            <div class="font-semibold text-gray-800">Paris</div>
+            <div class="text-xs text-gray-500">France</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Recommended for You -->
+    <section>
+      <div class="flex items-center justify-between mb-2 mt-4">
+        <h2 class="text-base font-semibold text-gray-800">Recommended for You</h2>
+        <a href="#" class="text-xs text-blue-500">See all</a>
+      </div>
+      <div class="flex flex-col gap-3">
+        <div class="flex bg-white rounded-xl shadow p-3 items-center gap-3">
+          <img src="https://images.unsplash.com/photo-1519125323398-675f0ddb6308?auto=format&fit=crop&w=80&q=80" alt="Golden Gate Bridge" class="h-14 w-14 object-cover rounded-lg" />
+          <div class="flex-1">
+            <div class="font-semibold text-gray-800">Golden Gate Bridge</div>
+            <div class="text-xs text-gray-500">San Francisco, USA</div>
+          </div>
+          <button class="bg-blue-100 text-blue-600 rounded-full p-2" aria-label="Play Audio Guide"><i class="fas fa-play"></i></button>
+        </div>
+        <div class="flex bg-white rounded-xl shadow p-3 items-center gap-3">
+          <img src="https://images.unsplash.com/photo-1467269204594-9661b134dd2b?auto=format&fit=crop&w=80&q=80" alt="Fushimi Inari" class="h-14 w-14 object-cover rounded-lg" />
+          <div class="flex-1">
+            <div class="font-semibold text-gray-800">Fushimi Inari</div>
+            <div class="text-xs text-gray-500">Kyoto, Japan</div>
+          </div>
+          <button class="bg-blue-100 text-blue-600 rounded-full p-2" aria-label="Play Audio Guide"><i class="fas fa-play"></i></button>
+        </div>
+        <div class="flex bg-white rounded-xl shadow p-3 items-center gap-3">
+          <img src="https://images.unsplash.com/photo-1502602898657-3e91760cbb34?auto=format&fit=crop&w=80&q=80" alt="Eiffel Tower" class="h-14 w-14 object-cover rounded-lg" />
+          <div class="flex-1">
+            <div class="font-semibold text-gray-800">Eiffel Tower</div>
+            <div class="text-xs text-gray-500">Paris, France</div>
+          </div>
+          <button class="bg-blue-100 text-blue-600 rounded-full p-2" aria-label="Play Audio Guide"><i class="fas fa-play"></i></button>
+        </div>
+      </div>
+    </section>
+    <!-- Top Content Creators -->
+    <section>
+      <div class="flex items-center justify-between mb-2 mt-4">
+        <h2 class="text-base font-semibold text-gray-800">Top Content Creators</h2>
+        <a href="#" class="text-xs text-blue-500">See all</a>
+      </div>
+      <div class="flex gap-4 overflow-x-auto no-scrollbar pb-2">
+        <button class="focus:outline-none" aria-label="View John Doe's Profile">
+          <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="John Doe" class="h-16 w-16 object-cover rounded-full border-2 border-blue-200" />
+        </button>
+        <button class="focus:outline-none" aria-label="View Jane Smith's Profile">
+          <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Jane Smith" class="h-16 w-16 object-cover rounded-full border-2 border-pink-200" />
+        </button>
+        <button class="focus:outline-none" aria-label="View Carlos Rivera's Profile">
+          <img src="https://randomuser.me/api/portraits/men/65.jpg" alt="Carlos Rivera" class="h-16 w-16 object-cover rounded-full border-2 border-purple-200" />
+        </button>
+        <!-- Add more avatars as needed -->
+      </div>
+    </section>
+  </main>
+
+  <!-- Bottom Navigation Bar -->
+  <nav class="fixed bottom-0 left-0 right-0 bg-white border-t border-gray-200 flex justify-around items-center h-14 z-20 max-w-md mx-auto w-full">
+    <a href="#" class="flex flex-col items-center text-blue-600"><i class="fas fa-home text-lg"></i><span class="text-xs">Home</span></a>
+    <a href="#" class="flex flex-col items-center text-gray-400"><i class="fas fa-search text-lg"></i><span class="text-xs">Search</span></a>
+    <a href="#" class="flex flex-col items-center text-gray-400"><i class="fas fa-map-marked-alt text-lg"></i><span class="text-xs">Map</span></a>
+    <a href="#" class="flex flex-col items-center text-gray-400"><i class="fas fa-heart text-lg"></i><span class="text-xs">Favorites</span></a>
+    <a href="#" class="flex flex-col items-center text-gray-400"><i class="fas fa-user text-lg"></i><span class="text-xs">Profile</span></a>
+  </nav>
+
+  <!-- Font Awesome CDN -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/js/all.min.js"></script>
+  <style>
+    /* Hide scrollbar for horizontal scroll sections */
+    .no-scrollbar::-webkit-scrollbar { display: none; }
+    .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+  </style>
+</body>
+</html> 

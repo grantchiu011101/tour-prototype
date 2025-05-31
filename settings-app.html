@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>App Preferences</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-50 min-h-screen flex flex-col">
+  <main class="flex-1 flex flex-col px-4 pt-8 pb-24 max-w-md mx-auto w-full">
+    <h1 class="text-xl font-semibold text-gray-800 mb-6">App Preferences</h1>
+    <div class="flex flex-col gap-4">
+      <a href="settings-language.html" class="settings-link"><span class="settings-icon"><i class="fas fa-language"></i></span> Language</a>
+      <a href="settings-theme.html" class="settings-link"><span class="settings-icon"><i class="fas fa-adjust"></i></span> Theme</a>
+      <a href="settings-location.html" class="settings-link"><span class="settings-icon"><i class="fas fa-map-marker-alt"></i></span> Location Services</a>
+    </div>
+  </main>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/js/all.min.js"></script>
+  <style>
+    .settings-link {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      background: #fff;
+      border-radius: 10px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+      padding: 1rem 1.2rem;
+      font-size: 1.1rem;
+      color: #222;
+      font-weight: 500;
+      text-decoration: none;
+      transition: box-shadow 0.2s, background 0.2s;
+    }
+    .settings-link:hover {
+      background: #f0f4fa;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.13);
+      color: #2563eb;
+    }
+    .settings-icon {
+      font-size: 1.3rem;
+      color: #3b82f6;
+      width: 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  </style>
+</body>
+</html> 

@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Notification Settings</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-50 min-h-screen flex flex-col">
+  <main class="flex-1 flex flex-col px-4 pt-8 pb-24 max-w-md mx-auto w-full">
+    <h1 class="text-xl font-semibold text-gray-800 mb-6">Notification Settings</h1>
+    <form class="flex flex-col gap-8">
+      <!-- Master Toggle & DND -->
+      <section class="flex flex-col gap-4">
+        <div class="flex items-center justify-between">
+          <span class="font-medium text-gray-700">Enable All Notifications</span>
+          <input type="checkbox" checked class="accent-blue-500 w-5 h-5" />
+        </div>
+        <div class="flex items-center justify-between">
+          <span class="font-medium text-gray-700">Do Not Disturb</span>
+          <input type="time" value="22:00" class="border rounded px-2 py-1 text-sm" style="width: 90px;" />
+          <span class="mx-1 text-gray-500">to</span>
+          <input type="time" value="07:00" class="border rounded px-2 py-1 text-sm" style="width: 90px;" />
+        </div>
+      </section>
+      <!-- Tour Updates -->
+      <section>
+        <h2 class="text-base font-semibold text-gray-700 mb-2">Tour Updates</h2>
+        <div class="flex flex-col gap-2">
+          <div class="flex flex-col gap-1">
+            <div class="flex items-center justify-between">
+              <span>New tours in my favorite cities</span>
+              <div class="flex gap-2">
+                <label class="flex items-center gap-1 text-xs"><input type="checkbox" checked class="accent-blue-500" />Push</label>
+                <label class="flex items-center gap-1 text-xs"><input type="checkbox" class="accent-blue-500" />Email</label>
+                <label class="flex items-center gap-1 text-xs"><input type="checkbox" checked class="accent-blue-500" />In-app</label>
+              </div>
+            </div>
+            <div class="flex items-center justify-between">
+              <span>Updates to tours I follow</span>
+              <div class="flex gap-2">
+                <label class="flex items-center gap-1 text-xs"><input type="checkbox" checked class="accent-blue-500" />Push</label>
+                <label class="flex items-center gap-1 text-xs"><input type="checkbox" class="accent-blue-500" />Email</label>
+                <label class="flex items-center gap-1 text-xs"><input type="checkbox" checked class="accent-blue-500" />In-app</label>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- Content Creator Activity -->
+      <section>
+        <h2 class="text-base font-semibold text-gray-700 mb-2">Content Creator Activity</h2>
+        <div class="flex flex-col gap-1">
+          <div class="flex items-center justify-between">
+            <span>New content from creators I follow</span>
+            <div class="flex gap-2">
+              <label class="flex items-center gap-1 text-xs"><input type="checkbox" checked class="accent-blue-500" />Push</label>
+              <label class="flex items-center gap-1 text-xs"><input type="checkbox" class="accent-blue-500" />Email</label>
+              <label class="flex items-center gap-1 text-xs"><input type="checkbox" checked class="accent-blue-500" />In-app</label>
+            </div>
+          </div>
+          <div class="flex items-center justify-between">
+            <span>Replies to my comments</span>
+            <div class="flex gap-2">
+              <label class="flex items-center gap-1 text-xs"><input type="checkbox" class="accent-blue-500" />Push</label>
+              <label class="flex items-center gap-1 text-xs"><input type="checkbox" checked class="accent-blue-500" />Email</label>
+              <label class="flex items-center gap-1 text-xs"><input type="checkbox" checked class="accent-blue-500" />In-app</label>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- Social -->
+      <section>
+        <h2 class="text-base font-semibold text-gray-700 mb-2">Social</h2>
+        <div class="flex flex-col gap-1">
+          <div class="flex items-center justify-between">
+            <span>New followers</span>
+            <div class="flex gap-2">
+              <label class="flex items-center gap-1 text-xs"><input type="checkbox" checked class="accent-blue-500" />Push</label>
+              <label class="flex items-center gap-1 text-xs"><input type="checkbox" class="accent-blue-500" />Email</label>
+              <label class="flex items-center gap-1 text-xs"><input type="checkbox" checked class="accent-blue-500" />In-app</label>
+            </div>
+          </div>
+          <div class="flex items-center justify-between">
+            <span>Likes/comments on my reviews</span>
+            <div class="flex gap-2">
+              <label class="flex items-center gap-1 text-xs"><input type="checkbox" class="accent-blue-500" />Push</label>
+              <label class="flex items-center gap-1 text-xs"><input type="checkbox" checked class="accent-blue-500" />Email</label>
+              <label class="flex items-center gap-1 text-xs"><input type="checkbox" checked class="accent-blue-500" />In-app</label>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- App Announcements -->
+      <section>
+        <h2 class="text-base font-semibold text-gray-700 mb-2">App Announcements</h2>
+        <div class="flex items-center justify-between">
+          <span>Product updates, tips, offers</span>
+          <div class="flex gap-2">
+            <label class="flex items-center gap-1 text-xs"><input type="checkbox" class="accent-blue-500" />Push</label>
+            <label class="flex items-center gap-1 text-xs"><input type="checkbox" checked class="accent-blue-500" />Email</label>
+            <label class="flex items-center gap-1 text-xs"><input type="checkbox" checked class="accent-blue-500" />In-app</label>
+          </div>
+        </div>
+      </section>
+      <!-- Advanced -->
+      <section>
+        <h2 class="text-base font-semibold text-gray-700 mb-2">Advanced</h2>
+        <div class="mb-2">
+          <label class="block text-gray-600 mb-1 font-medium">Digest Frequency</label>
+          <select class="w-full px-3 py-2 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-200">
+            <option>Immediate</option>
+            <option>Daily</option>
+            <option>Weekly</option>
+          </select>
+        </div>
+        <div class="flex items-center gap-3">
+          <input type="checkbox" id="previewContent" checked class="accent-blue-500" />
+          <label for="previewContent" class="text-gray-700">Preview content in notifications</label>
+        </div>
+      </section>
+      <button type="submit" class="bg-blue-500 text-white px-4 py-2 rounded-lg font-medium hover:bg-blue-600 transition mt-4">Save Changes</button>
+    </form>
+  </main>
+</body>
+</html> 

@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Travel Audio Guide Prototype - Tiled View</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        body {
+            min-height: 100vh;
+            background-color: #f0f2f5; /* Light gray background */
+            margin: 0;
+            padding: 20px; /* Padding around the whole page */
+        }
+        #app-content {
+            /* flex-grow: 1; */
+            /* overflow-y: auto; */
+            /* position: relative; */
+            display: grid; /* Changed from flex to grid */
+            grid-template-columns: repeat(3, 1fr); /* Ensure 3 columns */
+            /* flex-direction: column; */ /* Removed */
+            gap: 30px; /* Space between screens */
+        }
+        .screen {
+            background-color: #ffffff;
+            -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
+            border: 1px solid #d1d5db; /* Add border to distinguish screens */
+            border-radius: 12px; /* Rounded corners for screen containers */
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            padding: 16px; /* Add some padding inside each screen section */
+            width: 100%; /* Make screens take full width available in the new layout */
+            max-width: 600px; /* Optional: Constrain width for better readability if screens are too wide */
+            /* margin: 0 auto 20px auto; */ /* Removed margin, grid gap will handle spacing */
+        }
+        .top-nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 12px 16px;
+            background-color: #ffffff;
+            border-bottom: 1px solid #e5e7eb;
+            z-index: 50;
+            margin-bottom: 16px; /* Add some space below top-nav */
+        }
+        .top-nav .title {
+            font-size: 1.125rem; /* text-lg */
+            font-weight: 600; /* font-semibold */
+        }
+        .content-area {
+             padding: 16px;
+        }
+        .card {
+            background-color: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            margin-bottom: 16px;
+            overflow: hidden;
+        }
+        .card img {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+        }
+        .card-content {
+            padding: 12px;
+        }
+        .audio-player {
+            padding: 16px;
+            border-top: 1px solid #e5e7eb;
+            margin-top: 16px;
+        }
+        .form-input {
+            border: 1px solid #d1d5db;
+            border-radius: 8px;
+            padding: 10px 12px;
+            width: 100%;
+            margin-bottom: 12px;
+            font-size: 1rem;
+        }
+        .btn {
+            padding: 10px 16px;
+            border-radius: 8px;
+            font-weight: 500;
+            cursor: pointer;
+            text-align: center;
+            transition: background-color 0.2s;
+        }
+        .btn-primary {
+            background-color: #3b82f6; /* blue-500 */
+            color: white;
+        }
+        .btn-primary:hover {
+            background-color: #2563eb; /* blue-600 */
+        }
+        .btn-secondary {
+            background-color: #e5e7eb; /* gray-200 */
+            color: #374151; /* gray-700 */
+        }
+        .btn-secondary:hover {
+            background-color: #d1d5db; /* gray-300 */
+        }
+        .btn-full {
+            width: 100%;
+        }
+        .icon-btn {
+            background: none;
+            border: none;
+            color: #6b7280; /* gray-500 */
+            font-size: 1.25rem;
+            cursor: pointer;
+        }
+        .icon-btn:hover {
+            color: #3b82f6; /* blue-500 */
+        }
+        .screen::-webkit-scrollbar {
+            width: 5px;
+        }
+        .screen::-webkit-scrollbar-thumb {
+            background-color: #cbd5e1; /* coolGray-300 */
+            border-radius: 10px;
+        }
+        .screen::-webkit-scrollbar-track {
+            background-color: #f8fafc; /* coolGray-50 */
+        }
+        .fixed-header {
+            background-color: white;
+            z-index: 10;
+            border-bottom: 1px solid #e5e7eb;
+            padding: 16px; /* Ensure padding if it was just a container */
+            margin-bottom: 16px; /* Add space below fixed headers */
+        }
+    </style>
+</head>
+<body>
+
+    <div id="app-content">
+      <div style="display: flex; flex-direction: column; align-items: center;">
+        <div class="fixed-header title" style="text-align:center; font-weight:600; font-size:1.1rem; margin-bottom:8px;">Login</div>
+        <iframe src="login.html" class="screen" style="height: 844px; width: 390px; border: none; border-radius: 12px; box-shadow: 0 5px 15px rgba(0,0,0,0.1);"></iframe>
+      </div>
+      <div style="display: flex; flex-direction: column; align-items: center;">
+        <div class="fixed-header title" style="text-align:center; font-weight:600; font-size:1.1rem; margin-bottom:8px;">Signup</div>
+        <iframe src="signup.html" class="screen" style="height: 844px; width: 390px; border: none; border-radius: 12px; box-shadow: 0 5px 15px rgba(0,0,0,0.1);"></iframe>
+      </div>
+      <div style="display: flex; flex-direction: column; align-items: center;">
+        <div class="fixed-header title" style="text-align:center; font-weight:600; font-size:1.1rem; margin-bottom:8px;">Home</div>
+        <iframe src="home.html" class="screen" style="height: 844px; width: 390px; border: none; border-radius: 12px; box-shadow: 0 5px 15px rgba(0,0,0,0.1);"></iframe>
+      </div>
+      <div style="display: flex; flex-direction: column; align-items: center;">
+        <div class="fixed-header title" style="text-align:center; font-weight:600; font-size:1.1rem; margin-bottom:8px;">Search</div>
+        <iframe src="search.html" class="screen" style="height: 844px; width: 390px; border: none; border-radius: 12px; box-shadow: 0 5px 15px rgba(0,0,0,0.1);"></iframe>
+      </div>
+      <div style="display: flex; flex-direction: column; align-items: center;">
+        <div class="fixed-header title" style="text-align:center; font-weight:600; font-size:1.1rem; margin-bottom:8px;">Attraction Detail</div>
+        <iframe src="attraction-detail.html" class="screen" style="height: 844px; width: 390px; border: none; border-radius: 12px; box-shadow: 0 5px 15px rgba(0,0,0,0.1);"></iframe>
+      </div>
+      <div style="display: flex; flex-direction: column; align-items: center;">
+        <div class="fixed-header title" style="text-align:center; font-weight:600; font-size:1.1rem; margin-bottom:8px;">Map</div>
+        <iframe src="map.html" class="screen" style="height: 844px; width: 390px; border: none; border-radius: 12px; box-shadow: 0 5px 15px rgba(0,0,0,0.1);"></iframe>
+      </div>
+      <div style="display: flex; flex-direction: column; align-items: center;">
+        <div class="fixed-header title" style="text-align:center; font-weight:600; font-size:1.1rem; margin-bottom:8px;">Profile</div>
+        <iframe src="profile.html" class="screen" style="height: 844px; width: 390px; border: none; border-radius: 12px; box-shadow: 0 5px 15px rgba(0,0,0,0.1);"></iframe>
+      </div>
+      <div style="display: flex; flex-direction: column; align-items: center;">
+        <div class="fixed-header title" style="text-align:center; font-weight:600; font-size:1.1rem; margin-bottom:8px;">Settings</div>
+        <iframe src="settings.html" class="screen" style="height: 844px; width: 390px; border: none; border-radius: 12px; box-shadow: 0 5px 15px rgba(0,0,0,0.1);"></iframe>
+      </div>
+      <div style="display: flex; flex-direction: column; align-items: center;">
+        <div class="fixed-header title" style="text-align:center; font-weight:600; font-size:1.1rem; margin-bottom:8px;">Notifications</div>
+        <iframe src="notifications.html" class="screen" style="height: 844px; width: 390px; border: none; border-radius: 12px; box-shadow: 0 5px 15px rgba(0,0,0,0.1);"></iframe>
+      </div>
+      <div style="display: flex; flex-direction: column; align-items: center;">
+        <div class="fixed-header title" style="text-align:center; font-weight:600; font-size:1.1rem; margin-bottom:8px;">My Favorites</div>
+        <iframe src="my-favorites.html" class="screen" style="height: 844px; width: 390px; border: none; border-radius: 12px; box-shadow: 0 5px 15px rgba(0,0,0,0.1);"></iframe>
+      </div>
+      <div style="display: flex; flex-direction: column; align-items: center;">
+        <div class="fixed-header title" style="text-align:center; font-weight:600; font-size:1.1rem; margin-bottom:8px;">My Profile</div>
+        <iframe src="my-profile.html" class="screen" style="height: 844px; width: 390px; border: none; border-radius: 12px; box-shadow: 0 5px 15px rgba(0,0,0,0.1);"></iframe>
+      </div>
+      <div style="display: flex; flex-direction: column; align-items: center;">
+        <div class="fixed-header title" style="text-align:center; font-weight:600; font-size:1.1rem; margin-bottom:8px;">Profile Settings</div>
+        <iframe src="settings-profile.html" class="screen" style="height: 844px; width: 390px; border: none; border-radius: 12px; box-shadow: 0 5px 15px rgba(0,0,0,0.1);"></iframe>
+      </div>
+      <div style="display: flex; flex-direction: column; align-items: center;">
+        <div class="fixed-header title" style="text-align:center; font-weight:600; font-size:1.1rem; margin-bottom:8px;">Notification Settings</div>
+        <iframe src="settings-notifications.html" class="screen" style="height: 844px; width: 390px; border: none; border-radius: 12px; box-shadow: 0 5px 15px rgba(0,0,0,0.1);"></iframe>
+      </div>
+      <div style="display: flex; flex-direction: column; align-items: center;">
+        <div class="fixed-header title" style="text-align:center; font-weight:600; font-size:1.1rem; margin-bottom:8px;">Privacy & Security</div>
+        <iframe src="settings-privacy.html" class="screen" style="height: 844px; width: 390px; border: none; border-radius: 12px; box-shadow: 0 5px 15px rgba(0,0,0,0.1);"></iframe>
+      </div>
+      <div style="display: flex; flex-direction: column; align-items: center;">
+        <div class="fixed-header title" style="text-align:center; font-weight:600; font-size:1.1rem; margin-bottom:8px;">App Preferences</div>
+        <iframe src="settings-app.html" class="screen" style="height: 844px; width: 390px; border: none; border-radius: 12px; box-shadow: 0 5px 15px rgba(0,0,0,0.1);"></iframe>
+      </div>
+      <div style="display: flex; flex-direction: column; align-items: center;">
+        <div class="fixed-header title" style="text-align:center; font-weight:600; font-size:1.1rem; margin-bottom:8px;">Support & Legal</div>
+        <iframe src="settings-support.html" class="screen" style="height: 844px; width: 390px; border: none; border-radius: 12px; box-shadow: 0 5px 15px rgba(0,0,0,0.1);"></iframe>
+      </div>
+      <div style="display: flex; flex-direction: column; align-items: center;">
+        <div class="fixed-header title" style="text-align:center; font-weight:600; font-size:1.1rem; margin-bottom:8px;">Language Settings</div>
+        <iframe src="settings-language.html" class="screen" style="height: 844px; width: 390px; border: none; border-radius: 12px; box-shadow: 0 5px 15px rgba(0,0,0,0.1);"></iframe>
+      </div>
+      <div style="display: flex; flex-direction: column; align-items: center;">
+        <div class="fixed-header title" style="text-align:center; font-weight:600; font-size:1.1rem; margin-bottom:8px;">Theme Settings</div>
+        <iframe src="settings-theme.html" class="screen" style="height: 844px; width: 390px; border: none; border-radius: 12px; box-shadow: 0 5px 15px rgba(0,0,0,0.1);"></iframe>
+      </div>
+      <div style="display: flex; flex-direction: column; align-items: center;">
+        <div class="fixed-header title" style="text-align:center; font-weight:600; font-size:1.1rem; margin-bottom:8px;">Location Services</div>
+        <iframe src="settings-location.html" class="screen" style="height: 844px; width: 390px; border: none; border-radius: 12px; box-shadow: 0 5px 15px rgba(0,0,0,0.1);"></iframe>
+      </div>
+      <div style="display: flex; flex-direction: column; align-items: center;">
+        <div class="fixed-header title" style="text-align:center; font-weight:600; font-size:1.1rem; margin-bottom:8px;">Audio Player</div>
+        <iframe src="audio-player.html" class="screen" style="height: 844px; width: 390px; border: none; border-radius: 12px; box-shadow: 0 5px 15px rgba(0,0,0,0.1);"></iframe>
+      </div>
+    </div>
+
+</body>
+</html> 
