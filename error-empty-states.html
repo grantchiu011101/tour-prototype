@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Error & Empty States - Components</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gradient-to-b from-gray-100 to-white min-h-screen flex flex-col items-center px-4 py-8">
+  <main class="flex flex-col gap-10 w-full max-w-md">
+    <!-- Network Error State -->
+    <div class="flex flex-col items-center justify-center text-center p-8 bg-white rounded-2xl shadow">
+      <img src="https://cdn.jsdelivr.net/gh/feathericons/feather/icons/wifi-off.svg" class="w-16 h-16 mb-4 opacity-60" alt="No connection" />
+      <div class="text-lg font-semibold text-gray-800 mb-2">Connection Lost</div>
+      <div class="text-sm text-gray-500 mb-4">We couldn't load your content. Please check your internet connection and try again.</div>
+      <button class="bg-blue-500 text-white rounded-lg px-4 py-2 text-sm font-semibold" onclick="location.reload()">Retry</button>
+    </div>
+    <!-- Empty Favorites State -->
+    <div class="flex flex-col items-center justify-center text-center p-8 bg-white rounded-2xl shadow">
+      <img src="https://cdn.jsdelivr.net/gh/feathericons/feather/icons/star.svg" class="w-16 h-16 mb-4 opacity-60" alt="No favorites" />
+      <div class="text-lg font-semibold text-gray-800 mb-2">No Favorites Yet</div>
+      <div class="text-sm text-gray-500 mb-4">Save tours you love to find them here later.</div>
+      <a href="search.html" class="bg-blue-500 text-white rounded-lg px-4 py-2 text-sm font-semibold">Browse Tours</a>
+    </div>
+    <!-- Payment Error State -->
+    <div class="flex flex-col items-center justify-center text-center p-8 bg-white rounded-2xl shadow">
+      <img src="https://cdn.jsdelivr.net/gh/feathericons/feather/icons/credit-card.svg" class="w-16 h-16 mb-4 opacity-60" alt="Payment error" />
+      <div class="text-lg font-semibold text-gray-800 mb-2">Payment Failed</div>
+      <div class="text-sm text-gray-500 mb-4">We couldn't process your payment. Please try again or use a different method.</div>
+      <button class="bg-blue-500 text-white rounded-lg px-4 py-2 text-sm font-semibold mb-2">Try Again</button>
+      <a href="support.html" class="text-xs text-blue-500 hover:underline">Contact Support</a>
+    </div>
+    <!-- No Search Results State -->
+    <div class="flex flex-col items-center justify-center text-center p-8 bg-white rounded-2xl shadow">
+      <img src="https://cdn.jsdelivr.net/gh/feathericons/feather/icons/search.svg" class="w-16 h-16 mb-4 opacity-60" alt="No results" />
+      <div class="text-lg font-semibold text-gray-800 mb-2">No Results Found</div>
+      <div class="text-sm text-gray-500 mb-4">Try a different keyword or check your spelling.</div>
+      <a href="search.html" class="bg-blue-500 text-white rounded-lg px-4 py-2 text-sm font-semibold">Back to Search</a>
+    </div>
+  </main>
+</body>
+</html> 

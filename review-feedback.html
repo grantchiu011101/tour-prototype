@@ -7,44 +7,83 @@
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
-<body class="bg-white min-h-screen flex flex-col justify-center items-center px-4">
-  <main class="flex flex-col gap-8 w-full max-w-md mt-12">
-    <h1 class="text-xl font-bold text-gray-900 text-center mb-2">Leave a Review</h1>
-    <form class="flex flex-col gap-6">
+<body class="bg-gray-50 min-h-screen flex flex-col items-center px-4">
+  <main class="flex flex-col w-full max-w-md pt-10 pb-8 gap-6">
+    <h1 class="text-2xl font-bold text-gray-900 text-center mb-2">Leave a Review</h1>
+    <form class="flex flex-col gap-6 bg-white rounded-2xl shadow p-6" style="backdrop-filter: blur(2px);">
       <div class="flex flex-col gap-5">
+        <!-- Star Rating Row -->
         <div>
-          <label class="block text-gray-700 font-medium mb-1">Overall Experience</label>
-          <div class="flex gap-1">${[1,2,3,4,5].map(i=>`<i class='fa-regular fa-star text-2xl text-gray-300 cursor-pointer'></i>`).join('')}</div>
+          <label class="block text-gray-700 font-medium mb-2">Overall Experience</label>
+          <div class="flex gap-1" data-rating-group="overall">
+            <button type="button" aria-label="1 star" class="star-btn text-2xl text-gray-300 hover:text-yellow-400 focus:outline-none"><i class="fa-regular fa-star"></i></button>
+            <button type="button" aria-label="2 stars" class="star-btn text-2xl text-gray-300 hover:text-yellow-400 focus:outline-none"><i class="fa-regular fa-star"></i></button>
+            <button type="button" aria-label="3 stars" class="star-btn text-2xl text-gray-300 hover:text-yellow-400 focus:outline-none"><i class="fa-regular fa-star"></i></button>
+            <button type="button" aria-label="4 stars" class="star-btn text-2xl text-gray-300 hover:text-yellow-400 focus:outline-none"><i class="fa-regular fa-star"></i></button>
+            <button type="button" aria-label="5 stars" class="star-btn text-2xl text-gray-300 hover:text-yellow-400 focus:outline-none"><i class="fa-regular fa-star"></i></button>
+            <input type="hidden" name="overall" value="0">
+          </div>
         </div>
         <div>
-          <label class="block text-gray-700 font-medium mb-1">Audio Quality</label>
-          <div class="flex gap-1">${[1,2,3,4,5].map(i=>`<i class='fa-regular fa-star text-2xl text-gray-300 cursor-pointer'></i>`).join('')}</div>
+          <label class="block text-gray-700 font-medium mb-2">Audio Quality</label>
+          <div class="flex gap-1" data-rating-group="audio">
+            <button type="button" aria-label="1 star" class="star-btn text-2xl text-gray-300 hover:text-yellow-400 focus:outline-none"><i class="fa-regular fa-star"></i></button>
+            <button type="button" aria-label="2 stars" class="star-btn text-2xl text-gray-300 hover:text-yellow-400 focus:outline-none"><i class="fa-regular fa-star"></i></button>
+            <button type="button" aria-label="3 stars" class="star-btn text-2xl text-gray-300 hover:text-yellow-400 focus:outline-none"><i class="fa-regular fa-star"></i></button>
+            <button type="button" aria-label="4 stars" class="star-btn text-2xl text-gray-300 hover:text-yellow-400 focus:outline-none"><i class="fa-regular fa-star"></i></button>
+            <button type="button" aria-label="5 stars" class="star-btn text-2xl text-gray-300 hover:text-yellow-400 focus:outline-none"><i class="fa-regular fa-star"></i></button>
+            <input type="hidden" name="audio" value="0">
+          </div>
         </div>
         <div>
-          <label class="block text-gray-700 font-medium mb-1">Content Quality</label>
-          <div class="flex gap-1">${[1,2,3,4,5].map(i=>`<i class='fa-regular fa-star text-2xl text-gray-300 cursor-pointer'></i>`).join('')}</div>
+          <label class="block text-gray-700 font-medium mb-2">Content Quality</label>
+          <div class="flex gap-1" data-rating-group="content">
+            <button type="button" aria-label="1 star" class="star-btn text-2xl text-gray-300 hover:text-yellow-400 focus:outline-none"><i class="fa-regular fa-star"></i></button>
+            <button type="button" aria-label="2 stars" class="star-btn text-2xl text-gray-300 hover:text-yellow-400 focus:outline-none"><i class="fa-regular fa-star"></i></button>
+            <button type="button" aria-label="3 stars" class="star-btn text-2xl text-gray-300 hover:text-yellow-400 focus:outline-none"><i class="fa-regular fa-star"></i></button>
+            <button type="button" aria-label="4 stars" class="star-btn text-2xl text-gray-300 hover:text-yellow-400 focus:outline-none"><i class="fa-regular fa-star"></i></button>
+            <button type="button" aria-label="5 stars" class="star-btn text-2xl text-gray-300 hover:text-yellow-400 focus:outline-none"><i class="fa-regular fa-star"></i></button>
+            <input type="hidden" name="content" value="0">
+          </div>
         </div>
         <div>
-          <label class="block text-gray-700 font-medium mb-1">Creator</label>
-          <div class="flex gap-1">${[1,2,3,4,5].map(i=>`<i class='fa-regular fa-star text-2xl text-gray-300 cursor-pointer'></i>`).join('')}</div>
+          <label class="block text-gray-700 font-medium mb-2">Creator</label>
+          <div class="flex gap-1" data-rating-group="creator">
+            <button type="button" aria-label="1 star" class="star-btn text-2xl text-gray-300 hover:text-yellow-400 focus:outline-none"><i class="fa-regular fa-star"></i></button>
+            <button type="button" aria-label="2 stars" class="star-btn text-2xl text-gray-300 hover:text-yellow-400 focus:outline-none"><i class="fa-regular fa-star"></i></button>
+            <button type="button" aria-label="3 stars" class="star-btn text-2xl text-gray-300 hover:text-yellow-400 focus:outline-none"><i class="fa-regular fa-star"></i></button>
+            <button type="button" aria-label="4 stars" class="star-btn text-2xl text-gray-300 hover:text-yellow-400 focus:outline-none"><i class="fa-regular fa-star"></i></button>
+            <button type="button" aria-label="5 stars" class="star-btn text-2xl text-gray-300 hover:text-yellow-400 focus:outline-none"><i class="fa-regular fa-star"></i></button>
+            <input type="hidden" name="creator" value="0">
+          </div>
         </div>
         <div>
-          <label class="block text-gray-700 font-medium mb-1">Recommend?</label>
+          <label class="block text-gray-700 font-medium mb-2">Recommend?</label>
           <div class="flex gap-4 mt-1">
-            <label class="flex items-center gap-1 cursor-pointer"><input type="radio" name="recommend" class="accent-blue-500" /> Yes</label>
-            <label class="flex items-center gap-1 cursor-pointer"><input type="radio" name="recommend" class="accent-blue-500" /> No</label>
+            <label class="flex items-center gap-2 cursor-pointer"><input type="radio" name="recommend" class="accent-blue-500" required /> <span>Yes</span></label>
+            <label class="flex items-center gap-2 cursor-pointer"><input type="radio" name="recommend" class="accent-blue-500" /> <span>No</span></label>
           </div>
         </div>
       </div>
-      <textarea class="form-input w-full mt-2" rows="3" maxlength="500" placeholder="Write your feedback (optional)"></textarea>
-      <button type="submit" class="bg-blue-500 text-white rounded-lg py-3 w-full font-semibold text-lg hover:bg-blue-600 transition mt-2">Submit</button>
+      <textarea class="form-input w-full mt-2 rounded-xl border-gray-200 focus:ring-blue-200" rows="3" maxlength="500" placeholder="Write your feedback (optional)"></textarea>
+      <button type="submit" class="sticky bottom-4 bg-blue-500 text-white rounded-xl py-3 w-full font-semibold text-lg hover:bg-blue-600 transition mt-2 shadow">Submit</button>
     </form>
   </main>
   <script>
-    // Render static stars for minimalism
-    document.querySelectorAll('form').forEach(form => {
-      form.innerHTML = form.innerHTML.replace(/\$\{\[1,2,3,4,5\].*?\}/g, () => {
-        return [1,2,3,4,5].map(i=>`<i class='fa-regular fa-star text-2xl text-gray-300 cursor-pointer'></i>`).join('');
+    // Interactive star rating for each group
+    document.querySelectorAll('[data-rating-group]').forEach(group => {
+      const stars = group.querySelectorAll('.star-btn');
+      const input = group.querySelector('input[type="hidden"]');
+      stars.forEach((star, idx) => {
+        star.addEventListener('click', () => {
+          input.value = idx + 1;
+          stars.forEach((s, i) => {
+            s.querySelector('i').classList.toggle('fa-solid', i <= idx);
+            s.querySelector('i').classList.toggle('fa-regular', i > idx);
+            s.classList.toggle('text-yellow-400', i <= idx);
+            s.classList.toggle('text-gray-300', i > idx);
+          });
+        });
       });
     });
   </script>
