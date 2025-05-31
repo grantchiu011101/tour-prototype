@@ -6,51 +6,56 @@
   <title>City Detail</title>
   <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body class="bg-gray-50 min-h-screen flex flex-col">
-  <main class="flex-1 flex flex-col px-4 pt-4 pb-24 max-w-md mx-auto w-full">
+<body class="bg-gray-50 min-h-screen flex flex-col overflow-hidden">
+  <!-- Blurred City Image Background -->
+  <div class="absolute top-0 left-0 w-full h-60 z-0">
+    <img src="https://images.unsplash.com/photo-1467269204594-9661b134dd2b?auto=format&fit=crop&w=800&q=80" alt="Kyoto" class="w-full h-full object-cover object-center blur-xl scale-105" />
+    <div class="absolute inset-0 bg-black bg-opacity-40"></div>
+  </div>
+  <main class="relative z-10 flex-1 flex flex-col px-4 pt-4 pb-24 max-w-md mx-auto w-full">
     <!-- Top Bar -->
-    <div class="flex items-center justify-between mb-4">
-      <button class="text-gray-500 text-xl" aria-label="Back"><i class="fas fa-arrow-left"></i></button>
-      <div class="font-semibold text-base text-gray-800 truncate">Kyoto, Japan</div>
-      <button class="text-orange-400 text-xl" aria-label="Add to Favorites"><i class="fas fa-heart"></i></button>
+    <div class="flex items-center justify-between mb-4 relative z-20" style="margin-top:8px;">
+      <button class="text-gray-100 text-xl bg-black/30 rounded-full p-2 backdrop-blur-sm" aria-label="Back"><i class="fas fa-arrow-left"></i></button>
+      <div class="font-semibold text-base text-white drop-shadow truncate">Kyoto, Japan</div>
+      <button class="text-orange-200 text-xl bg-black/30 rounded-full p-2 backdrop-blur-sm" aria-label="Add to Favorites"><i class="fas fa-heart"></i></button>
     </div>
-    <!-- City Image -->
-    <div class="flex justify-center mb-4">
-      <img src="https://images.unsplash.com/photo-1467269204594-9661b134dd2b?auto=format&fit=crop&w=400&q=80" alt="Kyoto" class="w-full h-40 object-cover rounded-xl shadow" />
+    <!-- City Image Foreground Card -->
+    <div class="flex justify-center mb-4 relative z-10">
+      <img src="https://images.unsplash.com/photo-1467269204594-9661b134dd2b?auto=format&fit=crop&w=400&q=80" alt="Kyoto" class="w-full h-40 object-cover rounded-2xl shadow-xl border-4 border-white" />
     </div>
     <!-- Description & Info -->
-    <div class="text-center mb-2 text-gray-800 text-lg font-semibold">Kyoto</div>
-    <div class="text-center mb-2 text-gray-500 text-sm">Japan</div>
-    <div class="text-center mb-4 text-gray-500 text-xs">Kyoto, once the capital of Japan, is a city on the island of Honshu. It's famous for its numerous classical Buddhist temples, gardens, imperial palaces, Shinto shrines, and traditional wooden houses.</div>
-    <div class="flex justify-center gap-4 mb-4 text-xs text-gray-600">
-      <div class="flex items-center gap-1"><i class="fas fa-sun text-orange-400"></i> 22°C, Sunny</div>
-      <div class="flex items-center gap-1"><i class="fas fa-calendar-alt text-blue-400"></i> Best: Apr-Oct</div>
-      <a href="#" class="flex items-center gap-1 text-blue-500 hover:underline"><i class="fas fa-map-marker-alt"></i> Map</a>
+    <div class="text-center mb-1 text-2xl font-bold text-gray-900">Kyoto</div>
+    <div class="text-center mb-2 text-blue-500 text-base font-medium">Japan</div>
+    <div class="text-center mb-4 text-gray-600 text-sm">Kyoto, once the capital of Japan, is a city on the island of Honshu. It's famous for its numerous classical Buddhist temples, gardens, imperial palaces, Shinto shrines, and traditional wooden houses.</div>
+    <div class="flex justify-center gap-4 mb-6 text-xs text-gray-100 relative z-20">
+      <div class="flex items-center gap-1 bg-black/30 rounded-full px-3 py-1"><i class="fas fa-sun text-orange-300"></i> 22°C, Sunny</div>
+      <div class="flex items-center gap-1 bg-black/30 rounded-full px-3 py-1"><i class="fas fa-calendar-alt text-blue-200"></i> Best: Apr-Oct</div>
+      <a href="#" class="flex items-center gap-1 text-blue-200 hover:underline bg-black/30 rounded-full px-3 py-1"><i class="fas fa-map-marker-alt"></i> Map</a>
     </div>
     <!-- Top Attractions -->
-    <div class="mb-4">
+    <div class="mb-6">
       <div class="flex items-center justify-between mb-2">
         <h2 class="text-base font-semibold text-gray-800">Top Attractions</h2>
         <a href="#" class="text-xs text-blue-500 hover:text-orange-400 transition">See all</a>
       </div>
       <div class="flex gap-4 overflow-x-auto no-scrollbar">
-        <div class="min-w-[160px] bg-white rounded-xl shadow flex-shrink-0 border border-gray-100">
-          <img src="https://images.unsplash.com/photo-1465101046530-73398c7f28ca?auto=format&fit=crop&w=400&q=80" alt="Fushimi Inari" class="h-24 w-full object-cover rounded-t-xl" />
-          <div class="p-2">
+        <div class="min-w-[160px] bg-white rounded-2xl shadow-lg flex-shrink-0 border border-gray-100">
+          <img src="https://images.unsplash.com/photo-1465101046530-73398c7f28ca?auto=format&fit=crop&w=400&q=80" alt="Fushimi Inari" class="h-24 w-full object-cover rounded-t-2xl" />
+          <div class="p-3">
             <div class="font-semibold text-gray-800 text-sm">Fushimi Inari Shrine</div>
             <div class="text-xs text-gray-500">Iconic red torii gates</div>
           </div>
         </div>
-        <div class="min-w-[160px] bg-white rounded-xl shadow flex-shrink-0 border border-gray-100">
-          <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=400&q=80" alt="Arashiyama Bamboo Grove" class="h-24 w-full object-cover rounded-t-xl" />
-          <div class="p-2">
+        <div class="min-w-[160px] bg-white rounded-2xl shadow-lg flex-shrink-0 border border-gray-100">
+          <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=400&q=80" alt="Arashiyama Bamboo Grove" class="h-24 w-full object-cover rounded-t-2xl" />
+          <div class="p-3">
             <div class="font-semibold text-gray-800 text-sm">Arashiyama Bamboo Grove</div>
             <div class="text-xs text-gray-500">Scenic bamboo forest</div>
           </div>
         </div>
-        <div class="min-w-[160px] bg-white rounded-xl shadow flex-shrink-0 border border-gray-100">
-          <img src="https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?auto=format&fit=crop&w=400&q=80" alt="Kinkaku-ji" class="h-24 w-full object-cover rounded-t-xl" />
-          <div class="p-2">
+        <div class="min-w-[160px] bg-white rounded-2xl shadow-lg flex-shrink-0 border border-gray-100">
+          <img src="https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?auto=format&fit=crop&w=400&q=80" alt="Kinkaku-ji" class="h-24 w-full object-cover rounded-t-2xl" />
+          <div class="p-3">
             <div class="font-semibold text-gray-800 text-sm">Kinkaku-ji</div>
             <div class="text-xs text-gray-500">Golden Pavilion</div>
           </div>
@@ -58,43 +63,61 @@
       </div>
     </div>
     <!-- Audio Guides -->
-    <div class="mb-4">
+    <div class="mb-6">
       <h2 class="text-base font-semibold text-gray-800 mb-2">Audio Guides</h2>
       <div class="flex flex-col gap-3">
-        <div class="flex bg-white rounded-xl shadow p-3 items-center gap-3 border border-gray-100">
+        <div class="flex bg-white rounded-2xl shadow-lg p-3 items-center gap-3 border border-gray-100">
           <img src="https://images.unsplash.com/photo-1465101046530-73398c7f28ca?auto=format&fit=crop&w=80&q=80" alt="Fushimi Inari" class="h-14 w-14 object-cover rounded-lg" />
           <div class="flex-1">
             <div class="font-semibold text-gray-800">Fushimi Inari Shrine</div>
             <div class="text-xs text-gray-500">By John Doe</div>
           </div>
-          <button class="bg-blue-500 text-white rounded-full p-2 flex items-center justify-center hover:bg-blue-600 transition" aria-label="Play Audio Guide"><i class="fas fa-play"></i></button>
+          <button class="bg-blue-500 text-white rounded-full p-2 flex items-center justify-center hover:bg-blue-600 transition shadow" aria-label="Play Audio Guide"><i class="fas fa-play"></i></button>
         </div>
-        <div class="flex bg-white rounded-xl shadow p-3 items-center gap-3 border border-gray-100">
+        <div class="flex bg-white rounded-2xl shadow-lg p-3 items-center gap-3 border border-gray-100">
           <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=80&q=80" alt="Arashiyama Bamboo Grove" class="h-14 w-14 object-cover rounded-lg" />
           <div class="flex-1">
             <div class="font-semibold text-gray-800">Arashiyama Bamboo Grove</div>
             <div class="text-xs text-gray-500">By Jane Smith</div>
           </div>
-          <button class="bg-blue-500 text-white rounded-full p-2 flex items-center justify-center hover:bg-blue-600 transition" aria-label="Play Audio Guide"><i class="fas fa-play"></i></button>
+          <button class="bg-blue-500 text-white rounded-full p-2 flex items-center justify-center hover:bg-blue-600 transition shadow" aria-label="Play Audio Guide"><i class="fas fa-play"></i></button>
         </div>
       </div>
     </div>
     <!-- Featured Creators -->
-    <div class="mb-4">
+    <div class="mb-8">
       <h2 class="text-base font-semibold text-gray-800 mb-2">Featured Creators</h2>
-      <div class="flex gap-4">
-        <div class="flex flex-col items-center">
-          <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="John Doe" class="h-12 w-12 object-cover rounded-full border-2 border-blue-200 mb-1" />
+      <div class="flex gap-4 overflow-x-auto no-scrollbar pb-2">
+        <div class="flex flex-col items-center min-w-[72px]">
+          <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="John Doe" class="h-12 w-12 object-cover rounded-full border-2 border-blue-200 mb-1 shadow" />
           <span class="text-xs text-gray-700">John Doe</span>
         </div>
-        <div class="flex flex-col items-center">
-          <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Jane Smith" class="h-12 w-12 object-cover rounded-full border-2 border-pink-200 mb-1" />
+        <div class="flex flex-col items-center min-w-[72px]">
+          <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Jane Smith" class="h-12 w-12 object-cover rounded-full border-2 border-pink-200 mb-1 shadow" />
           <span class="text-xs text-gray-700">Jane Smith</span>
         </div>
-        <div class="flex flex-col items-center">
-          <img src="https://randomuser.me/api/portraits/men/65.jpg" alt="Carlos Rivera" class="h-12 w-12 object-cover rounded-full border-2 border-purple-200 mb-1" />
+        <div class="flex flex-col items-center min-w-[72px]">
+          <img src="https://randomuser.me/api/portraits/men/65.jpg" alt="Carlos Rivera" class="h-12 w-12 object-cover rounded-full border-2 border-purple-200 mb-1 shadow" />
           <span class="text-xs text-gray-700">Carlos Rivera</span>
         </div>
+        <div class="flex flex-col items-center min-w-[72px]">
+          <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Emily Chen" class="h-12 w-12 object-cover rounded-full border-2 border-green-200 mb-1 shadow" />
+          <span class="text-xs text-gray-700">Emily Chen</span>
+        </div>
+        <div class="flex flex-col items-center min-w-[72px]">
+          <img src="https://randomuser.me/api/portraits/men/77.jpg" alt="Liam Patel" class="h-12 w-12 object-cover rounded-full border-2 border-yellow-200 mb-1 shadow" />
+          <span class="text-xs text-gray-700">Liam Patel</span>
+        </div>
+        <div class="flex flex-col items-center min-w-[72px]">
+          <img src="https://randomuser.me/api/portraits/women/12.jpg" alt="Sofia Rossi" class="h-12 w-12 object-cover rounded-full border-2 border-red-200 mb-1 shadow" />
+          <span class="text-xs text-gray-700">Sofia Rossi</span>
+        </div>
+        <a href="#" class="flex flex-col items-center min-w-[72px] justify-center text-blue-500 hover:underline">
+          <div class="flex items-center justify-center w-12 h-12 rounded-full border-2 border-blue-200 bg-blue-50">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 12H8m8 0a8 8 0 11-16 0 8 8 0 0116 0z" /></svg>
+          </div>
+          <span class="mt-2 text-xs">More</span>
+        </a>
       </div>
     </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/js/all.min.js"></script>

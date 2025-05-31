@@ -7,6 +7,13 @@
   <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body class="bg-gradient-to-b from-gray-100 to-white min-h-screen flex flex-col items-center px-4">
+  <nav class="flex items-center justify-between px-4 py-3 bg-white shadow-sm sticky top-0 z-10 border-b border-gray-100 mb-2">
+    <button onclick="window.history.back()" aria-label="Back" class="text-gray-400 hover:text-blue-500 text-xl focus:outline-none">
+      <i class="fas fa-arrow-left"></i>
+    </button>
+    <span class="font-bold text-lg text-blue-500 tracking-wide">Language Settings</span>
+    <span></span>
+  </nav>
   <main class="flex flex-col gap-6 w-full max-w-md mt-8 mb-8">
     <!-- Top Card: Title -->
     <div class="bg-white rounded-2xl shadow p-6 flex flex-col items-center mb-2">

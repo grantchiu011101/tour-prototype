@@ -7,6 +7,13 @@
   <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body class="bg-gray-50 min-h-screen flex flex-col">
+  <nav class="flex items-center justify-between px-4 py-3 bg-white shadow-sm sticky top-0 z-10 border-b border-gray-100 mb-2">
+    <button onclick="window.history.back()" aria-label="Back" class="text-gray-400 hover:text-blue-500 text-xl focus:outline-none">
+      <i class="fas fa-arrow-left"></i>
+    </button>
+    <span class="font-bold text-lg text-blue-500 tracking-wide">App Preferences</span>
+    <span></span>
+  </nav>
   <main class="flex-1 flex flex-col px-4 pt-8 pb-24 max-w-md mx-auto w-full">
     <h1 class="text-xl font-semibold text-gray-800 mb-6">App Preferences</h1>
     <div class="flex flex-col gap-4">

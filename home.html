@@ -32,6 +32,94 @@
       </div>
     </section>
 
+    <!-- Recently Played / Continue Listening -->
+    <section>
+      <div class="flex items-center justify-between mb-2 mt-4">
+        <h2 class="text-base font-semibold text-gray-900">Continue Listening</h2>
+        <a href="#" class="text-xs text-blue-500 hover:text-blue-700 transition">See all</a>
+      </div>
+      <div class="flex gap-4 overflow-x-auto no-scrollbar pb-1">
+        <div class="min-w-[180px] bg-white rounded-xl shadow-sm flex-shrink-0 border border-gray-100 p-3 flex flex-col justify-between">
+          <div class="flex gap-3 items-center mb-2">
+            <img src="https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?auto=format&fit=crop&w=80&q=80" alt="Eiffel Tower" class="h-12 w-12 object-cover rounded-lg" />
+            <div class="flex-1">
+              <div class="font-semibold text-gray-900 text-sm">Eiffel Tower</div>
+              <div class="text-xs text-gray-400">Paris, France</div>
+            </div>
+            <button class="flex items-center justify-center bg-blue-500 text-white rounded-full w-8 h-8 hover:bg-blue-600 transition" aria-label="Resume"><i class="fas fa-play"></i></button>
+          </div>
+          <div class="w-full h-2 bg-gray-100 rounded-full overflow-hidden">
+            <div class="h-full bg-blue-400 rounded-full" style="width: 60%"></div>
+          </div>
+          <div class="text-xs text-gray-400 mt-1">12 min left</div>
+        </div>
+        <div class="min-w-[180px] bg-white rounded-xl shadow-sm flex-shrink-0 border border-gray-100 p-3 flex flex-col justify-between">
+          <div class="flex gap-3 items-center mb-2">
+            <img src="https://images.unsplash.com/photo-1465101046530-73398c7f28ca?auto=format&fit=crop&w=80&q=80" alt="Fushimi Inari" class="h-12 w-12 object-cover rounded-lg" />
+            <div class="flex-1">
+              <div class="font-semibold text-gray-900 text-sm">Fushimi Inari Shrine</div>
+              <div class="text-xs text-gray-400">Kyoto, Japan</div>
+            </div>
+            <button class="flex items-center justify-center bg-blue-500 text-white rounded-full w-8 h-8 hover:bg-blue-600 transition" aria-label="Resume"><i class="fas fa-play"></i></button>
+          </div>
+          <div class="w-full h-2 bg-gray-100 rounded-full overflow-hidden">
+            <div class="h-full bg-blue-400 rounded-full" style="width: 35%"></div>
+          </div>
+          <div class="text-xs text-gray-400 mt-1">28 min left</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Seasonal/Trending Highlights -->
+    <section>
+      <div class="flex items-center justify-between mb-2 mt-4">
+        <h2 class="text-base font-semibold text-gray-900">Seasonal Highlights</h2>
+        <a href="#" class="text-xs text-blue-500 hover:text-blue-700 transition">See all</a>
+      </div>
+      <div class="flex gap-4 overflow-x-auto no-scrollbar pb-1">
+        <div class="min-w-[220px] bg-gradient-to-br from-pink-100 to-blue-100 rounded-xl shadow-md flex-shrink-0 border border-gray-100 p-0 relative overflow-hidden">
+          <img src="https://images.unsplash.com/photo-1467269204594-9661b134dd2b?auto=format&fit=crop&w=400&q=80" alt="Kyoto Cherry Blossoms" class="h-28 w-full object-cover rounded-t-xl" />
+          <div class="absolute top-2 left-2 bg-pink-500 text-white text-xs font-semibold px-3 py-1 rounded-full shadow">Spring</div>
+          <div class="p-3">
+            <div class="font-semibold text-gray-900">Kyoto Cherry Blossoms</div>
+            <div class="text-xs text-gray-500 mb-1">Best in March–April</div>
+            <div class="text-xs text-gray-600">Experience hanami season in Japan's ancient capital.</div>
+          </div>
+        </div>
+        <div class="min-w-[220px] bg-gradient-to-br from-yellow-100 to-orange-100 rounded-xl shadow-md flex-shrink-0 border border-gray-100 p-0 relative overflow-hidden">
+          <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=400&q=80" alt="Yosemite Summer" class="h-28 w-full object-cover rounded-t-xl" />
+          <div class="absolute top-2 left-2 bg-yellow-500 text-white text-xs font-semibold px-3 py-1 rounded-full shadow">Trending</div>
+          <div class="p-3">
+            <div class="font-semibold text-gray-900">Yosemite Summer</div>
+            <div class="text-xs text-gray-500 mb-1">Top destination this week</div>
+            <div class="text-xs text-gray-600">Hike, camp, and explore the great outdoors.</div>
+          </div>
+        </div>
+        <div class="min-w-[220px] bg-gradient-to-br from-blue-100 to-indigo-100 rounded-xl shadow-md flex-shrink-0 border border-gray-100 p-0 relative overflow-hidden">
+          <img src="https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?auto=format&fit=crop&w=400&q=80" alt="Paris Lights" class="h-28 w-full object-cover rounded-t-xl" />
+          <div class="absolute top-2 left-2 bg-blue-500 text-white text-xs font-semibold px-3 py-1 rounded-full shadow">Summer</div>
+          <div class="p-3">
+            <div class="font-semibold text-gray-900">Paris Lights</div>
+            <div class="text-xs text-gray-500 mb-1">Night tours available</div>
+            <div class="text-xs text-gray-600">See the City of Light in its summer glow.</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Limited-Time Offers & Premium Teasers -->
+    <section class="my-4">
+      <div class="bg-gradient-to-r from-yellow-100 to-pink-100 rounded-xl shadow-md p-4 flex items-center gap-4 border border-yellow-200 relative overflow-hidden">
+        <div class="absolute top-2 left-2 bg-pink-500 text-white text-xs font-bold px-3 py-1 rounded-full shadow">Limited Time</div>
+        <div class="flex-1">
+          <div class="font-semibold text-gray-900 mb-1 flex items-center gap-2"><i class="fas fa-crown text-yellow-400"></i> Go Premium</div>
+          <div class="text-xs text-gray-600 mb-2">Unlock all tours, offline listening, and an ad-free experience. Save 30% this week only!</div>
+          <button class="bg-pink-500 text-white rounded-lg px-4 py-2 font-semibold text-sm hover:bg-pink-600 transition shadow">Upgrade Now</button>
+        </div>
+        <img src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png" alt="Premium" class="h-14 w-14 hidden sm:block" />
+      </div>
+    </section>
+
     <!-- Search Bar -->
     <section>
       <form class="flex items-center gap-2 bg-gray-50 rounded-lg shadow-sm px-3 py-2 border border-gray-100">
@@ -148,6 +236,38 @@
           <img src="https://randomuser.me/api/portraits/men/65.jpg" alt="Carlos Rivera" class="h-16 w-16 object-cover rounded-full border-2 border-purple-200" />
         </button>
         <!-- Add more avatars as needed -->
+      </div>
+    </section>
+
+    <!-- Invite Friends -->
+    <section class="mt-6 mb-4">
+      <div class="bg-blue-50 rounded-xl shadow-sm p-4 flex items-center gap-4 border border-blue-100">
+        <div class="flex items-center justify-center bg-blue-100 text-blue-500 w-12 h-12 rounded-full">
+          <i class="fas fa-user-friends text-2xl"></i>
+        </div>
+        <div class="flex-1">
+          <div class="font-semibold text-gray-900 mb-1">Invite Friends</div>
+          <div class="text-xs text-gray-500 mb-2">Share Roam and explore together. Get rewards for every friend who joins!</div>
+          <button class="bg-blue-500 text-white rounded-lg px-4 py-2 font-semibold text-sm hover:bg-blue-600 transition shadow">Invite</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Trust Badges -->
+    <section class="mb-8">
+      <div class="flex gap-4 justify-center">
+        <div class="flex flex-col items-center">
+          <span class="bg-green-100 text-green-600 rounded-full w-12 h-12 flex items-center justify-center mb-1"><i class="fas fa-check-circle text-2xl"></i></span>
+          <span class="text-xs text-gray-700 font-medium">Verified Creator</span>
+        </div>
+        <div class="flex flex-col items-center">
+          <span class="bg-blue-100 text-blue-600 rounded-full w-12 h-12 flex items-center justify-center mb-1"><i class="fas fa-university text-2xl"></i></span>
+          <span class="text-xs text-gray-700 font-medium">Official Partner</span>
+        </div>
+        <div class="flex flex-col items-center">
+          <span class="bg-yellow-100 text-yellow-600 rounded-full w-12 h-12 flex items-center justify-center mb-1"><i class="fas fa-lock text-2xl"></i></span>
+          <span class="text-xs text-gray-700 font-medium">Secure Payments</span>
+        </div>
       </div>
     </section>
   </main>
