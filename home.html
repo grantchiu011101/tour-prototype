@@ -161,6 +161,24 @@
     <a href="#" class="flex flex-col items-center text-gray-400 hover:text-blue-500"><i class="fas fa-user text-lg"></i><span class="text-xs">Profile</span></a>
   </nav>
 
+  <!-- Sample Unlock Modal Trigger (for demo) -->
+  <button onclick="document.getElementById('unlockModal').classList.remove('hidden')" class="fixed bottom-24 right-6 z-40 bg-blue-500 text-white rounded-full px-4 py-2 shadow-lg hover:bg-blue-600 transition">Show Unlock Modal</button>
+  <!-- Unlock Modal -->
+  <div id="unlockModal" class="hidden fixed inset-0 bg-black bg-opacity-40 flex items-center justify-center z-50">
+    <div class="bg-white rounded-xl p-6 max-w-xs w-full shadow-lg flex flex-col gap-4">
+      <h2 class="text-lg font-semibold text-gray-900 text-center">Unlock this Tour</h2>
+      <ul class="text-sm text-gray-600 mb-2">
+        <li>• High-quality audio guide</li>
+        <li>• Offline access</li>
+        <li>• No ads</li>
+      </ul>
+      <button class="bg-blue-500 text-white rounded-lg py-2 font-semibold hover:bg-blue-600 transition">Buy this tour for $2.99</button>
+      <div class="text-xs text-gray-400 text-center">or</div>
+      <button class="bg-gray-100 text-blue-500 rounded-lg py-2 font-semibold hover:bg-blue-100 transition">Go Premium: $7.99/month</button>
+      <button class="text-gray-400 text-xs mt-2 hover:underline" onclick="document.getElementById('unlockModal').classList.add('hidden')">Cancel</button>
+    </div>
+  </div>
+
   <!-- Font Awesome CDN -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/js/all.min.js"></script>
   <style>
