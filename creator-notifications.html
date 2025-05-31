@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Creator Notifications</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body class="bg-gradient-to-b from-gray-100 to-white min-h-screen flex flex-col items-center px-4">
+  <main class="flex flex-col gap-6 w-full max-w-md mt-8 mb-8">
+    <div class="bg-white rounded-2xl shadow p-6 flex flex-col gap-4">
+      <div class="text-lg font-bold text-gray-900 mb-2 text-center">Notifications</div>
+      <div class="flex flex-col gap-2">
+        <!-- Unread Notification -->
+        <div class="bg-blue-50 border-l-4 border-blue-400 rounded-xl p-4 flex flex-col gap-1 shadow-sm">
+          <div class="flex items-center gap-2">
+            <i class="fas fa-check-circle text-blue-500"></i>
+            <span class="font-semibold text-gray-900">Tour Approved</span>
+          </div>
+          <div class="text-sm text-gray-700">Your "Paris Food Tour" was approved and is now live.</div>
+          <div class="text-xs text-gray-400 mt-1">2m ago</div>
+        </div>
+        <!-- Read Notification -->
+        <div class="bg-gray-50 rounded-xl p-4 flex flex-col gap-1">
+          <div class="flex items-center gap-2">
+            <i class="fas fa-dollar-sign text-green-500"></i>
+            <span class="font-semibold text-gray-800">Payout Processed</span>
+          </div>
+          <div class="text-sm text-gray-600">$50.00 has been sent to your account.</div>
+          <div class="text-xs text-gray-400 mt-1">1h ago</div>
+        </div>
+        <!-- Review Notification -->
+        <div class="bg-gray-50 rounded-xl p-4 flex flex-col gap-1">
+          <div class="flex items-center gap-2">
+            <i class="fas fa-star text-yellow-400"></i>
+            <span class="font-semibold text-gray-800">New Review</span>
+          </div>
+          <div class="text-sm text-gray-600">You received a 5-star review for "Kyoto Walk".</div>
+          <div class="text-xs text-gray-400 mt-1">3h ago</div>
+        </div>
+        <!-- Platform Update Notification -->
+        <div class="bg-gray-50 rounded-xl p-4 flex flex-col gap-1">
+          <div class="flex items-center gap-2">
+            <i class="fas fa-bullhorn text-purple-500"></i>
+            <span class="font-semibold text-gray-800">Platform Update</span>
+          </div>
+          <div class="text-sm text-gray-600">New analytics dashboard is now available for creators.</div>
+          <div class="text-xs text-gray-400 mt-1">1d ago</div>
+        </div>
+      </div>
+    </div>
+  </main>
+  <style>
+    .no-scrollbar::-webkit-scrollbar { display: none; }
+    .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+  </style>
+</body>
+</html> 

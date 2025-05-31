@@ -6,49 +6,54 @@
   <title>Audio Player</title>
   <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body class="bg-gray-50 min-h-screen flex flex-col">
-  <main class="flex-1 flex flex-col px-4 pt-4 pb-24 max-w-md mx-auto w-full">
+<body class="relative min-h-screen flex flex-col">
+  <!-- Blurred Background Image -->
+  <div class="fixed inset-0 z-0">
+    <img src="https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?auto=format&fit=crop&w=800&q=80" alt="Eiffel Tower Background" class="w-full h-full object-cover blur-xl scale-110" />
+    <div class="absolute inset-0 bg-black bg-opacity-40"></div>
+  </div>
+  <main class="relative z-10 flex-1 flex flex-col px-4 pt-4 pb-24 max-w-md mx-auto w-full">
     <!-- Top Bar -->
     <div class="flex items-center justify-between mb-4">
-      <button class="text-gray-500 text-xl" aria-label="Back"><i class="fas fa-arrow-left"></i></button>
-      <div class="font-semibold text-base text-gray-800 truncate">Eiffel Tower</div>
-      <button class="text-blue-500 text-xl" aria-label="Share"><i class="fas fa-share-alt"></i></button>
+      <button class="text-gray-100 text-xl" aria-label="Back"><i class="fas fa-arrow-left"></i></button>
+      <div class="font-semibold text-base text-white truncate">Eiffel Tower</div>
+      <button class="text-blue-200 text-xl" aria-label="Share"><i class="fas fa-share-alt"></i></button>
     </div>
     <!-- Attraction Image -->
     <div class="flex justify-center mb-4">
       <img src="https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?auto=format&fit=crop&w=400&q=80" alt="Eiffel Tower" class="w-40 h-40 object-cover rounded-xl shadow" />
     </div>
     <!-- Location & Description -->
-    <div class="text-center mb-2 text-gray-600 text-sm">Paris, France</div>
-    <div class="text-center mb-4 text-gray-500 text-xs">The Eiffel Tower is a global cultural icon of France and one of the most recognizable structures in the world.</div>
+    <div class="text-center mb-2 text-gray-200 text-sm">Paris, France</div>
+    <div class="text-center mb-4 text-gray-300 text-xs">The Eiffel Tower is a global cultural icon of France and one of the most recognizable structures in the world.</div>
     <!-- Audio Controls -->
     <div class="flex flex-col items-center gap-3 mb-2">
       <!-- Seek Bar -->
       <div class="w-full flex items-center gap-2">
-        <span class="text-xs text-gray-400">1:23</span>
-        <input type="range" min="0" max="300" value="83" class="flex-1 accent-blue-500 h-1" />
-        <span class="text-xs text-gray-400">5:00</span>
+        <span class="text-xs text-gray-300">1:23</span>
+        <input type="range" min="0" max="300" value="83" class="flex-1 accent-blue-400 h-1" />
+        <span class="text-xs text-gray-300">5:00</span>
       </div>
       <!-- Main Controls -->
       <div class="flex items-center justify-center gap-6 mt-2">
-        <button class="text-gray-500 text-2xl" aria-label="Rewind 15 seconds"><i class="fas fa-undo-alt"></i></button>
+        <button class="text-gray-100 text-2xl" aria-label="Rewind 15 seconds"><i class="fas fa-undo-alt"></i></button>
         <button class="bg-blue-500 text-white rounded-full w-16 h-16 flex items-center justify-center text-3xl shadow-lg" aria-label="Play/Pause"><i class="fas fa-play"></i></button>
-        <button class="text-gray-500 text-2xl" aria-label="Forward 15 seconds"><i class="fas fa-redo-alt"></i></button>
+        <button class="text-gray-100 text-2xl" aria-label="Forward 15 seconds"><i class="fas fa-redo-alt"></i></button>
       </div>
       <!-- Playback Speed -->
       <div class="flex items-center gap-2 mt-2">
-        <span class="text-xs text-gray-500">Speed</span>
-        <button class="text-blue-500 text-sm font-semibold bg-blue-50 rounded px-2 py-1">1x</button>
+        <span class="text-xs text-gray-200">Speed</span>
+        <button class="text-blue-200 text-sm font-semibold bg-blue-900 bg-opacity-40 rounded px-2 py-1">1x</button>
       </div>
     </div>
     <!-- Engagement & Navigation -->
     <div class="flex justify-center gap-4 mt-4 mb-2">
-      <button class="flex items-center gap-1 text-pink-500 text-base font-medium bg-pink-50 px-3 py-1 rounded-full" aria-label="Add to Favorites"><i class="fas fa-heart"></i> Favorite</button>
-      <button class="flex items-center gap-1 text-blue-500 text-base font-medium bg-blue-50 px-3 py-1 rounded-full" aria-label="Show Transcript"><i class="fas fa-align-left"></i> Transcript</button>
+      <button class="flex items-center gap-1 text-pink-200 text-base font-medium bg-pink-900 bg-opacity-40 px-3 py-1 rounded-full" aria-label="Add to Favorites"><i class="fas fa-heart"></i> Favorite</button>
+      <button class="flex items-center gap-1 text-blue-200 text-base font-medium bg-blue-900 bg-opacity-40 px-3 py-1 rounded-full" aria-label="Show Transcript"><i class="fas fa-align-left"></i> Transcript</button>
     </div>
     <div class="flex justify-between mt-2">
-      <button class="text-gray-500 text-sm flex items-center gap-1" aria-label="Previous Segment"><i class="fas fa-step-backward"></i> Prev</button>
-      <button class="text-gray-500 text-sm flex items-center gap-1" aria-label="Next Segment">Next <i class="fas fa-step-forward"></i></button>
+      <button class="text-gray-200 text-sm flex items-center gap-1" aria-label="Previous Segment"><i class="fas fa-step-backward"></i> Prev</button>
+      <button class="text-gray-200 text-sm flex items-center gap-1" aria-label="Next Segment">Next <i class="fas fa-step-forward"></i></button>
     </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/js/all.min.js"></script>
   </main>
