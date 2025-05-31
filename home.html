@@ -241,11 +241,12 @@
 
     <!-- Invite Friends -->
     <section class="mt-6 mb-4">
-      <div class="bg-blue-100 rounded-xl shadow-sm p-4 flex items-center gap-4 border border-blue-200">
-        <div class="flex items-center justify-center bg-blue-200 text-blue-600 w-12 h-12 rounded-full">
+      <div class="bg-blue-100 rounded-xl shadow-sm p-4 flex items-center gap-4 border border-blue-200 relative overflow-hidden">
+        <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=400&q=80" alt="Invite Friends Background" class="absolute inset-0 w-full h-full object-cover opacity-20 blur-sm pointer-events-none select-none" />
+        <div class="flex items-center justify-center bg-blue-200 text-blue-600 w-12 h-12 rounded-full relative z-10">
           <i class="fas fa-user-friends text-2xl"></i>
         </div>
-        <div class="flex-1">
+        <div class="flex-1 relative z-10">
           <div class="font-semibold text-gray-900 mb-1">Invite Friends</div>
           <div class="text-xs text-gray-600 mb-2">Share Roam and explore together. Get rewards for every friend who joins!</div>
           <button class="bg-blue-600 text-white rounded-lg px-4 py-2 font-semibold text-sm hover:bg-blue-700 transition shadow">Invite</button>

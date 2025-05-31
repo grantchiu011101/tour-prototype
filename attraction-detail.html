@@ -12,80 +12,78 @@
     <img src="https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?auto=format&fit=crop&w=800&q=80" alt="Eiffel Tower" class="w-full h-full object-cover object-center blur-xl scale-105" />
     <div class="absolute inset-0 bg-black bg-opacity-40"></div>
   </div>
+  <!-- Transparent Navbar for safe area and structure -->
+  <div class="fixed top-0 left-0 w-full h-14 z-20 bg-transparent pointer-events-none"></div>
   <!-- Top Navbar -->
-  <nav class="relative z-20 flex items-center justify-between px-4 py-3 bg-white/80 shadow-sm sticky top-0 border-b border-gray-100 mb-2 rounded-b-2xl backdrop-blur">
-    <button onclick="window.history.back()" aria-label="Back" class="text-gray-400 hover:text-blue-500 text-xl focus:outline-none">
-      <i class="fas fa-arrow-left"></i>
-    </button>
-    <span class="font-bold text-lg text-blue-500 tracking-wide">Attraction</span>
-    <span></span>
-  </nav>
-  <main class="relative z-10 flex-1 flex flex-col px-4 pt-6 pb-24 max-w-md mx-auto w-full">
+  <button onclick="window.history.back()" aria-label="Back" class="fixed top-4 left-4 z-30 bg-white/80 text-gray-400 hover:text-blue-600 text-xl rounded-full shadow p-2 focus:outline-none backdrop-blur">
+    <i class="fas fa-arrow-left"></i>
+  </button>
+  <main class="relative z-10 flex-1 flex flex-col px-4 pt-4 pb-24 max-w-md mx-auto w-full">
     <!-- Foreground Attraction Image Card -->
     <div class="rounded-2xl overflow-hidden shadow-xl mb-4 border-4 border-white relative z-10">
-      <img src="https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?auto=format&fit=crop&w=600&q=80" alt="Eiffel Tower" class="w-full h-56 object-cover" />
+      <img src="https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?auto=format&fit=crop&w=600&q=80" alt="Eiffel Tower" class="w-full h-64 object-cover" />
     </div>
     <h1 class="text-3xl font-bold text-gray-900 mb-1 text-center">Eiffel Tower</h1>
-    <div class="text-base text-blue-500 mb-2 text-center font-medium">Paris, France</div>
+    <div class="text-base text-blue-600 mb-2 text-center font-medium">Paris, France</div>
     <div class="text-gray-700 mb-6 text-center">The Eiffel Tower is a wrought-iron lattice tower on the Champ de Mars in Paris, France. It is one of the most recognizable structures in the world and a global cultural icon of France.</div>
-    <div class="flex gap-3 mb-8">
-      <button class="flex-1 bg-blue-500 text-white py-2 rounded-lg font-medium flex items-center justify-center gap-2 hover:bg-blue-600 transition shadow"><i class="fas fa-play"></i> Play Audio Guide</button>
-      <button class="flex-1 bg-pink-100 text-pink-600 py-2 rounded-lg font-medium flex items-center justify-center gap-2 hover:bg-pink-200 transition shadow"><i class="fas fa-heart"></i> Favorite</button>
+    <div class="flex gap-3 mb-8 justify-center">
+      <button class="flex-1 max-w-xs bg-blue-600 text-white py-2 rounded-lg font-medium flex items-center justify-center gap-2 hover:bg-blue-700 transition shadow"><i class="fas fa-play"></i> Play Audio Guide</button>
+      <button class="flex-1 max-w-xs bg-pink-100 text-pink-600 py-2 rounded-lg font-medium flex items-center justify-center gap-2 hover:bg-pink-200 transition shadow"><i class="fas fa-heart"></i> Favorite</button>
     </div>
-    <div class="bg-white rounded-2xl shadow-lg p-4 mb-8">
-      <h2 class="text-lg font-semibold text-gray-800 mb-2">About this Attraction</h2>
-      <p class="text-gray-600 text-sm">Standing at 324 meters tall, the Eiffel Tower was constructed from 1887 to 1889 as the entrance to the 1889 World's Fair. Today, it is visited by millions of people each year and offers breathtaking views of Paris.</p>
+    <div class="bg-white rounded-2xl shadow-lg p-5 mb-8">
+      <h2 class="text-lg font-semibold text-gray-900 mb-2">About this Attraction</h2>
+      <p class="text-gray-700 text-sm">Standing at 324 meters tall, the Eiffel Tower was constructed from 1887 to 1889 as the entrance to the 1889 World's Fair. Today, it is visited by millions of people each year and offers breathtaking views of Paris.</p>
     </div>
-    <div class="bg-white rounded-2xl shadow-lg p-4 mb-8">
-      <h2 class="text-lg font-semibold text-gray-800 mb-2">Available Tours</h2>
+    <div class="bg-white rounded-2xl shadow-lg p-5 mb-8">
+      <h2 class="text-lg font-semibold text-gray-900 mb-2">Available Tours</h2>
       <div class="flex flex-col gap-3">
         <a href="tour-detail.html" class="flex items-center gap-3 bg-gray-50 rounded-lg p-3 hover:bg-blue-50 transition">
           <img src="https://images.unsplash.com/photo-1519125323398-675f0ddb6308?auto=format&fit=facearea&w=80&q=80" alt="Paris Landmarks Tour" class="h-14 w-14 object-cover rounded-lg" />
           <div class="flex-1">
-            <div class="font-semibold text-gray-800">Paris Landmarks Tour</div>
+            <div class="font-semibold text-gray-900">Paris Landmarks Tour</div>
             <div class="text-xs text-gray-500">2 hours • 5 stops</div>
           </div>
-          <i class="fas fa-chevron-right text-gray-400"></i>
+          <i class="fas fa-chevron-right text-gray-300"></i>
         </a>
         <a href="tour-detail.html" class="flex items-center gap-3 bg-gray-50 rounded-lg p-3 hover:bg-blue-50 transition">
           <img src="https://images.unsplash.com/photo-1465101046530-73398c7f28ca?auto=format&fit=facearea&w=80&q=80" alt="Eiffel Tower Deep Dive" class="h-14 w-14 object-cover rounded-lg" />
           <div class="flex-1">
-            <div class="font-semibold text-gray-800">Eiffel Tower Deep Dive</div>
+            <div class="font-semibold text-gray-900">Eiffel Tower Deep Dive</div>
             <div class="text-xs text-gray-500">45 min • 1 stop</div>
           </div>
-          <i class="fas fa-chevron-right text-gray-400"></i>
+          <i class="fas fa-chevron-right text-gray-300"></i>
         </a>
       </div>
     </div>
-    <div class="bg-white rounded-2xl shadow-lg p-4 mb-6">
-      <h2 class="text-lg font-semibold text-gray-800 mb-2">Content Creators</h2>
+    <div class="bg-white rounded-2xl shadow-lg p-5 mb-6">
+      <h2 class="text-lg font-semibold text-gray-900 mb-2">Content Creators</h2>
       <div class="flex gap-4 overflow-x-auto no-scrollbar pb-2">
         <a href="#" class="flex flex-col items-center min-w-[80px]">
-          <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="John Doe" class="h-14 w-14 object-cover rounded-full border-2 border-blue-200" />
-          <span class="mt-2 text-sm font-medium text-gray-800">John Doe</span>
+          <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="John Doe" class="h-14 w-14 object-cover rounded-full border-2 border-blue-400" />
+          <span class="mt-2 text-sm font-medium text-gray-900">John Doe</span>
         </a>
         <a href="#" class="flex flex-col items-center min-w-[80px]">
-          <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Jane Smith" class="h-14 w-14 object-cover rounded-full border-2 border-pink-200" />
-          <span class="mt-2 text-sm font-medium text-gray-800">Jane Smith</span>
+          <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Jane Smith" class="h-14 w-14 object-cover rounded-full border-2 border-blue-400" />
+          <span class="mt-2 text-sm font-medium text-gray-900">Jane Smith</span>
         </a>
         <a href="#" class="flex flex-col items-center min-w-[80px]">
-          <img src="https://randomuser.me/api/portraits/men/65.jpg" alt="Carlos Rivera" class="h-14 w-14 object-cover rounded-full border-2 border-purple-200" />
-          <span class="mt-2 text-sm font-medium text-gray-800">Carlos Rivera</span>
+          <img src="https://randomuser.me/api/portraits/men/65.jpg" alt="Carlos Rivera" class="h-14 w-14 object-cover rounded-full border-2 border-blue-400" />
+          <span class="mt-2 text-sm font-medium text-gray-900">Carlos Rivera</span>
         </a>
         <a href="#" class="flex flex-col items-center min-w-[80px]">
-          <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Emily Chen" class="h-14 w-14 object-cover rounded-full border-2 border-green-200" />
-          <span class="mt-2 text-sm font-medium text-gray-800">Emily Chen</span>
+          <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Emily Chen" class="h-14 w-14 object-cover rounded-full border-2 border-blue-400" />
+          <span class="mt-2 text-sm font-medium text-gray-900">Emily Chen</span>
         </a>
         <a href="#" class="flex flex-col items-center min-w-[80px]">
-          <img src="https://randomuser.me/api/portraits/men/77.jpg" alt="Liam Patel" class="h-14 w-14 object-cover rounded-full border-2 border-yellow-200" />
-          <span class="mt-2 text-sm font-medium text-gray-800">Liam Patel</span>
+          <img src="https://randomuser.me/api/portraits/men/77.jpg" alt="Liam Patel" class="h-14 w-14 object-cover rounded-full border-2 border-blue-400" />
+          <span class="mt-2 text-sm font-medium text-gray-900">Liam Patel</span>
         </a>
         <a href="#" class="flex flex-col items-center min-w-[80px]">
-          <img src="https://randomuser.me/api/portraits/women/12.jpg" alt="Sofia Rossi" class="h-14 w-14 object-cover rounded-full border-2 border-red-200" />
-          <span class="mt-2 text-sm font-medium text-gray-800">Sofia Rossi</span>
+          <img src="https://randomuser.me/api/portraits/women/12.jpg" alt="Sofia Rossi" class="h-14 w-14 object-cover rounded-full border-2 border-blue-400" />
+          <span class="mt-2 text-sm font-medium text-gray-900">Sofia Rossi</span>
         </a>
-        <a href="#" class="flex flex-col items-center min-w-[80px] justify-center text-blue-500 hover:underline">
-          <div class="flex items-center justify-center w-14 h-14 rounded-full border-2 border-blue-200 bg-blue-50">
+        <a href="#" class="flex flex-col items-center min-w-[80px] justify-center text-blue-600 hover:underline">
+          <div class="flex items-center justify-center w-14 h-14 rounded-full border-2 border-blue-400 bg-blue-50">
             <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 12H8m8 0a8 8 0 11-16 0 8 8 0 0116 0z" /></svg>
           </div>
           <span class="mt-2 text-sm">More</span>
