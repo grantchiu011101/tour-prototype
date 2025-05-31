@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Content Creator Profile</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-50 min-h-screen flex flex-col">
+  <!-- Top Navbar -->
+  <nav class="flex items-center justify-between px-4 py-3 bg-white shadow-sm sticky top-0 z-10 border-b border-gray-100 mb-2">
+    <button onclick="window.history.back()" aria-label="Back" class="text-gray-400 hover:text-blue-500 text-xl focus:outline-none">
+      <i class="fas fa-arrow-left"></i>
+    </button>
+    <span class="font-bold text-lg text-blue-500 tracking-wide"></span>
+    <button aria-label="Share Profile" class="text-gray-400 hover:text-blue-500 text-xl focus:outline-none">
+      <i class="fas fa-share-alt"></i>
+    </button>
+  </nav>
+  <main class="flex-1 flex flex-col px-4 pt-6 pb-20 max-w-md mx-auto w-full">
+    <!-- Profile Header -->
+    <div class="flex flex-col items-center mb-6">
+      <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="John Doe" class="h-20 w-20 object-cover rounded-full border border-gray-200 shadow-sm mb-2" />
+      <h1 class="text-xl font-semibold text-gray-900">John Doe</h1>
+      <div class="text-gray-500 text-sm mb-1">Expert Guide & Local Storyteller</div>
+      <div class="text-gray-400 text-xs flex items-center gap-1 mb-2"><i class="fas fa-map-marker-alt"></i> Paris, France</div>
+      <button class="bg-gray-100 text-gray-700 px-5 py-1.5 rounded-full font-medium text-sm shadow-none hover:bg-gray-200 transition">Follow</button>
+    </div>
+    <!-- Social Icons -->
+    <div class="flex gap-4 justify-center mb-4">
+      <a href="#" class="text-gray-400 hover:text-blue-600 text-xl" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+      <a href="#" class="text-gray-400 hover:text-blue-400 text-xl" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+      <a href="#" class="text-gray-400 hover:text-pink-500 text-xl" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+      <a href="#" class="text-gray-400 hover:text-blue-700 text-xl" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+      <a href="#" class="text-gray-400 hover:text-black text-xl" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+      <a href="#" class="text-gray-400 hover:text-black text-xl" aria-label="Threads"><i class="fa-brands fa-threads"></i></a>
+    </div>
+    <!-- Bio -->
+    <div class="bg-white rounded-xl shadow-sm p-4 mb-4">
+      <h2 class="text-base font-semibold text-gray-800 mb-2">About</h2>
+      <p class="text-gray-600 text-sm mb-4">Hi! I'm John, a passionate tour guide sharing the wonders of Paris and beyond. My tours blend history, culture, and local secrets for an unforgettable experience.</p>
+      <!-- Horizontal Images List -->
+      <div class="flex gap-3 overflow-x-auto no-scrollbar pb-1">
+        <img src="https://images.unsplash.com/photo-1519125323398-675f0ddb6308?auto=format&fit=crop&w=200&q=80" alt="Tour 1" class="w-20 h-20 object-cover rounded-lg flex-shrink-0" />
+        <img src="https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?auto=format&fit=crop&w=200&q=80" alt="Tour 2" class="w-20 h-20 object-cover rounded-lg flex-shrink-0" />
+        <img src="https://images.unsplash.com/photo-1465101046530-73398c7f28ca?auto=format&fit=crop&w=200&q=80" alt="Tour 3" class="w-20 h-20 object-cover rounded-lg flex-shrink-0" />
+      </div>
+    </div>
+    <!-- Tours Created -->
+    <div class="bg-white rounded-xl shadow-sm p-4 mb-4">
+      <h2 class="text-base font-semibold text-gray-800 mb-2">Tours by John</h2>
+      <div class="flex flex-col gap-2">
+        <a href="tour-detail.html" class="flex items-center gap-3 bg-gray-50 rounded-lg p-3 hover:bg-gray-100 transition">
+          <img src="https://images.unsplash.com/photo-1519125323398-675f0ddb6308?auto=format&fit=facearea&w=80&q=80" alt="Paris Landmarks Tour" class="h-12 w-12 object-cover rounded-lg" />
+          <div class="flex-1">
+            <div class="font-medium text-gray-900">Paris Landmarks Tour</div>
+            <div class="text-xs text-gray-400">2 hours • 5 stops</div>
+          </div>
+          <i class="fas fa-chevron-right text-gray-300"></i>
+        </a>
+        <a href="tour-detail.html" class="flex items-center gap-3 bg-gray-50 rounded-lg p-3 hover:bg-gray-100 transition">
+          <img src="https://images.unsplash.com/photo-1465101046530-73398c7f28ca?auto=format&fit=facearea&w=80&q=80" alt="Eiffel Tower Deep Dive" class="h-12 w-12 object-cover rounded-lg" />
+          <div class="flex-1">
+            <div class="font-medium text-gray-900">Eiffel Tower Deep Dive</div>
+            <div class="text-xs text-gray-400">45 min • 1 stop</div>
+          </div>
+          <i class="fas fa-chevron-right text-gray-300"></i>
+        </a>
+      </div>
+    </div>
+  </main>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/js/all.min.js"></script>
+</body>
+</html> 

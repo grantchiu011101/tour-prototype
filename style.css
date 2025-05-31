@@ -39,7 +39,6 @@ body {
     font-size: 14px;
     font-weight: 500;
     color: #1f2937; 
-    border-bottom: 1px solid #e5e7eb; 
     z-index: 100;
     flex-shrink: 0;
 }
@@ -75,7 +74,6 @@ body {
     top: 0;
     background-color: white;
     z-index: 50;
-    border-bottom: 1px solid #e5e7eb;
     padding: 16px;
 }
 

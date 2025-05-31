@@ -39,7 +39,6 @@
             align-items: center;
             padding: 12px 16px;
             background-color: #ffffff;
-            border-bottom: 1px solid #e5e7eb;
             z-index: 50;
             margin-bottom: 16px; /* Add some space below top-nav */
         }
@@ -124,9 +123,7 @@
             background-color: #f8fafc; /* coolGray-50 */
         }
         .fixed-header {
-            background-color: white;
             z-index: 10;
-            border-bottom: 1px solid #e5e7eb;
             padding: 16px; /* Ensure padding if it was just a container */
             margin-bottom: 16px; /* Add space below fixed headers */
         }
@@ -135,14 +132,24 @@
 <body>
 
     <div id="app-content">
+      <!-- Onboarding/Splash Screens -->
       <div style="display: flex; flex-direction: column; align-items: center;">
-        <div class="fixed-header title" style="text-align:center; font-weight:600; font-size:1.1rem; margin-bottom:8px;">Login</div>
-        <iframe src="login.html" class="screen" style="height: 844px; width: 390px; border: none; border-radius: 12px; box-shadow: 0 5px 15px rgba(0,0,0,0.1);"></iframe>
+        <div class="fixed-header title" style="text-align:center; font-weight:600; font-size:1.1rem; margin-bottom:8px;">Splash 1: Welcome</div>
+        <iframe src="splash-1.html" class="screen" style="height: 844px; width: 390px; border: none; border-radius: 12px; box-shadow: 0 5px 15px rgba(0,0,0,0.1);"></iframe>
       </div>
       <div style="display: flex; flex-direction: column; align-items: center;">
-        <div class="fixed-header title" style="text-align:center; font-weight:600; font-size:1.1rem; margin-bottom:8px;">Signup</div>
-        <iframe src="signup.html" class="screen" style="height: 844px; width: 390px; border: none; border-radius: 12px; box-shadow: 0 5px 15px rgba(0,0,0,0.1);"></iframe>
+        <div class="fixed-header title" style="text-align:center; font-weight:600; font-size:1.1rem; margin-bottom:8px;">Splash 2: Immersive Audio</div>
+        <iframe src="splash-2.html" class="screen" style="height: 844px; width: 390px; border: none; border-radius: 12px; box-shadow: 0 5px 15px rgba(0,0,0,0.1);"></iframe>
       </div>
+      <div style="display: flex; flex-direction: column; align-items: center;">
+        <div class="fixed-header title" style="text-align:center; font-weight:600; font-size:1.1rem; margin-bottom:8px;">Splash 3: Personalized & Offline</div>
+        <iframe src="splash-3.html" class="screen" style="height: 844px; width: 390px; border: none; border-radius: 12px; box-shadow: 0 5px 15px rgba(0,0,0,0.1);"></iframe>
+      </div>
+      <div style="display: flex; flex-direction: column; align-items: center;">
+        <div class="fixed-header title" style="text-align:center; font-weight:600; font-size:1.1rem; margin-bottom:8px;">Splash 4: Get Started</div>
+        <iframe src="splash-4.html" class="screen" style="height: 844px; width: 390px; border: none; border-radius: 12px; box-shadow: 0 5px 15px rgba(0,0,0,0.1);"></iframe>
+      </div>
+      <!-- Core App Flow -->
       <div style="display: flex; flex-direction: column; align-items: center;">
         <div class="fixed-header title" style="text-align:center; font-weight:600; font-size:1.1rem; margin-bottom:8px;">Home</div>
         <iframe src="home.html" class="screen" style="height: 844px; width: 390px; border: none; border-radius: 12px; box-shadow: 0 5px 15px rgba(0,0,0,0.1);"></iframe>
@@ -152,32 +159,52 @@
         <iframe src="search.html" class="screen" style="height: 844px; width: 390px; border: none; border-radius: 12px; box-shadow: 0 5px 15px rgba(0,0,0,0.1);"></iframe>
       </div>
       <div style="display: flex; flex-direction: column; align-items: center;">
+        <div class="fixed-header title" style="text-align:center; font-weight:600; font-size:1.1rem; margin-bottom:8px;">City Detail</div>
+        <iframe src="city-detail.html" class="screen" style="height: 844px; width: 390px; border: none; border-radius: 12px; box-shadow: 0 5px 15px rgba(0,0,0,0.1);"></iframe>
+      </div>
+      <div style="display: flex; flex-direction: column; align-items: center;">
         <div class="fixed-header title" style="text-align:center; font-weight:600; font-size:1.1rem; margin-bottom:8px;">Attraction Detail</div>
         <iframe src="attraction-detail.html" class="screen" style="height: 844px; width: 390px; border: none; border-radius: 12px; box-shadow: 0 5px 15px rgba(0,0,0,0.1);"></iframe>
+      </div>
+      <div style="display: flex; flex-direction: column; align-items: center;">
+        <div class="fixed-header title" style="text-align:center; font-weight:600; font-size:1.1rem; margin-bottom:8px;">Tour Detail</div>
+        <iframe src="tour-detail.html" class="screen" style="height: 844px; width: 390px; border: none; border-radius: 12px; box-shadow: 0 5px 15px rgba(0,0,0,0.1);"></iframe>
+      </div>
+      <div style="display: flex; flex-direction: column; align-items: center;">
+        <div class="fixed-header title" style="text-align:center; font-weight:600; font-size:1.1rem; margin-bottom:8px;">Audio Player</div>
+        <iframe src="audio-player.html" class="screen" style="height: 844px; width: 390px; border: none; border-radius: 12px; box-shadow: 0 5px 15px rgba(0,0,0,0.1);"></iframe>
       </div>
       <div style="display: flex; flex-direction: column; align-items: center;">
         <div class="fixed-header title" style="text-align:center; font-weight:600; font-size:1.1rem; margin-bottom:8px;">Map</div>
         <iframe src="map.html" class="screen" style="height: 844px; width: 390px; border: none; border-radius: 12px; box-shadow: 0 5px 15px rgba(0,0,0,0.1);"></iframe>
       </div>
+      <!-- Social/Creator -->
+      <div style="display: flex; flex-direction: column; align-items: center;">
+        <div class="fixed-header title" style="text-align:center; font-weight:600; font-size:1.1rem; margin-bottom:8px;">Creator Profile</div>
+        <iframe src="creator-profile.html" class="screen" style="height: 844px; width: 390px; border: none; border-radius: 12px; box-shadow: 0 5px 15px rgba(0,0,0,0.1);"></iframe>
+      </div>
+      <!-- User Profile & Favorites -->
       <div style="display: flex; flex-direction: column; align-items: center;">
         <div class="fixed-header title" style="text-align:center; font-weight:600; font-size:1.1rem; margin-bottom:8px;">Profile</div>
         <iframe src="profile.html" class="screen" style="height: 844px; width: 390px; border: none; border-radius: 12px; box-shadow: 0 5px 15px rgba(0,0,0,0.1);"></iframe>
       </div>
       <div style="display: flex; flex-direction: column; align-items: center;">
-        <div class="fixed-header title" style="text-align:center; font-weight:600; font-size:1.1rem; margin-bottom:8px;">Settings</div>
-        <iframe src="settings.html" class="screen" style="height: 844px; width: 390px; border: none; border-radius: 12px; box-shadow: 0 5px 15px rgba(0,0,0,0.1);"></iframe>
-      </div>
-      <div style="display: flex; flex-direction: column; align-items: center;">
-        <div class="fixed-header title" style="text-align:center; font-weight:600; font-size:1.1rem; margin-bottom:8px;">Notifications</div>
-        <iframe src="notifications.html" class="screen" style="height: 844px; width: 390px; border: none; border-radius: 12px; box-shadow: 0 5px 15px rgba(0,0,0,0.1);"></iframe>
+        <div class="fixed-header title" style="text-align:center; font-weight:600; font-size:1.1rem; margin-bottom:8px;">My Profile</div>
+        <iframe src="my-profile.html" class="screen" style="height: 844px; width: 390px; border: none; border-radius: 12px; box-shadow: 0 5px 15px rgba(0,0,0,0.1);"></iframe>
       </div>
       <div style="display: flex; flex-direction: column; align-items: center;">
         <div class="fixed-header title" style="text-align:center; font-weight:600; font-size:1.1rem; margin-bottom:8px;">My Favorites</div>
         <iframe src="my-favorites.html" class="screen" style="height: 844px; width: 390px; border: none; border-radius: 12px; box-shadow: 0 5px 15px rgba(0,0,0,0.1);"></iframe>
       </div>
+      <!-- Notifications -->
       <div style="display: flex; flex-direction: column; align-items: center;">
-        <div class="fixed-header title" style="text-align:center; font-weight:600; font-size:1.1rem; margin-bottom:8px;">My Profile</div>
-        <iframe src="my-profile.html" class="screen" style="height: 844px; width: 390px; border: none; border-radius: 12px; box-shadow: 0 5px 15px rgba(0,0,0,0.1);"></iframe>
+        <div class="fixed-header title" style="text-align:center; font-weight:600; font-size:1.1rem; margin-bottom:8px;">Notifications</div>
+        <iframe src="notifications.html" class="screen" style="height: 844px; width: 390px; border: none; border-radius: 12px; box-shadow: 0 5px 15px rgba(0,0,0,0.1);"></iframe>
+      </div>
+      <!-- Settings & Subpages -->
+      <div style="display: flex; flex-direction: column; align-items: center;">
+        <div class="fixed-header title" style="text-align:center; font-weight:600; font-size:1.1rem; margin-bottom:8px;">Settings</div>
+        <iframe src="settings.html" class="screen" style="height: 844px; width: 390px; border: none; border-radius: 12px; box-shadow: 0 5px 15px rgba(0,0,0,0.1);"></iframe>
       </div>
       <div style="display: flex; flex-direction: column; align-items: center;">
         <div class="fixed-header title" style="text-align:center; font-weight:600; font-size:1.1rem; margin-bottom:8px;">Profile Settings</div>
@@ -210,10 +237,6 @@
       <div style="display: flex; flex-direction: column; align-items: center;">
         <div class="fixed-header title" style="text-align:center; font-weight:600; font-size:1.1rem; margin-bottom:8px;">Location Services</div>
         <iframe src="settings-location.html" class="screen" style="height: 844px; width: 390px; border: none; border-radius: 12px; box-shadow: 0 5px 15px rgba(0,0,0,0.1);"></iframe>
-      </div>
-      <div style="display: flex; flex-direction: column; align-items: center;">
-        <div class="fixed-header title" style="text-align:center; font-weight:600; font-size:1.1rem; margin-bottom:8px;">Audio Player</div>
-        <iframe src="audio-player.html" class="screen" style="height: 844px; width: 390px; border: none; border-radius: 12px; box-shadow: 0 5px 15px rgba(0,0,0,0.1);"></iframe>
       </div>
     </div>
 

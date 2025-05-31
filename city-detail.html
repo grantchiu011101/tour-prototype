@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>City Detail</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-50 min-h-screen flex flex-col">
+  <main class="flex-1 flex flex-col px-4 pt-4 pb-24 max-w-md mx-auto w-full">
+    <!-- Top Bar -->
+    <div class="flex items-center justify-between mb-4">
+      <button class="text-gray-500 text-xl" aria-label="Back"><i class="fas fa-arrow-left"></i></button>
+      <div class="font-semibold text-base text-gray-800 truncate">Kyoto, Japan</div>
+      <button class="text-orange-400 text-xl" aria-label="Add to Favorites"><i class="fas fa-heart"></i></button>
+    </div>
+    <!-- City Image -->
+    <div class="flex justify-center mb-4">
+      <img src="https://images.unsplash.com/photo-1467269204594-9661b134dd2b?auto=format&fit=crop&w=400&q=80" alt="Kyoto" class="w-full h-40 object-cover rounded-xl shadow" />
+    </div>
+    <!-- Description & Info -->
+    <div class="text-center mb-2 text-gray-800 text-lg font-semibold">Kyoto</div>
+    <div class="text-center mb-2 text-gray-500 text-sm">Japan</div>
+    <div class="text-center mb-4 text-gray-500 text-xs">Kyoto, once the capital of Japan, is a city on the island of Honshu. It's famous for its numerous classical Buddhist temples, gardens, imperial palaces, Shinto shrines, and traditional wooden houses.</div>
+    <div class="flex justify-center gap-4 mb-4 text-xs text-gray-600">
+      <div class="flex items-center gap-1"><i class="fas fa-sun text-orange-400"></i> 22°C, Sunny</div>
+      <div class="flex items-center gap-1"><i class="fas fa-calendar-alt text-blue-400"></i> Best: Apr-Oct</div>
+      <a href="#" class="flex items-center gap-1 text-blue-500 hover:underline"><i class="fas fa-map-marker-alt"></i> Map</a>
+    </div>
+    <!-- Top Attractions -->
+    <div class="mb-4">
+      <div class="flex items-center justify-between mb-2">
+        <h2 class="text-base font-semibold text-gray-800">Top Attractions</h2>
+        <a href="#" class="text-xs text-blue-500 hover:text-orange-400 transition">See all</a>
+      </div>
+      <div class="flex gap-4 overflow-x-auto no-scrollbar">
+        <div class="min-w-[160px] bg-white rounded-xl shadow flex-shrink-0 border border-gray-100">
+          <img src="https://images.unsplash.com/photo-1465101046530-73398c7f28ca?auto=format&fit=crop&w=400&q=80" alt="Fushimi Inari" class="h-24 w-full object-cover rounded-t-xl" />
+          <div class="p-2">
+            <div class="font-semibold text-gray-800 text-sm">Fushimi Inari Shrine</div>
+            <div class="text-xs text-gray-500">Iconic red torii gates</div>
+          </div>
+        </div>
+        <div class="min-w-[160px] bg-white rounded-xl shadow flex-shrink-0 border border-gray-100">
+          <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=400&q=80" alt="Arashiyama Bamboo Grove" class="h-24 w-full object-cover rounded-t-xl" />
+          <div class="p-2">
+            <div class="font-semibold text-gray-800 text-sm">Arashiyama Bamboo Grove</div>
+            <div class="text-xs text-gray-500">Scenic bamboo forest</div>
+          </div>
+        </div>
+        <div class="min-w-[160px] bg-white rounded-xl shadow flex-shrink-0 border border-gray-100">
+          <img src="https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?auto=format&fit=crop&w=400&q=80" alt="Kinkaku-ji" class="h-24 w-full object-cover rounded-t-xl" />
+          <div class="p-2">
+            <div class="font-semibold text-gray-800 text-sm">Kinkaku-ji</div>
+            <div class="text-xs text-gray-500">Golden Pavilion</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Audio Guides -->
+    <div class="mb-4">
+      <h2 class="text-base font-semibold text-gray-800 mb-2">Audio Guides</h2>
+      <div class="flex flex-col gap-3">
+        <div class="flex bg-white rounded-xl shadow p-3 items-center gap-3 border border-gray-100">
+          <img src="https://images.unsplash.com/photo-1465101046530-73398c7f28ca?auto=format&fit=crop&w=80&q=80" alt="Fushimi Inari" class="h-14 w-14 object-cover rounded-lg" />
+          <div class="flex-1">
+            <div class="font-semibold text-gray-800">Fushimi Inari Shrine</div>
+            <div class="text-xs text-gray-500">By John Doe</div>
+          </div>
+          <button class="bg-blue-100 text-blue-500 rounded-full p-2" aria-label="Play Audio Guide"><i class="fas fa-play"></i></button>
+        </div>
+        <div class="flex bg-white rounded-xl shadow p-3 items-center gap-3 border border-gray-100">
+          <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=80&q=80" alt="Arashiyama Bamboo Grove" class="h-14 w-14 object-cover rounded-lg" />
+          <div class="flex-1">
+            <div class="font-semibold text-gray-800">Arashiyama Bamboo Grove</div>
+            <div class="text-xs text-gray-500">By Jane Smith</div>
+          </div>
+          <button class="bg-blue-100 text-blue-500 rounded-full p-2" aria-label="Play Audio Guide"><i class="fas fa-play"></i></button>
+        </div>
+      </div>
+    </div>
+    <!-- Featured Creators -->
+    <div class="mb-4">
+      <h2 class="text-base font-semibold text-gray-800 mb-2">Featured Creators</h2>
+      <div class="flex gap-4">
+        <div class="flex flex-col items-center">
+          <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="John Doe" class="h-12 w-12 object-cover rounded-full border-2 border-blue-200 mb-1" />
+          <span class="text-xs text-gray-700">John Doe</span>
+        </div>
+        <div class="flex flex-col items-center">
+          <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Jane Smith" class="h-12 w-12 object-cover rounded-full border-2 border-pink-200 mb-1" />
+          <span class="text-xs text-gray-700">Jane Smith</span>
+        </div>
+        <div class="flex flex-col items-center">
+          <img src="https://randomuser.me/api/portraits/men/65.jpg" alt="Carlos Rivera" class="h-12 w-12 object-cover rounded-full border-2 border-purple-200 mb-1" />
+          <span class="text-xs text-gray-700">Carlos Rivera</span>
+        </div>
+      </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/js/all.min.js"></script>
+  </main>
+</body>
+</html> 

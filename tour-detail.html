@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tour Detail</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-50 min-h-screen flex flex-col">
+  <!-- Top Navbar -->
+  <nav class="flex items-center justify-between px-4 py-3 bg-white shadow-sm sticky top-0 z-10 border-b border-gray-100 mb-2">
+    <button onclick="window.history.back()" aria-label="Back" class="text-gray-400 hover:text-blue-500 text-xl focus:outline-none">
+      <i class="fas fa-arrow-left"></i>
+    </button>
+    <span class="font-bold text-lg text-blue-500 tracking-wide"></span>
+    <span></span>
+  </nav>
+  <main class="flex-1 flex flex-col px-4 pt-6 pb-20 max-w-md mx-auto w-full">
+    <!-- Hero Image Gallery -->
+    <div class="flex gap-3 overflow-x-auto no-scrollbar rounded-xl mb-4">
+      <img src="https://images.unsplash.com/photo-1519125323398-675f0ddb6308?auto=format&fit=crop&w=600&q=80" alt="Paris Landmarks 1" class="h-48 w-48 object-cover rounded-xl flex-shrink-0" />
+      <img src="https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?auto=format&fit=crop&w=600&q=80" alt="Paris Landmarks 2" class="h-48 w-48 object-cover rounded-xl flex-shrink-0" />
+      <img src="https://images.unsplash.com/photo-1465101046530-73398c7f28ca?auto=format&fit=crop&w=600&q=80" alt="Paris Landmarks 3" class="h-48 w-48 object-cover rounded-xl flex-shrink-0" />
+    </div>
+    <!-- Title & Meta -->
+    <h1 class="text-xl font-semibold text-gray-900 mb-1">Paris Landmarks Tour</h1>
+    <div class="flex items-center text-xs text-gray-400 mb-4 gap-2">
+      <span>2 hours</span>
+      <span>•</span>
+      <span>5 stops</span>
+    </div>
+    <!-- Tour Description -->
+    <div class="bg-white rounded-xl shadow-sm p-4 mb-4">
+      <p class="text-gray-600 text-sm mb-0">Discover the most iconic landmarks of Paris in this immersive audio tour. Walk through history, culture, and hidden gems with expert narration and local tips.</p>
+    </div>
+    <!-- Stops List -->
+    <div class="bg-white rounded-xl shadow-sm p-4 mb-4">
+      <h2 class="text-base font-semibold text-gray-800 mb-2">Stops</h2>
+      <div class="flex flex-col gap-4">
+        <div class="flex items-center gap-3">
+          <img src="https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?auto=format&fit=facearea&w=80&q=80" alt="Eiffel Tower" class="h-10 w-10 object-cover rounded-lg" />
+          <div class="flex-1">
+            <div class="font-medium text-gray-900">Eiffel Tower</div>
+            <div class="text-xs text-gray-400">Start here</div>
+          </div>
+          <button class="bg-gray-100 text-gray-500 rounded-full p-2 flex items-center justify-center hover:bg-gray-200 transition" aria-label="Play Audio"><i class="fas fa-play"></i></button>
+        </div>
+        <div class="flex items-center gap-3">
+          <img src="https://images.unsplash.com/photo-1465101046530-73398c7f28ca?auto=format&fit=facearea&w=80&q=80" alt="Louvre Museum" class="h-10 w-10 object-cover rounded-lg" />
+          <div class="flex-1">
+            <div class="font-medium text-gray-900">Louvre Museum</div>
+            <div class="text-xs text-gray-400">Art & History</div>
+          </div>
+          <button class="bg-gray-100 text-gray-500 rounded-full p-2 flex items-center justify-center hover:bg-gray-200 transition" aria-label="Play Audio"><i class="fas fa-play"></i></button>
+        </div>
+        <div class="flex items-center gap-3">
+          <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=facearea&w=80&q=80" alt="Notre-Dame Cathedral" class="h-10 w-10 object-cover rounded-lg" />
+          <div class="flex-1">
+            <div class="font-medium text-gray-900">Notre-Dame Cathedral</div>
+            <div class="text-xs text-gray-400">Gothic Wonder</div>
+          </div>
+          <button class="bg-gray-100 text-gray-500 rounded-full p-2 flex items-center justify-center hover:bg-gray-200 transition" aria-label="Play Audio"><i class="fas fa-play"></i></button>
+        </div>
+        <div class="flex items-center gap-3">
+          <img src="https://images.unsplash.com/photo-1511367461989-f85a21fda167?auto=format&fit=facearea&w=80&q=80" alt="Montmartre" class="h-10 w-10 object-cover rounded-lg" />
+          <div class="flex-1">
+            <div class="font-medium text-gray-900">Montmartre</div>
+            <div class="text-xs text-gray-400">Artists' Quarter</div>
+          </div>
+          <button class="bg-gray-100 text-gray-500 rounded-full p-2 flex items-center justify-center hover:bg-gray-200 transition" aria-label="Play Audio"><i class="fas fa-play"></i></button>
+        </div>
+        <div class="flex items-center gap-3">
+          <img src="https://images.unsplash.com/photo-1467269204594-9661b134dd2b?auto=format&fit=facearea&w=80&q=80" alt="Arc de Triomphe" class="h-10 w-10 object-cover rounded-lg" />
+          <div class="flex-1">
+            <div class="font-medium text-gray-900">Arc de Triomphe</div>
+            <div class="text-xs text-gray-400">Historic Monument</div>
+          </div>
+          <button class="bg-gray-100 text-gray-500 rounded-full p-2 flex items-center justify-center hover:bg-gray-200 transition" aria-label="Play Audio"><i class="fas fa-play"></i></button>
+        </div>
+      </div>
+    </div>
+    <!-- Content Creator Info -->
+    <a href="profile.html" class="flex items-center gap-3 bg-white rounded-xl shadow-sm p-4 mb-4 hover:bg-gray-50 transition" style="text-decoration: none;">
+      <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="John Doe" class="h-12 w-12 object-cover rounded-full border border-gray-200" />
+      <div class="flex-1">
+        <div class="font-medium text-gray-900">John Doe</div>
+        <div class="text-xs text-gray-400">Expert Guide & Local Storyteller</div>
+      </div>
+      <i class="fas fa-chevron-right text-gray-300"></i>
+    </a>
+    <!-- Call to Action -->
+    <button id="startTourBtn" class="bg-blue-500 text-white px-6 py-3 rounded-lg font-semibold shadow-none hover:bg-blue-600 transition w-full text-base mt-2">Start Tour</button>
+  </main>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/js/all.min.js"></script>
+  <script>
+    document.getElementById('startTourBtn').addEventListener('click', function() {
+      window.location.href = 'audio-player.html';
+    });
+  </script>
+</body>
+</html> 
