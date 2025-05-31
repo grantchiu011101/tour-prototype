@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Creator Dashboard</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body class="bg-gradient-to-b from-gray-100 to-white min-h-screen flex flex-col items-center px-4">
+  <main class="flex flex-col gap-6 w-full max-w-md mt-8 mb-8">
+    <!-- Top Card: Main Metric -->
+    <div class="bg-gray-700 rounded-2xl shadow-lg p-6 flex flex-col gap-2 relative">
+      <div class="absolute top-4 right-4">
+        <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Avatar" class="h-9 w-9 rounded-full border-2 border-white shadow" />
+      </div>
+      <div class="text-gray-200 text-sm mb-1">Total Plays</div>
+      <div class="text-3xl font-bold text-white tracking-tight">2,345</div>
+      <div class="text-xs text-gray-300 mt-1">Updated 22:30</div>
+      <a href="#" class="text-xs text-blue-200 underline mt-2 w-max">Edit Profile</a>
+    </div>
+    <!-- Action Card -->
+    <div class="bg-white rounded-2xl shadow flex justify-between px-4 py-4 gap-2">
+      <button class="flex-1 flex flex-col items-center gap-1 py-2 hover:bg-gray-50 rounded-xl transition">
+        <span class="bg-blue-50 text-blue-500 rounded-full w-10 h-10 flex items-center justify-center mb-1"><i class="fas fa-plus"></i></span>
+        <span class="text-xs font-medium text-gray-700">New</span>
+      </button>
+      <button class="flex-1 flex flex-col items-center gap-1 py-2 hover:bg-gray-50 rounded-xl transition">
+        <span class="bg-blue-50 text-blue-500 rounded-full w-10 h-10 flex items-center justify-center mb-1"><i class="fas fa-list"></i></span>
+        <span class="text-xs font-medium text-gray-700">My Content</span>
+      </button>
+      <button class="flex-1 flex flex-col items-center gap-1 py-2 hover:bg-gray-50 rounded-xl transition">
+        <span class="bg-blue-50 text-blue-500 rounded-full w-10 h-10 flex items-center justify-center mb-1"><i class="fas fa-coins"></i></span>
+        <span class="text-xs font-medium text-gray-700">Earnings</span>
+      </button>
+    </div>
+    <!-- Recent Content Scroll -->
+    <div>
+      <div class="text-sm font-semibold text-gray-700 mb-2 ml-1">Recent Content</div>
+      <div class="flex gap-4 overflow-x-auto no-scrollbar pb-1">
+        <div class="flex flex-col items-center min-w-[72px]">
+          <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=80&q=80" alt="Paris Food Tour" class="h-14 w-14 object-cover rounded-xl shadow mb-1" />
+          <span class="text-xs text-gray-700 truncate w-16 text-center">Paris Food</span>
+        </div>
+        <div class="flex flex-col items-center min-w-[72px]">
+          <img src="https://images.unsplash.com/photo-1465101046530-73398c7f28ca?auto=format&fit=crop&w=80&q=80" alt="Kyoto Walk" class="h-14 w-14 object-cover rounded-xl shadow mb-1" />
+          <span class="text-xs text-gray-700 truncate w-16 text-center">Kyoto Walk</span>
+        </div>
+        <div class="flex flex-col items-center min-w-[72px]">
+          <img src="https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?auto=format&fit=crop&w=80&q=80" alt="Rome Highlights" class="h-14 w-14 object-cover rounded-xl shadow mb-1" />
+          <span class="text-xs text-gray-700 truncate w-16 text-center">Rome Highl.</span>
+        </div>
+      </div>
+    </div>
+    <!-- Settings/Links Card -->
+    <div class="bg-white rounded-2xl shadow p-4 flex flex-col gap-2">
+      <a href="#" class="flex items-center gap-3 py-2 hover:bg-gray-50 rounded-xl transition">
+        <span class="bg-gray-100 rounded-full w-8 h-8 flex items-center justify-center"><i class="fas fa-user-cog text-gray-500"></i></span>
+        <span class="text-sm text-gray-700">Profile Settings</span>
+      </a>
+      <a href="#" class="flex items-center gap-3 py-2 hover:bg-gray-50 rounded-xl transition">
+        <span class="bg-gray-100 rounded-full w-8 h-8 flex items-center justify-center"><i class="fas fa-chart-line text-gray-500"></i></span>
+        <span class="text-sm text-gray-700">Content Analytics</span>
+      </a>
+      <a href="#" class="flex items-center gap-3 py-2 hover:bg-gray-50 rounded-xl transition">
+        <span class="bg-gray-100 rounded-full w-8 h-8 flex items-center justify-center"><i class="fas fa-wallet text-gray-500"></i></span>
+        <span class="text-sm text-gray-700">Payouts</span>
+      </a>
+      <a href="#" class="flex items-center gap-3 py-2 hover:bg-gray-50 rounded-xl transition">
+        <span class="bg-gray-100 rounded-full w-8 h-8 flex items-center justify-center"><i class="fas fa-question-circle text-gray-500"></i></span>
+        <span class="text-sm text-gray-700">Support</span>
+      </a>
+    </div>
+  </main>
+  <style>
+    .no-scrollbar::-webkit-scrollbar { display: none; }
+    .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+  </style>
+</body>
+</html> 

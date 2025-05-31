@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Submission Step 2: Media Upload</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-white min-h-screen flex flex-col justify-center items-center px-4">
+  <main class="flex flex-col gap-6 w-full max-w-md mt-8">
+    <h1 class="text-xl font-bold text-gray-900 text-center mb-2">Step 2: Media Upload</h1>
+    <form class="flex flex-col gap-4">
+      <div>
+        <label class="block text-gray-700 font-medium mb-1">Cover Image</label>
+        <input type="file" accept="image/*" class="form-input w-full" />
+        <div class="text-xs text-gray-400 mt-1">Required. JPG or PNG.</div>
+      </div>
+      <div>
+        <label class="block text-gray-700 font-medium mb-1">Audio File</label>
+        <input type="file" accept="audio/*" class="form-input w-full" />
+        <div class="text-xs text-gray-400 mt-1">Required. MP3 or WAV.</div>
+      </div>
+      <div>
+        <label class="block text-gray-700 font-medium mb-1">Gallery Images (optional, up to 5)</label>
+        <input type="file" accept="image/*" multiple class="form-input w-full" />
+      </div>
+      <div class="flex gap-2 mt-2">
+        <button type="button" class="bg-gray-100 text-blue-500 rounded-lg py-3 w-full font-semibold text-lg hover:bg-gray-200 transition">Back</button>
+        <button type="button" class="bg-blue-500 text-white rounded-lg py-3 w-full font-semibold text-lg hover:bg-blue-600 transition">Next</button>
+      </div>
+    </form>
+  </main>
+</body>
+</html> 

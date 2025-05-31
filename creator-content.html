@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Content</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body class="bg-gradient-to-b from-gray-100 to-white min-h-screen flex flex-col items-center px-4">
+  <main class="flex flex-col gap-6 w-full max-w-md mt-8 mb-8">
+    <!-- Top Card: Content Summary -->
+    <div class="bg-white rounded-2xl shadow p-4 flex justify-between items-center mb-2">
+      <div class="flex flex-col items-center flex-1">
+        <div class="text-lg font-bold text-gray-900">5</div>
+        <div class="text-xs text-gray-500">Total</div>
+      </div>
+      <div class="flex flex-col items-center flex-1">
+        <div class="text-lg font-bold text-green-600">3</div>
+        <div class="text-xs text-gray-500">Published</div>
+      </div>
+      <div class="flex flex-col items-center flex-1">
+        <div class="text-lg font-bold text-yellow-500">1</div>
+        <div class="text-xs text-gray-500">Drafts</div>
+      </div>
+      <div class="flex flex-col items-center flex-1">
+        <div class="text-lg font-bold text-blue-500">1</div>
+        <div class="text-xs text-gray-500">Pending</div>
+      </div>
+    </div>
+    <!-- Quick Actions Scroll -->
+    <div class="flex gap-4 overflow-x-auto no-scrollbar pb-1">
+      <button class="flex flex-col items-center min-w-[72px]" aria-label="New Content">
+        <span class="bg-blue-50 text-blue-500 rounded-full w-12 h-12 flex items-center justify-center mb-1"><i class="fas fa-plus"></i></span>
+        <span class="text-xs font-medium text-gray-700">New</span>
+      </button>
+      <button class="flex flex-col items-center min-w-[72px]" aria-label="Drafts">
+        <span class="bg-yellow-50 text-yellow-500 rounded-full w-12 h-12 flex items-center justify-center mb-1"><i class="fas fa-file-alt"></i></span>
+        <span class="text-xs font-medium text-gray-700">Drafts</span>
+      </button>
+      <button class="flex flex-col items-center min-w-[72px]" aria-label="Published">
+        <span class="bg-green-50 text-green-600 rounded-full w-12 h-12 flex items-center justify-center mb-1"><i class="fas fa-check"></i></span>
+        <span class="text-xs font-medium text-gray-700">Published</span>
+      </button>
+      <button class="flex flex-col items-center min-w-[72px]" aria-label="Pending">
+        <span class="bg-blue-50 text-blue-500 rounded-full w-12 h-12 flex items-center justify-center mb-1"><i class="fas fa-hourglass-half"></i></span>
+        <span class="text-xs font-medium text-gray-700">Pending</span>
+      </button>
+    </div>
+    <!-- Content List -->
+    <div class="flex flex-col gap-4 w-full">
+      <!-- Content Item -->
+      <div class="bg-white rounded-2xl shadow flex items-center gap-3 p-4">
+        <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=80&q=80" alt="Paris Food Tour" class="h-14 w-14 object-cover rounded-xl" />
+        <div class="flex-1 min-w-0">
+          <div class="font-semibold text-gray-900 truncate">Paris Food Tour</div>
+          <div class="flex items-center gap-2 mt-1">
+            <span class="bg-green-100 text-green-700 text-xs rounded-full px-2 py-0.5">Published</span>
+            <span class="text-xs text-gray-400 flex items-center gap-1"><i class="fas fa-play"></i>1,234</span>
+          </div>
+        </div>
+        <a href="#" class="text-blue-500 text-base hover:underline ml-2"><i class="fas fa-edit"></i></a>
+      </div>
+      <div class="bg-white rounded-2xl shadow flex items-center gap-3 p-4">
+        <img src="https://images.unsplash.com/photo-1465101046530-73398c7f28ca?auto=format&fit=crop&w=80&q=80" alt="Kyoto Walk" class="h-14 w-14 object-cover rounded-xl" />
+        <div class="flex-1 min-w-0">
+          <div class="font-semibold text-gray-900 truncate">Kyoto Walk</div>
+          <div class="flex items-center gap-2 mt-1">
+            <span class="bg-yellow-100 text-yellow-700 text-xs rounded-full px-2 py-0.5">Draft</span>
+            <span class="text-xs text-gray-400 flex items-center gap-1"><i class="fas fa-play"></i>0</span>
+          </div>
+        </div>
+        <a href="#" class="text-blue-500 text-base hover:underline ml-2"><i class="fas fa-edit"></i></a>
+      </div>
+      <div class="bg-white rounded-2xl shadow flex items-center gap-3 p-4">
+        <img src="https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?auto=format&fit=crop&w=80&q=80" alt="Rome Highlights" class="h-14 w-14 object-cover rounded-xl" />
+        <div class="flex-1 min-w-0">
+          <div class="font-semibold text-gray-900 truncate">Rome Highlights</div>
+          <div class="flex items-center gap-2 mt-1">
+            <span class="bg-blue-100 text-blue-700 text-xs rounded-full px-2 py-0.5">Pending</span>
+            <span class="text-xs text-gray-400 flex items-center gap-1"><i class="fas fa-play"></i>0</span>
+          </div>
+        </div>
+        <a href="#" class="text-blue-500 text-base hover:underline ml-2"><i class="fas fa-edit"></i></a>
+      </div>
+    </div>
+    <!-- Empty State Example (uncomment if needed) -->
+    <!--
+    <div class="flex flex-col items-center gap-3 py-16">
+      <span class="bg-gray-100 rounded-full w-16 h-16 flex items-center justify-center text-3xl text-gray-300 mb-2"><i class="fas fa-folder-open"></i></span>
+      <div class="text-gray-400 text-base">No content yet. Start creating!</div>
+      <button class="bg-blue-500 text-white rounded-lg py-3 px-6 font-semibold text-base hover:bg-blue-600 transition mt-2"><i class="fas fa-plus mr-2"></i>Create New Content</button>
+    </div>
+    -->
+  </main>
+  <style>
+    .no-scrollbar::-webkit-scrollbar { display: none; }
+    .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+  </style>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/js/all.min.js"></script>
+</body>
+</html> 

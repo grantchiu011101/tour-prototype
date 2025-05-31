@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Earnings & Payouts</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body class="bg-gradient-to-b from-gray-100 to-white min-h-screen flex flex-col items-center px-4">
+  <main class="flex flex-col gap-6 w-full max-w-md mt-8 mb-8">
+    <!-- Top Card: Total Earnings -->
+    <div class="bg-gray-700 rounded-2xl shadow-lg p-6 flex flex-col gap-2 relative">
+      <div class="text-gray-200 text-sm mb-1">Total Earnings</div>
+      <div class="text-3xl font-bold text-white tracking-tight">$1,200.00</div>
+      <div class="text-xs text-gray-300 mt-1">Updated 22:30</div>
+    </div>
+    <!-- Action Card -->
+    <div class="bg-white rounded-2xl shadow flex justify-between px-4 py-4 gap-2">
+      <button class="flex-1 flex flex-col items-center gap-1 py-2 hover:bg-gray-50 rounded-xl transition">
+        <span class="bg-blue-50 text-blue-500 rounded-full w-10 h-10 flex items-center justify-center mb-1"><i class="fas fa-arrow-up"></i></span>
+        <span class="text-xs font-medium text-gray-700">Request</span>
+      </button>
+      <button class="flex-1 flex flex-col items-center gap-1 py-2 hover:bg-gray-50 rounded-xl transition">
+        <span class="bg-blue-50 text-blue-500 rounded-full w-10 h-10 flex items-center justify-center mb-1"><i class="fas fa-wallet"></i></span>
+        <span class="text-xs font-medium text-gray-700">Manage</span>
+      </button>
+    </div>
+    <!-- Earnings Breakdown Card -->
+    <div class="bg-white rounded-2xl shadow p-4 flex flex-col gap-2">
+      <div class="flex justify-between items-center mb-2">
+        <div class="flex flex-col items-center flex-1">
+          <div class="text-lg font-semibold text-gray-900">$120.00</div>
+          <div class="text-xs text-gray-500">This Month</div>
+        </div>
+        <div class="flex flex-col items-center flex-1">
+          <div class="text-lg font-semibold text-blue-500">$30.00</div>
+          <div class="text-xs text-gray-500">Pending</div>
+        </div>
+      </div>
+      <div class="text-sm font-semibold text-gray-700 mb-1 mt-2">Recent Transactions</div>
+      <div class="flex flex-col gap-1">
+        <div class="flex justify-between text-xs text-gray-500"><span>Paris Tour</span><span class="text-green-600 font-semibold">+$12.00</span></div>
+        <div class="flex justify-between text-xs text-gray-500"><span>Payout</span><span class="text-red-500 font-semibold">-$50.00</span></div>
+        <div class="flex justify-between text-xs text-gray-500"><span>Kyoto Tour</span><span class="text-green-600 font-semibold">+$8.00</span></div>
+      </div>
+    </div>
+    <!-- Payout History Card -->
+    <div class="bg-white rounded-2xl shadow p-4 flex flex-col gap-2">
+      <div class="text-sm font-semibold text-gray-700 mb-1">Payout History</div>
+      <div class="flex justify-between text-xs text-gray-500"><span>2024-06-01</span><span>$50.00</span><span class="text-green-600">Completed</span></div>
+      <div class="flex justify-between text-xs text-gray-500"><span>2024-05-01</span><span>$40.00</span><span class="text-green-600">Completed</span></div>
+    </div>
+    <!-- Next Payout & Policy -->
+    <div class="flex flex-col items-center gap-1 mt-4">
+      <div class="text-xs text-gray-400">Next payout: <span class="text-gray-700 font-medium">2024-07-01</span></div>
+      <a href="#" class="text-xs text-blue-500 underline">Payout Policy</a>
+    </div>
+  </main>
+  <style>
+    .no-scrollbar::-webkit-scrollbar { display: none; }
+    .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+  </style>
+</body>
+</html> 

@@ -14,8 +14,8 @@
     </a>
     <span class="font-bold text-lg text-blue-500 tracking-wide">Roam</span>
     <div class="flex items-center gap-3">
-      <a href="notifications.html" aria-label="Notifications" class="text-gray-400 hover:text-blue-500 text-xl transition"><i class="fas fa-bell"></i></a>
-      <a href="search.html" aria-label="Search" class="text-gray-400 hover:text-blue-500 text-xl transition"><i class="fas fa-search"></i></a>
+      <a href="notifications.html" aria-label="Notifications" class="flex items-center justify-center bg-gray-100 rounded-full w-10 h-10 text-gray-400 hover:text-blue-500 text-xl transition"><i class="fas fa-bell"></i></a>
+      <a href="search.html" aria-label="Search" class="flex items-center justify-center bg-gray-100 rounded-full w-10 h-10 text-gray-400 hover:text-blue-500 text-xl transition"><i class="fas fa-search"></i></a>
     </div>
   </nav>
 
@@ -44,23 +44,23 @@
     <section>
       <div class="flex gap-4 overflow-x-auto no-scrollbar py-1">
         <button class="flex flex-col items-center min-w-[64px]" aria-label="Nearby">
-          <span class="bg-gray-100 text-blue-500 p-3 rounded-full mb-1"><i class="fas fa-location-arrow"></i></span>
+          <span class="flex items-center justify-center bg-gray-100 text-blue-500 w-12 h-12 rounded-full mb-1"><i class="fas fa-location-arrow"></i></span>
           <span class="text-xs text-gray-900">Nearby</span>
         </button>
         <button class="flex flex-col items-center min-w-[64px]" aria-label="Favorites">
-          <span class="bg-gray-100 text-blue-500 p-3 rounded-full mb-1"><i class="fas fa-heart"></i></span>
+          <span class="flex items-center justify-center bg-gray-100 text-blue-500 w-12 h-12 rounded-full mb-1"><i class="fas fa-heart"></i></span>
           <span class="text-xs text-gray-900">Favorites</span>
         </button>
         <button class="flex flex-col items-center min-w-[64px]" aria-label="Map">
-          <span class="bg-gray-100 text-blue-500 p-3 rounded-full mb-1"><i class="fas fa-map-marked-alt"></i></span>
+          <span class="flex items-center justify-center bg-gray-100 text-blue-500 w-12 h-12 rounded-full mb-1"><i class="fas fa-map-marked-alt"></i></span>
           <span class="text-xs text-gray-900">Map</span>
         </button>
         <button class="flex flex-col items-center min-w-[64px]" aria-label="Audio Guides">
-          <span class="bg-gray-100 text-blue-500 p-3 rounded-full mb-1"><i class="fas fa-headphones"></i></span>
+          <span class="flex items-center justify-center bg-gray-100 text-blue-500 w-12 h-12 rounded-full mb-1"><i class="fas fa-headphones"></i></span>
           <span class="text-xs text-gray-900">Audio Guides</span>
         </button>
         <button class="flex flex-col items-center min-w-[64px]" aria-label="Categories">
-          <span class="bg-gray-100 text-blue-500 p-3 rounded-full mb-1"><i class="fas fa-th-large"></i></span>
+          <span class="flex items-center justify-center bg-gray-100 text-blue-500 w-12 h-12 rounded-full mb-1"><i class="fas fa-th-large"></i></span>
           <span class="text-xs text-gray-900">Categories</span>
         </button>
       </div>
@@ -110,7 +110,7 @@
             <div class="font-semibold text-gray-900">Golden Gate Bridge</div>
             <div class="text-xs text-gray-400">San Francisco, USA</div>
           </div>
-          <button class="bg-gray-100 text-blue-500 rounded-full p-2" aria-label="Play Audio Guide"><i class="fas fa-play"></i></button>
+          <button class="flex items-center justify-center bg-gray-100 rounded-full w-10 h-10 text-blue-500" aria-label="Play Audio Guide"><i class="fas fa-play"></i></button>
         </div>
         <div class="flex bg-white rounded-xl shadow-sm p-3 items-center gap-3 border border-gray-100">
           <img src="https://images.unsplash.com/photo-1467269204594-9661b134dd2b?auto=format&fit=crop&w=80&q=80" alt="Fushimi Inari" class="h-14 w-14 object-cover rounded-lg" />
@@ -118,7 +118,7 @@
             <div class="font-semibold text-gray-900">Fushimi Inari</div>
             <div class="text-xs text-gray-400">Kyoto, Japan</div>
           </div>
-          <button class="bg-gray-100 text-blue-500 rounded-full p-2" aria-label="Play Audio Guide"><i class="fas fa-play"></i></button>
+          <button class="flex items-center justify-center bg-gray-100 rounded-full w-10 h-10 text-blue-500" aria-label="Play Audio Guide"><i class="fas fa-play"></i></button>
         </div>
         <div class="flex bg-white rounded-xl shadow-sm p-3 items-center gap-3 border border-gray-100">
           <img src="https://images.unsplash.com/photo-1502602898657-3e91760cbb34?auto=format&fit=crop&w=80&q=80" alt="Eiffel Tower" class="h-14 w-14 object-cover rounded-lg" />
@@ -126,7 +126,7 @@
             <div class="font-semibold text-gray-900">Eiffel Tower</div>
             <div class="text-xs text-gray-400">Paris, France</div>
           </div>
-          <button class="bg-gray-100 text-blue-500 rounded-full p-2" aria-label="Play Audio Guide"><i class="fas fa-play"></i></button>
+          <button class="flex items-center justify-center bg-gray-100 rounded-full w-10 h-10 text-blue-500" aria-label="Play Audio Guide"><i class="fas fa-play"></i></button>
         </div>
       </div>
     </section>
@@ -151,15 +151,6 @@
       </div>
     </section>
   </main>
-
-  <!-- Bottom Navigation Bar -->
-  <nav class="fixed bottom-0 left-0 right-0 bg-white border-t border-gray-100 flex justify-around items-center h-14 z-20 max-w-md mx-auto w-full">
-    <a href="#" class="flex flex-col items-center text-blue-500"><i class="fas fa-home text-lg"></i><span class="text-xs">Home</span></a>
-    <a href="#" class="flex flex-col items-center text-gray-400 hover:text-blue-500"><i class="fas fa-search text-lg"></i><span class="text-xs">Search</span></a>
-    <a href="#" class="flex flex-col items-center text-gray-400 hover:text-blue-500"><i class="fas fa-map-marked-alt text-lg"></i><span class="text-xs">Map</span></a>
-    <a href="#" class="flex flex-col items-center text-gray-400 hover:text-blue-500"><i class="fas fa-heart text-lg"></i><span class="text-xs">Favorites</span></a>
-    <a href="#" class="flex flex-col items-center text-gray-400 hover:text-blue-500"><i class="fas fa-user text-lg"></i><span class="text-xs">Profile</span></a>
-  </nav>
 
   <!-- Sample Unlock Modal Trigger (for demo) -->
   <button onclick="document.getElementById('unlockModal').classList.remove('hidden')" class="fixed bottom-24 right-6 z-40 bg-blue-500 text-white rounded-full px-4 py-2 shadow-lg hover:bg-blue-600 transition">Show Unlock Modal</button>

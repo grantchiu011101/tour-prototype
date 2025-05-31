@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Language Settings</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gradient-to-b from-gray-100 to-white min-h-screen flex flex-col items-center px-4">
+  <main class="flex flex-col gap-6 w-full max-w-md mt-8 mb-8">
+    <!-- Top Card: Title -->
+    <div class="bg-white rounded-2xl shadow p-6 flex flex-col items-center mb-2">
+      <h1 class="text-xl font-bold text-gray-900">Language Settings</h1>
+      <div class="text-sm text-gray-500 mt-1">Choose your preferred language for the creator experience.</div>
+    </div>
+    <!-- Language Options Card -->
+    <div class="bg-white rounded-2xl shadow p-4 flex flex-col gap-2">
+      <label class="flex items-center gap-3 py-2 cursor-pointer">
+        <input type="radio" name="language" checked class="accent-blue-500" />
+        <span class="text-sm text-gray-800">English</span>
+      </label>
+      <label class="flex items-center gap-3 py-2 cursor-pointer">
+        <input type="radio" name="language" class="accent-blue-500" />
+        <span class="text-sm text-gray-800">Spanish</span>
+      </label>
+      <label class="flex items-center gap-3 py-2 cursor-pointer">
+        <input type="radio" name="language" class="accent-blue-500" />
+        <span class="text-sm text-gray-800">French</span>
+      </label>
+      <label class="flex items-center gap-3 py-2 cursor-pointer">
+        <input type="radio" name="language" class="accent-blue-500" />
+        <span class="text-sm text-gray-800">German</span>
+      </label>
+      <label class="flex items-center gap-3 py-2 cursor-pointer">
+        <input type="radio" name="language" class="accent-blue-500" />
+        <span class="text-sm text-gray-800">Other</span>
+      </label>
+    </div>
+    <button class="bg-blue-500 text-white rounded-lg py-3 w-full font-semibold text-lg hover:bg-blue-600 transition mt-2">Save</button>
+  </main>
+  <style>
+    .no-scrollbar::-webkit-scrollbar { display: none; }
+    .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+  </style>
+</body>
+</html> 

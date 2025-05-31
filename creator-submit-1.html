@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Submission Step 1: Basic Info</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-white min-h-screen flex flex-col justify-center items-center px-4">
+  <main class="flex flex-col gap-6 w-full max-w-md mt-8">
+    <h1 class="text-xl font-bold text-gray-900 text-center mb-2">Step 1: Basic Info</h1>
+    <form class="flex flex-col gap-4">
+      <div>
+        <label class="block text-gray-700 font-medium mb-1">Content Type</label>
+        <select class="form-input w-full">
+          <option>Tour</option>
+          <option>Attraction</option>
+          <option>Audio Guide</option>
+        </select>
+      </div>
+      <div>
+        <label class="block text-gray-700 font-medium mb-1">Title</label>
+        <input type="text" class="form-input w-full" placeholder="Enter title" />
+      </div>
+      <div>
+        <label class="block text-gray-700 font-medium mb-1">Short Description</label>
+        <textarea class="form-input w-full" rows="2" maxlength="140" placeholder="Briefly describe your content (max 140 chars)"></textarea>
+      </div>
+      <div>
+        <label class="block text-gray-700 font-medium mb-1">Category/Tags</label>
+        <input type="text" class="form-input w-full" placeholder="e.g. History, Food, Art" />
+      </div>
+      <div>
+        <label class="block text-gray-700 font-medium mb-1">Language</label>
+        <select class="form-input w-full">
+          <option>English</option>
+          <option>Spanish</option>
+          <option>French</option>
+          <option>German</option>
+          <option>Other</option>
+        </select>
+      </div>
+      <button type="button" class="bg-blue-500 text-white rounded-lg py-3 w-full font-semibold text-lg hover:bg-blue-600 transition mt-2">Next</button>
+    </form>
+  </main>
+</body>
+</html> 

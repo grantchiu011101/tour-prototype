@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Submission Step 3: Stops & Details</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-white min-h-screen flex flex-col justify-center items-center px-4">
+  <main class="flex flex-col gap-6 w-full max-w-md mt-8">
+    <h1 class="text-xl font-bold text-gray-900 text-center mb-2">Step 3: Stops & Details</h1>
+    <div class="flex flex-col gap-4">
+      <div class="bg-blue-50 text-blue-700 rounded-lg p-3 text-center text-sm mb-2">If you are submitting a Tour, add stops below. For Attractions or Audio Guides, this step is skipped.</div>
+      <div class="flex flex-col gap-3">
+        <div class="bg-gray-50 rounded-lg p-3 flex flex-col gap-2">
+          <div class="flex gap-2 items-center">
+            <input type="text" class="form-input flex-1" placeholder="Stop Title" />
+            <button type="button" class="text-red-400 hover:text-red-600 text-lg">Remove</button>
+          </div>
+          <textarea class="form-input w-full" rows="2" placeholder="Stop Description"></textarea>
+          <input type="file" accept="audio/*" class="form-input w-full" />
+          <input type="file" accept="image/*" class="form-input w-full" />
+          <input type="text" class="form-input w-full" placeholder="Location (optional)" />
+        </div>
+        <button type="button" class="bg-gray-100 text-blue-500 rounded-lg py-2 w-full font-semibold text-base hover:bg-gray-200 transition">+ Add Stop</button>
+      </div>
+      <div class="flex gap-2 mt-2">
+        <button type="button" class="bg-gray-100 text-blue-500 rounded-lg py-3 w-full font-semibold text-lg hover:bg-gray-200 transition">Back</button>
+        <button type="button" class="bg-blue-500 text-white rounded-lg py-3 w-full font-semibold text-lg hover:bg-blue-600 transition">Next</button>
+      </div>
+    </div>
+  </main>
+</body>
+</html> 
