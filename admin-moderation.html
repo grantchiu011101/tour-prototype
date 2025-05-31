@@ -3,15 +3,71 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Admin Moderation</title>
+  <title>Admin: Moderation</title>
   <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
-<body class="bg-white min-h-screen flex flex-col justify-center items-center px-4">
-  <main class="flex flex-col items-center gap-4 w-full max-w-md">
-    <h1 class="text-2xl font-bold text-gray-900 text-center mt-8 mb-2">Moderation</h1>
-    <div class="text-base text-gray-500 text-center mb-4">Review and act on reported content or users.</div>
-    <div class="w-full flex flex-col gap-2">
-      <div class="bg-gray-50 rounded-lg p-4 text-center text-gray-700">[Flagged Content Placeholder]</div>
+<body class="bg-gradient-to-b from-gray-100 to-white min-h-screen flex flex-col items-center px-4">
+  <main class="flex flex-col gap-6 w-full max-w-md mt-8 mb-8">
+    <!-- Quick Stats -->
+    <div class="grid grid-cols-3 gap-4">
+      <div class="bg-white rounded-2xl shadow p-4 flex flex-col items-center">
+        <div class="text-xs text-gray-500 mb-1">Flagged Content</div>
+        <div class="text-lg font-bold text-red-500">3</div>
+      </div>
+      <div class="bg-white rounded-2xl shadow p-4 flex flex-col items-center">
+        <div class="text-xs text-gray-500 mb-1">Flagged Users</div>
+        <div class="text-lg font-bold text-yellow-500">2</div>
+      </div>
+      <div class="bg-white rounded-2xl shadow p-4 flex flex-col items-center">
+        <div class="text-xs text-gray-500 mb-1">Actions Taken</div>
+        <div class="text-lg font-bold text-green-600">5</div>
+      </div>
+    </div>
+    <!-- Search & Filter -->
+    <div class="flex gap-2">
+      <input type="text" placeholder="Search moderation..." class="flex-1 rounded-lg border border-gray-200 px-3 py-2 text-sm focus:outline-none" />
+      <button class="bg-gray-100 text-gray-700 rounded-lg px-3 py-2 text-sm"><i class="fas fa-filter"></i></button>
+    </div>
+    <!-- Moderation Actions List -->
+    <div class="bg-white rounded-2xl shadow p-4 flex flex-col gap-3">
+      <div class="font-semibold text-gray-900 mb-2">Recent Actions</div>
+      <!-- Moderation Action Card -->
+      <div class="flex items-center justify-between py-2 border-b border-gray-100 last:border-b-0">
+        <div class="flex flex-col gap-1 flex-1">
+          <div class="text-sm text-gray-900">Tour <span class="font-semibold">"Old Town"</span> flagged</div>
+          <div class="text-xs text-gray-500">by Noah Smith</div>
+          <div class="text-xs text-yellow-500 font-semibold">Pending Review</div>
+        </div>
+        <div class="flex flex-col items-end gap-1">
+          <span class="text-xs text-gray-400">1h ago</span>
+          <div class="flex gap-1">
+            <button class="text-xs text-green-600 hover:text-green-800" title="Approve"><i class="fas fa-check-circle"></i></button>
+            <button class="text-xs text-red-500 hover:text-red-700" title="Reject"><i class="fas fa-times-circle"></i></button>
+          </div>
+        </div>
+      </div>
+      <!-- More moderation actions... -->
+      <div class="flex items-center justify-between py-2 border-b border-gray-100 last:border-b-0">
+        <div class="flex flex-col gap-1 flex-1">
+          <div class="text-sm text-gray-900">User <span class="font-semibold">Emma Lee</span> flagged</div>
+          <div class="text-xs text-gray-500">Reason: Inappropriate content</div>
+          <div class="text-xs text-red-500 font-semibold">Suspended</div>
+        </div>
+        <div class="flex flex-col items-end gap-1">
+          <span class="text-xs text-gray-400">2h ago</span>
+        </div>
+      </div>
+      <div class="flex items-center justify-between py-2 border-b border-gray-100 last:border-b-0">
+        <div class="flex flex-col gap-1 flex-1">
+          <div class="text-sm text-gray-900">Tour <span class="font-semibold">"Paris Food Tour"</span> unflagged</div>
+          <div class="text-xs text-gray-500">by Admin</div>
+          <div class="text-xs text-green-600 font-semibold">Resolved</div>
+        </div>
+        <div class="flex flex-col items-end gap-1">
+          <span class="text-xs text-gray-400">3h ago</span>
+        </div>
+      </div>
     </div>
   </main>
 </body>

@@ -3,15 +3,78 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Admin Support Inbox</title>
+  <title>Admin: Support Inbox</title>
   <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
-<body class="bg-white min-h-screen flex flex-col justify-center items-center px-4">
-  <main class="flex flex-col items-center gap-4 w-full max-w-md">
-    <h1 class="text-2xl font-bold text-gray-900 text-center mt-8 mb-2">Support Inbox</h1>
-    <div class="text-base text-gray-500 text-center mb-4">View and respond to user support requests.</div>
-    <div class="w-full flex flex-col gap-2">
-      <div class="bg-gray-50 rounded-lg p-4 text-center text-gray-700">[Support Requests Placeholder]</div>
+<body class="bg-gradient-to-b from-gray-100 to-white min-h-screen flex flex-col items-center px-4">
+  <main class="flex flex-col gap-6 w-full max-w-md mt-8 mb-8">
+    <!-- Quick Stats -->
+    <div class="grid grid-cols-3 gap-4">
+      <div class="bg-white rounded-2xl shadow p-4 flex flex-col items-center">
+        <div class="text-xs text-gray-500 mb-1">Open</div>
+        <div class="text-lg font-bold text-red-500">7</div>
+      </div>
+      <div class="bg-white rounded-2xl shadow p-4 flex flex-col items-center">
+        <div class="text-xs text-gray-500 mb-1">Pending</div>
+        <div class="text-lg font-bold text-yellow-500">3</div>
+      </div>
+      <div class="bg-white rounded-2xl shadow p-4 flex flex-col items-center">
+        <div class="text-xs text-gray-500 mb-1">Resolved</div>
+        <div class="text-lg font-bold text-green-600">21</div>
+      </div>
+    </div>
+    <!-- Search & Filter -->
+    <div class="flex gap-2">
+      <input type="text" placeholder="Search tickets..." class="flex-1 rounded-lg border border-gray-200 px-3 py-2 text-sm focus:outline-none" />
+      <button class="bg-gray-100 text-gray-700 rounded-lg px-3 py-2 text-sm"><i class="fas fa-filter"></i></button>
+    </div>
+    <!-- Ticket List -->
+    <div class="bg-white rounded-2xl shadow p-4 flex flex-col gap-3">
+      <div class="font-semibold text-gray-900 mb-2">Support Tickets</div>
+      <!-- Ticket Card -->
+      <div class="flex items-center justify-between py-2 border-b border-gray-100 last:border-b-0">
+        <div class="flex flex-col gap-1 flex-1">
+          <div class="flex items-center gap-2">
+            <span class="text-xs text-red-500 font-semibold">Open</span>
+            <span class="text-xs text-yellow-500 font-semibold">High</span>
+          </div>
+          <div class="font-medium text-gray-900">Payment not received</div>
+          <div class="text-xs text-gray-500">by Alex Johnson • 2m ago</div>
+        </div>
+        <div class="flex flex-col items-end gap-1">
+          <button class="text-xs text-blue-500 hover:underline">Reply</button>
+          <button class="text-xs text-gray-400 hover:text-green-600" title="Mark as resolved"><i class="fas fa-check-circle"></i></button>
+        </div>
+      </div>
+      <!-- More ticket cards... -->
+      <div class="flex items-center justify-between py-2 border-b border-gray-100 last:border-b-0">
+        <div class="flex flex-col gap-1 flex-1">
+          <div class="flex items-center gap-2">
+            <span class="text-xs text-yellow-500 font-semibold">Pending</span>
+            <span class="text-xs text-gray-400 font-semibold">Normal</span>
+          </div>
+          <div class="font-medium text-gray-900">Audio not playing</div>
+          <div class="text-xs text-gray-500">by Emma Lee • 10m ago</div>
+        </div>
+        <div class="flex flex-col items-end gap-1">
+          <button class="text-xs text-blue-500 hover:underline">Reply</button>
+          <button class="text-xs text-gray-400 hover:text-green-600" title="Mark as resolved"><i class="fas fa-check-circle"></i></button>
+        </div>
+      </div>
+      <div class="flex items-center justify-between py-2 border-b border-gray-100 last:border-b-0">
+        <div class="flex flex-col gap-1 flex-1">
+          <div class="flex items-center gap-2">
+            <span class="text-xs text-green-600 font-semibold">Resolved</span>
+            <span class="text-xs text-gray-400 font-semibold">Low</span>
+          </div>
+          <div class="font-medium text-gray-900">Feature request: offline mode</div>
+          <div class="text-xs text-gray-500">by Noah Smith • 1h ago</div>
+        </div>
+        <div class="flex flex-col items-end gap-1">
+          <button class="text-xs text-blue-500 hover:underline">View</button>
+        </div>
+      </div>
     </div>
   </main>
 </body>

@@ -3,15 +3,91 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Admin Creator Management</title>
+  <title>Admin: Creator Management</title>
   <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
-<body class="bg-white min-h-screen flex flex-col justify-center items-center px-4">
-  <main class="flex flex-col items-center gap-4 w-full max-w-md">
-    <h1 class="text-2xl font-bold text-gray-900 text-center mt-8 mb-2">Creator Management</h1>
-    <div class="text-base text-gray-500 text-center mb-4">Review and verify creators. Manage badges and profiles.</div>
-    <div class="w-full flex flex-col gap-2">
-      <div class="bg-gray-50 rounded-lg p-4 text-center text-gray-700">[Creator List Placeholder]</div>
+<body class="bg-gradient-to-b from-gray-100 to-white min-h-screen flex flex-col items-center px-4">
+  <main class="flex flex-col gap-6 w-full max-w-md mt-8 mb-8">
+    <!-- Quick Stats -->
+    <div class="grid grid-cols-3 gap-4">
+      <div class="bg-white rounded-2xl shadow p-4 flex flex-col items-center">
+        <div class="text-xs text-gray-500 mb-1">Total Creators</div>
+        <div class="text-lg font-bold text-gray-900">320</div>
+      </div>
+      <div class="bg-white rounded-2xl shadow p-4 flex flex-col items-center">
+        <div class="text-xs text-gray-500 mb-1">Pending</div>
+        <div class="text-lg font-bold text-yellow-500">5</div>
+      </div>
+      <div class="bg-white rounded-2xl shadow p-4 flex flex-col items-center">
+        <div class="text-xs text-gray-500 mb-1">Flagged</div>
+        <div class="text-lg font-bold text-red-500">2</div>
+      </div>
+    </div>
+    <!-- Search & Filter -->
+    <div class="flex gap-2">
+      <input type="text" placeholder="Search creators..." class="flex-1 rounded-lg border border-gray-200 px-3 py-2 text-sm focus:outline-none" />
+      <button class="bg-gray-100 text-gray-700 rounded-lg px-3 py-2 text-sm"><i class="fas fa-filter"></i></button>
+    </div>
+    <!-- Creator List -->
+    <div class="bg-white rounded-2xl shadow p-4 flex flex-col gap-3">
+      <div class="font-semibold text-gray-900 mb-2">Creators</div>
+      <!-- Creator Card -->
+      <div class="flex items-center justify-between py-2 border-b border-gray-100 last:border-b-0">
+        <div class="flex items-center gap-3 flex-1">
+          <img src="https://randomuser.me/api/portraits/men/32.jpg" class="w-10 h-10 rounded-full border" alt="Creator" />
+          <div>
+            <div class="font-medium text-gray-900">Alex Johnson</div>
+            <div class="text-xs text-gray-500">alex@email.com</div>
+            <div class="text-xs text-blue-500 font-semibold">Verified</div>
+          </div>
+        </div>
+        <div class="flex flex-col items-end gap-1">
+          <span class="text-xs text-green-600 font-semibold">Active</span>
+          <div class="flex gap-1">
+            <button class="text-xs text-yellow-500 hover:text-yellow-700" title="Suspend"><i class="fas fa-ban"></i></button>
+            <button class="text-xs text-gray-400 hover:text-red-500" title="Delete"><i class="fas fa-trash"></i></button>
+          </div>
+        </div>
+      </div>
+      <!-- More creator cards... -->
+      <div class="flex items-center justify-between py-2 border-b border-gray-100 last:border-b-0">
+        <div class="flex items-center gap-3 flex-1">
+          <img src="https://randomuser.me/api/portraits/women/44.jpg" class="w-10 h-10 rounded-full border" alt="Creator" />
+          <div>
+            <div class="font-medium text-gray-900">Emma Lee</div>
+            <div class="text-xs text-gray-500">emma@email.com</div>
+            <div class="text-xs text-gray-400">Unverified</div>
+          </div>
+        </div>
+        <div class="flex flex-col items-end gap-1">
+          <span class="text-xs text-yellow-500 font-semibold">Pending</span>
+          <div class="flex gap-1">
+            <button class="text-xs text-green-600 hover:text-green-800" title="Verify"><i class="fas fa-check-circle"></i></button>
+            <button class="text-xs text-yellow-500 hover:text-yellow-700" title="Suspend"><i class="fas fa-ban"></i></button>
+            <button class="text-xs text-gray-400 hover:text-red-500" title="Delete"><i class="fas fa-trash"></i></button>
+          </div>
+        </div>
+      </div>
+      <!-- Example flagged creator -->
+      <div class="flex items-center justify-between py-2 border-b border-gray-100 last:border-b-0">
+        <div class="flex items-center gap-3 flex-1">
+          <img src="https://randomuser.me/api/portraits/men/45.jpg" class="w-10 h-10 rounded-full border" alt="Creator" />
+          <div>
+            <div class="font-medium text-gray-900">Noah Smith</div>
+            <div class="text-xs text-gray-500">noah@email.com</div>
+            <div class="text-xs text-blue-500 font-semibold">Verified</div>
+          </div>
+        </div>
+        <div class="flex flex-col items-end gap-1">
+          <span class="text-xs text-red-500 font-semibold">Flagged</span>
+          <div class="flex gap-1">
+            <button class="text-xs text-green-600 hover:text-green-800" title="Verify"><i class="fas fa-check-circle"></i></button>
+            <button class="text-xs text-yellow-500 hover:text-yellow-700" title="Suspend"><i class="fas fa-ban"></i></button>
+            <button class="text-xs text-gray-400 hover:text-red-500" title="Delete"><i class="fas fa-trash"></i></button>
+          </div>
+        </div>
+      </div>
     </div>
   </main>
 </body>

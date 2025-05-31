@@ -5,15 +5,66 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Admin Dashboard</title>
   <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
-<body class="bg-white min-h-screen flex flex-col justify-center items-center px-4">
-  <main class="flex flex-col items-center gap-4 w-full max-w-md">
-    <h1 class="text-2xl font-bold text-gray-900 text-center mt-8 mb-2">Admin Dashboard</h1>
-    <div class="text-base text-gray-500 text-center mb-4">Overview of key metrics, recent activity, and system health.</div>
-    <div class="w-full flex flex-col gap-2">
-      <div class="bg-gray-50 rounded-lg p-4 text-center text-gray-700">[Active Users: 1,234]</div>
-      <div class="bg-gray-50 rounded-lg p-4 text-center text-gray-700">[New Signups: 56]</div>
-      <div class="bg-gray-50 rounded-lg p-4 text-center text-gray-700">[Popular Tours: Paris, Kyoto]</div>
+<body class="bg-gradient-to-b from-gray-100 to-white min-h-screen flex flex-col items-center px-4">
+  <main class="flex flex-col gap-6 w-full max-w-md mt-8 mb-8">
+    <!-- Metrics Overview -->
+    <div class="grid grid-cols-2 gap-4">
+      <div class="bg-white rounded-2xl shadow p-4 flex flex-col items-center">
+        <i class="fas fa-users text-blue-500 text-2xl mb-1"></i>
+        <div class="text-lg font-bold text-gray-900">12,340</div>
+        <div class="text-xs text-gray-500">Total Users</div>
+      </div>
+      <div class="bg-white rounded-2xl shadow p-4 flex flex-col items-center">
+        <i class="fas fa-user-tie text-green-500 text-2xl mb-1"></i>
+        <div class="text-lg font-bold text-gray-900">320</div>
+        <div class="text-xs text-gray-500">Active Creators</div>
+      </div>
+      <div class="bg-white rounded-2xl shadow p-4 flex flex-col items-center">
+        <i class="fas fa-map-marked-alt text-yellow-500 text-2xl mb-1"></i>
+        <div class="text-lg font-bold text-gray-900">1,200</div>
+        <div class="text-xs text-gray-500">Total Tours</div>
+      </div>
+      <div class="bg-white rounded-2xl shadow p-4 flex flex-col items-center">
+        <i class="fas fa-dollar-sign text-purple-500 text-2xl mb-1"></i>
+        <div class="text-lg font-bold text-gray-900">$8,900</div>
+        <div class="text-xs text-gray-500">Revenue</div>
+      </div>
+    </div>
+    <!-- Alerts & Quick Actions -->
+    <div class="bg-white rounded-2xl shadow p-4 flex flex-col gap-3">
+      <div class="flex items-center gap-2 mb-2">
+        <i class="fas fa-exclamation-triangle text-red-500"></i>
+        <span class="font-semibold text-gray-900">Alerts</span>
+      </div>
+      <div class="text-sm text-red-600 mb-1">3 flagged tours need review</div>
+      <div class="text-sm text-yellow-600 mb-1">1 system warning: API latency</div>
+      <div class="flex gap-2 mt-2">
+        <button class="bg-blue-500 text-white rounded-lg px-4 py-2 text-sm font-semibold">Review Content</button>
+        <button class="bg-gray-100 text-gray-700 rounded-lg px-4 py-2 text-sm font-semibold">Support Inbox</button>
+      </div>
+    </div>
+    <!-- Recent Activity -->
+    <div class="bg-white rounded-2xl shadow p-4 flex flex-col gap-2">
+      <div class="flex items-center justify-between mb-1">
+        <span class="font-semibold text-gray-900">Recent Activity</span>
+        <a href="admin-recent-activity.html" class="text-xs text-blue-500 hover:underline">See all</a>
+      </div>
+      <div class="text-xs text-gray-600">+ New creator "Alex J." signed up</div>
+      <div class="text-xs text-gray-600">+ Tour "Kyoto Walk" submitted</div>
+      <div class="text-xs text-gray-600">+ $50 payout processed</div>
+      <div class="text-xs text-gray-600">- Tour "Old Town" flagged for review</div>
+    </div>
+    <!-- Navigation Links -->
+    <div class="grid grid-cols-2 gap-3">
+      <a href="admin-users.html" class="bg-gray-50 rounded-xl p-3 flex flex-col items-center text-sm text-gray-700 hover:bg-blue-50 transition"><i class="fas fa-user-cog mb-1"></i>User Mgmt</a>
+      <a href="admin-content.html" class="bg-gray-50 rounded-xl p-3 flex flex-col items-center text-sm text-gray-700 hover:bg-blue-50 transition"><i class="fas fa-map mb-1"></i>Content</a>
+      <a href="admin-creators.html" class="bg-gray-50 rounded-xl p-3 flex flex-col items-center text-sm text-gray-700 hover:bg-blue-50 transition"><i class="fas fa-user-tie mb-1"></i>Creators</a>
+      <a href="admin-reports.html" class="bg-gray-50 rounded-xl p-3 flex flex-col items-center text-sm text-gray-700 hover:bg-blue-50 transition"><i class="fas fa-chart-bar mb-1"></i>Analytics</a>
+      <a href="admin-moderation.html" class="bg-gray-50 rounded-xl p-3 flex flex-col items-center text-sm text-gray-700 hover:bg-blue-50 transition"><i class="fas fa-shield-alt mb-1"></i>Moderation</a>
+      <a href="admin-settings.html" class="bg-gray-50 rounded-xl p-3 flex flex-col items-center text-sm text-gray-700 hover:bg-blue-50 transition"><i class="fas fa-cogs mb-1"></i>System</a>
+      <a href="admin-support.html" class="bg-gray-50 rounded-xl p-3 flex flex-col items-center text-sm text-gray-700 hover:bg-blue-50 transition"><i class="fas fa-envelope mb-1"></i>Support</a>
     </div>
   </main>
 </body>

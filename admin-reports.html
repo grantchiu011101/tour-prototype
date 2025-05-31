@@ -3,16 +3,111 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Admin Reports & Analytics</title>
+  <title>Admin: Reports & Analytics</title>
   <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
-<body class="bg-white min-h-screen flex flex-col justify-center items-center px-4">
-  <main class="flex flex-col items-center gap-4 w-full max-w-md">
-    <h1 class="text-2xl font-bold text-gray-900 text-center mt-8 mb-2">Reports & Analytics</h1>
-    <div class="text-base text-gray-500 text-center mb-4">View usage analytics, revenue, and content performance.</div>
-    <div class="w-full flex flex-col gap-2">
-      <div class="bg-gray-50 rounded-lg p-4 text-center text-gray-700">[Analytics Placeholder]</div>
+<body class="bg-gradient-to-b from-gray-100 to-white min-h-screen flex flex-col items-center px-4">
+  <main class="flex flex-col gap-6 w-full max-w-md mt-8 mb-8">
+    <!-- Key Metrics -->
+    <div class="grid grid-cols-2 gap-4">
+      <div class="bg-white rounded-2xl shadow p-4 flex flex-col items-center">
+        <div class="text-xs text-gray-500 mb-1">Total Users</div>
+        <div class="text-lg font-bold text-gray-900">12,340</div>
+      </div>
+      <div class="bg-white rounded-2xl shadow p-4 flex flex-col items-center">
+        <div class="text-xs text-gray-500 mb-1">Active Creators</div>
+        <div class="text-lg font-bold text-green-600">320</div>
+      </div>
+      <div class="bg-white rounded-2xl shadow p-4 flex flex-col items-center">
+        <div class="text-xs text-gray-500 mb-1">Total Tours</div>
+        <div class="text-lg font-bold text-gray-900">1,200</div>
+      </div>
+      <div class="bg-white rounded-2xl shadow p-4 flex flex-col items-center">
+        <div class="text-xs text-gray-500 mb-1">Revenue</div>
+        <div class="text-lg font-bold text-purple-600">$8,900</div>
+      </div>
     </div>
+    <!-- Trends (Interactive Charts) -->
+    <div class="bg-white rounded-2xl shadow p-6 flex flex-col gap-4">
+      <div class="font-bold text-gray-900 mb-2">Trends</div>
+      <div>
+        <div class="text-xs text-gray-500 mb-1">User Growth (Last 7 Days)</div>
+        <canvas id="userGrowthChart" height="80"></canvas>
+      </div>
+      <div>
+        <div class="text-xs text-gray-500 mb-1">Revenue (Last 7 Days)</div>
+        <canvas id="revenueChart" height="80"></canvas>
+      </div>
+      <div>
+        <div class="text-xs text-gray-500 mb-1">User Roles</div>
+        <canvas id="rolesChart" height="80"></canvas>
+      </div>
+    </div>
+    <!-- Recent Highlights -->
+    <div class="bg-white rounded-2xl shadow p-6 flex flex-col gap-2">
+      <div class="font-bold text-gray-900 mb-2">Recent Highlights</div>
+      <div class="text-xs text-gray-700">Top Tour: <span class="font-semibold">Paris Food Tour</span> (1,200 listens)</div>
+      <div class="text-xs text-gray-700">Top Creator: <span class="font-semibold">Alex Johnson</span></div>
+      <div class="text-xs text-gray-700">Recent 5-star review for <span class="font-semibold">Kyoto Walk</span></div>
+    </div>
+    <!-- Export Button -->
+    <button class="bg-blue-500 text-white rounded-lg px-4 py-2 text-sm font-semibold w-full">Export Data</button>
   </main>
+  <script>
+    // User Growth Line Chart
+    new Chart(document.getElementById('userGrowthChart'), {
+      type: 'line',
+      data: {
+        labels: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
+        datasets: [{
+          label: 'Users',
+          data: [1200, 1250, 1300, 1400, 1450, 1500, 1550],
+          borderColor: '#3b82f6',
+          backgroundColor: 'rgba(59,130,246,0.1)',
+          fill: true,
+          tension: 0.4,
+          pointRadius: 3
+        }]
+      },
+      options: {
+        plugins: { legend: { display: false } },
+        scales: { y: { beginAtZero: false } }
+      }
+    });
+
+    // Revenue Bar Chart
+    new Chart(document.getElementById('revenueChart'), {
+      type: 'bar',
+      data: {
+        labels: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
+        datasets: [{
+          label: 'Revenue',
+          data: [800, 900, 700, 1100, 950, 1200, 1250],
+          backgroundColor: '#a78bfa'
+        }]
+      },
+      options: {
+        plugins: { legend: { display: false } },
+        scales: { y: { beginAtZero: true } }
+      }
+    });
+
+    // User Roles Pie Chart
+    new Chart(document.getElementById('rolesChart'), {
+      type: 'doughnut',
+      data: {
+        labels: ['Users', 'Creators', 'Admins'],
+        datasets: [{
+          data: [11000, 1200, 140],
+          backgroundColor: ['#60a5fa', '#34d399', '#fbbf24']
+        }]
+      },
+      options: {
+        plugins: { legend: { position: 'bottom' } }
+      }
+    });
+  </script>
 </body>
 </html> 

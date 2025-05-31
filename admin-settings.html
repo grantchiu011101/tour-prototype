@@ -3,15 +3,46 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Admin System Settings</title>
+  <title>Admin: System Settings</title>
   <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
-<body class="bg-white min-h-screen flex flex-col justify-center items-center px-4">
-  <main class="flex flex-col items-center gap-4 w-full max-w-md">
-    <h1 class="text-2xl font-bold text-gray-900 text-center mt-8 mb-2">System Settings</h1>
-    <div class="text-base text-gray-500 text-center mb-4">Manage app-wide settings, feature toggles, and announcements.</div>
-    <div class="w-full flex flex-col gap-2">
-      <div class="bg-gray-50 rounded-lg p-4 text-center text-gray-700">[Settings Placeholder]</div>
+<body class="bg-gradient-to-b from-gray-100 to-white min-h-screen flex flex-col items-center px-4">
+  <main class="flex flex-col gap-6 w-full max-w-md mt-8 mb-8">
+    <!-- Platform Settings -->
+    <div class="bg-white rounded-2xl shadow p-6 flex flex-col gap-4">
+      <div class="font-bold text-gray-900 mb-2">Platform Settings</div>
+      <div class="flex items-center justify-between py-2">
+        <span class="text-sm text-gray-700">Maintenance Mode</span>
+        <a href="admin-maintenance.html" class="text-xs text-blue-500 bg-blue-50 rounded px-2 py-1 hover:underline">Manage</a>
+      </div>
+      <div class="flex items-center justify-between py-2">
+        <span class="text-sm text-gray-700">API Key</span>
+        <button class="text-xs text-blue-500 bg-blue-50 rounded px-2 py-1">View</button>
+      </div>
+      <div class="flex items-center justify-between py-2">
+        <span class="text-sm text-gray-700">App Version</span>
+        <span class="text-xs text-gray-500">v1.2.3</span>
+      </div>
+    </div>
+    <!-- Security -->
+    <div class="bg-white rounded-2xl shadow p-6 flex flex-col gap-4">
+      <div class="font-bold text-gray-900 mb-2">Security</div>
+      <div class="flex items-center justify-between py-2">
+        <span class="text-sm text-gray-700">Two-Factor Authentication</span>
+        <button class="text-xs text-blue-500 bg-blue-50 rounded px-2 py-1">Manage</button>
+      </div>
+      <div class="flex items-center justify-between py-2">
+        <span class="text-sm text-gray-700">Access Logs</span>
+        <button class="text-xs text-blue-500 bg-blue-50 rounded px-2 py-1">View</button>
+      </div>
+    </div>
+    <!-- Legal & Compliance -->
+    <div class="bg-white rounded-2xl shadow p-6 flex flex-col gap-4">
+      <div class="font-bold text-gray-900 mb-2">Legal & Compliance</div>
+      <a href="#" class="text-sm text-blue-500 hover:underline">Terms of Service</a>
+      <a href="#" class="text-sm text-blue-500 hover:underline">Privacy Policy</a>
+      <button class="text-xs text-gray-700 bg-gray-100 rounded px-2 py-1 w-max">Export Data</button>
     </div>
   </main>
 </body>

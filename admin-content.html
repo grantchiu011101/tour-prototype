@@ -3,15 +3,79 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Admin Content Management</title>
+  <title>Admin: Content Management</title>
   <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
-<body class="bg-white min-h-screen flex flex-col justify-center items-center px-4">
-  <main class="flex flex-col items-center gap-4 w-full max-w-md">
-    <h1 class="text-2xl font-bold text-gray-900 text-center mt-8 mb-2">Content Management</h1>
-    <div class="text-base text-gray-500 text-center mb-4">Approve, edit, or remove tours, attractions, and audio guides.</div>
-    <div class="w-full flex flex-col gap-2">
-      <div class="bg-gray-50 rounded-lg p-4 text-center text-gray-700">[Content List Placeholder]</div>
+<body class="bg-gradient-to-b from-gray-100 to-white min-h-screen flex flex-col items-center px-4">
+  <main class="flex flex-col gap-6 w-full max-w-md mt-8 mb-8">
+    <!-- Quick Stats -->
+    <div class="grid grid-cols-3 gap-4">
+      <div class="bg-white rounded-2xl shadow p-4 flex flex-col items-center">
+        <div class="text-xs text-gray-500 mb-1">Total Tours</div>
+        <div class="text-lg font-bold text-gray-900">1,200</div>
+      </div>
+      <div class="bg-white rounded-2xl shadow p-4 flex flex-col items-center">
+        <div class="text-xs text-gray-500 mb-1">Pending</div>
+        <div class="text-lg font-bold text-yellow-500">8</div>
+      </div>
+      <div class="bg-white rounded-2xl shadow p-4 flex flex-col items-center">
+        <div class="text-xs text-gray-500 mb-1">Flagged</div>
+        <div class="text-lg font-bold text-red-500">3</div>
+      </div>
+    </div>
+    <!-- Search & Filter -->
+    <div class="flex gap-2">
+      <input type="text" placeholder="Search tours..." class="flex-1 rounded-lg border border-gray-200 px-3 py-2 text-sm focus:outline-none" />
+      <button class="bg-gray-100 text-gray-700 rounded-lg px-3 py-2 text-sm"><i class="fas fa-filter"></i></button>
+    </div>
+    <!-- Tour List -->
+    <div class="bg-white rounded-2xl shadow p-4 flex flex-col gap-3">
+      <div class="font-semibold text-gray-900 mb-2">Tours</div>
+      <!-- Tour Card -->
+      <div class="flex items-center justify-between py-2 border-b border-gray-100 last:border-b-0">
+        <div class="flex flex-col gap-1 flex-1">
+          <div class="font-medium text-gray-900">Paris Food Tour</div>
+          <div class="text-xs text-gray-500">by Alex Johnson</div>
+          <div class="text-xs text-yellow-500 font-semibold">Pending</div>
+        </div>
+        <div class="flex flex-col items-end gap-1">
+          <div class="flex gap-1">
+            <button class="text-xs text-green-600 hover:text-green-800" title="Approve"><i class="fas fa-check-circle"></i></button>
+            <button class="text-xs text-red-500 hover:text-red-700" title="Reject"><i class="fas fa-times-circle"></i></button>
+            <button class="text-xs text-yellow-500 hover:text-yellow-700" title="Flag"><i class="fas fa-flag"></i></button>
+            <button class="text-xs text-gray-400 hover:text-red-500" title="Delete"><i class="fas fa-trash"></i></button>
+          </div>
+        </div>
+      </div>
+      <!-- More tour cards... -->
+      <div class="flex items-center justify-between py-2 border-b border-gray-100 last:border-b-0">
+        <div class="flex flex-col gap-1 flex-1">
+          <div class="font-medium text-gray-900">Kyoto Walk</div>
+          <div class="text-xs text-gray-500">by Emma Lee</div>
+          <div class="text-xs text-green-600 font-semibold">Approved</div>
+        </div>
+        <div class="flex flex-col items-end gap-1">
+          <div class="flex gap-1">
+            <button class="text-xs text-yellow-500 hover:text-yellow-700" title="Flag"><i class="fas fa-flag"></i></button>
+            <button class="text-xs text-gray-400 hover:text-red-500" title="Delete"><i class="fas fa-trash"></i></button>
+          </div>
+        </div>
+      </div>
+      <div class="flex items-center justify-between py-2 border-b border-gray-100 last:border-b-0">
+        <div class="flex flex-col gap-1 flex-1">
+          <div class="font-medium text-gray-900">Old Town</div>
+          <div class="text-xs text-gray-500">by Noah Smith</div>
+          <div class="text-xs text-red-500 font-semibold">Flagged</div>
+        </div>
+        <div class="flex flex-col items-end gap-1">
+          <div class="flex gap-1">
+            <button class="text-xs text-green-600 hover:text-green-800" title="Approve"><i class="fas fa-check-circle"></i></button>
+            <button class="text-xs text-red-500 hover:text-red-700" title="Reject"><i class="fas fa-times-circle"></i></button>
+            <button class="text-xs text-gray-400 hover:text-red-500" title="Delete"><i class="fas fa-trash"></i></button>
+          </div>
+        </div>
+      </div>
     </div>
   </main>
 </body>
