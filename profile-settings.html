@@ -13,16 +13,6 @@
     <div class="bg-white rounded-t-2xl shadow-lg w-full max-w-md mx-auto p-6 flex flex-col gap-6 animate-slide-up">
       <!-- Drag Handle -->
       <div class="w-12 h-1.5 bg-gray-200 rounded-full mx-auto mb-2"></div>
-      <!-- Profile Card -->
-      <div class="flex flex-col items-center gap-2 relative">
-        <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Avatar" class="h-20 w-20 rounded-full border-4 border-blue-400 shadow mb-2" />
-        <button onclick="alert('Edit Profile')" class="absolute top-2 right-2 bg-blue-600 text-white rounded-full p-2 shadow hover:bg-blue-700 transition flex items-center justify-center" style="width:32px; height:32px;">
-          <i class="fas fa-pen"></i>
-        </button>
-        <div class="text-xl font-bold text-gray-900 mt-2">Alex Johnson</div>
-        <div class="text-sm text-gray-500 mb-1">Travel storyteller</div>
-        <div class="flex items-center gap-1 text-xs text-gray-400 mb-2"><i class="fas fa-map-marker-alt"></i> Paris, France</div>
-      </div>
       <!-- Quick Links -->
       <div class="flex justify-around w-full mb-2">
         <a href="my-favorites.html" class="flex flex-col items-center text-blue-600 hover:text-blue-800">
@@ -44,8 +34,59 @@
         <span class="text-sm text-blue-700 font-semibold">Premium Member</span>
         <a href="paywall.html" class="text-xs text-blue-500 underline ml-2">Manage</a>
       </div>
-      <!-- Support & Legal -->
-      <div class="flex flex-col gap-1">
+      <!-- Profile Card -->
+      <div class="bg-white rounded-2xl shadow p-6 flex flex-col items-center gap-2 mb-2 relative">
+        <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Avatar" class="h-24 w-24 rounded-full border-4 border-blue-400 shadow mb-2" />
+        <button onclick="alert('Edit Profile')" class="absolute top-4 right-4 bg-blue-600 text-white rounded-full p-2 shadow hover:bg-blue-700 transition flex items-center justify-center" style="width:36px; height:36px;">
+          <i class="fas fa-pen"></i>
+        </button>
+        <div class="text-2xl font-bold text-gray-900 mt-2">Alex Johnson</div>
+        <div class="text-sm text-gray-500 mb-1">Travel storyteller</div>
+        <div class="flex items-center gap-1 text-xs text-gray-400 mb-2"><i class="fas fa-map-marker-alt"></i> Paris, France</div>
+      </div>
+      <button class="bg-blue-600 text-white rounded-lg px-5 py-2 font-semibold shadow hover:bg-blue-700 transition text-sm w-full">Edit Profile</button>
+      <!-- Account Info Card -->
+      <div class="bg-white rounded-2xl shadow p-5 flex flex-col gap-2">
+        <div class="text-xs font-semibold text-gray-400 uppercase mb-1 tracking-wide">Account</div>
+        <div class="flex items-center gap-2 text-sm text-gray-700"><i class="fas fa-envelope text-gray-400"></i> alex.j***@email.com</div>
+        <div class="flex items-center gap-2 text-xs text-blue-600 font-semibold"><i class="fas fa-certificate"></i> Verified Creator</div>
+        <div class="flex gap-4 mt-2">
+          <a href="#" class="text-gray-400 hover:text-blue-400 text-xl" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+          <a href="#" class="text-gray-400 hover:text-blue-400 text-xl" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+          <a href="#" class="text-gray-400 hover:text-blue-400 text-xl" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+          <a href="#" class="text-gray-400 hover:text-blue-400 text-xl" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+          <a href="#" class="text-gray-400 hover:text-blue-400 text-xl" aria-label="Threads"><i class="fa-brands fa-threads"></i></a>
+          <a href="#" class="text-gray-400 hover:text-blue-400 text-xl" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+        </div>
+      </div>
+      <!-- Settings Card -->
+      <div class="bg-white rounded-2xl shadow p-5 flex flex-col gap-2">
+        <div class="text-xs font-semibold text-gray-400 uppercase mb-1 tracking-wide">Settings</div>
+        <div class="flex items-center justify-between py-2">
+          <span class="text-sm text-gray-700">Notifications</span>
+          <label class="inline-flex items-center cursor-pointer">
+            <input type="checkbox" checked class="accent-blue-600 h-5 w-5 rounded-full transition" />
+          </label>
+        </div>
+        <div class="flex items-center justify-between py-2">
+          <span class="text-sm text-gray-700">Language</span>
+          <a href="creator-settings-language.html" class="text-sm text-blue-600 hover:underline">English <i class="fas fa-chevron-right ml-1"></i></a>
+        </div>
+        <div class="flex items-center justify-between py-2">
+          <span class="text-sm text-gray-700">Theme</span>
+          <label class="inline-flex items-center cursor-pointer">
+            <input type="checkbox" class="accent-blue-600 h-5 w-5 rounded-full transition" />
+            <span class="ml-2 text-xs text-gray-500">Dark</span>
+          </label>
+        </div>
+        <div class="flex items-center justify-between py-2">
+          <span class="text-sm text-gray-700">Change Password</span>
+          <a href="#" class="text-sm text-blue-600 hover:underline">Edit</a>
+        </div>
+      </div>
+      <!-- Support & Legal Card -->
+      <div class="bg-white rounded-2xl shadow p-5 flex flex-col gap-1">
+        <div class="text-xs font-semibold text-gray-400 uppercase mb-1 tracking-wide">Support & Legal</div>
         <a href="#" class="flex items-center gap-2 py-2 text-sm text-blue-600 hover:underline"><i class="fas fa-question-circle"></i> Help Center / FAQ</a>
         <a href="#" class="flex items-center gap-2 py-2 text-sm text-blue-600 hover:underline"><i class="fas fa-envelope"></i> Contact Support</a>
         <a href="#" class="flex items-center gap-2 py-2 text-sm text-blue-600 hover:underline"><i class="fas fa-file-contract"></i> Terms of Service</a>
