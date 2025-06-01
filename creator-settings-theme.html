@@ -7,8 +7,15 @@
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
-<body class="bg-gradient-to-b from-gray-100 to-white min-h-screen flex flex-col items-center px-4">
-  <main class="flex flex-col gap-6 w-full max-w-md mt-8 mb-8">
+<body class="bg-gray-50 min-h-screen flex flex-col">
+  <nav class="flex items-center justify-between px-4 py-3 bg-white shadow-sm sticky top-0 z-10 border-b border-gray-100 mb-2">
+    <button onclick="window.history.back()" aria-label="Back" class="text-gray-400 hover:text-blue-500 text-xl focus:outline-none">
+      <i class="fas fa-arrow-left"></i>
+    </button>
+    <span class="font-bold text-lg text-blue-500 tracking-wide">Theme Settings</span>
+    <span></span>
+  </nav>
+  <main class="flex-1 flex flex-col px-4 pt-8 pb-24 max-w-md mx-auto w-full">
     <div class="bg-white rounded-2xl shadow p-6 flex flex-col gap-4">
       <div class="text-lg font-bold text-gray-900 mb-2 text-center">Theme Settings</div>
       <div class="flex flex-col divide-y divide-gray-100">
