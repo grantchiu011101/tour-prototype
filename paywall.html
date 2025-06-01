@@ -6,27 +6,47 @@
   <title>Unlock Premium</title>
   <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body class="relative min-h-screen flex flex-col overflow-hidden">
+<body class="bg-gray-950 min-h-screen flex flex-col justify-center items-center px-4 overflow-hidden">
   <!-- Blurred Background Image -->
   <div class="absolute inset-0 w-full h-full z-0">
     <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=800&q=80" alt="Background" class="w-full h-full object-cover object-center blur-xl scale-105" />
-    <div class="absolute inset-0 bg-black bg-opacity-40"></div>
+    <div class="absolute inset-0 bg-gray-950 bg-opacity-80"></div>
   </div>
-  <button onclick="window.history.back()" aria-label="Close" class="absolute top-4 right-4 text-gray-200 hover:text-blue-200 text-2xl focus:outline-none z-20"><i class="fas fa-times"></i></button>
-  <main class="relative z-10 flex-1 flex flex-col justify-center items-center px-4 w-full gap-6">
-    <h1 class="text-2xl font-bold text-white text-center mb-2 drop-shadow">Unlock Premium</h1>
-    <div class="text-base text-gray-100 text-center mb-4 drop-shadow">Unlimited access to all tours, offline listening, and an ad-free experience.</div>
-    <ul class="text-base text-white/90 mb-4 w-full max-w-md mx-auto list-disc list-inside drop-shadow">
-      <li>Unlimited tours & guides</li>
-      <li>Download for offline</li>
-      <li>Ad-free experience</li>
-      <li>Early access to new content</li>
+  <button onclick="window.history.back()" aria-label="Close" class="absolute top-4 right-4 text-gray-400 hover:text-blue-400 text-2xl focus:outline-none z-10"><i class="fas fa-times"></i></button>
+  <main class="relative z-10 flex flex-col items-center w-full max-w-sm mx-auto gap-8 py-12">
+    <h1 class="text-2xl font-semibold text-white text-center mb-2"><span id="dynamicHeadline">Unlock Premium</span></h1>
+    <div class="text-base text-gray-300 text-center mb-4">Unlimited tours. Offline listening. No ads.</div>
+    <ul class="flex flex-col gap-2 w-full mb-4">
+      <li class="flex items-center gap-2 text-gray-200 text-sm"><span class="text-lg">&#8226;</span> Unlimited access</li>
+      <li class="flex items-center gap-2 text-gray-200 text-sm"><span class="text-lg">&#8226;</span> Download for offline</li>
+      <li class="flex items-center gap-2 text-gray-200 text-sm"><span class="text-lg">&#8226;</span> Ad-free experience</li>
     </ul>
-    <button class="bg-blue-500 bg-opacity-90 text-white rounded-lg py-3 w-full max-w-md font-semibold text-lg hover:bg-blue-600 transition drop-shadow">Go Premium: $7.99/month</button>
-    <div class="text-xs text-gray-200 text-center w-full max-w-md">or</div>
-    <button class="bg-white/80 text-blue-600 rounded-lg py-3 w-full max-w-md font-semibold text-lg hover:bg-blue-100 transition drop-shadow">One-Time Unlock: $2.99</button>
-    <div class="text-xs text-gray-200 text-center w-full max-w-md mt-2">Cancel anytime. No hidden fees.</div>
+    <div class="flex items-center justify-center gap-1 text-xs text-gray-400 mb-2">
+      <span class="text-yellow-400"><i class="fas fa-star"></i></span>
+      <span>Trusted by 10,000+ travelers</span>
+    </div>
+    <button class="bg-blue-600 text-white rounded-lg py-3 w-full font-semibold text-lg hover:bg-blue-500 transition mb-2">Unlock All Features &mdash; $7.99/month</button>
+    <button class="bg-gray-800 text-gray-100 rounded-lg py-3 w-full font-semibold text-lg hover:bg-gray-700 transition">One-Time Unlock &mdash; $2.99</button>
+    <div class="text-xs text-gray-400 text-center w-full mt-8 flex flex-col items-center gap-2">
+      <div class="flex items-center justify-center gap-2 mb-1">
+        <span class="text-green-400"><i class="fas fa-lock"></i></span>
+        <span class="text-gray-400">Secured by Stripe</span>
+        <!-- Visa Icon (Iconduck) -->
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 16" class="h-4 inline" fill="none"><rect width="48" height="16" rx="2" fill="#fff"/><text x="8" y="12" font-size="10" font-family="Arial, sans-serif" fill="#1A1F71">VISA</text></svg>
+        <!-- MasterCard Icon (Iconduck) -->
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 16" class="h-4 inline" fill="none"><rect x="0" y="0" width="16" height="16" rx="8" fill="#EB001B"/><rect x="16" y="0" width="16" height="16" rx="8" fill="#F79E1B"/><circle cx="16" cy="8" r="8" fill="#FF5F00" fill-opacity=".7"/></svg>
+      </div>
+      Cancel anytime. No hidden fees.
+    </div>
   </main>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/js/all.min.js"></script>
+  <script>
+    // Example: personalize headline based on context or user
+    // This can be extended to use user data or recent activity
+    const headline = document.getElementById('dynamicHeadline');
+    // Example: set a dynamic message
+    headline.textContent = 'Unlock Premium for your next adventure!';
+    // To personalize, replace the above with logic using user/session data
+  </script>
 </body>
 </html> 

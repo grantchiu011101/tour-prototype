@@ -48,7 +48,9 @@
     </div>
     <!-- Engagement & Navigation -->
     <div class="flex justify-center gap-4 mt-4 mb-2">
-      <button class="flex items-center gap-1 text-pink-200 text-base font-medium bg-pink-900 bg-opacity-40 px-3 py-1 rounded-full" aria-label="Add to Favorites"><i class="fas fa-heart"></i> Favorite</button>
+      <button id="favoriteBtn" class="flex items-center gap-1 text-pink-200 text-base font-medium bg-pink-900 bg-opacity-40 px-3 py-1 rounded-full transition" aria-label="Add to Favorites" onclick="toggleFavorite()">
+        <i id="favoriteIcon" class="far fa-heart"></i> <span id="favoriteText">Favorite</span>
+      </button>
       <button class="flex items-center gap-1 text-blue-200 text-base font-medium bg-blue-900 bg-opacity-40 px-3 py-1 rounded-full" aria-label="Show Transcript"><i class="fas fa-align-left"></i> Transcript</button>
     </div>
     <div class="flex justify-between mt-2">
@@ -56,6 +58,28 @@
       <button class="text-gray-200 text-sm flex items-center gap-1" aria-label="Next Segment">Next <i class="fas fa-step-forward"></i></button>
     </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/js/all.min.js"></script>
+    <script>
+      let isFavorited = false;
+      function toggleFavorite() {
+        isFavorited = !isFavorited;
+        const btn = document.getElementById('favoriteBtn');
+        const icon = document.getElementById('favoriteIcon');
+        const text = document.getElementById('favoriteText');
+        if (isFavorited) {
+          btn.classList.remove('bg-pink-900','bg-opacity-40','text-pink-200');
+          btn.classList.add('bg-pink-600','text-white');
+          icon.classList.remove('far');
+          icon.classList.add('fas');
+          text.textContent = 'Favorited';
+        } else {
+          btn.classList.add('bg-pink-900','bg-opacity-40','text-pink-200');
+          btn.classList.remove('bg-pink-600','text-white');
+          icon.classList.remove('fas');
+          icon.classList.add('far');
+          text.textContent = 'Favorite';
+        }
+      }
+    </script>
   </main>
 </body>
 </html> 
