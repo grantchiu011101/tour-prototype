@@ -3,11 +3,10 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Submission Step 1: Tour Info & Location</title>
+  <title>Create Tour - Step 1</title>
   <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body class="bg-white min-h-screen flex flex-col justify-center items-center px-4">
-  <!-- Top Navbar -->
   <nav class="w-full flex items-center justify-between px-4 py-3 bg-white shadow-sm sticky top-0 z-10 border-b border-gray-100">
     <button onclick="window.history.back()" aria-label="Back" class="text-gray-400 hover:text-blue-600 text-xl focus:outline-none">
       <i class="fas fa-arrow-left"></i>
@@ -15,151 +14,117 @@
     <span class="font-bold text-lg text-blue-600 tracking-wide mx-auto">Create Tour</span>
     <span class="w-8"></span>
   </nav>
-  <main class="flex flex-col gap-6 w-full max-w-md mt-8">
-    <h1 class="text-xl font-bold text-gray-900 text-center mb-2">Step 1: Tour Info & Location</h1>
-    <form class="flex flex-col gap-4">
-      <div>
-        <label class="block text-gray-700 font-medium mb-1">Tour Title</label>
-        <input type="text" class="form-input w-full" placeholder="Enter tour title" required />
-      </div>
-      <div>
-        <label class="block text-gray-700 font-medium mb-1">Short Description</label>
-        <textarea class="form-input w-full" rows="2" maxlength="140" placeholder="Briefly describe your tour (max 140 chars)" required></textarea>
-      </div>
-      <div>
-        <label class="block text-gray-700 font-medium mb-1">Tour Start Location</label>
-        <button type="button" class="bg-blue-50 text-blue-600 rounded-lg px-4 py-2 font-semibold text-sm hover:bg-blue-100 transition mb-2">Detect My Location</button>
-        <div class="bg-gray-50 rounded-lg p-3 flex items-center gap-2 mb-2">
-          <i class="fas fa-map-marker-alt text-blue-500"></i>
-          <span class="text-gray-600 text-sm">123 Main St, Paris, France</span>
+  <main class="flex flex-col gap-4 w-full max-w-md mt-6 mb-6">
+    <!-- Language/Translation Info Banner -->
+    <div class="flex items-center gap-2 bg-blue-50 border border-blue-100 rounded-lg px-3 py-2 mb-4">
+      <span class="text-blue-400 text-lg"><i class="fas fa-globe"></i></span>
+      <div class="text-sm text-blue-900">Write and record in any language. <span class="font-semibold">We'll translate your content and audio for travelers worldwide.</span></div>
+    </div>
+    <!-- Tour Info Card -->
+    <div class="bg-gray-50 rounded-xl p-4 flex flex-col gap-3 shadow-sm">
+      <input type="text" class="form-input w-full" placeholder="Tour Title" required />
+      <textarea class="form-input w-full" rows="2" maxlength="140" placeholder="Short Description (max 140 chars)" required></textarea>
+    </div>
+    <!-- Location Card -->
+    <div class="bg-gray-50 rounded-xl p-4 flex flex-col gap-3 shadow-sm">
+      <button type="button" class="bg-blue-50 text-blue-600 rounded-lg px-4 py-2 font-semibold text-sm hover:bg-blue-100 transition">Detect My Location</button>
+      <input type="text" class="form-input w-full" placeholder="Tour Start Location" />
+    </div>
+    <!-- Images Card -->
+    <div class="bg-gray-50 rounded-xl p-4 flex flex-col gap-2 shadow-sm">
+      <div class="grid grid-cols-3 gap-2">
+        <!-- Example: 2 uploaded images, 3 empty slots (show max 5, collapse rest) -->
+        <div class="relative group aspect-square w-full">
+          <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=200&q=80" class="absolute inset-0 w-full h-full object-cover rounded-lg border border-gray-200" />
+          <button type="button" class="absolute top-1 right-1 bg-white bg-opacity-80 rounded-full p-1 text-gray-400 hover:text-red-500 transition"><i class="fas fa-times"></i></button>
         </div>
-        <input type="text" class="form-input w-full" placeholder="Or enter location manually" />
+        <div class="relative group aspect-square w-full">
+          <img src="https://images.unsplash.com/photo-1465101046530-73398c7f28ca?auto=format&fit=crop&w=200&q=80" class="absolute inset-0 w-full h-full object-cover rounded-lg border border-gray-200" />
+          <button type="button" class="absolute top-1 right-1 bg-white bg-opacity-80 rounded-full p-1 text-gray-400 hover:text-red-500 transition"><i class="fas fa-times"></i></button>
+        </div>
+        <div class="aspect-square w-full flex items-center justify-center bg-gray-100 rounded-lg border border-dashed border-gray-300 cursor-pointer hover:bg-blue-50 transition">
+          <label class="w-full h-full flex items-center justify-center cursor-pointer">
+            <input type="file" accept="image/*" class="hidden" />
+            <span class="flex items-center justify-center w-full h-full">
+              <i class="fas fa-plus text-blue-500 text-3xl"></i>
+            </span>
+          </label>
+        </div>
+        <div class="aspect-square w-full flex items-center justify-center bg-gray-100 rounded-lg border border-dashed border-gray-300 cursor-pointer hover:bg-blue-50 transition">
+          <label class="w-full h-full flex items-center justify-center cursor-pointer">
+            <input type="file" accept="image/*" class="hidden" />
+            <span class="flex items-center justify-center w-full h-full">
+              <i class="fas fa-plus text-blue-500 text-3xl"></i>
+            </span>
+          </label>
+        </div>
+        <div class="aspect-square w-full flex items-center justify-center bg-gray-100 rounded-lg border border-dashed border-gray-300 cursor-pointer hover:bg-blue-50 transition">
+          <label class="w-full h-full flex items-center justify-center cursor-pointer">
+            <input type="file" accept="image/*" class="hidden" />
+            <span class="flex items-center justify-center w-full h-full">
+              <i class="fas fa-plus text-blue-500 text-3xl"></i>
+            </span>
+          </label>
+        </div>
       </div>
-      <div>
-        <label class="block text-gray-700 font-medium mb-1">Tour Images</label>
-        <div class="grid grid-cols-3 gap-2 mb-2">
-          <!-- Example: 2 uploaded images, 7 empty slots -->
-          <div class="relative group aspect-square w-full">
-            <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=200&q=80" class="absolute inset-0 w-full h-full object-cover rounded-lg border border-gray-200" />
-            <button type="button" class="absolute top-1 right-1 bg-white bg-opacity-80 rounded-full p-1 text-gray-400 hover:text-red-500 transition opacity-0 group-hover:opacity-100"><i class="fas fa-times"></i></button>
+      <!-- Show more images if needed -->
+    </div>
+    <!-- Steps Card -->
+    <div class="bg-gray-50 rounded-xl p-4 flex flex-col gap-2 shadow-sm">
+      <div class="flex flex-col gap-2">
+        <div class="flex items-center bg-white rounded-lg px-3 py-2 gap-3 shadow-sm">
+          <span class="flex items-center justify-center h-7 w-7 rounded-full bg-blue-50 text-blue-600 font-bold text-xs mr-1">1</span>
+          <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=80&q=80" alt="Step 1" class="h-12 w-12 object-cover rounded-md border border-gray-200" />
+          <div class="flex-1 min-w-0">
+            <div class="text-gray-900 font-medium truncate">Eiffel Tower</div>
+            <div class="text-xs text-gray-500 flex items-center gap-1"><i class="fas fa-headphones-alt"></i> 02:15</div>
           </div>
-          <div class="relative group aspect-square w-full">
-            <img src="https://images.unsplash.com/photo-1465101046530-73398c7f28ca?auto=format&fit=crop&w=200&q=80" class="absolute inset-0 w-full h-full object-cover rounded-lg border border-gray-200" />
-            <button type="button" class="absolute top-1 right-1 bg-white bg-opacity-80 rounded-full p-1 text-gray-400 hover:text-red-500 transition opacity-0 group-hover:opacity-100"><i class="fas fa-times"></i></button>
-          </div>
-          <!-- 7 empty slots -->
-          <div class="aspect-square w-full flex items-center justify-center bg-gray-100 rounded-lg border border-dashed border-gray-300 cursor-pointer hover:bg-blue-50 transition">
-            <label class="w-full h-full flex items-center justify-center cursor-pointer">
-              <input type="file" accept="image/*" class="hidden" />
-              <span class="flex items-center justify-center w-full h-full">
-                <i class="fas fa-plus text-blue-500 text-3xl"></i>
-              </span>
-            </label>
-          </div>
-          <div class="aspect-square w-full flex items-center justify-center bg-gray-100 rounded-lg border border-dashed border-gray-300 cursor-pointer hover:bg-blue-50 transition">
-            <label class="w-full h-full flex items-center justify-center cursor-pointer">
-              <input type="file" accept="image/*" class="hidden" />
-              <span class="flex items-center justify-center w-full h-full">
-                <i class="fas fa-plus text-blue-500 text-3xl"></i>
-              </span>
-            </label>
-          </div>
-          <div class="aspect-square w-full flex items-center justify-center bg-gray-100 rounded-lg border border-dashed border-gray-300 cursor-pointer hover:bg-blue-50 transition">
-            <label class="w-full h-full flex items-center justify-center cursor-pointer">
-              <input type="file" accept="image/*" class="hidden" />
-              <span class="flex items-center justify-center w-full h-full">
-                <i class="fas fa-plus text-blue-500 text-3xl"></i>
-              </span>
-            </label>
-          </div>
-          <div class="aspect-square w-full flex items-center justify-center bg-gray-100 rounded-lg border border-dashed border-gray-300 cursor-pointer hover:bg-blue-50 transition">
-            <label class="w-full h-full flex items-center justify-center cursor-pointer">
-              <input type="file" accept="image/*" class="hidden" />
-              <span class="flex items-center justify-center w-full h-full">
-                <i class="fas fa-plus text-blue-500 text-3xl"></i>
-              </span>
-            </label>
-          </div>
-          <div class="aspect-square w-full flex items-center justify-center bg-gray-100 rounded-lg border border-dashed border-gray-300 cursor-pointer hover:bg-blue-50 transition">
-            <label class="w-full h-full flex items-center justify-center cursor-pointer">
-              <input type="file" accept="image/*" class="hidden" />
-              <span class="flex items-center justify-center w-full h-full">
-                <i class="fas fa-plus text-blue-500 text-3xl"></i>
-              </span>
-            </label>
-          </div>
-          <div class="aspect-square w-full flex items-center justify-center bg-gray-100 rounded-lg border border-dashed border-gray-300 cursor-pointer hover:bg-blue-50 transition">
-            <label class="w-full h-full flex items-center justify-center cursor-pointer">
-              <input type="file" accept="image/*" class="hidden" />
-              <span class="flex items-center justify-center w-full h-full">
-                <i class="fas fa-plus text-blue-500 text-3xl"></i>
-              </span>
-            </label>
+          <div class="flex gap-2">
+            <button type="button" class="text-blue-500 hover:text-blue-700"><i class="fas fa-pen"></i></button>
+            <button type="button" class="text-red-400 hover:text-red-600"><i class="fas fa-trash"></i></button>
           </div>
         </div>
-        <div class="text-xs text-gray-400">Add up to 9 images. First image will be used as the cover.</div>
-      </div>
-      <div>
-        <label class="block text-gray-700 font-medium mb-1 mt-4">Tour Steps</label>
-        <div class="flex flex-col gap-2 mb-2">
-          <!-- Example step list, replace with dynamic JS in real app -->
-          <div class="flex items-center bg-gray-50 rounded-lg px-3 py-2 gap-3">
-            <span class="flex items-center justify-center h-7 w-7 rounded-full bg-blue-50 text-blue-600 font-bold text-xs mr-1">1</span>
-            <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=80&q=80" alt="Step 1" class="h-12 w-12 object-cover rounded-md border border-gray-200" />
-            <div class="flex-1 min-w-0">
-              <div class="text-gray-900 font-medium truncate">Eiffel Tower</div>
-              <div class="text-xs text-gray-500 flex items-center gap-1"><i class="fas fa-headphones-alt"></i> 02:15</div>
-            </div>
-            <div class="flex gap-2">
-              <button type="button" class="text-blue-500 hover:text-blue-700"><i class="fas fa-pen"></i></button>
-              <button type="button" class="text-red-400 hover:text-red-600"><i class="fas fa-trash"></i></button>
-            </div>
+        <div class="flex items-center bg-white rounded-lg px-3 py-2 gap-3 shadow-sm">
+          <span class="flex items-center justify-center h-7 w-7 rounded-full bg-blue-50 text-blue-600 font-bold text-xs mr-1">2</span>
+          <img src="https://images.unsplash.com/photo-1465101046530-73398c7f28ca?auto=format&fit=crop&w=80&q=80" alt="Step 2" class="h-12 w-12 object-cover rounded-md border border-gray-200" />
+          <div class="flex-1 min-w-0">
+            <div class="text-gray-900 font-medium truncate">Louvre Museum</div>
+            <div class="text-xs text-gray-500 flex items-center gap-1"><i class="fas fa-headphones-alt"></i> 01:42</div>
           </div>
-          <div class="flex items-center bg-gray-50 rounded-lg px-3 py-2 gap-3">
-            <span class="flex items-center justify-center h-7 w-7 rounded-full bg-blue-50 text-blue-600 font-bold text-xs mr-1">2</span>
-            <img src="https://images.unsplash.com/photo-1465101046530-73398c7f28ca?auto=format&fit=crop&w=80&q=80" alt="Step 2" class="h-12 w-12 object-cover rounded-md border border-gray-200" />
-            <div class="flex-1 min-w-0">
-              <div class="text-gray-900 font-medium truncate">Louvre Museum</div>
-              <div class="text-xs text-gray-500 flex items-center gap-1"><i class="fas fa-headphones-alt"></i> 01:42</div>
-            </div>
-            <div class="flex gap-2">
-              <button type="button" class="text-blue-500 hover:text-blue-700"><i class="fas fa-pen"></i></button>
-              <button type="button" class="text-red-400 hover:text-red-600"><i class="fas fa-trash"></i></button>
-            </div>
+          <div class="flex gap-2">
+            <button type="button" class="text-blue-500 hover:text-blue-700"><i class="fas fa-pen"></i></button>
+            <button type="button" class="text-red-400 hover:text-red-600"><i class="fas fa-trash"></i></button>
           </div>
-          <!-- Add more steps as needed -->
         </div>
-        <button type="button" class="bg-blue-50 text-blue-600 rounded-lg px-4 py-2 font-semibold text-sm hover:bg-blue-100 transition w-full flex items-center justify-center gap-2"><i class="fas fa-plus"></i> Add Step</button>
       </div>
-      <div class="mt-4">
-        <label class="block text-gray-700 font-medium mb-1">Tour Price</label>
-        <div class="flex gap-2 flex-wrap mb-2">
-          <button type="button" class="price-btn bg-blue-50 text-blue-600 rounded-lg px-4 py-2 font-semibold text-sm border border-blue-200 focus:bg-blue-600 focus:text-white">Free</button>
-          <button type="button" class="price-btn bg-blue-50 text-blue-600 rounded-lg px-4 py-2 font-semibold text-sm border border-blue-200">$0.99</button>
-          <button type="button" class="price-btn bg-blue-50 text-blue-600 rounded-lg px-4 py-2 font-semibold text-sm border border-blue-200">$1.99</button>
-          <button type="button" class="price-btn bg-blue-50 text-blue-600 rounded-lg px-4 py-2 font-semibold text-sm border border-blue-200">$2.99</button>
-          <button type="button" class="price-btn bg-blue-50 text-blue-600 rounded-lg px-4 py-2 font-semibold text-sm border border-blue-200">$4.99</button>
-          <button type="button" class="price-btn bg-blue-50 text-blue-600 rounded-lg px-4 py-2 font-semibold text-sm border border-blue-200">Custom</button>
-        </div>
-        <!-- Example: Show custom price input if 'Custom' is selected (JS needed in real app) -->
-        <input type="number" min="0.5" step="0.01" placeholder="Enter custom price" class="form-input w-full mt-2 hidden" id="customPriceInput" />
-        <script>
-          // Minimal JS for demo: highlight selected price and show custom input
-          document.querySelectorAll('.price-btn').forEach(btn => {
-            btn.addEventListener('click', function() {
-              document.querySelectorAll('.price-btn').forEach(b => b.classList.remove('bg-blue-600', 'text-white', 'focus:bg-blue-600', 'focus:text-white'));
-              this.classList.add('bg-blue-600', 'text-white');
-              if (this.textContent.trim() === 'Custom') {
-                document.getElementById('customPriceInput').classList.remove('hidden');
-              } else {
-                document.getElementById('customPriceInput').classList.add('hidden');
-              }
-            });
+      <button type="button" class="bg-blue-50 text-blue-600 rounded-lg px-4 py-2 font-semibold text-sm hover:bg-blue-100 transition w-full flex items-center justify-center gap-2"><i class="fas fa-plus"></i> Add Step</button>
+    </div>
+    <!-- Price Card -->
+    <div class="bg-gray-50 rounded-xl p-4 flex flex-col gap-2 shadow-sm">
+      <div class="flex gap-2 flex-wrap mb-2">
+        <button type="button" class="price-btn bg-blue-50 text-blue-600 rounded-lg px-4 py-2 font-semibold text-sm border border-blue-200 focus:bg-blue-600 focus:text-white">Free</button>
+        <button type="button" class="price-btn bg-blue-50 text-blue-600 rounded-lg px-4 py-2 font-semibold text-sm border border-blue-200">$0.99</button>
+        <button type="button" class="price-btn bg-blue-50 text-blue-600 rounded-lg px-4 py-2 font-semibold text-sm border border-blue-200">$1.99</button>
+        <button type="button" class="price-btn bg-blue-50 text-blue-600 rounded-lg px-4 py-2 font-semibold text-sm border border-blue-200">$2.99</button>
+        <button type="button" class="price-btn bg-blue-50 text-blue-600 rounded-lg px-4 py-2 font-semibold text-sm border border-blue-200">$4.99</button>
+        <button type="button" class="price-btn bg-blue-50 text-blue-600 rounded-lg px-4 py-2 font-semibold text-sm border border-blue-200">Custom</button>
+      </div>
+      <input type="number" min="0.5" step="0.01" placeholder="Enter custom price" class="form-input w-full mt-2 hidden" id="customPriceInput" />
+      <script>
+        document.querySelectorAll('.price-btn').forEach(btn => {
+          btn.addEventListener('click', function() {
+            document.querySelectorAll('.price-btn').forEach(b => b.classList.remove('bg-blue-600', 'text-white', 'focus:bg-blue-600', 'focus:text-white'));
+            this.classList.add('bg-blue-600', 'text-white');
+            if (this.textContent.trim() === 'Custom') {
+              document.getElementById('customPriceInput').classList.remove('hidden');
+            } else {
+              document.getElementById('customPriceInput').classList.add('hidden');
+            }
           });
-        </script>
-      </div>
-      <button type="button" class="bg-blue-600 text-white rounded-lg py-3 w-full font-semibold text-lg hover:bg-blue-700 transition mt-2">Next</button>
-    </form>
+        });
+      </script>
+    </div>
+    <button type="button" class="bg-blue-600 text-white rounded-lg py-3 w-full font-semibold text-lg hover:bg-blue-700 transition mt-2">Next</button>
   </main>
 </body>
 </html> 
