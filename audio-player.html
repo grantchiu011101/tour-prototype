@@ -19,10 +19,33 @@
       <div class="font-semibold text-base text-white truncate">Eiffel Tower</div>
       <button class="text-blue-200 text-xl" aria-label="Share"><i class="fas fa-share-alt"></i></button>
     </div>
-    <!-- Attraction Image -->
-    <div class="flex justify-center mb-4">
-      <img src="https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?auto=format&fit=crop&w=400&q=80" alt="Eiffel Tower" class="w-40 h-40 object-cover rounded-xl shadow" />
+    <!-- Image Carousel -->
+    <div class="relative w-40 h-40 mx-auto mb-4">
+      <div id="carousel" class="overflow-hidden rounded-xl">
+        <div id="carouselInner" class="flex transition-transform duration-300" style="transform: translateX(0);">
+          <img src="https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?auto=format&fit=crop&w=400&q=80" alt="Eiffel Tower 1" class="w-40 h-40 aspect-square object-cover flex-shrink-0" />
+          <img src="https://images.unsplash.com/photo-1465101046530-73398c7f28ca?auto=format&fit=crop&w=400&q=80" alt="Eiffel Tower 2" class="w-40 h-40 aspect-square object-cover flex-shrink-0" />
+          <img src="https://images.unsplash.com/photo-1467269204594-9661b134dd2b?auto=format&fit=crop&w=400&q=80" alt="Eiffel Tower 3" class="w-40 h-40 aspect-square object-cover flex-shrink-0" />
+          <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=400&q=80" alt="Eiffel Tower 4" class="w-40 h-40 aspect-square object-cover flex-shrink-0" />
+          <img src="https://images.unsplash.com/photo-1519125323398-675f0ddb6308?auto=format&fit=crop&w=400&q=80" alt="Eiffel Tower 5" class="w-40 h-40 aspect-square object-cover flex-shrink-0" />
+        </div>
+      </div>
+      <!-- Left Arrow -->
+      <button id="carouselPrev" class="absolute left-0 top-1/2 -translate-y-1/2 bg-white bg-opacity-70 rounded-full p-2 shadow text-gray-700 hover:bg-opacity-100 hidden md:block" aria-label="Previous image"><i class="fas fa-chevron-left"></i></button>
+      <!-- Right Arrow -->
+      <button id="carouselNext" class="absolute right-0 top-1/2 -translate-y-1/2 bg-white bg-opacity-70 rounded-full p-2 shadow text-gray-700 hover:bg-opacity-100 hidden md:block" aria-label="Next image"><i class="fas fa-chevron-right"></i></button>
+      <!-- Dots & Counter -->
+      <div class="absolute bottom-2 left-1/2 -translate-x-1/2 flex items-center gap-2 bg-black bg-opacity-30 px-3 py-1 rounded-full">
+        <div id="carouselDots" class="flex gap-1">
+          <span class="w-2 h-2 rounded-full bg-white opacity-80"></span>
+          <span class="w-2 h-2 rounded-full bg-white opacity-40"></span>
+          <span class="w-2 h-2 rounded-full bg-white opacity-40"></span>
+          <span class="w-2 h-2 rounded-full bg-white opacity-40"></span>
+          <span class="w-2 h-2 rounded-full bg-white opacity-40"></span>
+        </div>
+      </div>
     </div>
+    <!-- End Image Carousel -->
     <!-- Location & Description -->
     <div class="text-center mb-2 text-gray-200 text-sm">Paris, France</div>
     <div class="text-center mb-4 text-gray-300 text-xs">The Eiffel Tower is a global cultural icon of France and one of the most recognizable structures in the world.</div>
@@ -79,6 +102,43 @@
           text.textContent = 'Favorite';
         }
       }
+      // Carousel logic
+      const images = document.querySelectorAll('#carouselInner img');
+      const carouselInner = document.getElementById('carouselInner');
+      const prevBtn = document.getElementById('carouselPrev');
+      const nextBtn = document.getElementById('carouselNext');
+      const dots = document.getElementById('carouselDots').children;
+      let current = 0;
+      function updateCarousel() {
+        carouselInner.style.transform = `translateX(-${current * 100}%)`;
+        for (let i = 0; i < dots.length; i++) {
+          dots[i].style.opacity = i === current ? '0.8' : '0.4';
+        }
+      }
+      if (nextBtn && prevBtn) {
+        nextBtn.onclick = () => { if (current < images.length - 1) { current++; updateCarousel(); } };
+        prevBtn.onclick = () => { if (current > 0) { current--; updateCarousel(); } };
+      }
+      for (let i = 0; i < dots.length; i++) {
+        dots[i].onclick = () => { current = i; updateCarousel(); };
+      }
+      // Swipe support
+      let startX = 0;
+      let isDown = false;
+      const carousel = document.getElementById('carousel');
+      carousel.addEventListener('touchstart', e => { isDown = true; startX = e.touches[0].clientX; });
+      carousel.addEventListener('touchend', e => { isDown = false; });
+      carousel.addEventListener('touchmove', e => {
+        if (!isDown) return;
+        let diff = e.touches[0].clientX - startX;
+        if (Math.abs(diff) > 50) {
+          if (diff < 0 && current < images.length - 1) { current++; updateCarousel(); }
+          if (diff > 0 && current > 0) { current--; updateCarousel(); }
+          isDown = false;
+        }
+      });
+      updateCarousel();
+      // End carousel logic
     </script>
   </main>
 </body>
