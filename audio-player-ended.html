@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Audio Player - Ended</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body class="relative min-h-screen flex flex-col">
+  <div class="fixed inset-0 z-0">
+    <img src="https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?auto=format&fit=crop&w=800&q=80" alt="Eiffel Tower Background" class="w-full h-full object-cover blur-xl scale-110" />
+    <div class="absolute inset-0 bg-black bg-opacity-40"></div>
+  </div>
+  <main class="relative z-10 flex-1 flex flex-col px-4 pt-4 pb-24 max-w-md mx-auto w-full">
+    <div class="flex items-center justify-between mb-4">
+      <button class="text-gray-100 text-xl" aria-label="Back"><i class="fas fa-arrow-left"></i></button>
+      <div class="font-semibold text-base text-white truncate">Eiffel Tower</div>
+      <button class="text-blue-200 text-xl" aria-label="Share"><i class="fas fa-share-alt"></i></button>
+    </div>
+    <div class="flex justify-center mb-4">
+      <img src="https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?auto=format&fit=crop&w=400&q=80" alt="Eiffel Tower" class="w-40 h-40 object-cover rounded-xl shadow" />
+    </div>
+    <div class="text-center mb-2 text-gray-200 text-sm">Paris, France</div>
+    <div class="text-center mb-4 text-gray-300 text-xs">The Eiffel Tower is a global cultural icon of France and one of the most recognizable structures in the world.</div>
+    <div class="flex flex-col items-center gap-3 mb-2">
+      <div class="w-full flex items-center gap-2">
+        <span class="text-xs text-gray-300">5:00</span>
+        <input type="range" min="0" max="300" value="300" class="flex-1 accent-blue-400 h-1" />
+        <span class="text-xs text-gray-300">5:00</span>
+      </div>
+      <div class="flex items-center justify-center gap-6 mt-2">
+        <button class="text-gray-100 text-2xl" aria-label="Rewind 15 seconds" disabled><i class="fas fa-undo-alt opacity-40"></i></button>
+        <button class="bg-blue-500 text-white rounded-full w-16 h-16 flex items-center justify-center text-3xl shadow-lg animate-bounce" aria-label="Replay"><i class="fas fa-redo"></i></button>
+        <button class="text-gray-100 text-2xl" aria-label="Forward 15 seconds" disabled><i class="fas fa-redo-alt opacity-40"></i></button>
+      </div>
+      <div class="flex items-center gap-2 mt-2">
+        <span class="text-xs text-gray-200">Speed</span>
+        <button class="text-blue-200 text-sm font-semibold bg-blue-900 bg-opacity-40 rounded px-2 py-1">1x</button>
+      </div>
+    </div>
+    <div class="flex justify-center gap-4 mt-4 mb-2">
+      <button class="flex items-center gap-1 text-pink-200 text-base font-medium bg-pink-900 bg-opacity-40 px-3 py-1 rounded-full transition" aria-label="Add to Favorites">
+        <i class="far fa-heart"></i> <span>Favorite</span>
+      </button>
+      <button class="flex items-center gap-1 text-blue-200 text-base font-medium bg-blue-900 bg-opacity-40 px-3 py-1 rounded-full" aria-label="Show Transcript"><i class="fas fa-align-left"></i> Transcript</button>
+    </div>
+    <div class="flex justify-between mt-2">
+      <button class="text-gray-200 text-sm flex items-center gap-1 opacity-40" aria-label="Previous Segment" disabled><i class="fas fa-step-backward"></i> Prev</button>
+      <button class="text-gray-200 text-sm flex items-center gap-1 opacity-40" aria-label="Next Segment" disabled>Next <i class="fas fa-step-forward"></i></button>
+    </div>
+    <div class="flex justify-center mt-6">
+      <span class="text-orange-200 text-base font-semibold"><i class="fas fa-flag-checkered mr-2"></i>Audio Finished</span>
+    </div>
+  </main>
+</body>
+</html> 

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Audio Player - Mini Player</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body class="relative min-h-screen flex flex-col bg-gray-100">
+  <div class="fixed inset-0 z-0">
+    <img src="https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?auto=format&fit=crop&w=800&q=80" alt="Eiffel Tower Background" class="w-full h-full object-cover blur-xl scale-110" />
+    <div class="absolute inset-0 bg-black bg-opacity-40"></div>
+  </div>
+  <main class="relative z-10 flex-1 flex flex-col px-4 pt-4 pb-24 max-w-md mx-auto w-full">
+    <div class="flex-1"></div>
+    <!-- Mini Player Bar -->
+    <div class="fixed bottom-0 left-1/2 -translate-x-1/2 w-full max-w-md z-50">
+      <div class="bg-white bg-opacity-90 rounded-t-xl shadow-lg flex items-center px-4 py-2 gap-3">
+        <img src="https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?auto=format&fit=crop&w=80&q=80" alt="Eiffel Tower" class="w-12 h-12 object-cover rounded-lg" />
+        <div class="flex-1 min-w-0">
+          <div class="text-gray-900 text-sm font-semibold truncate">Eiffel Tower</div>
+          <div class="text-gray-500 text-xs truncate">Paris, France</div>
+        </div>
+        <button class="text-gray-700 text-xl mx-2" aria-label="Rewind 15 seconds"><i class="fas fa-undo-alt"></i></button>
+        <button class="bg-blue-500 text-white rounded-full w-10 h-10 flex items-center justify-center text-lg shadow-lg" aria-label="Pause"><i class="fas fa-pause"></i></button>
+        <button class="text-gray-700 text-xl mx-2" aria-label="Forward 15 seconds"><i class="fas fa-redo-alt"></i></button>
+      </div>
+    </div>
+  </main>
+</body>
+</html> 
