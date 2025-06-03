@@ -389,6 +389,83 @@
         <div class="fixed-header title" style="text-align:center; font-weight:600; font-size:1.1rem; margin-bottom:2px;">Maintenance Mode</div>
         <iframe src="admin-maintenance.html" class="screen" style="height: 844px; width: 390px; border: none; border-radius: 12px; box-shadow: 0 5px 15px rgba(0,0,0,0.1);"></iframe>
       </div>
+      <!-- AUDIO PLAYER STATES SECTION HEADER -->
+      <div style="grid-column: 1 / -1; width: 100%; display: flex; flex-direction: column; align-items: flex-start; margin-bottom: 8px; margin-top: 32px;">
+        <h2 style="font-size:1.2rem; font-weight:700; color:#222; margin-bottom:4px; letter-spacing:0.01em;">Audio Player States</h2>
+        <hr style="width:100%; border: none; border-top: 1.5px solid #e5e7eb; margin-bottom: 24px;">
+      </div>
+      <!-- Audio Player: Loading -->
+      <div style="display: flex; flex-direction: column; align-items: center;">
+        <div class="fixed-header title" style="text-align:center; font-weight:600; font-size:1.1rem; margin-bottom:2px;">Audio Player: Loading</div>
+        <div style="text-align:center; color:#6b7280; font-size:0.92rem; margin-bottom:8px;">Shows a spinner and loading message while audio is being prepared.</div>
+        <iframe src="audio-player-loading.html" class="screen" style="height: 844px; width: 390px; border: none; border-radius: 12px; box-shadow: 0 5px 15px rgba(0,0,0,0.1);"></iframe>
+      </div>
+      <!-- Audio Player: Buffering -->
+      <div style="display: flex; flex-direction: column; align-items: center;">
+        <div class="fixed-header title" style="text-align:center; font-weight:600; font-size:1.1rem; margin-bottom:2px;">Audio Player: Buffering</div>
+        <div style="text-align:center; color:#6b7280; font-size:0.92rem; margin-bottom:8px;">Indicates temporary buffering during playback.</div>
+        <iframe src="audio-player-buffering.html" class="screen" style="height: 844px; width: 390px; border: none; border-radius: 12px; box-shadow: 0 5px 15px rgba(0,0,0,0.1);"></iframe>
+      </div>
+      <!-- Audio Player: Idle -->
+      <div style="display: flex; flex-direction: column; align-items: center;">
+        <div class="fixed-header title" style="text-align:center; font-weight:600; font-size:1.1rem; margin-bottom:2px;">Audio Player: Idle</div>
+        <div style="text-align:center; color:#6b7280; font-size:0.92rem; margin-bottom:8px;">No audio selected, prompts user to browse guides.</div>
+        <iframe src="audio-player-idle.html" class="screen" style="height: 844px; width: 390px; border: none; border-radius: 12px; box-shadow: 0 5px 15px rgba(0,0,0,0.1);"></iframe>
+      </div>
+      <!-- Audio Player: Paused -->
+      <div style="display: flex; flex-direction: column; align-items: center;">
+        <div class="fixed-header title" style="text-align:center; font-weight:600; font-size:1.1rem; margin-bottom:2px;">Audio Player: Paused</div>
+        <div style="text-align:center; color:#6b7280; font-size:0.92rem; margin-bottom:8px;">Audio is loaded but not playing, shows play button and paused indicator.</div>
+        <iframe src="audio-player-paused.html" class="screen" style="height: 844px; width: 390px; border: none; border-radius: 12px; box-shadow: 0 5px 15px rgba(0,0,0,0.1);"></iframe>
+      </div>
+      <!-- Audio Player: Playing -->
+      <div style="display: flex; flex-direction: column; align-items: center;">
+        <div class="fixed-header title" style="text-align:center; font-weight:600; font-size:1.1rem; margin-bottom:2px;">Audio Player: Playing</div>
+        <div style="text-align:center; color:#6b7280; font-size:0.92rem; margin-bottom:8px;">Audio is actively playing, shows pause button and playing indicator.</div>
+        <iframe src="audio-player-playing.html" class="screen" style="height: 844px; width: 390px; border: none; border-radius: 12px; box-shadow: 0 5px 15px rgba(0,0,0,0.1);"></iframe>
+      </div>
+      <!-- Audio Player: Ended -->
+      <div style="display: flex; flex-direction: column; align-items: center;">
+        <div class="fixed-header title" style="text-align:center; font-weight:600; font-size:1.1rem; margin-bottom:2px;">Audio Player: Ended</div>
+        <div style="text-align:center; color:#6b7280; font-size:0.92rem; margin-bottom:8px;">Audio has finished, shows replay option.</div>
+        <iframe src="audio-player-ended.html" class="screen" style="height: 844px; width: 390px; border: none; border-radius: 12px; box-shadow: 0 5px 15px rgba(0,0,0,0.1);"></iframe>
+      </div>
+      <!-- Audio Player: Error -->
+      <div style="display: flex; flex-direction: column; align-items: center;">
+        <div class="fixed-header title" style="text-align:center; font-weight:600; font-size:1.1rem; margin-bottom:2px;">Audio Player: Error</div>
+        <div style="text-align:center; color:#6b7280; font-size:0.92rem; margin-bottom:8px;">Shows an error message if playback fails.</div>
+        <iframe src="audio-player-error.html" class="screen" style="height: 844px; width: 390px; border: none; border-radius: 12px; box-shadow: 0 5px 15px rgba(0,0,0,0.1);"></iframe>
+      </div>
+      <!-- Audio Player: Offline -->
+      <div style="display: flex; flex-direction: column; align-items: center;">
+        <div class="fixed-header title" style="text-align:center; font-weight:600; font-size:1.1rem; margin-bottom:2px;">Audio Player: Offline</div>
+        <div style="text-align:center; color:#6b7280; font-size:0.92rem; margin-bottom:8px;">Audio is unavailable offline, prompts user to reconnect.</div>
+        <iframe src="audio-player-offline.html" class="screen" style="height: 844px; width: 390px; border: none; border-radius: 12px; box-shadow: 0 5px 15px rgba(0,0,0,0.1);"></iframe>
+      </div>
+      <!-- Audio Player: Favorited -->
+      <div style="display: flex; flex-direction: column; align-items: center;">
+        <div class="fixed-header title" style="text-align:center; font-weight:600; font-size:1.1rem; margin-bottom:2px;">Audio Player: Favorited</div>
+        <div style="text-align:center; color:#6b7280; font-size:0.92rem; margin-bottom:8px;">Shows the favorite button as active and the guide is marked as favorited.</div>
+        <iframe src="audio-player-favorited.html" class="screen" style="height: 844px; width: 390px; border: none; border-radius: 12px; box-shadow: 0 5px 15px rgba(0,0,0,0.1);"></iframe>
+      </div>
+      <!-- Audio Player: Transcript Open -->
+      <div style="display: flex; flex-direction: column; align-items: center;">
+        <div class="fixed-header title" style="text-align:center; font-weight:600; font-size:1.1rem; margin-bottom:2px;">Audio Player: Transcript Open</div>
+        <div style="text-align:center; color:#6b7280; font-size:0.92rem; margin-bottom:8px;">Transcript panel is open below the controls for reading along.</div>
+        <iframe src="audio-player-transcript.html" class="screen" style="height: 844px; width: 390px; border: none; border-radius: 12px; box-shadow: 0 5px 15px rgba(0,0,0,0.1);"></iframe>
+      </div>
+      <!-- Audio Player: Playback Speed Menu -->
+      <div style="display: flex; flex-direction: column; align-items: center;">
+        <div class="fixed-header title" style="text-align:center; font-weight:600; font-size:1.1rem; margin-bottom:2px;">Audio Player: Playback Speed Menu</div>
+        <div style="text-align:center; color:#6b7280; font-size:0.92rem; margin-bottom:8px;">Shows a modal with playback speed options.</div>
+        <iframe src="audio-player-speed.html" class="screen" style="height: 844px; width: 390px; border: none; border-radius: 12px; box-shadow: 0 5px 15px rgba(0,0,0,0.1);"></iframe>
+      </div>
+      <!-- Audio Player: Mini Player -->
+      <div style="display: flex; flex-direction: column; align-items: center;">
+        <div class="fixed-header title" style="text-align:center; font-weight:600; font-size:1.1rem; margin-bottom:2px;">Audio Player: Mini Player</div>
+        <div style="text-align:center; color:#6b7280; font-size:0.92rem; margin-bottom:8px;">Compact player bar for quick access while browsing the app.</div>
+        <iframe src="audio-player-mini.html" class="screen" style="height: 120px; width: 390px; border: none; border-radius: 12px; box-shadow: 0 5px 15px rgba(0,0,0,0.1);"></iframe>
+      </div>
     </div>
 
 </body>

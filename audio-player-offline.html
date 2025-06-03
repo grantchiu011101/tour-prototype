@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Audio Player - Offline</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body class="relative min-h-screen flex flex-col">
+  <div class="fixed inset-0 z-0">
+    <img src="https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?auto=format&fit=crop&w=800&q=80" alt="Eiffel Tower Background" class="w-full h-full object-cover blur-xl scale-110" />
+    <div class="absolute inset-0 bg-black bg-opacity-40"></div>
+  </div>
+  <main class="relative z-10 flex-1 flex flex-col items-center justify-center px-4 max-w-md mx-auto w-full">
+    <!-- Top Back Button -->
+    <div class="absolute left-0 top-0 mt-6 ml-4">
+      <a href="#" onclick="window.history.back(); return false;" class="text-gray-200 text-2xl" aria-label="Back"><i class="fas fa-arrow-left"></i></a>
+    </div>
+    <div class="flex flex-col items-center justify-center w-full max-w-xs py-8">
+      <i class="fas fa-wifi-slash text-gray-200 text-4xl mb-6" aria-hidden="true"></i>
+      <div class="text-white text-base font-semibold mb-2" role="alert">You're offline</div>
+      <div class="text-gray-300 text-sm mb-6 text-center">Connect to the internet to listen to this guide.</div>
+      <button class="bg-blue-500 text-white px-6 py-2 rounded-full font-semibold shadow w-full mb-3" aria-label="Retry connection">Retry</button>
+    </div>
+  </main>
+</body>
+</html> 

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Audio Player - Transcript Open</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body class="relative min-h-screen flex flex-col">
+  <div class="fixed inset-0 z-0">
+    <img src="https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?auto=format&fit=crop&w=800&q=80" alt="Eiffel Tower Background" class="w-full h-full object-cover blur-xl scale-110" />
+    <div class="absolute inset-0 bg-black bg-opacity-40"></div>
+  </div>
+  <main class="relative z-10 flex-1 flex flex-col px-4 pt-6 pb-8 max-w-md mx-auto w-full">
+    <div class="flex items-center gap-2 mb-4">
+      <button class="text-gray-500 text-2xl" aria-label="Back"><i class="fas fa-arrow-left"></i></button>
+      <div class="font-semibold text-lg text-gray-900 flex-1 text-center">Transcript</div>
+      <span class="w-8"></span>
+    </div>
+    <div class="bg-white rounded-xl shadow p-4 mb-6 flex-1 overflow-y-auto min-h-[220px]">
+      <div class="text-gray-900 text-base font-semibold mb-2 flex items-center"><i class="fas fa-align-left mr-2 text-blue-400"></i>Transcript</div>
+      <div class="text-gray-700 text-lg leading-relaxed">
+        Welcome to the Eiffel Tower audio guide. Rising above the Paris skyline, the Eiffel Tower is a marvel of engineering and a symbol of romance.
+        <span class="bg-blue-100 text-blue-800 px-1 rounded">You are now standing at the base of the tower...</span>
+      </div>
+    </div>
+    <div class="flex flex-col items-center gap-4 mt-auto">
+      <div class="w-full flex items-center gap-2">
+        <span class="text-xs text-gray-400">1:23</span>
+        <input type="range" min="0" max="300" value="83" class="flex-1 accent-blue-400 h-1" />
+        <span class="text-xs text-gray-400">5:00</span>
+      </div>
+      <button class="bg-blue-500 text-white rounded-full w-16 h-16 flex items-center justify-center text-3xl shadow hover:bg-blue-600 transition" aria-label="Pause"><i class="fas fa-pause"></i></button>
+    </div>
+  </main>
+</body>
+</html> 

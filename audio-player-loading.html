@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Audio Player - Loading</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="relative min-h-screen flex flex-col">
+  <!-- Blurred Background Image -->
+  <div class="fixed inset-0 z-0">
+    <img src="https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?auto=format&fit=crop&w=800&q=80" alt="Eiffel Tower Background" class="w-full h-full object-cover blur-xl scale-110" />
+    <div class="absolute inset-0 bg-black bg-opacity-40"></div>
+  </div>
+  <main class="relative z-10 flex-1 flex flex-col px-4 pt-4 pb-24 max-w-md mx-auto w-full items-center justify-center">
+    <!-- Loading Spinner -->
+    <div class="flex flex-col items-center justify-center h-full">
+      <div class="animate-spin rounded-full h-16 w-16 border-t-4 border-b-4 border-blue-400 mb-6"></div>
+      <div class="text-white text-lg font-semibold mb-2">Loading audio guide...</div>
+      <div class="text-gray-300 text-sm">Please wait while we prepare your experience.</div>
+    </div>
+  </main>
+</body>
+</html> 
