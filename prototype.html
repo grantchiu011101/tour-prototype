@@ -352,6 +352,47 @@
         <div class="fixed-header title" style="text-align:center; font-weight:600; font-size:1.1rem; margin-bottom:2px;">Creator Notifications</div>
         <iframe src="creator-notifications.html" class="screen" style="height: 844px; width: 390px; border: none; border-radius: 12px; box-shadow: 0 5px 15px rgba(0,0,0,0.1);"></iframe>
       </div>
+      <!-- CREATOR AUDIO RECORDING STATES SECTION HEADER -->
+      <div style="grid-column: 1 / -1; width: 100%; display: flex; flex-direction: column; align-items: flex-start; margin-bottom: 8px; margin-top: 32px;">
+        <h2 style="font-size:1.2rem; font-weight:700; color:#222; margin-bottom:4px; letter-spacing:0.01em;">Creator Audio Recording States</h2>
+        <hr style="width:100%; border: none; border-top: 1.5px solid #e5e7eb; margin-bottom: 24px;">
+      </div>
+      <!-- Idle State -->
+      <div style="display: flex; flex-direction: column; align-items: center;">
+        <div class="fixed-header title" style="text-align:center; font-weight:600; font-size:1.1rem; margin-bottom:2px;">Idle</div>
+        <div style="text-align:center; color:#6b7280; font-size:0.92rem; margin-bottom:8px;">Ready to record. Mic button is active, timer at 00:00, other controls disabled.</div>
+        <iframe src="creator-recording-idle.html" class="screen" style="height: 844px; width: 390px; border: none; border-radius: 12px; box-shadow: 0 5px 15px rgba(0,0,0,0.1);"></iframe>
+      </div>
+      <!-- Recording State -->
+      <div style="display: flex; flex-direction: column; align-items: center;">
+        <div class="fixed-header title" style="text-align:center; font-weight:600; font-size:1.1rem; margin-bottom:2px;">Recording</div>
+        <div style="text-align:center; color:#6b7280; font-size:0.92rem; margin-bottom:8px;">Audio is being captured. Timer runs, waveform animates, pause and stop enabled.</div>
+        <iframe src="creator-recording-recording.html" class="screen" style="height: 844px; width: 390px; border: none; border-radius: 12px; box-shadow: 0 5px 15px rgba(0,0,0,0.1);"></iframe>
+      </div>
+      <!-- Paused State -->
+      <div style="display: flex; flex-direction: column; align-items: center;">
+        <div class="fixed-header title" style="text-align:center; font-weight:600; font-size:1.1rem; margin-bottom:2px;">Paused</div>
+        <div style="text-align:center; color:#6b7280; font-size:0.92rem; margin-bottom:8px;">Recording is paused. Timer stopped, resume and stop enabled.</div>
+        <iframe src="creator-recording-paused.html" class="screen" style="height: 844px; width: 390px; border: none; border-radius: 12px; box-shadow: 0 5px 15px rgba(0,0,0,0.1);"></iframe>
+      </div>
+      <!-- Preview State -->
+      <div style="display: flex; flex-direction: column; align-items: center;">
+        <div class="fixed-header title" style="text-align:center; font-weight:600; font-size:1.1rem; margin-bottom:2px;">Preview</div>
+        <div style="text-align:center; color:#6b7280; font-size:0.92rem; margin-bottom:8px;">Listen to the recorded audio. Play, delete, or save the recording.</div>
+        <iframe src="creator-recording-preview.html" class="screen" style="height: 844px; width: 390px; border: none; border-radius: 12px; box-shadow: 0 5px 15px rgba(0,0,0,0.1);"></iframe>
+      </div>
+      <!-- Saving State -->
+      <div style="display: flex; flex-direction: column; align-items: center;">
+        <div class="fixed-header title" style="text-align:center; font-weight:600; font-size:1.1rem; margin-bottom:2px;">Saving</div>
+        <div style="text-align:center; color:#6b7280; font-size:0.92rem; margin-bottom:8px;">Audio is being saved or processed. Controls are disabled.</div>
+        <iframe src="creator-recording-saving.html" class="screen" style="height: 844px; width: 390px; border: none; border-radius: 12px; box-shadow: 0 5px 15px rgba(0,0,0,0.1);"></iframe>
+      </div>
+      <!-- Error State -->
+      <div style="display: flex; flex-direction: column; align-items: center;">
+        <div class="fixed-header title" style="text-align:center; font-weight:600; font-size:1.1rem; margin-bottom:2px;">Error</div>
+        <div style="text-align:center; color:#6b7280; font-size:0.92rem; margin-bottom:8px;">An error occurred. User can retry recording.</div>
+        <iframe src="creator-recording-error.html" class="screen" style="height: 844px; width: 390px; border: none; border-radius: 12px; box-shadow: 0 5px 15px rgba(0,0,0,0.1);"></iframe>
+      </div>
       <!-- ADMIN SECTION HEADER -->
       <div style="grid-column: 1 / -1; width: 100%; display: flex; flex-direction: column; align-items: flex-start; margin-bottom: 8px; margin-top: 32px;">
         <h2 style="font-size:1.2rem; font-weight:700; color:#222; margin-bottom:4px; letter-spacing:0.01em;">Admin</h2>

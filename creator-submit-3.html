@@ -6,37 +6,44 @@
   <title>Submission Step 3: Stops & Details</title>
   <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body class="bg-white min-h-screen flex flex-col justify-between items-center px-4 min-h-screen">
-  <!-- Top Navbar -->
-  <nav class="w-full max-w-md mx-auto flex items-center justify-between py-4 px-2 bg-white border-b border-gray-100 fixed top-0 left-1/2 -translate-x-1/2 z-10">
-    <button type="button" onclick="window.history.back()" class="text-blue-500 text-2xl px-2"><i class="fas fa-arrow-left"></i></button>
-    <span class="text-base font-bold text-gray-900">Sound Recorder</span>
-    <button type="button" class="text-gray-400 text-xl"><i class="fas fa-cog"></i></button>
-  </nav>
-  <main class="flex flex-col items-center justify-center w-full max-w-md flex-1 mt-24 mb-32">
-    <div class="text-4xl font-mono tracking-widest text-gray-900 mb-2">00:01:07</div>
-    <div class="text-sm text-gray-400 mb-4">Recording...</div>
-    <!-- Waveform placeholder -->
+<body class="bg-white min-h-screen flex flex-col items-center px-4">
+  <!-- Minimal Header -->
+  <header class="w-full flex justify-center pt-8 pb-2">
+    <h1 class="text-lg font-semibold text-gray-900">Record Audio</h1>
+  </header>
+  <main class="flex flex-col items-center justify-center w-full max-w-md flex-1 mt-24 mb-24">
+    <div class="text-4xl font-mono tracking-widest text-gray-900 mb-3">00:01:07</div>
+    <div class="flex items-center gap-2 mb-6">
+      <span class="inline-block w-2 h-2 rounded-full bg-red-500 animate-pulse"></span>
+      <span class="text-sm text-gray-500">Recording</span>
+    </div>
+    <!-- Minimal Waveform -->
     <div class="w-full flex justify-center mb-2">
-      <svg width="220" height="40" viewBox="0 0 220 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <polyline points="0,20 20,18 40,22 60,15 80,25 100,18 120,22 140,15 160,25 180,18 200,22 220,20" stroke="#60A5FA" stroke-width="3" fill="none" stroke-linecap="round"/>
+      <svg width="180" height="32" viewBox="0 0 180 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <polyline points="0,16 20,14 40,18 60,11 80,21 100,14 120,18 140,11 160,21 180,16" stroke="#60A5FA" stroke-width="2" fill="none" stroke-linecap="round"/>
       </svg>
     </div>
   </main>
-  <!-- Bottom Controls -->
-  <div class="fixed bottom-0 left-1/2 -translate-x-1/2 w-full max-w-md bg-white pb-8 flex items-center justify-center gap-10 z-10">
-    <button type="button" class="flex flex-col items-center">
-      <span class="bg-red-500 rounded-full w-12 h-12 flex items-center justify-center text-white text-2xl shadow"><i class="fas fa-stop"></i></span>
-      <span class="text-xs text-gray-500 mt-1">End</span>
-    </button>
-    <button type="button" class="flex flex-col items-center">
-      <span class="bg-gray-900 rounded-full w-16 h-16 flex items-center justify-center text-white text-3xl shadow"><i class="fas fa-pause"></i></span>
-      <span class="text-xs text-gray-500 mt-1">Pause</span>
-    </button>
-    <button type="button" class="flex flex-col items-center">
-      <span class="bg-gray-100 rounded-full w-12 h-12 flex items-center justify-center text-gray-700 text-2xl shadow"><i class="fas fa-list"></i></span>
-      <span class="text-xs text-gray-500 mt-1">Records</span>
-    </button>
+  <!-- Minimal Controls -->
+  <div class="fixed bottom-0 left-1/2 -translate-x-1/2 w-full max-w-md bg-white pb-8 flex items-center justify-center gap-12 z-10">
+    <button type="button" aria-label="End Recording" class="flex items-center justify-center bg-red-500 rounded-full w-12 h-12 text-white text-2xl focus:outline-none"><i class="fas fa-stop"></i></button>
+    <button type="button" aria-label="Pause Recording" class="flex items-center justify-center bg-gray-200 rounded-full w-12 h-12 text-gray-700 text-2xl focus:outline-none"><i class="fas fa-pause"></i></button>
+    <button type="button" aria-label="Preview Recording" id="previewBtn" disabled class="flex items-center justify-center bg-blue-500 rounded-full w-12 h-12 text-white text-2xl opacity-50 focus:outline-none"><i class="fas fa-play"></i></button>
   </div>
+  <script>
+    // Minimal confirmation for discard (optional, can be removed for pure minimalism)
+    // function confirmDiscard() {
+    //   if (confirm('Discard recording?')) window.history.back();
+    // }
+  </script>
+  <style>
+    .animate-pulse {
+      animation: pulse 1s infinite;
+    }
+    @keyframes pulse {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.3; }
+    }
+  </style>
 </body>
 </html> 
