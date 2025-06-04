@@ -66,6 +66,14 @@
         </div>
       </div>
       <textarea class="form-input w-full mt-2 rounded-xl border-gray-200 focus:ring-blue-200" rows="3" maxlength="500" placeholder="Write your feedback (optional)"></textarea>
+      <!-- Image Upload Grid -->
+      <div class="flex flex-col gap-2">
+        <label class="block text-gray-700 font-medium mb-1">Add Photos (optional, max 6)</label>
+        <div id="review-image-grid" class="grid grid-cols-3 gap-2">
+          <!-- JS will render image previews and upload slots here -->
+        </div>
+        <small class="text-xs text-gray-400">Please only upload photos you took yourself. Max 6 images, 5MB each.</small>
+      </div>
       <button type="submit" class="sticky bottom-4 bg-blue-500 text-white rounded-xl py-3 w-full font-semibold text-lg hover:bg-blue-600 transition mt-2 shadow">Submit</button>
     </form>
   </main>
@@ -86,6 +94,67 @@
         });
       });
     });
+
+    // Image upload grid logic (max 6 images)
+    const maxImages = 6;
+    let images = [
+      'https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=200&q=80',
+      'https://images.unsplash.com/photo-1465101046530-73398c7f28ca?auto=format&fit=crop&w=200&q=80'
+    ];
+    const grid = document.getElementById('review-image-grid');
+
+    function renderGrid() {
+      grid.innerHTML = '';
+      images.forEach((img, idx) => {
+        const wrapper = document.createElement('div');
+        wrapper.className = 'relative group aspect-square w-full';
+        const image = document.createElement('img');
+        image.src = img;
+        image.className = 'absolute inset-0 w-full h-full object-cover rounded-lg border border-gray-200';
+        const removeBtn = document.createElement('button');
+        removeBtn.type = 'button';
+        removeBtn.className = 'absolute top-1 right-1 bg-white bg-opacity-80 rounded-full w-7 h-7 flex items-center justify-center text-gray-400 hover:text-red-500 transition';
+        removeBtn.innerHTML = '<i class="fas fa-times text-xl"></i>';
+        removeBtn.onclick = () => {
+          images.splice(idx, 1);
+          renderGrid();
+        };
+        wrapper.appendChild(image);
+        wrapper.appendChild(removeBtn);
+        grid.appendChild(wrapper);
+      });
+      for (let i = images.length; i < maxImages; i++) {
+        const slot = document.createElement('div');
+        slot.className = 'aspect-square w-full flex items-center justify-center bg-gray-100 rounded-lg border border-dashed border-gray-300 cursor-pointer hover:bg-blue-50 transition';
+        const label = document.createElement('label');
+        label.className = 'w-full h-full flex items-center justify-center cursor-pointer';
+        const input = document.createElement('input');
+        input.type = 'file';
+        input.accept = 'image/*';
+        input.className = 'hidden';
+        input.onchange = (e) => {
+          const file = e.target.files[0];
+          if (file && file.size <= 5 * 1024 * 1024) {
+            const reader = new FileReader();
+            reader.onload = (ev) => {
+              images.push(ev.target.result);
+              renderGrid();
+            };
+            reader.readAsDataURL(file);
+          } else {
+            alert('Image must be less than 5MB.');
+          }
+        };
+        const plus = document.createElement('span');
+        plus.className = 'flex items-center justify-center w-full h-full';
+        plus.innerHTML = '<i class="fas fa-plus text-gray-400 text-3xl"></i>';
+        label.appendChild(input);
+        label.appendChild(plus);
+        slot.appendChild(label);
+        grid.appendChild(slot);
+      }
+    }
+    renderGrid();
   </script>
 </body>
 </html> 
