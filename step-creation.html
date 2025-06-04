@@ -14,11 +14,19 @@
     <span class="w-10"></span>
   </nav>
   <main class="flex flex-col gap-6 w-full max-w-md mt-20">
-    <h1 class="text-xl font-bold text-gray-900 text-center mb-2">Add Step</h1>
     <form class="flex flex-col gap-5">
+      <!-- Title input -->
+      <div>
+        <label class="block text-gray-700 font-medium mb-1" for="step-title">Step Title</label>
+        <input id="step-title" name="step-title" type="text" class="form-input w-full bg-gray-100 rounded-lg px-4 py-3 border border-gray-300" placeholder="e.g. 'Arrive at the Eiffel Tower' (Tip: Make it short and clear)" />
+      </div>
+      <!-- Description input -->
+      <div>
+        <label class="block text-gray-700 font-medium mb-1" for="step-description">Step Description</label>
+        <textarea id="step-description" name="step-description" rows="3" class="form-input w-full bg-gray-100 rounded-lg px-4 py-3 border border-gray-300" placeholder="Describe what happens at this step. (Tip: Mention what to see, do, or listen for)"></textarea>
+      </div>
       <!-- 1. 9-grid image upload -->
       <div>
-        <label class="block text-gray-700 font-medium mb-1">Step Images</label>
         <div class="grid grid-cols-3 gap-2 mb-2">
           <!-- Example: 1 uploaded image, 8 empty slots -->
           <div class="relative group aspect-square w-full">
@@ -87,13 +95,7 @@
       </div>
       <!-- 2. Check-in location -->
       <div>
-        <label class="block text-gray-700 font-medium mb-1">Step Location</label>
-        <button type="button" class="bg-blue-50 text-blue-600 rounded-lg px-4 py-2 font-semibold text-sm hover:bg-blue-100 transition mb-2">Detect My Location</button>
-        <div class="bg-gray-50 rounded-lg p-3 flex items-center gap-2 mb-2">
-          <i class="fas fa-map-marker-alt text-blue-500"></i>
-          <span class="text-gray-600 text-sm">123 Main St, Paris, France</span>
-        </div>
-        <input type="text" class="form-input w-full" placeholder="Or enter location manually" />
+        <button type="button" class="bg-blue-50 text-blue-600 rounded-lg px-4 py-2 font-semibold text-sm hover:bg-blue-100 transition mb-2 w-full">Detect My Location</button>
       </div>
       <!-- 3. Record audio -->
       <div>
@@ -109,7 +111,6 @@
       </div>
       <!-- 4. Save and Back -->
       <div class="flex gap-2 mt-2">
-        <button type="button" onclick="window.history.back()" class="bg-gray-100 text-blue-500 rounded-lg py-3 w-full font-semibold text-lg hover:bg-gray-200 transition">Back</button>
         <button type="submit" class="bg-blue-600 text-white rounded-lg py-3 w-full font-semibold text-lg hover:bg-blue-700 transition">Save Step</button>
       </div>
     </form>
