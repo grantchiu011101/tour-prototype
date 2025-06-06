@@ -18,9 +18,11 @@
         <label class="block text-gray-700 font-semibold">Experience & Expertise
           <textarea class="mt-1 bg-gray-50 text-gray-900 rounded-lg border border-gray-200 focus:ring-blue-500 focus:border-blue-500 w-full px-3 py-2" rows="3" placeholder="Describe your relevant experience and expertise" required></textarea>
         </label>
-        <label class="block text-gray-700 font-semibold">Links (optional, comma separated)
-          <input type="text" class="mt-1 bg-gray-50 text-gray-900 rounded-lg border border-gray-200 focus:ring-blue-500 focus:border-blue-500 w-full px-3 py-2" placeholder="https://yourwebsite.com, https://linkedin.com/in/yourprofile" />
-        </label>
+        <div class="flex flex-col gap-3 mt-2">
+          <span class="block text-gray-700 font-semibold mb-1">Connect your social profiles</span>
+          <button type="button" class="flex items-center gap-2 bg-blue-700 hover:bg-blue-800 text-white font-semibold rounded-lg px-4 py-2 shadow transition"><i class="fab fa-linkedin text-xl"></i> Connect LinkedIn</button>
+          <button type="button" class="flex items-center gap-2 bg-gray-800 hover:bg-gray-900 text-white font-semibold rounded-lg px-4 py-2 shadow transition"><i class="fab fa-instagram text-xl"></i> Connect Instagram</button>
+        </div>
       </div>
       <button type="submit" class="mt-4 bg-blue-600 text-white rounded-lg px-8 py-3 font-bold text-lg shadow hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-offset-2 transition w-full text-center">Next</button>
     </form>
