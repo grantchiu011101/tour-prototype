@@ -42,13 +42,9 @@
             <div class="text-xs text-blue-500 font-semibold">Verified</div>
           </div>
         </div>
-        <div class="flex flex-col items-end gap-1">
-          <span class="text-xs text-green-600 font-semibold">Active</span>
-          <div class="flex gap-1">
-            <button class="text-xs text-yellow-500 hover:text-yellow-700" title="Suspend"><i class="fas fa-ban"></i></button>
-            <button class="text-xs text-gray-400 hover:text-red-500" title="Delete"><i class="fas fa-trash"></i></button>
-          </div>
-        </div>
+        <button class="w-9 h-9 flex items-center justify-center rounded-full bg-blue-50 text-blue-500 hover:bg-blue-100 transition icon-btn" aria-label="More actions for Alex Johnson" onclick="openSheet('alex')">
+          <i class="fas fa-ellipsis-v"></i>
+        </button>
       </div>
       <!-- More creator cards... -->
       <div class="flex items-center justify-between py-2 border-b border-gray-100 last:border-b-0">
@@ -60,14 +56,9 @@
             <div class="text-xs text-gray-400">Unverified</div>
           </div>
         </div>
-        <div class="flex flex-col items-end gap-1">
-          <span class="text-xs text-yellow-500 font-semibold">Pending</span>
-          <div class="flex gap-1">
-            <button class="text-xs text-green-600 hover:text-green-800" title="Verify"><i class="fas fa-check-circle"></i></button>
-            <button class="text-xs text-yellow-500 hover:text-yellow-700" title="Suspend"><i class="fas fa-ban"></i></button>
-            <button class="text-xs text-gray-400 hover:text-red-500" title="Delete"><i class="fas fa-trash"></i></button>
-          </div>
-        </div>
+        <button class="w-9 h-9 flex items-center justify-center rounded-full bg-blue-50 text-blue-500 hover:bg-blue-100 transition icon-btn" aria-label="More actions for Emma Lee" onclick="openSheet('emma')">
+          <i class="fas fa-ellipsis-v"></i>
+        </button>
       </div>
       <!-- Example flagged creator -->
       <div class="flex items-center justify-between py-2 border-b border-gray-100 last:border-b-0">
@@ -79,16 +70,49 @@
             <div class="text-xs text-blue-500 font-semibold">Verified</div>
           </div>
         </div>
-        <div class="flex flex-col items-end gap-1">
-          <span class="text-xs text-red-500 font-semibold">Flagged</span>
-          <div class="flex gap-1">
-            <button class="text-xs text-green-600 hover:text-green-800" title="Verify"><i class="fas fa-check-circle"></i></button>
-            <button class="text-xs text-yellow-500 hover:text-yellow-700" title="Suspend"><i class="fas fa-ban"></i></button>
-            <button class="text-xs text-gray-400 hover:text-red-500" title="Delete"><i class="fas fa-trash"></i></button>
-          </div>
-        </div>
+        <button class="w-9 h-9 flex items-center justify-center rounded-full bg-blue-50 text-blue-500 hover:bg-blue-100 transition icon-btn" aria-label="More actions for Noah Smith" onclick="openSheet('noah')">
+          <i class="fas fa-ellipsis-v"></i>
+        </button>
       </div>
     </div>
+    <!-- Bottom Sheets for Actions -->
+    <div id="sheet-alex" class="fixed inset-0 z-50 flex items-end justify-center bg-black bg-opacity-30 hidden" tabindex="-1" aria-modal="true" role="dialog">
+      <div class="w-full max-w-md bg-white rounded-t-2xl p-6 shadow-lg animate-slideup">
+        <div class="font-semibold text-gray-900 mb-4">Actions for Alex Johnson</div>
+        <button class="w-full flex items-center gap-2 py-3 text-left hover:bg-gray-50 rounded" onclick="closeSheet('alex')"><i class="fas fa-user"></i> View Profile</button>
+        <button class="w-full flex items-center gap-2 py-3 text-left hover:bg-gray-50 rounded" onclick="closeSheet('alex')"><i class="fas fa-ban"></i> Suspend</button>
+        <button class="w-full flex items-center gap-2 py-3 text-left hover:bg-gray-50 rounded" onclick="closeSheet('alex')"><i class="fas fa-trash"></i> Delete</button>
+        <button class="w-full flex items-center gap-2 py-3 text-left text-blue-600 font-semibold hover:bg-blue-50 rounded" onclick="closeSheet('alex')"><i class="fas fa-times"></i> Cancel</button>
+      </div>
+    </div>
+    <div id="sheet-emma" class="fixed inset-0 z-50 flex items-end justify-center bg-black bg-opacity-30 hidden" tabindex="-1" aria-modal="true" role="dialog">
+      <div class="w-full max-w-md bg-white rounded-t-2xl p-6 shadow-lg animate-slideup">
+        <div class="font-semibold text-gray-900 mb-4">Actions for Emma Lee</div>
+        <button class="w-full flex items-center gap-2 py-3 text-left hover:bg-gray-50 rounded" onclick="closeSheet('emma')"><i class="fas fa-check-circle"></i> Verify</button>
+        <button class="w-full flex items-center gap-2 py-3 text-left hover:bg-gray-50 rounded" onclick="closeSheet('emma')"><i class="fas fa-ban"></i> Suspend</button>
+        <button class="w-full flex items-center gap-2 py-3 text-left hover:bg-gray-50 rounded" onclick="closeSheet('emma')"><i class="fas fa-trash"></i> Delete</button>
+        <button class="w-full flex items-center gap-2 py-3 text-left text-blue-600 font-semibold hover:bg-blue-50 rounded" onclick="closeSheet('emma')"><i class="fas fa-times"></i> Cancel</button>
+      </div>
+    </div>
+    <div id="sheet-noah" class="fixed inset-0 z-50 flex items-end justify-center bg-black bg-opacity-30 hidden" tabindex="-1" aria-modal="true" role="dialog">
+      <div class="w-full max-w-md bg-white rounded-t-2xl p-6 shadow-lg animate-slideup">
+        <div class="font-semibold text-gray-900 mb-4">Actions for Noah Smith</div>
+        <button class="w-full flex items-center gap-2 py-3 text-left hover:bg-gray-50 rounded" onclick="closeSheet('noah')"><i class="fas fa-check-circle"></i> Verify</button>
+        <button class="w-full flex items-center gap-2 py-3 text-left hover:bg-gray-50 rounded" onclick="closeSheet('noah')"><i class="fas fa-ban"></i> Suspend</button>
+        <button class="w-full flex items-center gap-2 py-3 text-left hover:bg-gray-50 rounded" onclick="closeSheet('noah')"><i class="fas fa-trash"></i> Delete</button>
+        <button class="w-full flex items-center gap-2 py-3 text-left text-blue-600 font-semibold hover:bg-blue-50 rounded" onclick="closeSheet('noah')"><i class="fas fa-times"></i> Cancel</button>
+      </div>
+    </div>
+    <script>
+      function openSheet(id) {
+        document.getElementById('sheet-' + id).classList.remove('hidden');
+        document.body.style.overflow = 'hidden';
+      }
+      function closeSheet(id) {
+        document.getElementById('sheet-' + id).classList.add('hidden');
+        document.body.style.overflow = '';
+      }
+    </script>
   </main>
 </body>
 </html> 
