@@ -6,6 +6,15 @@
   <title>My Downloads</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <style>
+    @keyframes downloadCardIn {
+      from { opacity: 0; transform: translateY(32px); }
+      to { opacity: 1; transform: none; }
+    }
+    .animate-download-card {
+      animation: downloadCardIn 0.7s cubic-bezier(0.4,0,0.2,1) both;
+    }
+  </style>
 </head>
 <body class="bg-gray-50 min-h-screen flex flex-col">
   <!-- Sticky Top Bar -->
@@ -31,7 +40,7 @@
     <!-- Downloaded Tours List -->
     <div class="flex flex-col gap-4">
       <!-- Downloaded (Complete) State -->
-      <div class="bg-white rounded-2xl shadow flex items-center gap-4 p-4">
+      <div class="bg-white rounded-2xl shadow flex items-center gap-4 p-4 animate-download-card">
         <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=100&q=80" class="w-16 h-16 rounded-xl object-cover" alt="Tour Cover" />
         <div class="flex-1 min-w-0">
           <div class="font-semibold text-gray-900 truncate">Paris Landmarks Walking Tour</div>
@@ -51,7 +60,7 @@
         </button>
       </div>
       <!-- Downloading (In Progress) State -->
-      <div class="relative bg-blue-50 rounded-2xl shadow flex items-center gap-4 p-4 border border-blue-200">
+      <div class="relative bg-blue-50 rounded-2xl shadow flex items-center gap-4 p-4 border border-blue-200 animate-download-card">
         <div class="relative">
           <img src="https://images.unsplash.com/photo-1467269204594-9661b134dd2b?auto=format&fit=crop&w=100&q=80" class="w-16 h-16 rounded-xl object-cover opacity-80" alt="Tour Cover" />
           <span class="absolute inset-0 flex items-center justify-center">
@@ -74,7 +83,7 @@
         </button>
       </div>
       <!-- Paused State -->
-      <div class="relative bg-yellow-50 rounded-2xl shadow flex items-center gap-4 p-4 border border-yellow-200">
+      <div class="relative bg-yellow-50 rounded-2xl shadow flex items-center gap-4 p-4 border border-yellow-200 animate-download-card">
         <div class="relative">
           <img src="https://images.unsplash.com/photo-1519125323398-675f0ddb6308?auto=format&fit=crop&w=100&q=80" class="w-16 h-16 rounded-xl object-cover opacity-80" alt="Tour Cover" />
           <span class="absolute inset-0 flex items-center justify-center">
@@ -100,7 +109,7 @@
         </button>
       </div>
       <!-- Queued State -->
-      <div class="relative bg-gray-50 rounded-2xl shadow flex items-center gap-4 p-4 border border-gray-200">
+      <div class="relative bg-gray-50 rounded-2xl shadow flex items-center gap-4 p-4 border border-gray-200 animate-download-card">
         <div class="relative">
           <img src="https://images.unsplash.com/photo-1465101046530-73398c7f28ca?auto=format&fit=crop&w=100&q=80" class="w-16 h-16 rounded-xl object-cover opacity-70" alt="Tour Cover" />
           <span class="absolute inset-0 flex items-center justify-center">
@@ -123,7 +132,7 @@
         </button>
       </div>
       <!-- Error State -->
-      <div class="bg-white rounded-2xl shadow flex items-center gap-4 p-4 border border-red-200">
+      <div class="bg-white rounded-2xl shadow flex items-center gap-4 p-4 border border-red-200 animate-download-card">
         <img src="https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?auto=format&fit=crop&w=100&q=80" class="w-16 h-16 rounded-xl object-cover grayscale" alt="Tour Cover" />
         <div class="flex-1 min-w-0">
           <div class="font-semibold text-gray-900 truncate">Eiffel Tower Audio Guide</div>
@@ -141,7 +150,7 @@
         </button>
       </div>
       <!-- Removing State -->
-      <div class="relative bg-red-50 rounded-2xl shadow flex items-center gap-4 p-4 border border-red-200 opacity-80">
+      <div class="relative bg-red-50 rounded-2xl shadow flex items-center gap-4 p-4 border border-red-200 opacity-80 animate-download-card">
         <div class="relative">
           <img src="https://images.unsplash.com/photo-1465101046530-73398c7f28ca?auto=format&fit=crop&w=100&q=80" class="w-16 h-16 rounded-xl object-cover opacity-60" alt="Tour Cover" />
           <span class="absolute inset-0 flex items-center justify-center">
@@ -158,7 +167,7 @@
         </button>
       </div>
       <!-- Download Failed Permanently State -->
-      <div class="bg-red-100 rounded-2xl shadow flex items-center gap-4 p-4 border border-red-300">
+      <div class="bg-red-100 rounded-2xl shadow flex items-center gap-4 p-4 border border-red-300 animate-download-card">
         <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=100&q=80" class="w-16 h-16 rounded-xl object-cover grayscale opacity-70" alt="Tour Cover" />
         <div class="flex-1 min-w-0">
           <div class="font-semibold text-gray-900 truncate">Notre Dame Cathedral Tour</div>
@@ -173,7 +182,7 @@
         </button>
       </div>
       <!-- Storage Full State -->
-      <div class="bg-yellow-100 rounded-2xl shadow flex items-center gap-4 p-4 border border-yellow-300">
+      <div class="bg-yellow-100 rounded-2xl shadow flex items-center gap-4 p-4 border border-yellow-300 animate-download-card">
         <i class="fas fa-hdd text-yellow-500 text-3xl ml-2"></i>
         <div class="flex-1 min-w-0">
           <div class="font-semibold text-gray-900 mb-1">Storage Full</div>
