@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Smart Downloads Preferences</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body class="bg-gray-50 min-h-screen flex flex-col">
+  <!-- Sticky Top Bar -->
+  <header class="sticky top-0 z-20 bg-white/90 backdrop-blur flex items-center justify-between h-16 px-4 shadow-sm border-b border-gray-100">
+    <button onclick="window.history.back()" aria-label="Back" class="text-gray-400 hover:text-blue-500 text-2xl focus:outline-none">
+      <i class="fas fa-arrow-left"></i>
+    </button>
+    <h1 class="text-lg font-bold text-gray-900 tracking-tight flex-1 text-center">Smart Download Preferences</h1>
+    <span class="w-8"></span>
+  </header>
+  <main class="flex-1 flex flex-col px-2 pt-4 pb-28 max-w-md mx-auto w-full">
+    <!-- Summary -->
+    <div class="bg-blue-50 border border-blue-200 rounded-2xl p-4 flex items-center gap-4 mb-6">
+      <i class="fas fa-magic text-blue-500 text-2xl"></i>
+      <div class="flex-1">
+        <div class="font-semibold text-blue-700">Smart Download is ON</div>
+        <div class="text-xs text-blue-700">Your preferences help us keep the right tours ready for you offline.</div>
+      </div>
+    </div>
+    <!-- Preferences Form -->
+    <form class="flex flex-col gap-6">
+      <!-- Enable Smart Download -->
+      <div class="flex items-center justify-between bg-white rounded-xl shadow p-4">
+        <div class="flex flex-col">
+          <span class="font-medium text-gray-900">Enable Smart Download</span>
+          <span class="text-xs text-gray-500">Automatically download relevant tours for offline use.</span>
+        </div>
+        <input type="checkbox" checked class="accent-blue-500 w-7 h-7" />
+      </div>
+      <!-- Wi-Fi Only -->
+      <div class="flex items-center justify-between bg-white rounded-xl shadow p-4">
+        <div class="flex flex-col">
+          <span class="font-medium text-gray-900">Wi-Fi Only</span>
+          <span class="text-xs text-gray-500">Download only when connected to Wi-Fi.</span>
+        </div>
+        <input type="checkbox" checked class="accent-blue-500 w-7 h-7" />
+      </div>
+      <!-- Auto-remove Completed Tours -->
+      <div class="flex items-center justify-between bg-white rounded-xl shadow p-4">
+        <div class="flex flex-col">
+          <span class="font-medium text-gray-900">Auto-remove Completed Tours</span>
+          <span class="text-xs text-gray-500">Free up space by removing finished tours automatically.</span>
+        </div>
+        <input type="checkbox" checked class="accent-blue-500 w-7 h-7" />
+      </div>
+      <!-- Max Storage Usage -->
+      <div class="flex flex-col gap-2 bg-white rounded-xl shadow p-4">
+        <div class="flex items-center justify-between">
+          <span class="font-medium text-gray-900">Max Storage for Downloads</span>
+          <span class="text-xs text-gray-500">2 GB</span>
+        </div>
+        <input type="range" min="0.5" max="5" step="0.5" value="2" class="w-full accent-blue-500" />
+        <div class="flex justify-between text-xs text-gray-400 mt-1">
+          <span>0.5 GB</span>
+          <span>5 GB</span>
+        </div>
+      </div>
+    </form>
+    <!-- Save Button -->
+    <div class="fixed left-0 right-0 bottom-0 z-20 flex justify-center items-center pb-6 bg-transparent">
+      <button class="bg-blue-500 text-white px-8 py-4 rounded-full font-bold shadow-lg hover:bg-blue-600 transition text-lg active:scale-95 w-[90vw] max-w-md">Save Preferences</button>
+    </div>
+  </main>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/js/all.min.js"></script>
+</body>
+</html> 
