@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Downloads</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body class="bg-gray-50 min-h-screen flex flex-col">
+  <!-- Sticky Top Bar -->
+  <header class="sticky top-0 z-20 bg-white/90 backdrop-blur flex items-center justify-between h-16 px-4 shadow-sm border-b border-gray-100">
+    <button onclick="window.history.back()" aria-label="Back" class="text-gray-400 hover:text-blue-500 text-2xl focus:outline-none">
+      <i class="fas fa-arrow-left"></i>
+    </button>
+    <h1 class="text-lg font-bold text-gray-900 tracking-tight flex-1 text-center">My Downloads</h1>
+    <span class="w-8"></span>
+  </header>
+  <main class="flex-1 flex flex-col px-2 pt-4 pb-28 max-w-md mx-auto w-full">
+    <!-- Storage Usage -->
+    <div class="bg-white rounded-xl shadow p-4 flex items-center gap-4 mb-6">
+      <i class="fas fa-hdd text-blue-400 text-2xl"></i>
+      <div class="flex-1">
+        <div class="text-xs text-gray-500 mb-1">Storage Used</div>
+        <div class="w-full bg-gray-100 rounded-full h-2.5 mb-1">
+          <div class="bg-blue-400 h-2.5 rounded-full" style="width: 40%"></div>
+        </div>
+        <div class="text-xs text-gray-400">1.2 GB of 3.0 GB used</div>
+      </div>
+    </div>
+    <!-- Downloaded Tours List -->
+    <div class="flex flex-col gap-4">
+      <!-- Example Downloaded Tour -->
+      <div class="bg-white rounded-2xl shadow flex items-center gap-4 p-4">
+        <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=100&q=80" class="w-16 h-16 rounded-xl object-cover" alt="Tour Cover" />
+        <div class="flex-1 min-w-0">
+          <div class="font-semibold text-gray-900 truncate">Paris Landmarks Walking Tour</div>
+          <div class="text-xs text-gray-500 mb-1 truncate">12 stops • 2h 15m</div>
+          <div class="flex items-center gap-2">
+            <div class="w-24 bg-gray-100 rounded-full h-2">
+              <div class="bg-blue-400 h-2 rounded-full" style="width: 80%"></div>
+            </div>
+            <span class="text-xs text-gray-400">80%</span>
+          </div>
+        </div>
+        <button class="ml-2 w-10 h-10 flex items-center justify-center bg-blue-500 text-white rounded-full shadow hover:bg-blue-600 transition" aria-label="Play">
+          <i class="fas fa-play"></i>
+        </button>
+        <button class="ml-1 w-10 h-10 flex items-center justify-center bg-gray-100 text-gray-400 rounded-full hover:text-red-500 hover:bg-red-50 transition" aria-label="Remove">
+          <i class="fas fa-trash"></i>
+        </button>
+      </div>
+      <!-- Download in Progress State -->
+      <div class="relative bg-blue-50 rounded-2xl shadow flex items-center gap-4 p-4 border border-blue-200">
+        <div class="relative">
+          <img src="https://images.unsplash.com/photo-1467269204594-9661b134dd2b?auto=format&fit=crop&w=100&q=80" class="w-16 h-16 rounded-xl object-cover opacity-80" alt="Tour Cover" />
+          <span class="absolute inset-0 flex items-center justify-center">
+            <i class="fas fa-spinner fa-spin text-blue-400 text-2xl"></i>
+          </span>
+        </div>
+        <div class="flex-1 min-w-0">
+          <div class="font-semibold text-gray-900 truncate">Louvre Museum Highlights</div>
+          <div class="text-xs text-gray-500 mb-1 truncate">8 stops • 1h 10m</div>
+          <div class="flex items-center gap-2 mb-1">
+            <div class="w-28 bg-blue-100 rounded-full h-2">
+              <div class="bg-blue-500 h-2 rounded-full transition-all duration-300" style="width: 45%"></div>
+            </div>
+            <span class="text-xs text-blue-500 font-semibold">45%</span>
+          </div>
+          <span class="text-xs text-blue-400 font-medium">Downloading...</span>
+        </div>
+        <button class="ml-2 w-10 h-10 flex items-center justify-center bg-white text-blue-400 border border-blue-100 rounded-full shadow hover:text-red-500 hover:bg-red-50 transition" aria-label="Cancel Download">
+          <i class="fas fa-times"></i>
+        </button>
+      </div>
+      <!-- Error State -->
+      <div class="bg-white rounded-2xl shadow flex items-center gap-4 p-4 border border-red-200">
+        <img src="https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?auto=format&fit=crop&w=100&q=80" class="w-16 h-16 rounded-xl object-cover grayscale" alt="Tour Cover" />
+        <div class="flex-1 min-w-0">
+          <div class="font-semibold text-gray-900 truncate">Eiffel Tower Audio Guide</div>
+          <div class="text-xs text-gray-500 mb-1 truncate">5 stops • 45m</div>
+          <div class="flex items-center gap-2">
+            <span class="text-xs text-red-500 flex items-center gap-1"><i class="fas fa-exclamation-triangle"></i>Error</span>
+            <span class="text-xs text-gray-400">Network issue</span>
+          </div>
+        </div>
+        <button class="ml-2 w-10 h-10 flex items-center justify-center bg-red-500 text-white rounded-full shadow hover:bg-red-600 transition" aria-label="Retry Download">
+          <i class="fas fa-redo"></i>
+        </button>
+        <button class="ml-1 w-10 h-10 flex items-center justify-center bg-gray-100 text-gray-400 rounded-full hover:text-red-500 hover:bg-red-50 transition" aria-label="Remove">
+          <i class="fas fa-trash"></i>
+        </button>
+      </div>
+      <!-- No Downloads State -->
+      <!--
+      <div class="flex flex-col items-center justify-center py-16 text-center text-gray-400">
+        <i class="fas fa-cloud-download-alt text-5xl mb-4"></i>
+        <div class="font-semibold text-lg mb-2">No Downloads Yet</div>
+        <div class="text-sm">Download tours to listen offline. They'll appear here.</div>
+      </div>
+      -->
+    </div>
+  </main>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/js/all.min.js"></script>
+</body>
+</html> 
