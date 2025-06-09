@@ -5,6 +5,15 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Tour Detail</title>
   <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <style>
+    .line-clamp-3 {
+      display: -webkit-box;
+      -webkit-line-clamp: 3;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+  </style>
 </head>
 <body class="bg-gray-50 min-h-screen flex flex-col">
   <!-- Top Navbar -->
@@ -35,10 +44,13 @@
       <span>•</span>
       <span>5 stops</span>
     </div>
-    <!-- Tour Description -->
-    <div class="bg-white rounded-xl shadow-sm p-4 mb-4">
-      <p class="text-gray-600 text-sm mb-0">Discover the most iconic landmarks of Paris in this immersive audio tour. Walk through history, culture, and hidden gems with expert narration and local tips.</p>
-    </div>
+    <!-- Tour Description (collapsed to 3 lines with Read more toggle) -->
+    <section class="bg-white rounded-xl shadow-sm p-4 mb-4">
+      <p id="tourDesc" class="text-gray-600 text-sm mb-0 line-clamp-3">
+        Discover the most iconic landmarks of Paris in this immersive audio tour. Walk through history, culture, and hidden gems with expert narration and local tips. This tour is perfect for first-time visitors and seasoned travelers alike, offering a unique perspective on the City of Light.
+      </p>
+      <button id="descToggle" class="text-xs text-blue-600 mt-2" onclick="toggleDesc()">Read more</button>
+    </section>
     <!-- Stops List -->
     <div class="bg-white rounded-xl shadow-sm p-4 mb-4">
       <h2 class="text-base font-semibold text-gray-800 mb-2">Stops</h2>
@@ -106,6 +118,13 @@
     document.getElementById('startTourBtn').addEventListener('click', function() {
       window.location.href = 'audio-player.html';
     });
+
+    function toggleDesc() {
+      const desc = document.getElementById('tourDesc');
+      const btn = document.getElementById('descToggle');
+      desc.classList.toggle('line-clamp-3');
+      btn.textContent = desc.classList.contains('line-clamp-3') ? 'Read more' : 'Show less';
+    }
   </script>
 </body>
 </html> 
