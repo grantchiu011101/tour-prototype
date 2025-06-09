@@ -39,14 +39,9 @@
           <div class="text-xs text-gray-500">by Alex Johnson</div>
           <div class="text-xs text-yellow-500 font-semibold">Pending</div>
         </div>
-        <div class="flex flex-col items-end gap-1">
-          <div class="flex gap-1">
-            <button class="text-xs text-green-600 hover:text-green-800" title="Approve"><i class="fas fa-check-circle"></i></button>
-            <button class="text-xs text-red-500 hover:text-red-700" title="Reject"><i class="fas fa-times-circle"></i></button>
-            <button class="text-xs text-yellow-500 hover:text-yellow-700" title="Flag"><i class="fas fa-flag"></i></button>
-            <button class="text-xs text-gray-400 hover:text-red-500" title="Delete"><i class="fas fa-trash"></i></button>
-          </div>
-        </div>
+        <button class="w-9 h-9 flex items-center justify-center rounded-full bg-blue-50 text-blue-500 hover:bg-blue-100 transition icon-btn" aria-label="More actions for Paris Food Tour" onclick="openSheet('paris')">
+          <i class="fas fa-ellipsis-v"></i>
+        </button>
       </div>
       <!-- More tour cards... -->
       <div class="flex items-center justify-between py-2 border-b border-gray-100 last:border-b-0">
@@ -55,12 +50,9 @@
           <div class="text-xs text-gray-500">by Emma Lee</div>
           <div class="text-xs text-green-600 font-semibold">Approved</div>
         </div>
-        <div class="flex flex-col items-end gap-1">
-          <div class="flex gap-1">
-            <button class="text-xs text-yellow-500 hover:text-yellow-700" title="Flag"><i class="fas fa-flag"></i></button>
-            <button class="text-xs text-gray-400 hover:text-red-500" title="Delete"><i class="fas fa-trash"></i></button>
-          </div>
-        </div>
+        <button class="w-9 h-9 flex items-center justify-center rounded-full bg-blue-50 text-blue-500 hover:bg-blue-100 transition icon-btn" aria-label="More actions for Kyoto Walk" onclick="openSheet('kyoto')">
+          <i class="fas fa-ellipsis-v"></i>
+        </button>
       </div>
       <div class="flex items-center justify-between py-2 border-b border-gray-100 last:border-b-0">
         <div class="flex flex-col gap-1 flex-1">
@@ -68,15 +60,49 @@
           <div class="text-xs text-gray-500">by Noah Smith</div>
           <div class="text-xs text-red-500 font-semibold">Flagged</div>
         </div>
-        <div class="flex flex-col items-end gap-1">
-          <div class="flex gap-1">
-            <button class="text-xs text-green-600 hover:text-green-800" title="Approve"><i class="fas fa-check-circle"></i></button>
-            <button class="text-xs text-red-500 hover:text-red-700" title="Reject"><i class="fas fa-times-circle"></i></button>
-            <button class="text-xs text-gray-400 hover:text-red-500" title="Delete"><i class="fas fa-trash"></i></button>
-          </div>
-        </div>
+        <button class="w-9 h-9 flex items-center justify-center rounded-full bg-blue-50 text-blue-500 hover:bg-blue-100 transition icon-btn" aria-label="More actions for Old Town" onclick="openSheet('oldtown')">
+          <i class="fas fa-ellipsis-v"></i>
+        </button>
       </div>
     </div>
+    <!-- Bottom Sheets for Actions -->
+    <div id="sheet-paris" class="fixed inset-0 z-50 flex items-end justify-center bg-black bg-opacity-30 hidden" tabindex="-1" aria-modal="true" role="dialog">
+      <div class="w-full max-w-md bg-white rounded-t-2xl p-6 shadow-lg animate-slideup">
+        <div class="font-semibold text-gray-900 mb-4">Actions for Paris Food Tour</div>
+        <button class="w-full flex items-center gap-2 py-3 text-left hover:bg-gray-50 rounded" onclick="closeSheet('paris')"><i class="fas fa-check-circle"></i> Approve</button>
+        <button class="w-full flex items-center gap-2 py-3 text-left hover:bg-gray-50 rounded" onclick="closeSheet('paris')"><i class="fas fa-times-circle"></i> Reject</button>
+        <button class="w-full flex items-center gap-2 py-3 text-left hover:bg-gray-50 rounded" onclick="closeSheet('paris')"><i class="fas fa-flag"></i> Flag</button>
+        <button class="w-full flex items-center gap-2 py-3 text-left hover:bg-gray-50 rounded" onclick="closeSheet('paris')"><i class="fas fa-trash"></i> Delete</button>
+        <button class="w-full flex items-center gap-2 py-3 text-left text-blue-600 font-semibold hover:bg-blue-50 rounded" onclick="closeSheet('paris')"><i class="fas fa-times"></i> Cancel</button>
+      </div>
+    </div>
+    <div id="sheet-kyoto" class="fixed inset-0 z-50 flex items-end justify-center bg-black bg-opacity-30 hidden" tabindex="-1" aria-modal="true" role="dialog">
+      <div class="w-full max-w-md bg-white rounded-t-2xl p-6 shadow-lg animate-slideup">
+        <div class="font-semibold text-gray-900 mb-4">Actions for Kyoto Walk</div>
+        <button class="w-full flex items-center gap-2 py-3 text-left hover:bg-gray-50 rounded" onclick="closeSheet('kyoto')"><i class="fas fa-flag"></i> Flag</button>
+        <button class="w-full flex items-center gap-2 py-3 text-left hover:bg-gray-50 rounded" onclick="closeSheet('kyoto')"><i class="fas fa-trash"></i> Delete</button>
+        <button class="w-full flex items-center gap-2 py-3 text-left text-blue-600 font-semibold hover:bg-blue-50 rounded" onclick="closeSheet('kyoto')"><i class="fas fa-times"></i> Cancel</button>
+      </div>
+    </div>
+    <div id="sheet-oldtown" class="fixed inset-0 z-50 flex items-end justify-center bg-black bg-opacity-30 hidden" tabindex="-1" aria-modal="true" role="dialog">
+      <div class="w-full max-w-md bg-white rounded-t-2xl p-6 shadow-lg animate-slideup">
+        <div class="font-semibold text-gray-900 mb-4">Actions for Old Town</div>
+        <button class="w-full flex items-center gap-2 py-3 text-left hover:bg-gray-50 rounded" onclick="closeSheet('oldtown')"><i class="fas fa-check-circle"></i> Approve</button>
+        <button class="w-full flex items-center gap-2 py-3 text-left hover:bg-gray-50 rounded" onclick="closeSheet('oldtown')"><i class="fas fa-times-circle"></i> Reject</button>
+        <button class="w-full flex items-center gap-2 py-3 text-left hover:bg-gray-50 rounded" onclick="closeSheet('oldtown')"><i class="fas fa-trash"></i> Delete</button>
+        <button class="w-full flex items-center gap-2 py-3 text-left text-blue-600 font-semibold hover:bg-blue-50 rounded" onclick="closeSheet('oldtown')"><i class="fas fa-times"></i> Cancel</button>
+      </div>
+    </div>
+    <script>
+      function openSheet(id) {
+        document.getElementById('sheet-' + id).classList.remove('hidden');
+        document.body.style.overflow = 'hidden';
+      }
+      function closeSheet(id) {
+        document.getElementById('sheet-' + id).classList.add('hidden');
+        document.body.style.overflow = '';
+      }
+    </script>
   </main>
 </body>
 </html> 
