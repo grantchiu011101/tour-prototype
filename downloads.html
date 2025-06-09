@@ -16,7 +16,7 @@
     <h1 class="text-lg font-bold text-gray-900 tracking-tight flex-1 text-center">My Downloads</h1>
     <span class="w-8"></span>
   </header>
-  <main class="flex-1 flex flex-col px-2 pt-4 pb-28 max-w-md mx-auto w-full">
+  <main class="flex-1 flex flex-col p-4 pb-28 max-w-md mx-auto w-full">
     <!-- Storage Usage -->
     <div class="bg-white rounded-xl shadow p-4 flex items-center gap-4 mb-6">
       <i class="fas fa-hdd text-blue-400 text-2xl"></i>
@@ -30,17 +30,17 @@
     </div>
     <!-- Downloaded Tours List -->
     <div class="flex flex-col gap-4">
-      <!-- Example Downloaded Tour -->
+      <!-- Downloaded (Complete) State -->
       <div class="bg-white rounded-2xl shadow flex items-center gap-4 p-4">
         <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=100&q=80" class="w-16 h-16 rounded-xl object-cover" alt="Tour Cover" />
         <div class="flex-1 min-w-0">
           <div class="font-semibold text-gray-900 truncate">Paris Landmarks Walking Tour</div>
           <div class="text-xs text-gray-500 mb-1 truncate">12 stops • 2h 15m</div>
-          <div class="flex items-center gap-2">
+          <div class="flex items-center gap-2 mb-1">
             <div class="w-24 bg-gray-100 rounded-full h-2">
-              <div class="bg-blue-400 h-2 rounded-full" style="width: 80%"></div>
+              <div class="bg-blue-400 h-2 rounded-full" style="width: 100%"></div>
             </div>
-            <span class="text-xs text-gray-400">80%</span>
+            <span class="text-xs text-green-500 font-semibold"><i class="fas fa-check-circle"></i> Downloaded</span>
           </div>
         </div>
         <button class="ml-2 w-10 h-10 flex items-center justify-center bg-blue-500 text-white rounded-full shadow hover:bg-blue-600 transition" aria-label="Play">
@@ -50,7 +50,7 @@
           <i class="fas fa-trash"></i>
         </button>
       </div>
-      <!-- Download in Progress State -->
+      <!-- Downloading (In Progress) State -->
       <div class="relative bg-blue-50 rounded-2xl shadow flex items-center gap-4 p-4 border border-blue-200">
         <div class="relative">
           <img src="https://images.unsplash.com/photo-1467269204594-9661b134dd2b?auto=format&fit=crop&w=100&q=80" class="w-16 h-16 rounded-xl object-cover opacity-80" alt="Tour Cover" />
@@ -73,13 +73,62 @@
           <i class="fas fa-times"></i>
         </button>
       </div>
+      <!-- Paused State -->
+      <div class="relative bg-yellow-50 rounded-2xl shadow flex items-center gap-4 p-4 border border-yellow-200">
+        <div class="relative">
+          <img src="https://images.unsplash.com/photo-1519125323398-675f0ddb6308?auto=format&fit=crop&w=100&q=80" class="w-16 h-16 rounded-xl object-cover opacity-80" alt="Tour Cover" />
+          <span class="absolute inset-0 flex items-center justify-center">
+            <i class="fas fa-pause-circle text-yellow-400 text-2xl"></i>
+          </span>
+        </div>
+        <div class="flex-1 min-w-0">
+          <div class="font-semibold text-gray-900 truncate">Montmartre Art Walk</div>
+          <div class="text-xs text-gray-500 mb-1 truncate">10 stops • 1h 30m</div>
+          <div class="flex items-center gap-2 mb-1">
+            <div class="w-28 bg-yellow-100 rounded-full h-2">
+              <div class="bg-yellow-400 h-2 rounded-full transition-all duration-300" style="width: 60%"></div>
+            </div>
+            <span class="text-xs text-yellow-500 font-semibold">Paused</span>
+          </div>
+          <span class="text-xs text-yellow-500 font-medium">Paused</span>
+        </div>
+        <button class="ml-2 w-10 h-10 flex items-center justify-center bg-white text-yellow-500 border border-yellow-100 rounded-full shadow hover:text-blue-500 hover:bg-blue-50 transition" aria-label="Resume Download">
+          <i class="fas fa-play"></i>
+        </button>
+        <button class="ml-1 w-10 h-10 flex items-center justify-center bg-gray-100 text-gray-400 rounded-full hover:text-red-500 hover:bg-red-50 transition" aria-label="Remove">
+          <i class="fas fa-trash"></i>
+        </button>
+      </div>
+      <!-- Queued State -->
+      <div class="relative bg-gray-50 rounded-2xl shadow flex items-center gap-4 p-4 border border-gray-200">
+        <div class="relative">
+          <img src="https://images.unsplash.com/photo-1465101046530-73398c7f28ca?auto=format&fit=crop&w=100&q=80" class="w-16 h-16 rounded-xl object-cover opacity-70" alt="Tour Cover" />
+          <span class="absolute inset-0 flex items-center justify-center">
+            <i class="fas fa-clock text-gray-400 text-2xl"></i>
+          </span>
+        </div>
+        <div class="flex-1 min-w-0">
+          <div class="font-semibold text-gray-900 truncate">Versailles Palace Tour</div>
+          <div class="text-xs text-gray-500 mb-1 truncate">15 stops • 3h</div>
+          <div class="flex items-center gap-2 mb-1">
+            <div class="w-28 bg-gray-100 rounded-full h-2">
+              <div class="bg-gray-400 h-2 rounded-full transition-all duration-300" style="width: 0%"></div>
+            </div>
+            <span class="text-xs text-gray-400 font-semibold">Queued</span>
+          </div>
+          <span class="text-xs text-gray-400 font-medium">Waiting to download...</span>
+        </div>
+        <button class="ml-2 w-10 h-10 flex items-center justify-center bg-white text-gray-400 border border-gray-100 rounded-full shadow hover:text-red-500 hover:bg-red-50 transition" aria-label="Cancel Queue">
+          <i class="fas fa-times"></i>
+        </button>
+      </div>
       <!-- Error State -->
       <div class="bg-white rounded-2xl shadow flex items-center gap-4 p-4 border border-red-200">
         <img src="https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?auto=format&fit=crop&w=100&q=80" class="w-16 h-16 rounded-xl object-cover grayscale" alt="Tour Cover" />
         <div class="flex-1 min-w-0">
           <div class="font-semibold text-gray-900 truncate">Eiffel Tower Audio Guide</div>
           <div class="text-xs text-gray-500 mb-1 truncate">5 stops • 45m</div>
-          <div class="flex items-center gap-2">
+          <div class="flex items-center gap-2 mb-1">
             <span class="text-xs text-red-500 flex items-center gap-1"><i class="fas fa-exclamation-triangle"></i>Error</span>
             <span class="text-xs text-gray-400">Network issue</span>
           </div>
@@ -89,6 +138,49 @@
         </button>
         <button class="ml-1 w-10 h-10 flex items-center justify-center bg-gray-100 text-gray-400 rounded-full hover:text-red-500 hover:bg-red-50 transition" aria-label="Remove">
           <i class="fas fa-trash"></i>
+        </button>
+      </div>
+      <!-- Removing State -->
+      <div class="relative bg-red-50 rounded-2xl shadow flex items-center gap-4 p-4 border border-red-200 opacity-80">
+        <div class="relative">
+          <img src="https://images.unsplash.com/photo-1465101046530-73398c7f28ca?auto=format&fit=crop&w=100&q=80" class="w-16 h-16 rounded-xl object-cover opacity-60" alt="Tour Cover" />
+          <span class="absolute inset-0 flex items-center justify-center">
+            <i class="fas fa-trash-alt fa-bounce text-red-400 text-2xl"></i>
+          </span>
+        </div>
+        <div class="flex-1 min-w-0">
+          <div class="font-semibold text-gray-900 truncate">Versailles Palace Tour</div>
+          <div class="text-xs text-gray-500 mb-1 truncate">15 stops • 3h</div>
+          <span class="text-xs text-red-400 font-medium">Removing...</span>
+        </div>
+        <button class="ml-2 w-10 h-10 flex items-center justify-center bg-white text-red-400 border border-red-100 rounded-full shadow cursor-not-allowed opacity-60" aria-label="Removing" disabled>
+          <i class="fas fa-trash"></i>
+        </button>
+      </div>
+      <!-- Download Failed Permanently State -->
+      <div class="bg-red-100 rounded-2xl shadow flex items-center gap-4 p-4 border border-red-300">
+        <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=100&q=80" class="w-16 h-16 rounded-xl object-cover grayscale opacity-70" alt="Tour Cover" />
+        <div class="flex-1 min-w-0">
+          <div class="font-semibold text-gray-900 truncate">Notre Dame Cathedral Tour</div>
+          <div class="text-xs text-gray-500 mb-1 truncate">7 stops • 55m</div>
+          <div class="flex items-center gap-2 mb-1">
+            <span class="text-xs text-red-600 flex items-center gap-1"><i class="fas fa-times-circle"></i>Failed</span>
+          </div>
+          <span class="text-xs text-red-500 font-medium">Download failed permanently. Please try another tour.</span>
+        </div>
+        <button class="ml-2 w-10 h-10 flex items-center justify-center bg-white text-red-400 border border-red-100 rounded-full shadow hover:text-red-600 hover:bg-red-200 transition" aria-label="Remove">
+          <i class="fas fa-trash"></i>
+        </button>
+      </div>
+      <!-- Storage Full State -->
+      <div class="bg-yellow-100 rounded-2xl shadow flex items-center gap-4 p-4 border border-yellow-300">
+        <i class="fas fa-hdd text-yellow-500 text-3xl ml-2"></i>
+        <div class="flex-1 min-w-0">
+          <div class="font-semibold text-gray-900 mb-1">Storage Full</div>
+          <div class="text-xs text-gray-600 mb-2">Your device is out of storage. Free up space to continue downloading tours.</div>
+        </div>
+        <button class="ml-2 w-10 h-10 flex items-center justify-center bg-white text-yellow-500 border border-yellow-200 rounded-full shadow hover:text-yellow-600 hover:bg-yellow-200 transition" aria-label="Manage Storage">
+          <i class="fas fa-cog"></i>
         </button>
       </div>
       <!-- No Downloads State -->
