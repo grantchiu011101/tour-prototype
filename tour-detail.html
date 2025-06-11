@@ -54,15 +54,16 @@
     <!-- Stops List -->
     <div class="bg-white rounded-xl shadow-sm p-4 mb-4">
       <h2 class="text-base font-semibold text-gray-800 mb-2">Stops</h2>
-      <div class="flex flex-col gap-4">
-        <div class="flex items-center gap-3 relative">
+      <div id="stops-list" class="flex flex-col gap-4">
+        <!-- First 2 stops shown by default -->
+        <div class="flex items-center gap-3 relative opacity-60">
           <img src="https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?auto=format&fit=facearea&w=80&q=80" alt="Eiffel Tower" class="h-10 w-10 object-cover rounded-lg" />
           <span class="absolute top-0 right-0 bg-white bg-opacity-80 rounded-full p-1 text-xs text-gray-400" style="transform: translate(40%,-40%);"><i class="fas fa-lock"></i></span>
           <div class="flex-1">
             <div class="font-medium text-gray-900">Eiffel Tower</div>
             <div class="text-xs text-gray-400 mt-0.5">12 min</div>
           </div>
-          <button class="bg-gray-100 text-gray-500 rounded-full p-2 flex items-center justify-center hover:bg-gray-200 transition" aria-label="Play Audio"><i class="fas fa-play"></i></button>
+          <button class="bg-gray-100 text-gray-400 w-10 h-10 rounded-full flex items-center justify-center cursor-not-allowed" aria-label="Play Audio"><i class="fas fa-play"></i></button>
         </div>
         <div class="flex items-center gap-3 relative">
           <img src="https://images.unsplash.com/photo-1465101046530-73398c7f28ca?auto=format&fit=facearea&w=80&q=80" alt="Louvre Museum" class="h-10 w-10 object-cover rounded-lg" />
@@ -70,7 +71,7 @@
             <div class="font-medium text-gray-900">Louvre Museum</div>
             <div class="text-xs text-gray-400 mt-0.5">15 min</div>
           </div>
-          <button class="bg-gray-100 text-gray-500 rounded-full p-2 flex items-center justify-center hover:bg-gray-200 transition" aria-label="Play Audio"><i class="fas fa-play"></i></button>
+          <button class="bg-blue-100 text-blue-600 w-10 h-10 rounded-full flex items-center justify-center hover:bg-blue-200 transition" aria-label="Play Audio"><i class="fas fa-play"></i></button>
         </div>
         <div class="flex items-center gap-3 relative">
           <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=facearea&w=80&q=80" alt="Notre-Dame Cathedral" class="h-10 w-10 object-cover rounded-lg" />
@@ -79,7 +80,7 @@
             <div class="font-medium text-gray-900">Notre-Dame Cathedral</div>
             <div class="text-xs text-gray-400 mt-0.5">10 min</div>
           </div>
-          <button class="bg-gray-100 text-gray-500 rounded-full p-2 flex items-center justify-center hover:bg-gray-200 transition" aria-label="Play Audio"><i class="fas fa-play"></i></button>
+          <button class="bg-gray-100 text-gray-400 w-10 h-10 rounded-full flex items-center justify-center cursor-not-allowed"><i class="fas fa-play"></i></button>
         </div>
         <div class="flex items-center gap-3">
           <img src="https://images.unsplash.com/photo-1511367461989-f85a21fda167?auto=format&fit=facearea&w=80&q=80" alt="Montmartre" class="h-10 w-10 object-cover rounded-lg" />
@@ -88,7 +89,7 @@
             <div class="text-xs text-gray-400">Artists' Quarter</div>
             <div class="text-xs text-gray-400 mt-0.5">8 min</div>
           </div>
-          <button class="bg-gray-100 text-gray-500 rounded-full p-2 flex items-center justify-center hover:bg-gray-200 transition" aria-label="Play Audio"><i class="fas fa-play"></i></button>
+          <button class="bg-gray-100 text-gray-400 w-10 h-10 rounded-full flex items-center justify-center cursor-not-allowed"><i class="fas fa-play"></i></button>
         </div>
         <div class="flex items-center gap-3">
           <img src="https://images.unsplash.com/photo-1467269204594-9661b134dd2b?auto=format&fit=facearea&w=80&q=80" alt="Arc de Triomphe" class="h-10 w-10 object-cover rounded-lg" />
@@ -97,7 +98,7 @@
             <div class="text-xs text-gray-400">Historic Monument</div>
             <div class="text-xs text-gray-400 mt-0.5">7 min</div>
           </div>
-          <button class="bg-gray-100 text-gray-500 rounded-full p-2 flex items-center justify-center hover:bg-gray-200 transition" aria-label="Play Audio"><i class="fas fa-play"></i></button>
+          <button class="bg-gray-100 text-gray-400 w-10 h-10 rounded-full flex items-center justify-center cursor-not-allowed"><i class="fas fa-play"></i></button>
         </div>
       </div>
     </div>
@@ -124,6 +125,13 @@
       const btn = document.getElementById('descToggle');
       desc.classList.toggle('line-clamp-3');
       btn.textContent = desc.classList.contains('line-clamp-3') ? 'Read more' : 'Show less';
+    }
+
+    function expandStops() {
+      const stopsList = document.getElementById('stops-list');
+      stopsList.innerHTML += `
+        <div class=\"flex items-center gap-3 relative opacity-60\">\n  <img src=\"https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=facearea&w=80&q=80\" alt=\"Notre-Dame Cathedral\" class=\"h-10 w-10 object-cover rounded-lg\" />\n  <span class=\"absolute top-0 right-0 bg-white bg-opacity-80 rounded-full p-1 text-xs text-gray-400\" style=\"transform: translate(40%,-40%);\"><i class=\"fas fa-lock\"></i></span>\n  <div class=\"flex-1\">\n    <div class=\"font-medium text-gray-900\">Notre-Dame Cathedral</div>\n    <div class=\"text-xs text-gray-400 mt-0.5\">10 min</div>\n  </div>\n  <button class=\"bg-gray-100 text-gray-400 w-10 h-10 rounded-full flex items-center justify-center cursor-not-allowed\"><i class=\"fas fa-play\"></i></button>\n</div>\n\n<div class=\"flex items-center gap-3\">\n  <img src=\"https://images.unsplash.com/photo-1511367461989-f85a21fda167?auto=format&fit=facearea&w=80&q=80\" alt=\"Montmartre\" class=\"h-10 w-10 object-cover rounded-lg\" />\n  <div class=\"flex-1\">\n    <div class=\"font-medium text-gray-900\">Montmartre</div>\n    <div class=\"text-xs text-gray-400\">Artists' Quarter</div>\n    <div class=\"text-xs text-gray-400 mt-0.5\">8 min</div>\n  </div>\n  <button class=\"bg-blue-100 text-blue-600 w-10 h-10 rounded-full flex items-center justify-center hover:bg-blue-200 transition\" aria-label=\"Play Audio\"><i class=\"fas fa-play\"></i></button>\n</div>\n\n<div class=\"flex items-center gap-3\">\n  <img src=\"https://images.unsplash.com/photo-1467269204594-9661b134dd2b?auto=format&fit=facearea&w=80&q=80\" alt=\"Arc de Triomphe\" class=\"h-10 w-10 object-cover rounded-lg\" />\n  <div class=\"flex-1\">\n    <div class=\"font-medium text-gray-900\">Arc de Triomphe</div>\n    <div class=\"text-xs text-gray-400\">Historic Monument</div>\n    <div class=\"text-xs text-gray-400 mt-0.5\">7 min</div>\n  </div>\n  <button class=\"bg-blue-100 text-blue-600 w-10 h-10 rounded-full flex items-center justify-center hover:bg-blue-200 transition\" aria-label=\"Play Audio\"><i class=\"fas fa-play\"></i></button>\n</div>\n`;
+      document.getElementById('showAllStopsBtn').style.display = 'none';
     }
   </script>
 </body>
