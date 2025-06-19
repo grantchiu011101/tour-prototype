@@ -1,0 +1,12 @@
+{
+  "name": "roam-prototype",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/grantchiu011101/tour-prototype.git",
+  "author": "Grant Fong <grant@nex.team>",
+  "license": "MIT",
+  "dependencies": {
+    "nightmare": "^3.0.2",
+    "playwright": "^1.53.1"
+  }
+}
