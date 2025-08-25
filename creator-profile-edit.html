@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Edit Profile - Creator</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body class="bg-gray-50 min-h-screen flex flex-col">
+  <!-- Navigation Header -->
+  <nav class="w-full flex items-center justify-between px-4 py-3 bg-white shadow-sm sticky top-0 z-10 border-b border-gray-100">
+    <button onclick="window.history.back()" aria-label="Back" class="text-gray-400 hover:text-blue-600 text-xl focus:outline-none">
+      <i class="fas fa-arrow-left"></i>
+    </button>
+    <span class="font-bold text-lg text-blue-600 tracking-wide mx-auto">Edit Profile</span>
+    <span class="w-8"></span>
+  </nav>
+
+  <main class="flex-1 px-4 py-6 space-y-6">
+    <!-- Profile Photo Section -->
+    <div class="flex flex-col items-center space-y-4">
+      <div class="relative">
+        <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&w=150&q=80" 
+             alt="Profile Photo" 
+             class="w-24 h-24 rounded-full object-cover border-4 border-white shadow-lg">
+        <button type="button" class="absolute bottom-0 right-0 bg-blue-600 text-white rounded-full p-2 shadow-lg hover:bg-blue-700 transition">
+          <i class="fas fa-camera text-sm"></i>
+        </button>
+      </div>
+      <button type="button" class="text-blue-600 text-sm font-medium hover:text-blue-700">Change Photo</button>
+    </div>
+
+    <!-- Bio Information Section -->
+    <div class="space-y-4">
+      <h3 class="text-lg font-semibold text-gray-900">Bio Information</h3>
+      
+      <div class="space-y-3">
+        <label class="block text-gray-700 font-medium mb-1" for="display-name">Display Name</label>
+        <input id="display-name" name="display-name" type="text" 
+               class="form-input w-full bg-white rounded-lg px-4 py-3 border border-gray-300 focus:border-blue-500 focus:ring-1 focus:ring-blue-500" 
+               placeholder="Enter your display name" 
+               value="John Traveler" />
+        
+        <label class="block text-gray-700 font-medium mb-1" for="short-bio">Short Bio</label>
+        <input id="short-bio" name="short-bio" type="text" 
+               class="form-input w-full bg-white rounded-lg px-4 py-3 border border-gray-300 focus:border-blue-500 focus:ring-1 focus:ring-blue-500" 
+               placeholder="e.g. 'Expert Paris guide with 8+ years experience'" 
+               value="Expert Paris guide with 8+ years experience" />
+        
+        <label class="block text-gray-700 font-medium mb-1" for="bio">Bio</label>
+        <textarea id="bio" name="bio" rows="4" maxlength="300" 
+                  class="form-input w-full bg-white rounded-lg px-4 py-3 border border-gray-300 focus:border-blue-500 focus:ring-1 focus:ring-blue-500" 
+                  placeholder="Tell travelers about yourself, your expertise, and what makes your tours special...">Passionate travel guide with 8+ years of experience exploring Europe. I love sharing hidden gems and local stories that bring destinations to life.</textarea>
+        <div class="text-xs text-gray-500 text-right">
+          <span id="bio-count">0</span>/300 characters
+        </div>
+      </div>
+    </div>
+
+    <!-- Location Information Section -->
+    <div class="space-y-4">
+      <h3 class="text-lg font-semibold text-gray-900">Location</h3>
+      
+      <div class="flex items-center gap-3 bg-blue-50 border border-blue-100 rounded-lg px-4 py-3">
+        <span class="text-blue-500 text-lg"><i class="fas fa-map-marker-alt"></i></span>
+        <div class="flex-1">
+          <div class="text-sm text-blue-900 font-medium">Auto-detected Location</div>
+          <div class="text-xs text-blue-700">Paris, France • Europe/Paris (UTC+1)</div>
+        </div>
+        <button type="button" class="text-blue-600 text-sm font-medium hover:text-blue-700">
+          <i class="fas fa-refresh"></i>
+        </button>
+      </div>
+      
+      <p class="text-xs text-gray-500 text-center">Location and timezone are automatically detected based on your device settings</p>
+    </div>
+
+    <!-- Gallery Photos Section -->
+    <div class="space-y-4">
+      <div class="flex items-center justify-between">
+        <h3 class="text-lg font-semibold text-gray-900">Gallery Photos</h3>
+        <span class="text-sm text-gray-500">
+          <span id="photo-count">2</span>/12 photos
+        </span>
+      </div>
+      
+      <div class="grid grid-cols-3 gap-3">
+        <!-- Existing Photos -->
+        <div class="relative group aspect-square w-full">
+          <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=200&q=80" 
+               class="absolute inset-0 w-full h-full object-cover rounded-lg border border-gray-200" />
+          <button type="button" class="absolute top-1 right-1 bg-white bg-opacity-90 rounded-full p-1.5 text-gray-400 hover:text-red-500 transition opacity-0 group-hover:opacity-100">
+            <i class="fas fa-times text-xs"></i>
+          </button>
+        </div>
+        
+        <div class="relative group aspect-square w-full">
+          <img src="https://images.unsplash.com/photo-1465101046530-73398c7f28ca?auto=format&fit=crop&w=200&q=80" 
+               class="absolute inset-0 w-full h-full object-cover rounded-lg border border-gray-200" />
+          <button type="button" class="absolute top-1 right-1 bg-white bg-opacity-90 rounded-full p-1.5 text-gray-400 hover:text-red-500 transition opacity-0 group-hover:opacity-100">
+            <i class="fas fa-times text-xs"></i>
+          </button>
+        </div>
+        
+        <!-- Add Photo Button -->
+        <div class="aspect-square w-full flex items-center justify-center bg-gray-100 rounded-lg border border-dashed border-gray-300 cursor-pointer hover:bg-blue-50 transition">
+          <label class="w-full h-full flex items-center justify-center cursor-pointer">
+            <input type="file" accept="image/*" class="hidden" id="photo-upload" />
+            <span class="flex items-center justify-center w-full h-full">
+              <i class="fas fa-plus text-blue-500 text-2xl"></i>
+            </span>
+          </label>
+        </div>
+        
+        <!-- Empty Slots -->
+        <div class="aspect-square w-full flex items-center justify-center bg-gray-100 rounded-lg border border-dashed border-gray-300 opacity-50">
+          <i class="fas fa-image text-gray-400 text-xl"></i>
+        </div>
+        <div class="aspect-square w-full flex items-center justify-center bg-gray-100 rounded-lg border border-dashed border-gray-300 opacity-50">
+          <i class="fas fa-image text-gray-400 text-xl"></i>
+        </div>
+        <div class="aspect-square w-full flex items-center justify-center bg-gray-100 rounded-lg border border-dashed border-gray-300 opacity-50">
+          <i class="fas fa-image text-gray-400 text-xl"></i>
+        </div>
+        <div class="aspect-square w-full flex items-center justify-center bg-gray-100 rounded-lg border border-dashed border-gray-300 opacity-50">
+          <i class="fas fa-image text-gray-400 text-xl"></i>
+        </div>
+        <div class="aspect-square w-full flex items-center justify-center bg-gray-100 rounded-lg border border-dashed border-gray-300 opacity-50">
+          <i class="fas fa-image text-gray-400 text-xl"></i>
+        </div>
+        <div class="aspect-square w-full flex items-center justify-center bg-gray-100 rounded-lg border border-dashed border-gray-300 opacity-50">
+          <i class="fas fa-image text-gray-400 text-xl"></i>
+        </div>
+        <div class="aspect-square w-full flex items-center justify-center bg-gray-100 rounded-lg border border-dashed border-gray-300 opacity-50">
+          <i class="fas fa-image text-gray-400 text-xl"></i>
+        </div>
+        <div class="aspect-square w-full flex items-center justify-center bg-gray-100 rounded-lg border border-dashed border-gray-300 opacity-50">
+          <i class="fas fa-image text-gray-400 text-xl"></i>
+        </div>
+      </div>
+      
+      <p class="text-xs text-gray-500 text-center">Upload up to 12 photos to showcase your expertise and style</p>
+    </div>
+
+    <!-- Contact Information Section -->
+    <div class="space-y-4">
+      <h3 class="text-lg font-semibold text-gray-900">Contact Information</h3>
+      
+      <div class="space-y-3">
+        <label class="block text-gray-700 font-medium mb-1" for="email">Email</label>
+        <input id="email" name="email" type="email" 
+               class="form-input w-full bg-gray-100 rounded-lg px-4 py-3 border border-gray-300 text-gray-600" 
+               placeholder="your.email@example.com" 
+               value="john.traveler@example.com" 
+               disabled />
+        
+        <label class="block text-gray-700 font-medium mb-1" for="phone">Phone (Optional)</label>
+        <input id="phone" name="phone" type="tel" 
+               class="form-input w-full bg-gray-100 rounded-lg px-4 py-3 border border-gray-300 text-gray-600" 
+               placeholder="+1 (555) 123-4567" 
+               value="+33 6 12 34 56 78" 
+               disabled />
+      </div>
+      
+      <!-- Privacy Tip -->
+      <div class="flex items-start gap-2 bg-blue-50 border border-blue-100 rounded-lg px-3 py-2">
+        <span class="text-blue-500 text-sm mt-0.5"><i class="fas fa-shield-alt"></i></span>
+        <div class="text-xs text-blue-800">
+          <span class="font-medium">Privacy Note:</span> Your email and phone number are personal information and will not be shared publicly. These are only used for account verification and important communications.
+        </div>
+      </div>
+    </div>
+
+    <!-- Social Links Section -->
+    <div class="space-y-4">
+      <h3 class="text-lg font-semibold text-gray-900">Social Accounts</h3>
+      
+      <div class="grid grid-cols-2 gap-3">
+        <!-- Instagram -->
+        <button type="button" id="instagram-auth" class="social-auth-btn bg-gradient-to-r from-purple-500 to-pink-500 text-white rounded-lg px-4 py-3 flex items-center justify-center gap-3 hover:from-purple-600 hover:to-pink-600 transition-all duration-200 shadow-md">
+          <i class="fab fa-instagram text-xl"></i>
+          <span class="font-medium">Connect Instagram</span>
+        </button>
+        
+        <!-- Facebook -->
+        <button type="button" id="facebook-auth" class="social-auth-btn bg-blue-600 text-white rounded-lg px-4 py-3 flex items-center justify-center gap-3 hover:bg-blue-700 transition-all duration-200 shadow-md">
+          <i class="fab fa-facebook text-xl"></i>
+          <span class="font-medium">Connect Facebook</span>
+        </button>
+        
+        <!-- Twitter -->
+        <button type="button" id="twitter-auth" class="social-auth-btn bg-blue-400 text-white rounded-lg px-4 py-3 flex items-center justify-center gap-3 hover:bg-blue-500 transition-all duration-200 shadow-md">
+          <i class="fab fa-twitter text-xl"></i>
+          <span class="font-medium">Connect Twitter</span>
+        </button>
+        
+        <!-- LinkedIn -->
+        <button type="button" id="linkedin-auth" class="social-auth-btn bg-blue-700 text-white rounded-lg px-4 py-3 flex items-center justify-center gap-3 hover:bg-blue-800 transition-all duration-200 shadow-md">
+          <i class="fab fa-linkedin text-xl"></i>
+          <span class="font-medium">Connect LinkedIn</span>
+        </button>
+        
+        <!-- YouTube -->
+        <button type="button" id="youtube-auth" class="social-auth-btn bg-red-600 text-white rounded-lg px-4 py-3 flex items-center justify-center gap-3 hover:bg-red-700 transition-all duration-200 shadow-md">
+          <i class="fab fa-youtube text-xl"></i>
+          <span class="font-medium">Connect YouTube</span>
+        </button>
+        
+        <!-- TikTok -->
+        <button type="button" id="tiktok-auth" class="social-auth-btn bg-black text-white rounded-lg px-4 py-3 flex items-center justify-center gap-3 hover:bg-gray-800 transition-all duration-200 shadow-md">
+          <i class="fab fa-tiktok text-xl"></i>
+          <span class="font-medium">Connect TikTok</span>
+        </button>
+        
+        <!-- Pinterest -->
+        <button type="button" id="pinterest-auth" class="social-auth-btn bg-red-500 text-white rounded-lg px-4 py-3 flex items-center justify-center gap-3 hover:bg-red-600 transition-all duration-200 shadow-md">
+          <i class="fab fa-pinterest text-xl"></i>
+          <span class="font-medium">Connect Pinterest</span>
+        </button>
+        
+        <!-- Snapchat -->
+        <button type="button" id="snapchat-auth" class="social-auth-btn bg-yellow-400 text-black rounded-lg px-4 py-3 flex items-center justify-center gap-3 hover:bg-yellow-500 transition-all duration-200 shadow-md">
+          <i class="fab fa-snapchat text-xl"></i>
+          <span class="font-medium">Connect Snapchat</span>
+        </button>
+        
+        <!-- Reddit -->
+        <button type="button" id="reddit-auth" class="social-auth-btn bg-orange-500 text-white rounded-lg px-4 py-3 flex items-center justify-center gap-3 hover:bg-orange-600 transition-all duration-200 shadow-md">
+          <i class="fab fa-reddit text-xl"></i>
+          <span class="font-medium">Connect Reddit</span>
+        </button>
+        
+        <!-- Discord -->
+        <button type="button" id="discord-auth" class="social-auth-btn bg-indigo-600 text-white rounded-lg px-4 py-3 flex items-center justify-center gap-3 hover:bg-indigo-700 transition-all duration-200 shadow-md">
+          <i class="fab fa-discord text-xl"></i>
+          <span class="font-medium">Connect Discord</span>
+        </button>
+        
+        <!-- Twitch -->
+        <button type="button" id="twitch-auth" class="social-auth-btn bg-purple-600 text-white rounded-lg px-4 py-3 flex items-center justify-center gap-3 hover:bg-purple-700 transition-all duration-200 shadow-md">
+          <i class="fab fa-twitch text-xl"></i>
+          <span class="font-medium">Connect Twitch</span>
+        </button>
+        
+        <!-- Medium -->
+        <button type="button" id="medium-auth" class="social-auth-btn bg-gray-800 text-white rounded-lg px-4 py-3 flex items-center justify-center gap-3 hover:bg-gray-900 transition-all duration-200 shadow-md">
+          <i class="fab fa-medium text-xl"></i>
+          <span class="font-medium">Connect Medium</span>
+        </button>
+      </div>
+      
+      <p class="text-xs text-gray-500 text-center">Connect your social accounts to share your tours and grow your audience</p>
+    </div>
+  </main>
+
+  </main>
+
+  <!-- Save Button - At Bottom of Content -->
+  <div class="px-4 py-6">
+    <button type="button" id="save-profile" 
+            class="w-full bg-blue-600 text-white rounded-lg py-4 font-semibold text-lg hover:bg-blue-700 transition flex items-center justify-center gap-2">
+      <i class="fas fa-save"></i>
+      Save Changes
+    </button>
+  </div>
+
+  <script>
+    // Bio character counter
+    const bioTextarea = document.getElementById('bio');
+    const bioCount = document.getElementById('bio-count');
+    
+    bioTextarea.addEventListener('input', function() {
+      bioCount.textContent = this.value.length;
+    });
+    
+    // Initialize bio count
+    bioCount.textContent = bioTextarea.value.length;
+    
+    // Photo upload handling
+    const photoUpload = document.getElementById('photo-upload');
+    const photoCount = document.getElementById('photo-count');
+    
+    photoUpload.addEventListener('change', function(e) {
+      const files = e.target.files;
+      if (files.length > 0) {
+        // Here you would handle the file upload
+        console.log('Photo selected:', files[0].name);
+        // Update photo count logic would go here
+      }
+    });
+    
+    // Save profile button
+    document.getElementById('save-profile').addEventListener('click', function() {
+      // Here you would collect all form data and save
+      console.log('Saving profile...');
+      
+      // Show success message
+      this.innerHTML = '<i class="fas fa-check"></i> Saved!';
+      this.classList.remove('bg-blue-600', 'hover:bg-blue-700');
+      this.classList.add('bg-green-600');
+      
+      setTimeout(() => {
+        this.innerHTML = '<i class="fas fa-save"></i> Save Changes';
+        this.classList.remove('bg-green-600');
+        this.classList.add('bg-blue-600', 'hover:bg-blue-700');
+      }, 2000);
+    });
+    
+    // Form validation
+    const requiredFields = ['display-name', 'short-bio', 'bio'];
+    
+    function validateForm() {
+      let isValid = true;
+      requiredFields.forEach(fieldId => {
+        const field = document.getElementById(fieldId);
+        if (!field.value.trim()) {
+          field.classList.add('border-red-500');
+          isValid = false;
+        } else {
+          field.classList.remove('border-red-500');
+        }
+      });
+      return isValid;
+    }
+    
+    // Validate on save
+    document.getElementById('save-profile').addEventListener('click', function() {
+      if (!validateForm()) {
+        this.innerHTML = '<i class="fas fa-exclamation-triangle"></i> Please fill required fields';
+        this.classList.remove('bg-blue-600', 'hover:bg-blue-700');
+        this.classList.add('bg-red-600');
+        
+        setTimeout(() => {
+          this.innerHTML = '<i class="fas fa-save"></i> Save Changes';
+          this.classList.remove('bg-red-600');
+          this.classList.add('bg-blue-600', 'hover:bg-blue-700');
+        }, 2000);
+        return;
+      }
+    });
+    
+    // Social Auth Login Handlers
+    const socialAuthButtons = document.querySelectorAll('.social-auth-btn');
+    
+    socialAuthButtons.forEach(button => {
+      button.addEventListener('click', function() {
+        const platform = this.id.replace('-auth', '');
+        handleSocialAuth(platform);
+      });
+    });
+    
+    function handleSocialAuth(platform) {
+      console.log(`Initiating ${platform} authentication...`);
+      
+      // Show loading state
+      const button = document.getElementById(`${platform}-auth`);
+      const originalContent = button.innerHTML;
+      
+      button.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Connecting...';
+      button.disabled = true;
+      
+      // Simulate social auth process
+      setTimeout(() => {
+        // Here you would integrate with Firebase Auth or your preferred auth provider
+        // For now, we'll simulate a successful connection
+        
+        button.innerHTML = '<i class="fas fa-check"></i> Connected';
+        button.classList.add('opacity-75');
+        
+        // Show success message
+        const displayName = platform.charAt(0).toUpperCase() + platform.slice(1);
+        showNotification(`${displayName} account connected successfully!`, 'success');
+        
+        // Reset button after delay
+        setTimeout(() => {
+          button.innerHTML = originalContent;
+          button.disabled = false;
+          button.classList.remove('opacity-75');
+        }, 3000);
+        
+      }, 2000);
+    }
+    
+    function showNotification(message, type = 'info') {
+      // Create notification element
+      const notification = document.createElement('div');
+      notification.className = `fixed top-4 right-4 px-4 py-3 rounded-lg text-white font-medium z-50 transition-all duration-300 transform translate-x-full`;
+      
+      if (type === 'success') {
+        notification.classList.add('bg-green-600');
+      } else if (type === 'error') {
+        notification.classList.add('bg-red-600');
+      } else {
+        notification.classList.add('bg-blue-600');
+      }
+      
+      notification.textContent = message;
+      document.body.appendChild(notification);
+      
+      // Animate in
+      setTimeout(() => {
+        notification.classList.remove('translate-x-full');
+      }, 100);
+      
+      // Remove after 3 seconds
+      setTimeout(() => {
+        notification.classList.add('translate-x-full');
+        setTimeout(() => {
+          document.body.removeChild(notification);
+        }, 300);
+      }, 3000);
+    }
+  </script>
+</body>
+</html>

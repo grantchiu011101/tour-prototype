@@ -8,7 +8,23 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
 <body class="bg-gradient-to-b from-gray-100 to-white min-h-screen flex flex-col items-center px-4">
-  <main class="flex flex-col gap-6 w-full max-w-md mt-8 mb-8">
+  <!-- Navigation Bar -->
+  <nav class="fixed top-0 left-0 right-0 bg-white shadow-sm border-b border-gray-200 z-50">
+    <div class="flex items-center justify-between px-4 py-3 max-w-md mx-auto">
+      <!-- Back Button -->
+      <button onclick="window.history.back()" aria-label="Back" class="text-gray-400 hover:text-blue-600 text-xl focus:outline-none">
+        <i class="fas fa-arrow-left"></i>
+      </button>
+      
+      <!-- Page Title -->
+      <h1 class="text-lg font-semibold text-gray-900">Moderation</h1>
+      
+      <!-- Spacer to maintain layout -->
+      <span class="w-10"></span>
+    </div>
+  </nav>
+
+  <main class="flex flex-col gap-6 w-full max-w-md mt-20 mb-8">
     <!-- Quick Stats -->
     <div class="grid grid-cols-3 gap-4">
       <div class="bg-white rounded-2xl shadow p-4 flex flex-col items-center">
