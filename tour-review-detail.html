@@ -1,0 +1,634 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tour Reviews - Eiffel Tower Experience</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <style>
+    .no-scrollbar::-webkit-scrollbar { display: none; }
+    .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+    
+    .image-gallery {
+      scroll-snap-type: x mandatory;
+    }
+    
+    .image-gallery img {
+      scroll-snap-align: start;
+    }
+    
+    .review-images {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+      gap: 8px;
+      max-width: 280px;
+    }
+    
+    .review-image {
+      aspect-ratio: 1;
+      border-radius: 8px;
+      overflow: hidden;
+      cursor: pointer;
+      transition: transform 0.2s ease;
+    }
+    
+    .review-image:hover {
+      transform: scale(1.05);
+    }
+    
+    .fullscreen-overlay {
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+    }
+    
+    .rating-breakdown {
+      background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+    }
+  </style>
+</head>
+<body class="bg-gray-50 min-h-screen">
+  <!-- Top Navigation -->
+  <nav class="bg-white shadow-sm sticky top-0 z-40">
+    <div class="max-w-md mx-auto px-4 py-3 flex items-center justify-between">
+      <button onclick="window.history.back()" class="text-gray-400 hover:text-blue-500 text-xl">
+        <i class="fas fa-arrow-left"></i>
+      </button>
+      <h1 class="font-semibold text-lg text-gray-900">Tour Reviews</h1>
+      <button class="text-gray-400 hover:text-blue-500 text-xl">
+        <i class="fas fa-share-alt"></i>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Fullscreen Image Modal -->
+  <div id="fullscreenModal" class="fixed inset-0 z-50 bg-black bg-opacity-90 fullscreen-overlay hidden flex items-center justify-center">
+    <button id="closeFullscreen" class="absolute top-4 right-4 text-white text-2xl z-60 bg-black bg-opacity-50 rounded-full w-10 h-10 flex items-center justify-center">
+      <i class="fas fa-times"></i>
+    </button>
+    <div class="relative w-full h-full flex items-center justify-center">
+      <img id="fullscreenImage" src="" alt="" class="max-w-full max-h-full object-contain" />
+      <button id="fullscreenPrev" class="absolute left-4 top-1/2 -translate-y-1/2 text-white text-2xl bg-black bg-opacity-50 rounded-full w-12 h-12 flex items-center justify-center">
+        <i class="fas fa-chevron-left"></i>
+      </button>
+      <button id="fullscreenNext" class="absolute right-4 top-1/2 -translate-y-1/2 text-white text-2xl bg-black bg-opacity-50 rounded-full w-12 h-12 flex items-center justify-center">
+        <i class="fas fa-chevron-right"></i>
+      </button>
+      <div id="fullscreenInfo" class="absolute bottom-4 left-1/2 -translate-x-1/2 text-white bg-black bg-opacity-50 px-4 py-2 rounded-full text-sm text-center">
+        <div id="fullscreenCounter">1 / 3</div>
+        <div id="fullscreenReviewer" class="text-xs opacity-80">by Jane Smith</div>
+      </div>
+    </div>
+  </div>
+
+  <main class="max-w-md mx-auto px-4 pb-8">
+    <!-- Tour Header -->
+    <div class="bg-white rounded-2xl shadow-sm p-6 mb-6 mt-4">
+      <div class="flex items-center gap-4 mb-4">
+        <img src="https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?auto=format&fit=crop&w=80&q=80" alt="Eiffel Tower" class="w-16 h-16 rounded-xl object-cover" />
+        <div class="flex-1">
+          <h2 class="font-semibold text-lg text-gray-900">Eiffel Tower Experience</h2>
+          <p class="text-sm text-gray-500">Paris, France • 2 hours</p>
+        </div>
+      </div>
+      
+      <!-- Overall Rating Summary -->
+      <div class="rating-breakdown rounded-xl p-4 mb-4">
+        <div class="flex items-center justify-center gap-3 mb-3">
+          <span class="text-4xl font-bold text-gray-900">4.8</span>
+          <div class="flex flex-col items-center">
+            <div class="flex gap-1 mb-1">
+              <i class="fas fa-star text-yellow-400 text-lg"></i>
+              <i class="fas fa-star text-yellow-400 text-lg"></i>
+              <i class="fas fa-star text-yellow-400 text-lg"></i>
+              <i class="fas fa-star text-yellow-400 text-lg"></i>
+              <i class="fas fa-star-half-alt text-yellow-400 text-lg"></i>
+            </div>
+            <div class="text-sm text-gray-600">Based on 127 reviews</div>
+          </div>
+        </div>
+        
+        <!-- Rating Breakdown -->
+        <div class="grid grid-cols-3 gap-4 text-center">
+          <div class="flex flex-col items-center">
+            <div class="bg-blue-100 text-blue-600 rounded-full w-12 h-12 flex items-center justify-center mb-2">
+              <i class="fas fa-headphones"></i>
+            </div>
+            <div class="flex gap-0.5 mb-1">
+              <i class="fas fa-star text-yellow-400 text-xs"></i>
+              <i class="fas fa-star text-yellow-400 text-xs"></i>
+              <i class="fas fa-star text-yellow-400 text-xs"></i>
+              <i class="fas fa-star text-yellow-400 text-xs"></i>
+              <i class="fas fa-star-half-alt text-yellow-400 text-xs"></i>
+            </div>
+            <span class="text-xs font-medium text-gray-700">Audio Quality</span>
+          </div>
+          <div class="flex flex-col items-center">
+            <div class="bg-green-100 text-green-600 rounded-full w-12 h-12 flex items-center justify-center mb-2">
+              <i class="fas fa-file-alt"></i>
+            </div>
+            <div class="flex gap-0.5 mb-1">
+              <i class="fas fa-star text-yellow-400 text-xs"></i>
+              <i class="fas fa-star text-yellow-400 text-xs"></i>
+              <i class="fas fa-star text-yellow-400 text-xs"></i>
+              <i class="fas fa-star text-yellow-400 text-xs"></i>
+              <i class="fas fa-star text-yellow-400 text-xs"></i>
+            </div>
+            <span class="text-xs font-medium text-gray-700">Content</span>
+          </div>
+          <div class="flex flex-col items-center">
+            <div class="bg-purple-100 text-purple-600 rounded-full w-12 h-12 flex items-center justify-center mb-2">
+              <i class="fas fa-user-tie"></i>
+            </div>
+            <div class="flex gap-0.5 mb-1">
+              <i class="fas fa-star text-yellow-400 text-xs"></i>
+              <i class="fas fa-star text-yellow-400 text-xs"></i>
+              <i class="fas fa-star text-yellow-400 text-xs"></i>
+              <i class="fas fa-star text-yellow-400 text-xs"></i>
+              <i class="fas fa-star-half-alt text-yellow-400 text-xs"></i>
+            </div>
+            <span class="text-xs font-medium text-gray-700">Guide</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Featured Review Quote -->
+      <div class="text-center">
+        <p class="text-green-600 italic font-medium">"Amazing storytelling and crystal clear audio!"</p>
+        <p class="text-xs text-gray-500 mt-1">Most helpful review</p>
+      </div>
+    </div>
+
+    <!-- Filter/Sort Options -->
+    <div class="flex gap-2 mb-6 overflow-x-auto no-scrollbar pb-2">
+      <button class="px-4 py-2 bg-blue-500 text-white rounded-full text-sm font-medium whitespace-nowrap">All Reviews</button>
+      <button class="px-4 py-2 bg-gray-100 text-gray-700 rounded-full text-sm font-medium whitespace-nowrap">With Photos</button>
+      <button class="px-4 py-2 bg-gray-100 text-gray-700 rounded-full text-sm font-medium whitespace-nowrap">5 Stars</button>
+      <button class="px-4 py-2 bg-gray-100 text-gray-700 rounded-full text-sm font-medium whitespace-nowrap">Recent</button>
+    </div>
+
+    <!-- Reviews List -->
+    <div class="space-y-6">
+      <!-- Review 1 - With Multiple Images -->
+      <div class="bg-white rounded-2xl shadow-sm p-5">
+        <div class="flex items-start gap-3 mb-4">
+          <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Jane Smith" class="w-12 h-12 rounded-full object-cover" />
+          <div class="flex-1">
+            <div class="flex items-center gap-2 mb-1">
+              <span class="font-semibold text-gray-900">Jane Smith</span>
+              <div class="flex gap-0.5">
+                <i class="fas fa-star text-yellow-400 text-sm"></i>
+                <i class="fas fa-star text-yellow-400 text-sm"></i>
+                <i class="fas fa-star text-yellow-400 text-sm"></i>
+                <i class="fas fa-star text-yellow-400 text-sm"></i>
+                <i class="fas fa-star text-yellow-400 text-sm"></i>
+              </div>
+            </div>
+            <div class="flex items-center gap-2 text-xs text-gray-500 mb-2">
+              <span>2 days ago</span>
+              <span>•</span>
+              <span>Verified Purchase</span>
+              <span>•</span>
+              <span class="text-green-600"><i class="fas fa-thumbs-up text-xs mr-1"></i>Helpful (23)</span>
+            </div>
+          </div>
+        </div>
+        
+        <div class="mb-4">
+          <h3 class="font-medium text-gray-900 mb-2">Amazing storytelling and crystal clear audio!</h3>
+          <p class="text-gray-700 text-sm leading-relaxed">
+            This tour exceeded all my expectations! The narrator's voice was incredibly engaging and the historical details were fascinating. I loved how they included personal anecdotes and local legends. The audio quality was perfect even in crowded areas. Highly recommend for first-time visitors to Paris!
+          </p>
+        </div>
+
+        <!-- Rating Breakdown for this review -->
+        <div class="grid grid-cols-3 gap-4 mb-4 p-3 bg-gray-50 rounded-xl">
+          <div class="text-center">
+            <div class="text-xs text-gray-600 mb-1">Audio</div>
+            <div class="flex gap-0.5 justify-center">
+              <i class="fas fa-star text-yellow-400 text-xs"></i>
+              <i class="fas fa-star text-yellow-400 text-xs"></i>
+              <i class="fas fa-star text-yellow-400 text-xs"></i>
+              <i class="fas fa-star text-yellow-400 text-xs"></i>
+              <i class="fas fa-star text-yellow-400 text-xs"></i>
+            </div>
+          </div>
+          <div class="text-center">
+            <div class="text-xs text-gray-600 mb-1">Content</div>
+            <div class="flex gap-0.5 justify-center">
+              <i class="fas fa-star text-yellow-400 text-xs"></i>
+              <i class="fas fa-star text-yellow-400 text-xs"></i>
+              <i class="fas fa-star text-yellow-400 text-xs"></i>
+              <i class="fas fa-star text-yellow-400 text-xs"></i>
+              <i class="fas fa-star text-yellow-400 text-xs"></i>
+            </div>
+          </div>
+          <div class="text-center">
+            <div class="text-xs text-gray-600 mb-1">Guide</div>
+            <div class="flex gap-0.5 justify-center">
+              <i class="fas fa-star text-yellow-400 text-xs"></i>
+              <i class="fas fa-star text-yellow-400 text-xs"></i>
+              <i class="fas fa-star text-yellow-400 text-xs"></i>
+              <i class="fas fa-star text-yellow-400 text-xs"></i>
+              <i class="fas fa-star text-yellow-400 text-xs"></i>
+            </div>
+          </div>
+        </div>
+
+        <!-- Review Images -->
+        <div class="review-images mb-4" data-reviewer="Jane Smith">
+          <img src="https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?auto=format&fit=crop&w=200&q=80" alt="Eiffel Tower view" class="review-image w-full h-full object-cover" onclick="openFullscreen(this, 0)" />
+          <img src="https://images.unsplash.com/photo-1465101046530-73398c7f28ca?auto=format&fit=crop&w=200&q=80" alt="Tower at night" class="review-image w-full h-full object-cover" onclick="openFullscreen(this, 1)" />
+          <img src="https://images.unsplash.com/photo-1467269204594-9661b134dd2b?auto=format&fit=crop&w=200&q=80" alt="Tower details" class="review-image w-full h-full object-cover" onclick="openFullscreen(this, 2)" />
+        </div>
+
+        <!-- Review Actions -->
+        <div class="flex items-center justify-between pt-3 border-t border-gray-100">
+          <button class="flex items-center gap-2 text-gray-500 hover:text-blue-500 text-sm">
+            <i class="fas fa-thumbs-up"></i>
+            <span>Helpful (23)</span>
+          </button>
+          <button class="flex items-center gap-2 text-gray-500 hover:text-blue-500 text-sm">
+            <i class="fas fa-reply"></i>
+            <span>Reply</span>
+          </button>
+          <button class="flex items-center gap-2 text-gray-500 hover:text-blue-500 text-sm">
+            <i class="fas fa-share"></i>
+            <span>Share</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Review 2 - With Images -->
+      <div class="bg-white rounded-2xl shadow-sm p-5">
+        <div class="flex items-start gap-3 mb-4">
+          <img src="https://randomuser.me/api/portraits/men/65.jpg" alt="Carlos Rivera" class="w-12 h-12 rounded-full object-cover" />
+          <div class="flex-1">
+            <div class="flex items-center gap-2 mb-1">
+              <span class="font-semibold text-gray-900">Carlos Rivera</span>
+              <div class="flex gap-0.5">
+                <i class="fas fa-star text-yellow-400 text-sm"></i>
+                <i class="fas fa-star text-yellow-400 text-sm"></i>
+                <i class="fas fa-star text-yellow-400 text-sm"></i>
+                <i class="fas fa-star text-yellow-400 text-sm"></i>
+                <i class="fas fa-star text-yellow-400 text-sm"></i>
+              </div>
+            </div>
+            <div class="flex items-center gap-2 text-xs text-gray-500 mb-2">
+              <span>5 days ago</span>
+              <span>•</span>
+              <span>Verified Purchase</span>
+              <span>•</span>
+              <span class="text-green-600"><i class="fas fa-thumbs-up text-xs mr-1"></i>Helpful (18)</span>
+            </div>
+          </div>
+        </div>
+        
+        <div class="mb-4">
+          <h3 class="font-medium text-gray-900 mb-2">Perfect for history buffs!</h3>
+          <p class="text-gray-700 text-sm leading-relaxed">
+            Very informative and engaging. The guide provided excellent historical context and interesting facts I hadn't heard before. The pacing was perfect - not too rushed. Will definitely recommend to friends visiting Paris!
+          </p>
+        </div>
+
+        <!-- Rating Breakdown for this review -->
+        <div class="grid grid-cols-3 gap-4 mb-4 p-3 bg-gray-50 rounded-xl">
+          <div class="text-center">
+            <div class="text-xs text-gray-600 mb-1">Audio</div>
+            <div class="flex gap-0.5 justify-center">
+              <i class="fas fa-star text-yellow-400 text-xs"></i>
+              <i class="fas fa-star text-yellow-400 text-xs"></i>
+              <i class="fas fa-star text-yellow-400 text-xs"></i>
+              <i class="fas fa-star text-yellow-400 text-xs"></i>
+              <i class="fas fa-star text-yellow-400 text-xs"></i>
+            </div>
+          </div>
+          <div class="text-center">
+            <div class="text-xs text-gray-600 mb-1">Content</div>
+            <div class="flex gap-0.5 justify-center">
+              <i class="fas fa-star text-yellow-400 text-xs"></i>
+              <i class="fas fa-star text-yellow-400 text-xs"></i>
+              <i class="fas fa-star text-yellow-400 text-xs"></i>
+              <i class="fas fa-star text-yellow-400 text-xs"></i>
+              <i class="fas fa-star text-yellow-400 text-xs"></i>
+            </div>
+          </div>
+          <div class="text-center">
+            <div class="text-xs text-gray-600 mb-1">Guide</div>
+            <div class="flex gap-0.5 justify-center">
+              <i class="fas fa-star text-yellow-400 text-xs"></i>
+              <i class="fas fa-star text-yellow-400 text-xs"></i>
+              <i class="fas fa-star text-yellow-400 text-xs"></i>
+              <i class="fas fa-star text-yellow-400 text-xs"></i>
+              <i class="far fa-star text-gray-300 text-xs"></i>
+            </div>
+          </div>
+        </div>
+
+        <!-- Review Images -->
+        <div class="review-images mb-4" data-reviewer="Carlos Rivera">
+          <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=200&q=80" alt="Panoramic view" class="review-image w-full h-full object-cover" onclick="openFullscreen(this, 0)" />
+          <img src="https://images.unsplash.com/photo-1519125323398-675f0ddb6308?auto=format&fit=crop&w=200&q=80" alt="Golden hour" class="review-image w-full h-full object-cover" onclick="openFullscreen(this, 1)" />
+        </div>
+
+        <!-- Review Actions -->
+        <div class="flex items-center justify-between pt-3 border-t border-gray-100">
+          <button class="flex items-center gap-2 text-gray-500 hover:text-blue-500 text-sm">
+            <i class="fas fa-thumbs-up"></i>
+            <span>Helpful (18)</span>
+          </button>
+          <button class="flex items-center gap-2 text-gray-500 hover:text-blue-500 text-sm">
+            <i class="fas fa-reply"></i>
+            <span>Reply</span>
+          </button>
+          <button class="flex items-center gap-2 text-gray-500 hover:text-blue-500 text-sm">
+            <i class="fas fa-share"></i>
+            <span>Share</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Review 3 - Text Only -->
+      <div class="bg-white rounded-2xl shadow-sm p-5">
+        <div class="flex items-start gap-3 mb-4">
+          <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Emily Chen" class="w-12 h-12 rounded-full object-cover" />
+          <div class="flex-1">
+            <div class="flex items-center gap-2 mb-1">
+              <span class="font-semibold text-gray-900">Emily Chen</span>
+              <div class="flex gap-0.5">
+                <i class="fas fa-star text-yellow-400 text-sm"></i>
+                <i class="fas fa-star text-yellow-400 text-sm"></i>
+                <i class="fas fa-star text-yellow-400 text-sm"></i>
+                <i class="fas fa-star text-yellow-400 text-sm"></i>
+                <i class="fas fa-star text-yellow-400 text-sm"></i>
+              </div>
+            </div>
+            <div class="flex items-center gap-2 text-xs text-gray-500 mb-2">
+              <span>1 week ago</span>
+              <span>•</span>
+              <span>Verified Purchase</span>
+              <span>•</span>
+              <span class="text-green-600"><i class="fas fa-thumbs-up text-xs mr-1"></i>Helpful (12)</span>
+            </div>
+          </div>
+        </div>
+        
+        <div class="mb-4">
+          <h3 class="font-medium text-gray-900 mb-2">Great flexibility and clear directions</h3>
+          <p class="text-gray-700 text-sm leading-relaxed">
+            Loved the flexibility of the tour and the clear directions. The app worked perfectly offline and the GPS guidance was spot-on. The content was well-researched and presented in an engaging way. Highly recommended for anyone wanting to explore at their own pace!
+          </p>
+        </div>
+
+        <!-- Rating Breakdown for this review -->
+        <div class="grid grid-cols-3 gap-4 mb-4 p-3 bg-gray-50 rounded-xl">
+          <div class="text-center">
+            <div class="text-xs text-gray-600 mb-1">Audio</div>
+            <div class="flex gap-0.5 justify-center">
+              <i class="fas fa-star text-yellow-400 text-xs"></i>
+              <i class="fas fa-star text-yellow-400 text-xs"></i>
+              <i class="fas fa-star text-yellow-400 text-xs"></i>
+              <i class="fas fa-star text-yellow-400 text-xs"></i>
+              <i class="fas fa-star text-yellow-400 text-xs"></i>
+            </div>
+          </div>
+          <div class="text-center">
+            <div class="text-xs text-gray-600 mb-1">Content</div>
+            <div class="flex gap-0.5 justify-center">
+              <i class="fas fa-star text-yellow-400 text-xs"></i>
+              <i class="fas fa-star text-yellow-400 text-xs"></i>
+              <i class="fas fa-star text-yellow-400 text-xs"></i>
+              <i class="fas fa-star text-yellow-400 text-xs"></i>
+              <i class="fas fa-star text-yellow-400 text-xs"></i>
+            </div>
+          </div>
+          <div class="text-center">
+            <div class="text-xs text-gray-600 mb-1">Guide</div>
+            <div class="flex gap-0.5 justify-center">
+              <i class="fas fa-star text-yellow-400 text-xs"></i>
+              <i class="fas fa-star text-yellow-400 text-xs"></i>
+              <i class="fas fa-star text-yellow-400 text-xs"></i>
+              <i class="fas fa-star text-yellow-400 text-xs"></i>
+              <i class="fas fa-star text-yellow-400 text-xs"></i>
+            </div>
+          </div>
+        </div>
+
+        <!-- Review Actions -->
+        <div class="flex items-center justify-between pt-3 border-t border-gray-100">
+          <button class="flex items-center gap-2 text-gray-500 hover:text-blue-500 text-sm">
+            <i class="fas fa-thumbs-up"></i>
+            <span>Helpful (12)</span>
+          </button>
+          <button class="flex items-center gap-2 text-gray-500 hover:text-blue-500 text-sm">
+            <i class="fas fa-reply"></i>
+            <span>Reply</span>
+          </button>
+          <button class="flex items-center gap-2 text-gray-500 hover:text-blue-500 text-sm">
+            <i class="fas fa-share"></i>
+            <span>Share</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Review 4 - Critical Review -->
+      <div class="bg-white rounded-2xl shadow-sm p-5">
+        <div class="flex items-start gap-3 mb-4">
+          <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Liam O'Brien" class="w-12 h-12 rounded-full object-cover" />
+          <div class="flex-1">
+            <div class="flex items-center gap-2 mb-1">
+              <span class="font-semibold text-gray-900">Liam O'Brien</span>
+              <div class="flex gap-0.5">
+                <i class="fas fa-star text-yellow-400 text-sm"></i>
+                <i class="fas fa-star text-yellow-400 text-sm"></i>
+                <i class="fas fa-star text-yellow-400 text-sm"></i>
+                <i class="fas fa-star text-yellow-400 text-sm"></i>
+                <i class="far fa-star text-gray-300 text-sm"></i>
+              </div>
+            </div>
+            <div class="flex items-center gap-2 text-xs text-gray-500 mb-2">
+              <span>2 weeks ago</span>
+              <span>•</span>
+              <span>Verified Purchase</span>
+              <span>•</span>
+              <span class="text-green-600"><i class="fas fa-thumbs-up text-xs mr-1"></i>Helpful (8)</span>
+            </div>
+          </div>
+        </div>
+        
+        <div class="mb-4">
+          <h3 class="font-medium text-gray-900 mb-2">Good content, some audio issues</h3>
+          <p class="text-gray-700 text-sm leading-relaxed">
+            Good content overall, but some parts were a bit hard to hear in crowded areas. The historical information was excellent and well-researched. I appreciated the local tips and recommendations. Would be great if the audio levels were more consistent.
+          </p>
+        </div>
+
+        <!-- Rating Breakdown for this review -->
+        <div class="grid grid-cols-3 gap-4 mb-4 p-3 bg-gray-50 rounded-xl">
+          <div class="text-center">
+            <div class="text-xs text-gray-600 mb-1">Audio</div>
+            <div class="flex gap-0.5 justify-center">
+              <i class="fas fa-star text-yellow-400 text-xs"></i>
+              <i class="fas fa-star text-yellow-400 text-xs"></i>
+              <i class="fas fa-star text-yellow-400 text-xs"></i>
+              <i class="far fa-star text-gray-300 text-xs"></i>
+              <i class="far fa-star text-gray-300 text-xs"></i>
+            </div>
+          </div>
+          <div class="text-center">
+            <div class="text-xs text-gray-600 mb-1">Content</div>
+            <div class="flex gap-0.5 justify-center">
+              <i class="fas fa-star text-yellow-400 text-xs"></i>
+              <i class="fas fa-star text-yellow-400 text-xs"></i>
+              <i class="fas fa-star text-yellow-400 text-xs"></i>
+              <i class="fas fa-star text-yellow-400 text-xs"></i>
+              <i class="fas fa-star text-yellow-400 text-xs"></i>
+            </div>
+          </div>
+          <div class="text-center">
+            <div class="text-xs text-gray-600 mb-1">Guide</div>
+            <div class="flex gap-0.5 justify-center">
+              <i class="fas fa-star text-yellow-400 text-xs"></i>
+              <i class="fas fa-star text-yellow-400 text-xs"></i>
+              <i class="fas fa-star text-yellow-400 text-xs"></i>
+              <i class="fas fa-star text-yellow-400 text-xs"></i>
+              <i class="far fa-star text-gray-300 text-xs"></i>
+            </div>
+          </div>
+        </div>
+
+        <!-- Review Actions -->
+        <div class="flex items-center justify-between pt-3 border-t border-gray-100">
+          <button class="flex items-center gap-2 text-gray-500 hover:text-blue-500 text-sm">
+            <i class="fas fa-thumbs-up"></i>
+            <span>Helpful (8)</span>
+          </button>
+          <button class="flex items-center gap-2 text-gray-500 hover:text-blue-500 text-sm">
+            <i class="fas fa-reply"></i>
+            <span>Reply</span>
+          </button>
+          <button class="flex items-center gap-2 text-gray-500 hover:text-blue-500 text-sm">
+            <i class="fas fa-share"></i>
+            <span>Share</span>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Load More Button -->
+    <div class="flex justify-center mt-8">
+      <button class="bg-blue-500 text-white px-6 py-3 rounded-xl font-semibold shadow-sm hover:bg-blue-600 transition">
+        Load More Reviews
+      </button>
+    </div>
+
+    <!-- Write Review CTA -->
+    <div class="bg-gradient-to-r from-blue-500 to-purple-600 rounded-2xl p-6 mt-8 text-center text-white">
+      <h3 class="font-semibold text-lg mb-2">Share Your Experience</h3>
+      <p class="text-blue-100 text-sm mb-4">Help other travelers by writing a review</p>
+      <button class="bg-white text-blue-600 px-6 py-2 rounded-xl font-semibold hover:bg-blue-50 transition">
+        Write a Review
+      </button>
+    </div>
+  </main>
+
+  <script>
+    let currentImageSet = [];
+    let currentImageIndex = 0;
+    let currentReviewer = '';
+
+    function openFullscreen(imgElement, index) {
+      const reviewContainer = imgElement.closest('.review-images');
+      const reviewer = reviewContainer.dataset.reviewer;
+      const images = Array.from(reviewContainer.querySelectorAll('img'));
+      
+      currentImageSet = images.map(img => ({
+        src: img.src,
+        alt: img.alt
+      }));
+      currentImageIndex = index;
+      currentReviewer = reviewer;
+      
+      updateFullscreenImage();
+      document.getElementById('fullscreenModal').classList.remove('hidden');
+    }
+
+    function updateFullscreenImage() {
+      const image = document.getElementById('fullscreenImage');
+      const counter = document.getElementById('fullscreenCounter');
+      const reviewerEl = document.getElementById('fullscreenReviewer');
+      
+      if (currentImageSet.length > 0) {
+        image.src = currentImageSet[currentImageIndex].src;
+        image.alt = currentImageSet[currentImageIndex].alt;
+        counter.textContent = `${currentImageIndex + 1} / ${currentImageSet.length}`;
+        reviewerEl.textContent = `by ${currentReviewer}`;
+      }
+    }
+
+    function navigateFullscreen(direction) {
+      if (direction === 'next' && currentImageIndex < currentImageSet.length - 1) {
+        currentImageIndex++;
+      } else if (direction === 'prev' && currentImageIndex > 0) {
+        currentImageIndex--;
+      }
+      updateFullscreenImage();
+    }
+
+    function closeFullscreen() {
+      document.getElementById('fullscreenModal').classList.add('hidden');
+    }
+
+    // Event listeners
+    document.getElementById('closeFullscreen').onclick = closeFullscreen;
+    document.getElementById('fullscreenNext').onclick = () => navigateFullscreen('next');
+    document.getElementById('fullscreenPrev').onclick = () => navigateFullscreen('prev');
+
+    // Close fullscreen on escape key
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') {
+        closeFullscreen();
+      }
+    });
+
+    // Filter buttons functionality
+    document.querySelectorAll('button').forEach(button => {
+      if (button.textContent.includes('All Reviews') || 
+          button.textContent.includes('With Photos') || 
+          button.textContent.includes('5 Stars') || 
+          button.textContent.includes('Recent')) {
+        button.addEventListener('click', () => {
+          // Remove active class from all filter buttons
+          document.querySelectorAll('button').forEach(btn => {
+            if (btn.textContent.includes('All Reviews') || 
+                btn.textContent.includes('With Photos') || 
+                btn.textContent.includes('5 Stars') || 
+                btn.textContent.includes('Recent')) {
+              btn.className = 'px-4 py-2 bg-gray-100 text-gray-700 rounded-full text-sm font-medium whitespace-nowrap';
+            }
+          });
+          
+          // Add active class to clicked button
+          button.className = 'px-4 py-2 bg-blue-500 text-white rounded-full text-sm font-medium whitespace-nowrap';
+        });
+      }
+    });
+
+    // Helpful button functionality
+    document.querySelectorAll('button').forEach(button => {
+      if (button.textContent.includes('Helpful')) {
+        button.addEventListener('click', (e) => {
+          e.preventDefault();
+          const currentCount = parseInt(button.textContent.match(/\d+/)[0]);
+          const newCount = currentCount + 1;
+          button.innerHTML = button.innerHTML.replace(/\d+/, newCount);
+          button.classList.add('text-blue-500');
+          button.disabled = true;
+        });
+      }
+    });
+  </script>
+</body>
+</html>
+
+

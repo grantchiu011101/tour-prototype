@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Enhanced Audio Player</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    .no-scrollbar::-webkit-scrollbar { display: none; }
+    .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+    
+    .image-skeleton {
+      background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+      background-size: 200% 100%;
+      animation: loading 1.5s infinite;
+    }
+    
+    @keyframes loading {
+      0% { background-position: 200% 0; }
+      100% { background-position: -200% 0; }
+    }
+    
+    .image-zoom {
+      transition: transform 0.3s ease;
+    }
+    
+    .image-zoom:hover {
+      transform: scale(1.05);
+    }
+    
+    .fullscreen-overlay {
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+    }
+  </style>
+</head>
+<body class="relative min-h-screen flex flex-col">
+  <!-- Blurred Background Image -->
+  <div class="fixed inset-0 z-0">
+    <img src="https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?auto=format&fit=crop&w=800&q=80" alt="Eiffel Tower Background" class="w-full h-full object-cover blur-xl scale-110" />
+    <div class="absolute inset-0 bg-black bg-opacity-40"></div>
+  </div>
+
+  <!-- Fullscreen Image Modal -->
+  <div id="fullscreenModal" class="fixed inset-0 z-50 bg-black bg-opacity-90 fullscreen-overlay hidden flex items-center justify-center">
+    <button id="closeFullscreen" class="absolute top-4 right-4 text-white text-2xl z-60 bg-black bg-opacity-50 rounded-full w-10 h-10 flex items-center justify-center">
+      <i class="fas fa-times"></i>
+    </button>
+    <div class="relative w-full h-full flex items-center justify-center">
+      <img id="fullscreenImage" src="" alt="" class="max-w-full max-h-full object-contain" />
+      <button id="fullscreenPrev" class="absolute left-4 top-1/2 -translate-y-1/2 text-white text-2xl bg-black bg-opacity-50 rounded-full w-12 h-12 flex items-center justify-center">
+        <i class="fas fa-chevron-left"></i>
+      </button>
+      <button id="fullscreenNext" class="absolute right-4 top-1/2 -translate-y-1/2 text-white text-2xl bg-black bg-opacity-50 rounded-full w-12 h-12 flex items-center justify-center">
+        <i class="fas fa-chevron-right"></i>
+      </button>
+      <div id="fullscreenCounter" class="absolute bottom-4 left-1/2 -translate-x-1/2 text-white bg-black bg-opacity-50 px-3 py-1 rounded-full text-sm">
+        1 / 5
+      </div>
+    </div>
+  </div>
+
+  <main class="relative z-10 flex-1 flex flex-col px-4 pt-4 pb-24 max-w-md mx-auto w-full">
+    <!-- Top Bar -->
+    <div class="flex items-center justify-between mb-4">
+      <button class="text-gray-100 text-xl" aria-label="Back"><i class="fas fa-arrow-left"></i></button>
+      <div class="font-semibold text-base text-white truncate">Eiffel Tower</div>
+      <button class="text-blue-200 text-xl" aria-label="Share"><i class="fas fa-share-alt"></i></button>
+    </div>
+
+    <!-- Dynamic Image Display -->
+    <div id="imageContainer" class="mb-4">
+      <!-- This will be populated by JavaScript based on image count -->
+    </div>
+
+    <!-- Location & Description -->
+    <div class="text-center mb-2 text-gray-200 text-sm">Paris, France</div>
+    <div class="text-center mb-4 text-gray-300 text-xs">The Eiffel Tower is a global cultural icon of France and one of the most recognizable structures in the world.</div>
+
+    <!-- Audio Controls -->
+    <div class="flex flex-col items-center gap-3 mb-2">
+      <!-- Seek Bar -->
+      <div class="w-full flex items-center gap-2">
+        <span class="text-xs text-gray-300">1:23</span>
+        <input type="range" min="0" max="300" value="83" class="flex-1 accent-blue-400 h-1" />
+        <span class="text-xs text-gray-300">5:00</span>
+      </div>
+      <!-- Main Controls -->
+      <div class="flex items-center justify-center gap-6 mt-2">
+        <button class="text-gray-100 text-2xl" aria-label="Rewind 15 seconds"><i class="fas fa-undo-alt"></i></button>
+        <button class="bg-blue-500 text-white rounded-full w-16 h-16 flex items-center justify-center text-3xl shadow-lg" aria-label="Play/Pause"><i class="fas fa-play"></i></button>
+        <button class="text-gray-100 text-2xl" aria-label="Forward 15 seconds"><i class="fas fa-redo-alt"></i></button>
+      </div>
+      <!-- Playback Speed -->
+      <div class="flex items-center gap-2 mt-2">
+        <span class="text-xs text-gray-200">Speed</span>
+        <button class="text-blue-200 text-sm font-semibold bg-blue-900 bg-opacity-40 rounded px-2 py-1">1x</button>
+      </div>
+    </div>
+
+    <!-- Engagement & Navigation -->
+    <div class="flex justify-center gap-4 mt-4 mb-2">
+      <button id="favoriteBtn" class="flex items-center gap-1 text-pink-200 text-base font-medium bg-pink-900 bg-opacity-40 px-3 py-1 rounded-full transition" aria-label="Add to Favorites" onclick="toggleFavorite()">
+        <i id="favoriteIcon" class="far fa-heart"></i> <span id="favoriteText">Favorite</span>
+      </button>
+      <button class="flex items-center gap-1 text-blue-200 text-base font-medium bg-blue-900 bg-opacity-40 px-3 py-1 rounded-full" aria-label="Show Transcript"><i class="fas fa-align-left"></i> Transcript</button>
+    </div>
+    <div class="flex justify-between mt-2">
+      <button class="text-gray-200 text-sm flex items-center gap-1" aria-label="Previous Segment"><i class="fas fa-step-backward"></i> Prev</button>
+      <button class="text-gray-200 text-sm flex items-center gap-1" aria-label="Next Segment">Next <i class="fas fa-step-forward"></i></button>
+    </div>
+  </main>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/js/all.min.js"></script>
+  <script>
+    // Sample tour step data - in real app this would come from API/Firebase
+    const tourStepImages = [
+      {
+        url: "https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?auto=format&fit=crop&w=400&q=80",
+        caption: "Eiffel Tower from Trocadéro",
+        alt: "Eiffel Tower 1"
+      },
+      {
+        url: "https://images.unsplash.com/photo-1465101046530-73398c7f28ca?auto=format&fit=crop&w=400&q=80",
+        caption: "Tower illuminated at night",
+        alt: "Eiffel Tower 2"
+      },
+      {
+        url: "https://images.unsplash.com/photo-1467269204594-9661b134dd2b?auto=format&fit=crop&w=400&q=80",
+        caption: "Close-up architectural details",
+        alt: "Eiffel Tower 3"
+      },
+      {
+        url: "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=400&q=80",
+        caption: "Panoramic city view",
+        alt: "Eiffel Tower 4"
+      },
+      {
+        url: "https://images.unsplash.com/photo-1519125323398-675f0ddb6308?auto=format&fit=crop&w=400&q=80",
+        caption: "Sunset golden hour",
+        alt: "Eiffel Tower 5"
+      }
+    ];
+
+    let currentImageIndex = 0;
+    let isFavorited = false;
+
+    function createImageDisplay(images) {
+      const container = document.getElementById('imageContainer');
+      const imageCount = images.length;
+
+      if (imageCount === 1) {
+        // Single large image
+        container.innerHTML = `
+          <div class="relative w-50 h-50 mx-auto">
+            <img src="${images[0].url}" alt="${images[0].alt}" 
+                 class="w-full h-full object-cover rounded-xl cursor-pointer image-zoom" 
+                 onclick="openFullscreen(0)" />
+          </div>
+        `;
+      } else if (imageCount <= 4) {
+        // Carousel for 2-4 images
+        createCarousel(images, 'w-40 h-40');
+      } else {
+        // Compact carousel for 5+ images
+        createCarousel(images, 'w-35 h-35');
+      }
+    }
+
+    function createCarousel(images, sizeClass) {
+      const container = document.getElementById('imageContainer');
+      
+      container.innerHTML = `
+        <div class="relative ${sizeClass} mx-auto">
+          <div id="carousel" class="overflow-hidden rounded-xl">
+            <div id="carouselInner" class="flex transition-transform duration-300" style="transform: translateX(0);">
+              ${images.map((img, index) => `
+                <img src="${img.url}" alt="${img.alt}" 
+                     class="${sizeClass} aspect-square object-cover flex-shrink-0 cursor-pointer image-zoom" 
+                     onclick="openFullscreen(${index})" />
+              `).join('')}
+            </div>
+          </div>
+          
+          <!-- Navigation arrows (hidden on mobile) -->
+          <button id="carouselPrev" class="absolute left-0 top-1/2 -translate-y-1/2 bg-white bg-opacity-70 rounded-full p-2 shadow text-gray-700 hover:bg-opacity-100 hidden md:block" aria-label="Previous image">
+            <i class="fas fa-chevron-left"></i>
+          </button>
+          <button id="carouselNext" class="absolute right-0 top-1/2 -translate-y-1/2 bg-white bg-opacity-70 rounded-full p-2 shadow text-gray-700 hover:bg-opacity-100 hidden md:block" aria-label="Next image">
+            <i class="fas fa-chevron-right"></i>
+          </button>
+          
+          <!-- Dynamic indicators -->
+          <div class="absolute bottom-2 left-1/2 -translate-x-1/2 flex items-center gap-2 bg-black bg-opacity-30 px-3 py-1 rounded-full">
+            ${images.length <= 5 ? 
+              // Show dots for 5 or fewer images
+              `<div id="carouselDots" class="flex gap-1">
+                ${images.map((_, index) => `
+                  <span class="w-2 h-2 rounded-full bg-white ${index === 0 ? 'opacity-80' : 'opacity-40'} cursor-pointer" onclick="goToSlide(${index})"></span>
+                `).join('')}
+              </div>` :
+              // Show counter for more than 5 images
+              `<div id="carouselCounter" class="text-white text-xs font-medium">1 / ${images.length}</div>`
+            }
+          </div>
+        </div>
+      `;
+
+      initializeCarousel(images);
+    }
+
+    function initializeCarousel(images) {
+      const carouselInner = document.getElementById('carouselInner');
+      const prevBtn = document.getElementById('carouselPrev');
+      const nextBtn = document.getElementById('carouselNext');
+      const dots = document.getElementById('carouselDots');
+      const counter = document.getElementById('carouselCounter');
+
+      function updateCarousel() {
+        carouselInner.style.transform = `translateX(-${currentImageIndex * 100}%)`;
+        
+        if (dots) {
+          // Update dots
+          const dotElements = dots.children;
+          for (let i = 0; i < dotElements.length; i++) {
+            dotElements[i].className = `w-2 h-2 rounded-full bg-white cursor-pointer ${i === currentImageIndex ? 'opacity-80' : 'opacity-40'}`;
+          }
+        }
+        
+        if (counter) {
+          // Update counter
+          counter.textContent = `${currentImageIndex + 1} / ${images.length}`;
+        }
+      }
+
+      // Navigation buttons
+      if (nextBtn && prevBtn) {
+        nextBtn.onclick = () => {
+          if (currentImageIndex < images.length - 1) {
+            currentImageIndex++;
+            updateCarousel();
+          }
+        };
+        
+        prevBtn.onclick = () => {
+          if (currentImageIndex > 0) {
+            currentImageIndex--;
+            updateCarousel();
+          }
+        };
+      }
+
+      // Touch/swipe support
+      let startX = 0;
+      let isDown = false;
+      const carousel = document.getElementById('carousel');
+      
+      carousel.addEventListener('touchstart', e => {
+        isDown = true;
+        startX = e.touches[0].clientX;
+      });
+      
+      carousel.addEventListener('touchend', e => {
+        isDown = false;
+      });
+      
+      carousel.addEventListener('touchmove', e => {
+        if (!isDown) return;
+        let diff = e.touches[0].clientX - startX;
+        if (Math.abs(diff) > 50) {
+          if (diff < 0 && currentImageIndex < images.length - 1) {
+            currentImageIndex++;
+            updateCarousel();
+          }
+          if (diff > 0 && currentImageIndex > 0) {
+            currentImageIndex--;
+            updateCarousel();
+          }
+          isDown = false;
+        }
+      });
+
+      updateCarousel();
+    }
+
+    function goToSlide(index) {
+      currentImageIndex = index;
+      const carouselInner = document.getElementById('carouselInner');
+      if (carouselInner) {
+        carouselInner.style.transform = `translateX(-${currentImageIndex * 100}%)`;
+        
+        const dots = document.getElementById('carouselDots');
+        if (dots) {
+          const dotElements = dots.children;
+          for (let i = 0; i < dotElements.length; i++) {
+            dotElements[i].className = `w-2 h-2 rounded-full bg-white cursor-pointer ${i === currentImageIndex ? 'opacity-80' : 'opacity-40'}`;
+          }
+        }
+      }
+    }
+
+    function openFullscreen(index) {
+      currentImageIndex = index;
+      const modal = document.getElementById('fullscreenModal');
+      const image = document.getElementById('fullscreenImage');
+      const counter = document.getElementById('fullscreenCounter');
+      
+      image.src = tourStepImages[index].url;
+      image.alt = tourStepImages[index].alt;
+      counter.textContent = `${index + 1} / ${tourStepImages.length}`;
+      
+      modal.classList.remove('hidden');
+    }
+
+    function closeFullscreen() {
+      document.getElementById('fullscreenModal').classList.add('hidden');
+    }
+
+    function navigateFullscreen(direction) {
+      if (direction === 'next' && currentImageIndex < tourStepImages.length - 1) {
+        currentImageIndex++;
+      } else if (direction === 'prev' && currentImageIndex > 0) {
+        currentImageIndex--;
+      }
+      
+      const image = document.getElementById('fullscreenImage');
+      const counter = document.getElementById('fullscreenCounter');
+      
+      image.src = tourStepImages[currentImageIndex].url;
+      image.alt = tourStepImages[currentImageIndex].alt;
+      counter.textContent = `${currentImageIndex + 1} / ${tourStepImages.length}`;
+    }
+
+    function toggleFavorite() {
+      isFavorited = !isFavorited;
+      const btn = document.getElementById('favoriteBtn');
+      const icon = document.getElementById('favoriteIcon');
+      const text = document.getElementById('favoriteText');
+      
+      if (isFavorited) {
+        btn.classList.remove('bg-pink-900', 'bg-opacity-40', 'text-pink-200');
+        btn.classList.add('bg-pink-600', 'text-white');
+        icon.classList.remove('far');
+        icon.classList.add('fas');
+        text.textContent = 'Favorited';
+      } else {
+        btn.classList.add('bg-pink-900', 'bg-opacity-40', 'text-pink-200');
+        btn.classList.remove('bg-pink-600', 'text-white');
+        icon.classList.remove('fas');
+        icon.classList.add('far');
+        text.textContent = 'Favorite';
+      }
+    }
+
+    // Event listeners for fullscreen modal
+    document.getElementById('closeFullscreen').onclick = closeFullscreen;
+    document.getElementById('fullscreenNext').onclick = () => navigateFullscreen('next');
+    document.getElementById('fullscreenPrev').onclick = () => navigateFullscreen('prev');
+
+    // Close fullscreen on escape key
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') {
+        closeFullscreen();
+      }
+    });
+
+    // Initialize the image display
+    document.addEventListener('DOMContentLoaded', () => {
+      createImageDisplay(tourStepImages);
+    });
+  </script>
+</body>
+</html>
+
+

@@ -1,0 +1,23 @@
+# Creator Profile Edit Screenshot Placeholder
+
+This file is a placeholder for the creator-profile-edit.png screenshot.
+
+To create the actual screenshot:
+
+1. Open creator-profile-edit.html in a web browser
+2. Set the browser viewport to mobile dimensions (390x844 pixels)
+3. Take a screenshot of the mobile view
+4. Save it as creator-profile-edit.png in this screenshots folder
+
+The creator-profile-edit.html file contains:
+- Profile photo section with camera button
+- Bio information (display name, short bio, full bio)
+- Auto-detected location information
+- Gallery photos (max 12) with upload functionality
+- Contact information (email/phone - disabled)
+- Social media connection buttons (12 platforms)
+- Save button at the bottom
+
+The screen is designed for mobile devices and follows the app's design system.
+
+
