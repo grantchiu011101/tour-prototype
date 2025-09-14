@@ -20,7 +20,7 @@
         <input type="password" placeholder="确认密码" class="form-input">
         <button class="btn btn-primary btn-full mt-4" onclick="navigateToHomeAfterSignup()">注册</button>
         <p class="text-sm text-gray-500 mt-6 text-center">
-            已有账户? <a href="login.html" class="text-blue-500 hover:underline">登录</a>
+            已有账户? <a href="../auth/login.html" class="text-blue-500 hover:underline">登录</a>
         </p>
     </div>
 
@@ -33,7 +33,7 @@
                 window.parent.showBottomNav();
                  // Also, ensure the "Home" nav item in parent is set to active
                 window.parent.document.querySelectorAll('.nav-item').forEach(item => item.classList.remove('active'));
-                const homeNavItem = window.parent.document.querySelector('.nav-item[data-page="home.html"]');
+                const homeNavItem = window.parent.document.querySelector('.nav-item[data-page="../tourist/main/home.html"]');
                 if (homeNavItem) homeNavItem.classList.add('active');
             }
         }

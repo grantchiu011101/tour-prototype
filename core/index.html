@@ -21,23 +21,23 @@
         </div>
 
         <div id="app-iframe-container">
-            <iframe src="login.html" id="app-frame" name="app-frame"></iframe>
+            <iframe src="../auth/login.html" id="app-frame" name="app-frame"></iframe>
         </div>
 
         <div id="bottom-nav" class="bottom-navigation">
-            <div class="nav-item active" data-page="home.html">
+            <div class="nav-item active" data-page="../tourist/main/home.html">
                 <i class="fas fa-home"></i>
                 <span>首页</span>
             </div>
-            <div class="nav-item" data-page="search.html">
+            <div class="nav-item" data-page="../tourist/main/search.html">
                 <i class="fas fa-search"></i>
                 <span>发现</span>
             </div>
-            <div class="nav-item" data-page="map.html">
+            <div class="nav-item" data-page="../tourist/main/map.html">
                 <i class="fas fa-map-marked-alt"></i>
                 <span>地图</span>
             </div>
-            <div class="nav-item" data-page="profile.html">
+            <div class="nav-item" data-page="../tourist/profile/profile.html">
                 <i class="fas fa-user-circle"></i>
                 <span>我的</span>
             </div>
@@ -60,7 +60,7 @@
         // Then after login: iframe.src = 'home.html'; bottomNav.style.display = 'flex';
         
         // Default to home.html in iframe, and make bottom nav visible initially
-        iframe.src = 'home.html';
+        iframe.src = '../tourist/main/home.html';
 
         navItems.forEach(item => {
             item.addEventListener('click', function() {
@@ -92,7 +92,7 @@
         }
 
         // Initially set nav for home.html
-        document.querySelector('.nav-item[data-page="home.html"]').classList.add('active');
+        document.querySelector('.nav-item[data-page="../tourist/main/home.html"]').classList.add('active');
         // Call showBottomNav for the initial load of home.html
         showBottomNav();
 
