@@ -14,7 +14,9 @@
       <i class="fas fa-arrow-left text-lg"></i>
     </a>
     <span class="font-semibold text-lg text-gray-900">Continue Listening</span>
-    <div class="w-6"></div> <!-- Spacer for alignment -->
+    <button id="clearAllBtn" class="text-sm text-red-600 hover:text-red-700 font-medium transition">
+      Clear All
+    </button>
   </nav>
 
   <!-- Main Content -->
@@ -53,7 +55,7 @@
       <h2 class="text-sm font-semibold text-gray-500 uppercase tracking-wide">Your In-Progress Tours</h2>
 
       <!-- Tour Item 1 -->
-      <div class="bg-white rounded-xl shadow-sm border border-gray-100 p-4 hover:shadow-md transition">
+      <div class="tour-item bg-white rounded-xl shadow-sm border border-gray-100 p-4 hover:shadow-md transition relative">
         <div class="flex gap-3">
           <img src="https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?auto=format&fit=crop&w=100&q=80" alt="Eiffel Tower" class="h-20 w-20 object-cover rounded-lg flex-shrink-0" />
           <div class="flex-1 min-w-0">
@@ -62,9 +64,14 @@
                 <h3 class="font-semibold text-gray-900 text-sm truncate">Eiffel Tower Tour</h3>
                 <p class="text-xs text-gray-500">Paris, France</p>
               </div>
-              <button class="flex items-center justify-center bg-blue-600 text-white rounded-full w-10 h-10 hover:bg-blue-700 transition flex-shrink-0" aria-label="Resume">
-                <i class="fas fa-play"></i>
-              </button>
+              <div class="flex items-center gap-2 flex-shrink-0">
+                <button class="delete-btn flex items-center justify-center text-red-500 hover:text-red-600 w-8 h-8 rounded-full hover:bg-red-50 transition" aria-label="Delete" title="Remove from continue listening">
+                  <i class="fas fa-trash-alt text-sm"></i>
+                </button>
+                <button class="flex items-center justify-center bg-blue-600 text-white rounded-full w-10 h-10 hover:bg-blue-700 transition" aria-label="Resume">
+                  <i class="fas fa-play"></i>
+                </button>
+              </div>
             </div>
             <div class="mt-2">
               <div class="flex items-center justify-between text-xs text-gray-500 mb-1">
@@ -84,7 +91,7 @@
       </div>
 
       <!-- Tour Item 2 -->
-      <div class="bg-white rounded-xl shadow-sm border border-gray-100 p-4 hover:shadow-md transition">
+      <div class="tour-item bg-white rounded-xl shadow-sm border border-gray-100 p-4 hover:shadow-md transition relative">
         <div class="flex gap-3">
           <img src="https://images.unsplash.com/photo-1465101046530-73398c7f28ca?auto=format&fit=crop&w=100&q=80" alt="Fushimi Inari" class="h-20 w-20 object-cover rounded-lg flex-shrink-0" />
           <div class="flex-1 min-w-0">
@@ -93,9 +100,14 @@
                 <h3 class="font-semibold text-gray-900 text-sm truncate">Fushimi Inari Shrine</h3>
                 <p class="text-xs text-gray-500">Kyoto, Japan</p>
               </div>
-              <button class="flex items-center justify-center bg-blue-600 text-white rounded-full w-10 h-10 hover:bg-blue-700 transition flex-shrink-0" aria-label="Resume">
-                <i class="fas fa-play"></i>
-              </button>
+              <div class="flex items-center gap-2 flex-shrink-0">
+                <button class="delete-btn flex items-center justify-center text-red-500 hover:text-red-600 w-8 h-8 rounded-full hover:bg-red-50 transition" aria-label="Delete" title="Remove from continue listening">
+                  <i class="fas fa-trash-alt text-sm"></i>
+                </button>
+                <button class="flex items-center justify-center bg-blue-600 text-white rounded-full w-10 h-10 hover:bg-blue-700 transition" aria-label="Resume">
+                  <i class="fas fa-play"></i>
+                </button>
+              </div>
             </div>
             <div class="mt-2">
               <div class="flex items-center justify-between text-xs text-gray-500 mb-1">
@@ -115,7 +127,7 @@
       </div>
 
       <!-- Tour Item 3 -->
-      <div class="bg-white rounded-xl shadow-sm border border-gray-100 p-4 hover:shadow-md transition">
+      <div class="tour-item bg-white rounded-xl shadow-sm border border-gray-100 p-4 hover:shadow-md transition relative">
         <div class="flex gap-3">
           <img src="https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?auto=format&fit=crop&w=100&q=80" alt="British Museum" class="h-20 w-20 object-cover rounded-lg flex-shrink-0" />
           <div class="flex-1 min-w-0">
@@ -124,9 +136,14 @@
                 <h3 class="font-semibold text-gray-900 text-sm truncate">British Museum Highlights</h3>
                 <p class="text-xs text-gray-500">London, UK</p>
               </div>
-              <button class="flex items-center justify-center bg-blue-600 text-white rounded-full w-10 h-10 hover:bg-blue-700 transition flex-shrink-0" aria-label="Resume">
-                <i class="fas fa-play"></i>
-              </button>
+              <div class="flex items-center gap-2 flex-shrink-0">
+                <button class="delete-btn flex items-center justify-center text-red-500 hover:text-red-600 w-8 h-8 rounded-full hover:bg-red-50 transition" aria-label="Delete" title="Remove from continue listening">
+                  <i class="fas fa-trash-alt text-sm"></i>
+                </button>
+                <button class="flex items-center justify-center bg-blue-600 text-white rounded-full w-10 h-10 hover:bg-blue-700 transition" aria-label="Resume">
+                  <i class="fas fa-play"></i>
+                </button>
+              </div>
             </div>
             <div class="mt-2">
               <div class="flex items-center justify-between text-xs text-gray-500 mb-1">
@@ -146,7 +163,7 @@
       </div>
 
       <!-- Tour Item 4 -->
-      <div class="bg-white rounded-xl shadow-sm border border-gray-100 p-4 hover:shadow-md transition">
+      <div class="tour-item bg-white rounded-xl shadow-sm border border-gray-100 p-4 hover:shadow-md transition relative">
         <div class="flex gap-3">
           <img src="https://images.unsplash.com/photo-1552832230-c0197dd311b5?auto=format&fit=crop&w=100&q=80" alt="Colosseum" class="h-20 w-20 object-cover rounded-lg flex-shrink-0" />
           <div class="flex-1 min-w-0">
@@ -155,9 +172,14 @@
                 <h3 class="font-semibold text-gray-900 text-sm truncate">Ancient Rome: Colosseum</h3>
                 <p class="text-xs text-gray-500">Rome, Italy</p>
               </div>
-              <button class="flex items-center justify-center bg-blue-600 text-white rounded-full w-10 h-10 hover:bg-blue-700 transition flex-shrink-0" aria-label="Resume">
-                <i class="fas fa-play"></i>
-              </button>
+              <div class="flex items-center gap-2 flex-shrink-0">
+                <button class="delete-btn flex items-center justify-center text-red-500 hover:text-red-600 w-8 h-8 rounded-full hover:bg-red-50 transition" aria-label="Delete" title="Remove from continue listening">
+                  <i class="fas fa-trash-alt text-sm"></i>
+                </button>
+                <button class="flex items-center justify-center bg-blue-600 text-white rounded-full w-10 h-10 hover:bg-blue-700 transition" aria-label="Resume">
+                  <i class="fas fa-play"></i>
+                </button>
+              </div>
             </div>
             <div class="mt-2">
               <div class="flex items-center justify-between text-xs text-gray-500 mb-1">
@@ -177,7 +199,7 @@
       </div>
 
       <!-- Tour Item 5 -->
-      <div class="bg-white rounded-xl shadow-sm border border-gray-100 p-4 hover:shadow-md transition">
+      <div class="tour-item bg-white rounded-xl shadow-sm border border-gray-100 p-4 hover:shadow-md transition relative">
         <div class="flex gap-3">
           <img src="https://images.unsplash.com/photo-1549144511-f099e773c147?auto=format&fit=crop&w=100&q=80" alt="Statue of Liberty" class="h-20 w-20 object-cover rounded-lg flex-shrink-0" />
           <div class="flex-1 min-w-0">
@@ -186,9 +208,14 @@
                 <h3 class="font-semibold text-gray-900 text-sm truncate">Statue of Liberty & Ellis Island</h3>
                 <p class="text-xs text-gray-500">New York, USA</p>
               </div>
-              <button class="flex items-center justify-center bg-blue-600 text-white rounded-full w-10 h-10 hover:bg-blue-700 transition flex-shrink-0" aria-label="Resume">
-                <i class="fas fa-play"></i>
-              </button>
+              <div class="flex items-center gap-2 flex-shrink-0">
+                <button class="delete-btn flex items-center justify-center text-red-500 hover:text-red-600 w-8 h-8 rounded-full hover:bg-red-50 transition" aria-label="Delete" title="Remove from continue listening">
+                  <i class="fas fa-trash-alt text-sm"></i>
+                </button>
+                <button class="flex items-center justify-center bg-blue-600 text-white rounded-full w-10 h-10 hover:bg-blue-700 transition" aria-label="Resume">
+                  <i class="fas fa-play"></i>
+                </button>
+              </div>
             </div>
             <div class="mt-2">
               <div class="flex items-center justify-between text-xs text-gray-500 mb-1">
@@ -208,7 +235,7 @@
       </div>
 
       <!-- Tour Item 6 -->
-      <div class="bg-white rounded-xl shadow-sm border border-gray-100 p-4 hover:shadow-md transition">
+      <div class="tour-item bg-white rounded-xl shadow-sm border border-gray-100 p-4 hover:shadow-md transition relative">
         <div class="flex gap-3">
           <img src="https://images.unsplash.com/photo-1564507592333-c60657eea523?auto=format&fit=crop&w=100&q=80" alt="Sagrada Familia" class="h-20 w-20 object-cover rounded-lg flex-shrink-0" />
           <div class="flex-1 min-w-0">
@@ -217,9 +244,14 @@
                 <h3 class="font-semibold text-gray-900 text-sm truncate">Sagrada Família</h3>
                 <p class="text-xs text-gray-500">Barcelona, Spain</p>
               </div>
-              <button class="flex items-center justify-center bg-blue-600 text-white rounded-full w-10 h-10 hover:bg-blue-700 transition flex-shrink-0" aria-label="Resume">
-                <i class="fas fa-play"></i>
-              </button>
+              <div class="flex items-center gap-2 flex-shrink-0">
+                <button class="delete-btn flex items-center justify-center text-red-500 hover:text-red-600 w-8 h-8 rounded-full hover:bg-red-50 transition" aria-label="Delete" title="Remove from continue listening">
+                  <i class="fas fa-trash-alt text-sm"></i>
+                </button>
+                <button class="flex items-center justify-center bg-blue-600 text-white rounded-full w-10 h-10 hover:bg-blue-700 transition" aria-label="Resume">
+                  <i class="fas fa-play"></i>
+                </button>
+              </div>
             </div>
             <div class="mt-2">
               <div class="flex items-center justify-between text-xs text-gray-500 mb-1">
@@ -239,7 +271,7 @@
       </div>
 
       <!-- Tour Item 7 -->
-      <div class="bg-white rounded-xl shadow-sm border border-gray-100 p-4 hover:shadow-md transition">
+      <div class="tour-item bg-white rounded-xl shadow-sm border border-gray-100 p-4 hover:shadow-md transition relative">
         <div class="flex gap-3">
           <img src="https://images.unsplash.com/photo-1587474260584-136574528ed5?auto=format&fit=crop&w=100&q=80" alt="Petra" class="h-20 w-20 object-cover rounded-lg flex-shrink-0" />
           <div class="flex-1 min-w-0">
@@ -248,9 +280,14 @@
                 <h3 class="font-semibold text-gray-900 text-sm truncate">Petra: The Rose City</h3>
                 <p class="text-xs text-gray-500">Petra, Jordan</p>
               </div>
-              <button class="flex items-center justify-center bg-blue-600 text-white rounded-full w-10 h-10 hover:bg-blue-700 transition flex-shrink-0" aria-label="Resume">
-                <i class="fas fa-play"></i>
-              </button>
+              <div class="flex items-center gap-2 flex-shrink-0">
+                <button class="delete-btn flex items-center justify-center text-red-500 hover:text-red-600 w-8 h-8 rounded-full hover:bg-red-50 transition" aria-label="Delete" title="Remove from continue listening">
+                  <i class="fas fa-trash-alt text-sm"></i>
+                </button>
+                <button class="flex items-center justify-center bg-blue-600 text-white rounded-full w-10 h-10 hover:bg-blue-700 transition" aria-label="Resume">
+                  <i class="fas fa-play"></i>
+                </button>
+              </div>
             </div>
             <div class="mt-2">
               <div class="flex items-center justify-between text-xs text-gray-500 mb-1">
@@ -270,7 +307,7 @@
       </div>
 
       <!-- Tour Item 8 -->
-      <div class="bg-white rounded-xl shadow-sm border border-gray-100 p-4 hover:shadow-md transition">
+      <div class="tour-item bg-white rounded-xl shadow-sm border border-gray-100 p-4 hover:shadow-md transition relative">
         <div class="flex gap-3">
           <img src="https://images.unsplash.com/photo-1524492412937-b28074a5d7da?auto=format&fit=crop&w=100&q=80" alt="Louvre" class="h-20 w-20 object-cover rounded-lg flex-shrink-0" />
           <div class="flex-1 min-w-0">
@@ -279,9 +316,14 @@
                 <h3 class="font-semibold text-gray-900 text-sm truncate">The Louvre: Masterpieces</h3>
                 <p class="text-xs text-gray-500">Paris, France</p>
               </div>
-              <button class="flex items-center justify-center bg-blue-600 text-white rounded-full w-10 h-10 hover:bg-blue-700 transition flex-shrink-0" aria-label="Resume">
-                <i class="fas fa-play"></i>
-              </button>
+              <div class="flex items-center gap-2 flex-shrink-0">
+                <button class="delete-btn flex items-center justify-center text-red-500 hover:text-red-600 w-8 h-8 rounded-full hover:bg-red-50 transition" aria-label="Delete" title="Remove from continue listening">
+                  <i class="fas fa-trash-alt text-sm"></i>
+                </button>
+                <button class="flex items-center justify-center bg-blue-600 text-white rounded-full w-10 h-10 hover:bg-blue-700 transition" aria-label="Resume">
+                  <i class="fas fa-play"></i>
+                </button>
+              </div>
             </div>
             <div class="mt-2">
               <div class="flex items-center justify-between text-xs text-gray-500 mb-1">
@@ -318,6 +360,170 @@
     -->
 
   </main>
+
+  <!-- Empty State (shown when all tours are cleared) -->
+  <div id="emptyState" class="hidden fixed inset-0 bg-gray-50 flex flex-col items-center justify-center px-4 text-center z-20">
+    <div class="w-24 h-24 bg-gray-100 rounded-full flex items-center justify-center mb-4">
+      <i class="fas fa-headphones text-4xl text-gray-400"></i>
+    </div>
+    <h3 class="text-lg font-semibold text-gray-900 mb-2">No Tours in Progress</h3>
+    <p class="text-sm text-gray-500 mb-6 max-w-xs">Start exploring amazing destinations and your progress will appear here.</p>
+    <a href="search.html" class="px-6 py-3 bg-blue-600 text-white rounded-lg font-medium hover:bg-blue-700 transition">
+      Browse Tours
+    </a>
+  </div>
+
+  <!-- Clear All Confirmation Modal -->
+  <div id="clearAllModal" class="hidden fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center px-4 z-50">
+    <div class="bg-white rounded-2xl p-6 max-w-sm w-full shadow-2xl">
+      <div class="flex items-center justify-center w-12 h-12 bg-red-100 rounded-full mx-auto mb-4">
+        <i class="fas fa-exclamation-triangle text-red-600 text-xl"></i>
+      </div>
+      <h3 class="text-lg font-semibold text-gray-900 text-center mb-2">Clear All Progress?</h3>
+      <p class="text-sm text-gray-500 text-center mb-6">This will remove all tours from your Continue Listening list. This action cannot be undone.</p>
+      <div class="flex gap-3">
+        <button id="cancelClearAll" class="flex-1 px-4 py-3 bg-gray-100 text-gray-700 rounded-lg font-medium hover:bg-gray-200 transition">
+          Cancel
+        </button>
+        <button id="confirmClearAll" class="flex-1 px-4 py-3 bg-red-600 text-white rounded-lg font-medium hover:bg-red-700 transition">
+          Clear All
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Delete Item Confirmation Modal -->
+  <div id="deleteModal" class="hidden fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center px-4 z-50">
+    <div class="bg-white rounded-2xl p-6 max-w-sm w-full shadow-2xl">
+      <div class="flex items-center justify-center w-12 h-12 bg-orange-100 rounded-full mx-auto mb-4">
+        <i class="fas fa-trash-alt text-orange-600 text-xl"></i>
+      </div>
+      <h3 class="text-lg font-semibold text-gray-900 text-center mb-2">Remove from Continue Listening?</h3>
+      <p id="deleteItemName" class="text-sm text-gray-500 text-center mb-6">This tour will be removed from your Continue Listening list.</p>
+      <div class="flex gap-3">
+        <button id="cancelDelete" class="flex-1 px-4 py-3 bg-gray-100 text-gray-700 rounded-lg font-medium hover:bg-gray-200 transition">
+          Cancel
+        </button>
+        <button id="confirmDelete" class="flex-1 px-4 py-3 bg-red-600 text-white rounded-lg font-medium hover:bg-red-700 transition">
+          Remove
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Get DOM elements
+    const clearAllBtn = document.getElementById('clearAllBtn');
+    const clearAllModal = document.getElementById('clearAllModal');
+    const deleteModal = document.getElementById('deleteModal');
+    const cancelClearAll = document.getElementById('cancelClearAll');
+    const confirmClearAll = document.getElementById('confirmClearAll');
+    const cancelDelete = document.getElementById('cancelDelete');
+    const confirmDelete = document.getElementById('confirmDelete');
+    const deleteButtons = document.querySelectorAll('.delete-btn');
+    const emptyState = document.getElementById('emptyState');
+    const statsSection = document.querySelector('.bg-gradient-to-r');
+    const tourList = document.querySelector('.flex.flex-col.gap-3.mt-2');
+    
+    let currentItemToDelete = null;
+    let totalTours = document.querySelectorAll('.tour-item').length;
+
+    // Update stats
+    function updateStats() {
+      const remainingTours = document.querySelectorAll('.tour-item').length;
+      const statsText = statsSection.querySelector('.text-2xl');
+      if (statsText) {
+        statsText.textContent = `${remainingTours} ${remainingTours === 1 ? 'Tour' : 'Tours'}`;
+      }
+      
+      // Show empty state if no tours
+      if (remainingTours === 0) {
+        setTimeout(() => {
+          emptyState.classList.remove('hidden');
+          document.querySelector('main').classList.add('hidden');
+          statsSection.classList.add('hidden');
+        }, 300);
+      }
+    }
+
+    // Clear All button
+    clearAllBtn.addEventListener('click', () => {
+      clearAllModal.classList.remove('hidden');
+    });
+
+    // Cancel Clear All
+    cancelClearAll.addEventListener('click', () => {
+      clearAllModal.classList.add('hidden');
+    });
+
+    // Confirm Clear All
+    confirmClearAll.addEventListener('click', () => {
+      const tourItems = document.querySelectorAll('.tour-item');
+      tourItems.forEach((item, index) => {
+        setTimeout(() => {
+          item.style.transform = 'translateX(-100%)';
+          item.style.opacity = '0';
+          setTimeout(() => {
+            item.remove();
+            if (index === tourItems.length - 1) {
+              updateStats();
+            }
+          }, 300);
+        }, index * 50);
+      });
+      clearAllModal.classList.add('hidden');
+    });
+
+    // Delete individual item
+    deleteButtons.forEach(button => {
+      button.addEventListener('click', (e) => {
+        e.stopPropagation();
+        currentItemToDelete = button.closest('.tour-item');
+        const tourName = currentItemToDelete.querySelector('h3').textContent;
+        document.getElementById('deleteItemName').textContent = `"${tourName}" will be removed from your Continue Listening list.`;
+        deleteModal.classList.remove('hidden');
+      });
+    });
+
+    // Cancel Delete
+    cancelDelete.addEventListener('click', () => {
+      deleteModal.classList.add('hidden');
+      currentItemToDelete = null;
+    });
+
+    // Confirm Delete
+    confirmDelete.addEventListener('click', () => {
+      if (currentItemToDelete) {
+        currentItemToDelete.style.transform = 'translateX(-100%)';
+        currentItemToDelete.style.opacity = '0';
+        setTimeout(() => {
+          currentItemToDelete.remove();
+          updateStats();
+        }, 300);
+      }
+      deleteModal.classList.add('hidden');
+      currentItemToDelete = null;
+    });
+
+    // Close modals on background click
+    clearAllModal.addEventListener('click', (e) => {
+      if (e.target === clearAllModal) {
+        clearAllModal.classList.add('hidden');
+      }
+    });
+
+    deleteModal.addEventListener('click', (e) => {
+      if (e.target === deleteModal) {
+        deleteModal.classList.add('hidden');
+        currentItemToDelete = null;
+      }
+    });
+
+    // Add transition styles to tour items
+    document.querySelectorAll('.tour-item').forEach(item => {
+      item.style.transition = 'all 0.3s ease';
+    });
+  </script>
 
 </body>
 </html>
