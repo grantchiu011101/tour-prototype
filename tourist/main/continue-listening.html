@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Continue Listening - Roam</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body class="bg-gray-50 min-h-screen flex flex-col">
+  <!-- Top Navigation Bar -->
+  <nav class="flex items-center justify-between px-4 py-3 bg-white shadow-sm sticky top-0 z-10 border-b border-gray-100">
+    <a href="home.html" aria-label="Back" class="flex items-center gap-2 text-gray-700 hover:text-blue-600 transition">
+      <i class="fas fa-arrow-left text-lg"></i>
+    </a>
+    <span class="font-semibold text-lg text-gray-900">Continue Listening</span>
+    <div class="w-6"></div> <!-- Spacer for alignment -->
+  </nav>
+
+  <!-- Main Content -->
+  <main class="flex-1 flex flex-col gap-4 px-4 pb-24 max-w-md mx-auto w-full bg-white">
+    
+    <!-- Filter and Sort Options -->
+    <section class="mt-4 flex items-center justify-between gap-3">
+      <div class="flex items-center gap-2 flex-1">
+        <button class="flex items-center gap-2 px-3 py-2 bg-gray-100 rounded-lg text-sm text-gray-700 hover:bg-gray-200 transition">
+          <i class="fas fa-filter"></i>
+          <span>Filter</span>
+        </button>
+        <button class="flex items-center gap-2 px-3 py-2 bg-gray-100 rounded-lg text-sm text-gray-700 hover:bg-gray-200 transition">
+          <i class="fas fa-sort"></i>
+          <span>Recently Played</span>
+        </button>
+      </div>
+    </section>
+
+    <!-- Stats Summary -->
+    <section class="bg-gradient-to-r from-blue-50 to-indigo-50 rounded-xl p-4 border border-blue-100">
+      <div class="flex items-center justify-between">
+        <div>
+          <div class="text-xs text-gray-600 mb-1">In Progress</div>
+          <div class="text-2xl font-bold text-gray-900">8 Tours</div>
+        </div>
+        <div class="text-right">
+          <div class="text-xs text-gray-600 mb-1">Total Time Left</div>
+          <div class="text-lg font-semibold text-gray-900">2h 18m</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Continue Listening List -->
+    <section class="flex flex-col gap-3 mt-2">
+      <h2 class="text-sm font-semibold text-gray-500 uppercase tracking-wide">Your In-Progress Tours</h2>
+
+      <!-- Tour Item 1 -->
+      <div class="bg-white rounded-xl shadow-sm border border-gray-100 p-4 hover:shadow-md transition">
+        <div class="flex gap-3">
+          <img src="https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?auto=format&fit=crop&w=100&q=80" alt="Eiffel Tower" class="h-20 w-20 object-cover rounded-lg flex-shrink-0" />
+          <div class="flex-1 min-w-0">
+            <div class="flex items-start justify-between gap-2 mb-1">
+              <div class="flex-1 min-w-0">
+                <h3 class="font-semibold text-gray-900 text-sm truncate">Eiffel Tower Tour</h3>
+                <p class="text-xs text-gray-500">Paris, France</p>
+              </div>
+              <button class="flex items-center justify-center bg-blue-600 text-white rounded-full w-10 h-10 hover:bg-blue-700 transition flex-shrink-0" aria-label="Resume">
+                <i class="fas fa-play"></i>
+              </button>
+            </div>
+            <div class="mt-2">
+              <div class="flex items-center justify-between text-xs text-gray-500 mb-1">
+                <span>60% complete</span>
+                <span>12 min left</span>
+              </div>
+              <div class="w-full h-2 bg-gray-100 rounded-full overflow-hidden">
+                <div class="h-full bg-blue-500 rounded-full" style="width: 60%"></div>
+              </div>
+            </div>
+            <div class="flex items-center gap-2 mt-2 text-xs text-gray-400">
+              <i class="far fa-clock"></i>
+              <span>Last played 2 hours ago</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Tour Item 2 -->
+      <div class="bg-white rounded-xl shadow-sm border border-gray-100 p-4 hover:shadow-md transition">
+        <div class="flex gap-3">
+          <img src="https://images.unsplash.com/photo-1465101046530-73398c7f28ca?auto=format&fit=crop&w=100&q=80" alt="Fushimi Inari" class="h-20 w-20 object-cover rounded-lg flex-shrink-0" />
+          <div class="flex-1 min-w-0">
+            <div class="flex items-start justify-between gap-2 mb-1">
+              <div class="flex-1 min-w-0">
+                <h3 class="font-semibold text-gray-900 text-sm truncate">Fushimi Inari Shrine</h3>
+                <p class="text-xs text-gray-500">Kyoto, Japan</p>
+              </div>
+              <button class="flex items-center justify-center bg-blue-600 text-white rounded-full w-10 h-10 hover:bg-blue-700 transition flex-shrink-0" aria-label="Resume">
+                <i class="fas fa-play"></i>
+              </button>
+            </div>
+            <div class="mt-2">
+              <div class="flex items-center justify-between text-xs text-gray-500 mb-1">
+                <span>35% complete</span>
+                <span>18 min left</span>
+              </div>
+              <div class="w-full h-2 bg-gray-100 rounded-full overflow-hidden">
+                <div class="h-full bg-blue-500 rounded-full" style="width: 35%"></div>
+              </div>
+            </div>
+            <div class="flex items-center gap-2 mt-2 text-xs text-gray-400">
+              <i class="far fa-clock"></i>
+              <span>Last played yesterday</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Tour Item 3 -->
+      <div class="bg-white rounded-xl shadow-sm border border-gray-100 p-4 hover:shadow-md transition">
+        <div class="flex gap-3">
+          <img src="https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?auto=format&fit=crop&w=100&q=80" alt="British Museum" class="h-20 w-20 object-cover rounded-lg flex-shrink-0" />
+          <div class="flex-1 min-w-0">
+            <div class="flex items-start justify-between gap-2 mb-1">
+              <div class="flex-1 min-w-0">
+                <h3 class="font-semibold text-gray-900 text-sm truncate">British Museum Highlights</h3>
+                <p class="text-xs text-gray-500">London, UK</p>
+              </div>
+              <button class="flex items-center justify-center bg-blue-600 text-white rounded-full w-10 h-10 hover:bg-blue-700 transition flex-shrink-0" aria-label="Resume">
+                <i class="fas fa-play"></i>
+              </button>
+            </div>
+            <div class="mt-2">
+              <div class="flex items-center justify-between text-xs text-gray-500 mb-1">
+                <span>82% complete</span>
+                <span>5 min left</span>
+              </div>
+              <div class="w-full h-2 bg-gray-100 rounded-full overflow-hidden">
+                <div class="h-full bg-blue-500 rounded-full" style="width: 82%"></div>
+              </div>
+            </div>
+            <div class="flex items-center gap-2 mt-2 text-xs text-gray-400">
+              <i class="far fa-clock"></i>
+              <span>Last played 3 days ago</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Tour Item 4 -->
+      <div class="bg-white rounded-xl shadow-sm border border-gray-100 p-4 hover:shadow-md transition">
+        <div class="flex gap-3">
+          <img src="https://images.unsplash.com/photo-1552832230-c0197dd311b5?auto=format&fit=crop&w=100&q=80" alt="Colosseum" class="h-20 w-20 object-cover rounded-lg flex-shrink-0" />
+          <div class="flex-1 min-w-0">
+            <div class="flex items-start justify-between gap-2 mb-1">
+              <div class="flex-1 min-w-0">
+                <h3 class="font-semibold text-gray-900 text-sm truncate">Ancient Rome: Colosseum</h3>
+                <p class="text-xs text-gray-500">Rome, Italy</p>
+              </div>
+              <button class="flex items-center justify-center bg-blue-600 text-white rounded-full w-10 h-10 hover:bg-blue-700 transition flex-shrink-0" aria-label="Resume">
+                <i class="fas fa-play"></i>
+              </button>
+            </div>
+            <div class="mt-2">
+              <div class="flex items-center justify-between text-xs text-gray-500 mb-1">
+                <span>15% complete</span>
+                <span>22 min left</span>
+              </div>
+              <div class="w-full h-2 bg-gray-100 rounded-full overflow-hidden">
+                <div class="h-full bg-blue-500 rounded-full" style="width: 15%"></div>
+              </div>
+            </div>
+            <div class="flex items-center gap-2 mt-2 text-xs text-gray-400">
+              <i class="far fa-clock"></i>
+              <span>Last played 1 week ago</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Tour Item 5 -->
+      <div class="bg-white rounded-xl shadow-sm border border-gray-100 p-4 hover:shadow-md transition">
+        <div class="flex gap-3">
+          <img src="https://images.unsplash.com/photo-1549144511-f099e773c147?auto=format&fit=crop&w=100&q=80" alt="Statue of Liberty" class="h-20 w-20 object-cover rounded-lg flex-shrink-0" />
+          <div class="flex-1 min-w-0">
+            <div class="flex items-start justify-between gap-2 mb-1">
+              <div class="flex-1 min-w-0">
+                <h3 class="font-semibold text-gray-900 text-sm truncate">Statue of Liberty & Ellis Island</h3>
+                <p class="text-xs text-gray-500">New York, USA</p>
+              </div>
+              <button class="flex items-center justify-center bg-blue-600 text-white rounded-full w-10 h-10 hover:bg-blue-700 transition flex-shrink-0" aria-label="Resume">
+                <i class="fas fa-play"></i>
+              </button>
+            </div>
+            <div class="mt-2">
+              <div class="flex items-center justify-between text-xs text-gray-500 mb-1">
+                <span>45% complete</span>
+                <span>15 min left</span>
+              </div>
+              <div class="w-full h-2 bg-gray-100 rounded-full overflow-hidden">
+                <div class="h-full bg-blue-500 rounded-full" style="width: 45%"></div>
+              </div>
+            </div>
+            <div class="flex items-center gap-2 mt-2 text-xs text-gray-400">
+              <i class="far fa-clock"></i>
+              <span>Last played 1 week ago</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Tour Item 6 -->
+      <div class="bg-white rounded-xl shadow-sm border border-gray-100 p-4 hover:shadow-md transition">
+        <div class="flex gap-3">
+          <img src="https://images.unsplash.com/photo-1564507592333-c60657eea523?auto=format&fit=crop&w=100&q=80" alt="Sagrada Familia" class="h-20 w-20 object-cover rounded-lg flex-shrink-0" />
+          <div class="flex-1 min-w-0">
+            <div class="flex items-start justify-between gap-2 mb-1">
+              <div class="flex-1 min-w-0">
+                <h3 class="font-semibold text-gray-900 text-sm truncate">Sagrada Família</h3>
+                <p class="text-xs text-gray-500">Barcelona, Spain</p>
+              </div>
+              <button class="flex items-center justify-center bg-blue-600 text-white rounded-full w-10 h-10 hover:bg-blue-700 transition flex-shrink-0" aria-label="Resume">
+                <i class="fas fa-play"></i>
+              </button>
+            </div>
+            <div class="mt-2">
+              <div class="flex items-center justify-between text-xs text-gray-500 mb-1">
+                <span>70% complete</span>
+                <span>8 min left</span>
+              </div>
+              <div class="w-full h-2 bg-gray-100 rounded-full overflow-hidden">
+                <div class="h-full bg-blue-500 rounded-full" style="width: 70%"></div>
+              </div>
+            </div>
+            <div class="flex items-center gap-2 mt-2 text-xs text-gray-400">
+              <i class="far fa-clock"></i>
+              <span>Last played 2 weeks ago</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Tour Item 7 -->
+      <div class="bg-white rounded-xl shadow-sm border border-gray-100 p-4 hover:shadow-md transition">
+        <div class="flex gap-3">
+          <img src="https://images.unsplash.com/photo-1587474260584-136574528ed5?auto=format&fit=crop&w=100&q=80" alt="Petra" class="h-20 w-20 object-cover rounded-lg flex-shrink-0" />
+          <div class="flex-1 min-w-0">
+            <div class="flex items-start justify-between gap-2 mb-1">
+              <div class="flex-1 min-w-0">
+                <h3 class="font-semibold text-gray-900 text-sm truncate">Petra: The Rose City</h3>
+                <p class="text-xs text-gray-500">Petra, Jordan</p>
+              </div>
+              <button class="flex items-center justify-center bg-blue-600 text-white rounded-full w-10 h-10 hover:bg-blue-700 transition flex-shrink-0" aria-label="Resume">
+                <i class="fas fa-play"></i>
+              </button>
+            </div>
+            <div class="mt-2">
+              <div class="flex items-center justify-between text-xs text-gray-500 mb-1">
+                <span>25% complete</span>
+                <span>28 min left</span>
+              </div>
+              <div class="w-full h-2 bg-gray-100 rounded-full overflow-hidden">
+                <div class="h-full bg-blue-500 rounded-full" style="width: 25%"></div>
+              </div>
+            </div>
+            <div class="flex items-center gap-2 mt-2 text-xs text-gray-400">
+              <i class="far fa-clock"></i>
+              <span>Last played 3 weeks ago</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Tour Item 8 -->
+      <div class="bg-white rounded-xl shadow-sm border border-gray-100 p-4 hover:shadow-md transition">
+        <div class="flex gap-3">
+          <img src="https://images.unsplash.com/photo-1524492412937-b28074a5d7da?auto=format&fit=crop&w=100&q=80" alt="Louvre" class="h-20 w-20 object-cover rounded-lg flex-shrink-0" />
+          <div class="flex-1 min-w-0">
+            <div class="flex items-start justify-between gap-2 mb-1">
+              <div class="flex-1 min-w-0">
+                <h3 class="font-semibold text-gray-900 text-sm truncate">The Louvre: Masterpieces</h3>
+                <p class="text-xs text-gray-500">Paris, France</p>
+              </div>
+              <button class="flex items-center justify-center bg-blue-600 text-white rounded-full w-10 h-10 hover:bg-blue-700 transition flex-shrink-0" aria-label="Resume">
+                <i class="fas fa-play"></i>
+              </button>
+            </div>
+            <div class="mt-2">
+              <div class="flex items-center justify-between text-xs text-gray-500 mb-1">
+                <span>50% complete</span>
+                <span>20 min left</span>
+              </div>
+              <div class="w-full h-2 bg-gray-100 rounded-full overflow-hidden">
+                <div class="h-full bg-blue-500 rounded-full" style="width: 50%"></div>
+              </div>
+            </div>
+            <div class="flex items-center gap-2 mt-2 text-xs text-gray-400">
+              <i class="far fa-clock"></i>
+              <span>Last played 1 month ago</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </section>
+
+    <!-- Empty State (hidden when there are tours) -->
+    <!-- Uncomment this section if there are no tours -->
+    <!--
+    <section class="flex flex-col items-center justify-center py-16 px-4 text-center">
+      <div class="w-24 h-24 bg-gray-100 rounded-full flex items-center justify-center mb-4">
+        <i class="fas fa-headphones text-4xl text-gray-400"></i>
+      </div>
+      <h3 class="text-lg font-semibold text-gray-900 mb-2">No Tours in Progress</h3>
+      <p class="text-sm text-gray-500 mb-6 max-w-xs">Start exploring amazing destinations and your progress will appear here.</p>
+      <a href="search.html" class="px-6 py-3 bg-blue-600 text-white rounded-lg font-medium hover:bg-blue-700 transition">
+        Browse Tours
+      </a>
+    </section>
+    -->
+
+  </main>
+
+</body>
+</html>
+
