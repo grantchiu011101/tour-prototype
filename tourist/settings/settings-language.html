@@ -3,32 +3,426 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Language Settings</title>
+  <title>Language Settings - Roam</title>
   <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
 <body class="bg-gray-50 min-h-screen flex flex-col">
-  <main class="flex-1 flex flex-col px-4 pt-8 pb-24 max-w-md mx-auto w-full">
-    <div class="flex justify-end mb-6">
-      <button type="submit" form="languageForm" class="text-blue-600 font-medium text-base bg-transparent hover:underline px-2 py-1 rounded transition">Save</button>
-    </div>
-    <form id="languageForm" class="flex flex-col gap-6">
-      <div class="bg-white rounded-xl shadow overflow-hidden divide-y divide-gray-200">
-        <button type="button" class="flex items-center justify-between w-full px-4 py-4 focus:outline-none">
-          <span class="font-semibold text-gray-900">English</span>
-          <span class="text-blue-500"><i class="fas fa-check"></i></span>
-        </button>
-        <button type="button" class="flex items-center justify-between w-full px-4 py-4 focus:outline-none">
-          <span class="text-gray-800">中文</span>
-        </button>
-        <button type="button" class="flex items-center justify-between w-full px-4 py-4 focus:outline-none">
-          <span class="text-gray-800">日本語</span>
-        </button>
-        <button type="button" class="flex items-center justify-between w-full px-4 py-4 focus:outline-none">
-          <span class="text-gray-800">Français</span>
-        </button>
+  <!-- Top Navigation Bar -->
+  <nav class="flex items-center justify-between px-4 py-3 bg-white shadow-sm sticky top-0 z-10 border-b border-gray-100">
+    <a href="settings.html" aria-label="Back" class="flex items-center gap-2 text-gray-700 hover:text-blue-600 transition">
+      <i class="fas fa-arrow-left text-lg"></i>
+    </a>
+    <span class="font-semibold text-lg text-gray-900">Language</span>
+    <div class="w-6"></div> <!-- Spacer for alignment -->
+  </nav>
+
+  <!-- Main Content -->
+  <main class="flex-1 flex flex-col gap-4 px-4 pb-24 max-w-md mx-auto w-full bg-white">
+    
+    <!-- Current Language Banner -->
+    <section class="mt-4 bg-gradient-to-r from-blue-50 to-indigo-50 rounded-xl p-4 border border-blue-100">
+      <div class="flex items-center gap-3">
+        <div class="flex items-center justify-center w-12 h-12 bg-blue-100 rounded-full">
+          <i class="fas fa-language text-blue-600 text-xl"></i>
+        </div>
+        <div class="flex-1">
+          <div class="text-xs text-gray-600 mb-1">Current Language</div>
+          <div class="text-lg font-semibold text-gray-900" id="currentLanguageName">English (US)</div>
+        </div>
       </div>
-    </form>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/js/all.min.js"></script>
+    </section>
+
+    <!-- Search Bar -->
+    <section class="mt-2">
+      <div class="relative">
+        <input 
+          type="text" 
+          id="languageSearch"
+          placeholder="Search languages..." 
+          class="w-full px-4 py-3 pl-10 bg-gray-50 border border-gray-200 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+        />
+        <i class="fas fa-search absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400"></i>
+      </div>
+    </section>
+
+    <!-- Popular Languages Section -->
+    <section class="mt-2">
+      <h2 class="text-sm font-semibold text-gray-500 uppercase tracking-wide mb-3">Popular Languages</h2>
+      <div class="flex flex-col gap-2" id="popularLanguages">
+        
+        <!-- English (US) -->
+        <div class="language-item bg-white rounded-xl border border-gray-200 p-4 hover:border-blue-300 hover:shadow-sm transition cursor-pointer" data-lang="en-US" data-name="English (US)">
+          <div class="flex items-center justify-between">
+            <div class="flex items-center gap-3 flex-1">
+              <div class="text-2xl">🇺🇸</div>
+              <div class="flex-1">
+                <div class="font-semibold text-gray-900">English (US)</div>
+                <div class="text-xs text-gray-500">Default</div>
+              </div>
+            </div>
+            <div class="selected-check hidden">
+              <i class="fas fa-check-circle text-blue-600 text-xl"></i>
+            </div>
+          </div>
+        </div>
+
+        <!-- Spanish -->
+        <div class="language-item bg-white rounded-xl border border-gray-200 p-4 hover:border-blue-300 hover:shadow-sm transition cursor-pointer" data-lang="es" data-name="Español">
+          <div class="flex items-center justify-between">
+            <div class="flex items-center gap-3 flex-1">
+              <div class="text-2xl">🇪🇸</div>
+              <div class="flex-1">
+                <div class="font-semibold text-gray-900">Español</div>
+                <div class="text-xs text-gray-500">Spanish</div>
+              </div>
+            </div>
+            <div class="selected-check hidden">
+              <i class="fas fa-check-circle text-blue-600 text-xl"></i>
+            </div>
+          </div>
+        </div>
+
+        <!-- French -->
+        <div class="language-item bg-white rounded-xl border border-gray-200 p-4 hover:border-blue-300 hover:shadow-sm transition cursor-pointer" data-lang="fr" data-name="Français">
+          <div class="flex items-center justify-between">
+            <div class="flex items-center gap-3 flex-1">
+              <div class="text-2xl">🇫🇷</div>
+              <div class="flex-1">
+                <div class="font-semibold text-gray-900">Français</div>
+                <div class="text-xs text-gray-500">French</div>
+              </div>
+            </div>
+            <div class="selected-check hidden">
+              <i class="fas fa-check-circle text-blue-600 text-xl"></i>
+            </div>
+          </div>
+        </div>
+
+        <!-- German -->
+        <div class="language-item bg-white rounded-xl border border-gray-200 p-4 hover:border-blue-300 hover:shadow-sm transition cursor-pointer" data-lang="de" data-name="Deutsch">
+          <div class="flex items-center justify-between">
+            <div class="flex items-center gap-3 flex-1">
+              <div class="text-2xl">🇩🇪</div>
+              <div class="flex-1">
+                <div class="font-semibold text-gray-900">Deutsch</div>
+                <div class="text-xs text-gray-500">German</div>
+              </div>
+            </div>
+            <div class="selected-check hidden">
+              <i class="fas fa-check-circle text-blue-600 text-xl"></i>
+            </div>
+          </div>
+        </div>
+
+        <!-- Chinese (Simplified) -->
+        <div class="language-item bg-white rounded-xl border border-gray-200 p-4 hover:border-blue-300 hover:shadow-sm transition cursor-pointer" data-lang="zh-CN" data-name="简体中文">
+          <div class="flex items-center justify-between">
+            <div class="flex items-center gap-3 flex-1">
+              <div class="text-2xl">🇨🇳</div>
+              <div class="flex-1">
+                <div class="font-semibold text-gray-900">简体中文</div>
+                <div class="text-xs text-gray-500">Chinese (Simplified)</div>
+              </div>
+            </div>
+            <div class="selected-check hidden">
+              <i class="fas fa-check-circle text-blue-600 text-xl"></i>
+            </div>
+          </div>
+        </div>
+
+        <!-- Japanese -->
+        <div class="language-item bg-white rounded-xl border border-gray-200 p-4 hover:border-blue-300 hover:shadow-sm transition cursor-pointer" data-lang="ja" data-name="日本語">
+          <div class="flex items-center justify-between">
+            <div class="flex items-center gap-3 flex-1">
+              <div class="text-2xl">🇯🇵</div>
+              <div class="flex-1">
+                <div class="font-semibold text-gray-900">日本語</div>
+                <div class="text-xs text-gray-500">Japanese</div>
+              </div>
+            </div>
+            <div class="selected-check hidden">
+              <i class="fas fa-check-circle text-blue-600 text-xl"></i>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- All Languages Section -->
+    <section class="mt-4">
+      <h2 class="text-sm font-semibold text-gray-500 uppercase tracking-wide mb-3">All Languages</h2>
+      <div class="flex flex-col gap-2" id="allLanguages">
+        
+        <!-- Arabic -->
+        <div class="language-item bg-white rounded-xl border border-gray-200 p-4 hover:border-blue-300 hover:shadow-sm transition cursor-pointer" data-lang="ar" data-name="العربية">
+          <div class="flex items-center justify-between">
+            <div class="flex items-center gap-3 flex-1">
+              <div class="text-2xl">🇸🇦</div>
+              <div class="flex-1">
+                <div class="font-semibold text-gray-900">العربية</div>
+                <div class="text-xs text-gray-500">Arabic</div>
+              </div>
+            </div>
+            <div class="selected-check hidden">
+              <i class="fas fa-check-circle text-blue-600 text-xl"></i>
+            </div>
+          </div>
+        </div>
+
+        <!-- Portuguese (Brazil) -->
+        <div class="language-item bg-white rounded-xl border border-gray-200 p-4 hover:border-blue-300 hover:shadow-sm transition cursor-pointer" data-lang="pt-BR" data-name="Português (Brasil)">
+          <div class="flex items-center justify-between">
+            <div class="flex items-center gap-3 flex-1">
+              <div class="text-2xl">🇧🇷</div>
+              <div class="flex-1">
+                <div class="font-semibold text-gray-900">Português (Brasil)</div>
+                <div class="text-xs text-gray-500">Portuguese (Brazil)</div>
+              </div>
+            </div>
+            <div class="selected-check hidden">
+              <i class="fas fa-check-circle text-blue-600 text-xl"></i>
+            </div>
+          </div>
+        </div>
+
+        <!-- Italian -->
+        <div class="language-item bg-white rounded-xl border border-gray-200 p-4 hover:border-blue-300 hover:shadow-sm transition cursor-pointer" data-lang="it" data-name="Italiano">
+          <div class="flex items-center justify-between">
+            <div class="flex items-center gap-3 flex-1">
+              <div class="text-2xl">🇮🇹</div>
+              <div class="flex-1">
+                <div class="font-semibold text-gray-900">Italiano</div>
+                <div class="text-xs text-gray-500">Italian</div>
+              </div>
+            </div>
+            <div class="selected-check hidden">
+              <i class="fas fa-check-circle text-blue-600 text-xl"></i>
+            </div>
+          </div>
+        </div>
+
+        <!-- Korean -->
+        <div class="language-item bg-white rounded-xl border border-gray-200 p-4 hover:border-blue-300 hover:shadow-sm transition cursor-pointer" data-lang="ko" data-name="한국어">
+          <div class="flex items-center justify-between">
+            <div class="flex items-center gap-3 flex-1">
+              <div class="text-2xl">🇰🇷</div>
+              <div class="flex-1">
+                <div class="font-semibold text-gray-900">한국어</div>
+                <div class="text-xs text-gray-500">Korean</div>
+              </div>
+            </div>
+            <div class="selected-check hidden">
+              <i class="fas fa-check-circle text-blue-600 text-xl"></i>
+            </div>
+          </div>
+        </div>
+
+        <!-- Russian -->
+        <div class="language-item bg-white rounded-xl border border-gray-200 p-4 hover:border-blue-300 hover:shadow-sm transition cursor-pointer" data-lang="ru" data-name="Русский">
+          <div class="flex items-center justify-between">
+            <div class="flex items-center gap-3 flex-1">
+              <div class="text-2xl">🇷🇺</div>
+              <div class="flex-1">
+                <div class="font-semibold text-gray-900">Русский</div>
+                <div class="text-xs text-gray-500">Russian</div>
+              </div>
+            </div>
+            <div class="selected-check hidden">
+              <i class="fas fa-check-circle text-blue-600 text-xl"></i>
+            </div>
+          </div>
+        </div>
+
+        <!-- Dutch -->
+        <div class="language-item bg-white rounded-xl border border-gray-200 p-4 hover:border-blue-300 hover:shadow-sm transition cursor-pointer" data-lang="nl" data-name="Nederlands">
+          <div class="flex items-center justify-between">
+            <div class="flex items-center gap-3 flex-1">
+              <div class="text-2xl">🇳🇱</div>
+              <div class="flex-1">
+                <div class="font-semibold text-gray-900">Nederlands</div>
+                <div class="text-xs text-gray-500">Dutch</div>
+              </div>
+            </div>
+            <div class="selected-check hidden">
+              <i class="fas fa-check-circle text-blue-600 text-xl"></i>
+            </div>
+          </div>
+        </div>
+
+        <!-- Turkish -->
+        <div class="language-item bg-white rounded-xl border border-gray-200 p-4 hover:border-blue-300 hover:shadow-sm transition cursor-pointer" data-lang="tr" data-name="Türkçe">
+          <div class="flex items-center justify-between">
+            <div class="flex items-center gap-3 flex-1">
+              <div class="text-2xl">🇹🇷</div>
+              <div class="flex-1">
+                <div class="font-semibold text-gray-900">Türkçe</div>
+                <div class="text-xs text-gray-500">Turkish</div>
+              </div>
+            </div>
+            <div class="selected-check hidden">
+              <i class="fas fa-check-circle text-blue-600 text-xl"></i>
+            </div>
+          </div>
+        </div>
+
+        <!-- Hindi -->
+        <div class="language-item bg-white rounded-xl border border-gray-200 p-4 hover:border-blue-300 hover:shadow-sm transition cursor-pointer" data-lang="hi" data-name="हिन्दी">
+          <div class="flex items-center justify-between">
+            <div class="flex items-center gap-3 flex-1">
+              <div class="text-2xl">🇮🇳</div>
+              <div class="flex-1">
+                <div class="font-semibold text-gray-900">हिन्दी</div>
+                <div class="text-xs text-gray-500">Hindi</div>
+              </div>
+            </div>
+            <div class="selected-check hidden">
+              <i class="fas fa-check-circle text-blue-600 text-xl"></i>
+            </div>
+          </div>
+        </div>
+
+        <!-- Thai -->
+        <div class="language-item bg-white rounded-xl border border-gray-200 p-4 hover:border-blue-300 hover:shadow-sm transition cursor-pointer" data-lang="th" data-name="ไทย">
+          <div class="flex items-center justify-between">
+            <div class="flex items-center gap-3 flex-1">
+              <div class="text-2xl">🇹🇭</div>
+              <div class="flex-1">
+                <div class="font-semibold text-gray-900">ไทย</div>
+                <div class="text-xs text-gray-500">Thai</div>
+              </div>
+            </div>
+            <div class="selected-check hidden">
+              <i class="fas fa-check-circle text-blue-600 text-xl"></i>
+            </div>
+          </div>
+        </div>
+
+        <!-- Vietnamese -->
+        <div class="language-item bg-white rounded-xl border border-gray-200 p-4 hover:border-blue-300 hover:shadow-sm transition cursor-pointer" data-lang="vi" data-name="Tiếng Việt">
+          <div class="flex items-center justify-between">
+            <div class="flex items-center gap-3 flex-1">
+              <div class="text-2xl">🇻🇳</div>
+              <div class="flex-1">
+                <div class="font-semibold text-gray-900">Tiếng Việt</div>
+                <div class="text-xs text-gray-500">Vietnamese</div>
+              </div>
+            </div>
+            <div class="selected-check hidden">
+              <i class="fas fa-check-circle text-blue-600 text-xl"></i>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Info Note -->
+    <section class="mt-4 mb-6 bg-blue-50 rounded-xl p-4 border border-blue-100">
+      <div class="flex gap-3">
+        <i class="fas fa-info-circle text-blue-600 text-lg flex-shrink-0 mt-0.5"></i>
+        <div class="text-sm text-gray-700">
+          <p class="font-medium text-gray-900 mb-1">Language Preference</p>
+          <p class="text-xs text-gray-600">Changing your language will update the app interface. Tour content availability may vary by language.</p>
+        </div>
+      </div>
+    </section>
+
   </main>
+
+  <!-- Success Toast -->
+  <div id="successToast" class="hidden fixed top-20 left-1/2 transform -translate-x-1/2 bg-green-600 text-white px-6 py-3 rounded-full shadow-lg z-50 flex items-center gap-2">
+    <i class="fas fa-check-circle"></i>
+    <span id="toastMessage">Language updated successfully!</span>
+  </div>
+
+  <script>
+    // Get DOM elements
+    const languageItems = document.querySelectorAll('.language-item');
+    const currentLanguageName = document.getElementById('currentLanguageName');
+    const searchInput = document.getElementById('languageSearch');
+    const successToast = document.getElementById('successToast');
+    const toastMessage = document.getElementById('toastMessage');
+
+    // Load saved language or default to English (US)
+    let currentLanguage = localStorage.getItem('appLanguage') || 'en-US';
+
+    // Initialize - mark current language as selected
+    function initializeLanguage() {
+      languageItems.forEach(item => {
+        const lang = item.getAttribute('data-lang');
+        const checkIcon = item.querySelector('.selected-check');
+        
+        if (lang === currentLanguage) {
+          checkIcon.classList.remove('hidden');
+          item.classList.add('border-blue-500', 'bg-blue-50');
+          currentLanguageName.textContent = item.getAttribute('data-name');
+        }
+      });
+    }
+
+    // Handle language selection
+    languageItems.forEach(item => {
+      item.addEventListener('click', () => {
+        const selectedLang = item.getAttribute('data-lang');
+        const selectedName = item.getAttribute('data-name');
+        
+        // Don't do anything if clicking current language
+        if (selectedLang === currentLanguage) {
+          return;
+        }
+
+        // Remove selection from all items
+        languageItems.forEach(i => {
+          i.querySelector('.selected-check').classList.add('hidden');
+          i.classList.remove('border-blue-500', 'bg-blue-50');
+        });
+
+        // Add selection to clicked item
+        item.querySelector('.selected-check').classList.remove('hidden');
+        item.classList.add('border-blue-500', 'bg-blue-50');
+
+        // Update current language
+        currentLanguage = selectedLang;
+        currentLanguageName.textContent = selectedName;
+
+        // Save to localStorage
+        localStorage.setItem('appLanguage', selectedLang);
+
+        // Show success toast
+        toastMessage.textContent = `Language changed to ${selectedName}`;
+        successToast.classList.remove('hidden');
+        
+        // Hide toast after 3 seconds
+        setTimeout(() => {
+          successToast.classList.add('hidden');
+        }, 3000);
+
+        // Scroll to top smoothly
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      });
+    });
+
+    // Search functionality
+    searchInput.addEventListener('input', (e) => {
+      const searchTerm = e.target.value.toLowerCase();
+      
+      languageItems.forEach(item => {
+        const languageName = item.getAttribute('data-name').toLowerCase();
+        const englishName = item.querySelector('.text-xs').textContent.toLowerCase();
+        
+        if (languageName.includes(searchTerm) || englishName.includes(searchTerm)) {
+          item.style.display = 'block';
+        } else {
+          item.style.display = 'none';
+        }
+      });
+    });
+
+    // Initialize on page load
+    initializeLanguage();
+  </script>
+
 </body>
-</html> 
+</html>
