@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Top Creators - Roam</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body class="bg-gray-50 min-h-screen flex flex-col">
+  <!-- Top Navigation Bar -->
+  <nav class="flex items-center justify-between px-4 py-3 bg-white shadow-sm sticky top-0 z-10 border-b border-gray-100">
+    <a href="home.html" aria-label="Back" class="flex items-center gap-2 text-gray-700 hover:text-blue-600 transition">
+      <i class="fas fa-arrow-left text-lg"></i>
+    </a>
+    <span class="font-semibold text-lg text-gray-900">Top Creators</span>
+    <div class="w-6"></div> <!-- Spacer for alignment -->
+  </nav>
+
+  <!-- Main Content -->
+  <main class="flex-1 flex flex-col gap-4 px-4 pb-24 max-w-md mx-auto w-full bg-white">
+    
+    <!-- Filter Bar -->
+    <section class="mt-4 sticky top-[60px] z-30 bg-white py-3 -mx-4 px-4">
+      <div class="flex items-center gap-2 overflow-x-auto no-scrollbar pb-2">
+        <button id="filterVerified" class="filter-btn active px-4 py-2 bg-blue-600 text-white rounded-full text-sm font-medium whitespace-nowrap">
+          <i class="fas fa-shield-alt mr-1"></i> Verified
+        </button>
+        <button id="filterOfficial" class="filter-btn px-4 py-2 bg-gray-100 text-gray-700 rounded-full text-sm font-medium whitespace-nowrap">
+          <i class="fas fa-university mr-1"></i> Official
+        </button>
+        <button id="filterPopular" class="filter-btn px-4 py-2 bg-gray-100 text-gray-700 rounded-full text-sm font-medium whitespace-nowrap">
+          <i class="fas fa-fire mr-1"></i> Popular
+        </button>
+        <button id="filterNew" class="filter-btn px-4 py-2 bg-gray-100 text-gray-700 rounded-full text-sm font-medium whitespace-nowrap">
+          <i class="fas fa-star mr-1"></i> New
+        </button>
+      </div>
+    </section>
+
+    <!-- Sort Options -->
+    <section class="flex items-center justify-between">
+      <div class="flex items-center gap-2">
+        <button class="flex items-center gap-2 px-3 py-2 bg-gray-100 rounded-lg text-sm text-gray-700 hover:bg-gray-200 transition">
+          <i class="fas fa-sort-amount-down"></i>
+          <span id="sortLabel">Most Tours</span>
+        </button>
+      </div>
+      <div class="text-xs text-gray-500" id="resultCount">Showing 48 creators</div>
+    </section>
+
+    <!-- Creators List -->
+    <section class="flex flex-col gap-3 mt-2" id="creatorsList">
+      
+      <!-- Creator 1 -->
+      <div class="creator-card bg-white rounded-xl border border-gray-100 p-4 hover:shadow-md transition" data-verified="true" data-official="false" data-category="popular">
+        <div class="flex gap-3">
+          <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="John Doe" class="h-16 w-16 object-cover rounded-full border-2 border-blue-400 flex-shrink-0" />
+          <div class="flex-1 min-w-0">
+            <div class="flex items-start justify-between mb-1">
+              <div class="flex-1 min-w-0">
+                <h3 class="font-semibold text-gray-900 truncate">John Doe</h3>
+                <p class="text-xs text-gray-500 truncate">@johndoe_travels</p>
+              </div>
+              <button class="text-blue-600 hover:text-blue-700 transition flex-shrink-0">
+                <i class="fas fa-plus-circle text-xl"></i>
+              </button>
+            </div>
+            <div class="flex items-center gap-3 text-xs mb-2">
+              <span class="bg-blue-100 text-blue-700 px-2 py-0.5 rounded font-semibold">
+                <i class="fas fa-shield-alt mr-1"></i> Verified
+              </span>
+              <span class="text-gray-500">
+                <i class="fas fa-users mr-1"></i> 12.5k followers
+              </span>
+            </div>
+            <div class="flex items-center gap-3 text-xs text-gray-500">
+              <span><i class="fas fa-route mr-1"></i> 45 tours</span>
+              <span><i class="fas fa-star text-yellow-500"></i> 4.9</span>
+              <span><i class="fas fa-map-marker-alt mr-1"></i> Paris, France</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Creator 2 -->
+      <div class="creator-card bg-white rounded-xl border border-gray-100 p-4 hover:shadow-md transition" data-verified="true" data-official="true" data-category="popular">
+        <div class="flex gap-3">
+          <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Jane Smith" class="h-16 w-16 object-cover rounded-full border-2 border-blue-400 flex-shrink-0" />
+          <div class="flex-1 min-w-0">
+            <div class="flex items-start justify-between mb-1">
+              <div class="flex-1 min-w-0">
+                <h3 class="font-semibold text-gray-900 truncate">Jane Smith</h3>
+                <p class="text-xs text-gray-500 truncate">@janesmith_history</p>
+              </div>
+              <button class="text-blue-600 hover:text-blue-700 transition flex-shrink-0">
+                <i class="fas fa-plus-circle text-xl"></i>
+              </button>
+            </div>
+            <div class="flex items-center gap-3 text-xs mb-2">
+              <span class="bg-blue-100 text-blue-700 px-2 py-0.5 rounded font-semibold">
+                <i class="fas fa-shield-alt mr-1"></i> Verified
+              </span>
+              <span class="bg-purple-100 text-purple-700 px-2 py-0.5 rounded font-semibold">
+                <i class="fas fa-university mr-1"></i> Official
+              </span>
+            </div>
+            <div class="flex items-center gap-3 text-xs text-gray-500">
+              <span><i class="fas fa-route mr-1"></i> 38 tours</span>
+              <span><i class="fas fa-star text-yellow-500"></i> 5.0</span>
+              <span><i class="fas fa-map-marker-alt mr-1"></i> London, UK</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Creator 3 -->
+      <div class="creator-card bg-white rounded-xl border border-gray-100 p-4 hover:shadow-md transition" data-verified="true" data-official="false" data-category="popular">
+        <div class="flex gap-3">
+          <img src="https://randomuser.me/api/portraits/men/65.jpg" alt="Carlos Rivera" class="h-16 w-16 object-cover rounded-full border-2 border-blue-400 flex-shrink-0" />
+          <div class="flex-1 min-w-0">
+            <div class="flex items-start justify-between mb-1">
+              <div class="flex-1 min-w-0">
+                <h3 class="font-semibold text-gray-900 truncate">Carlos Rivera</h3>
+                <p class="text-xs text-gray-500 truncate">@carlos_wanderer</p>
+              </div>
+              <button class="text-blue-600 hover:text-blue-700 transition flex-shrink-0">
+                <i class="fas fa-plus-circle text-xl"></i>
+              </button>
+            </div>
+            <div class="flex items-center gap-3 text-xs mb-2">
+              <span class="bg-blue-100 text-blue-700 px-2 py-0.5 rounded font-semibold">
+                <i class="fas fa-shield-alt mr-1"></i> Verified
+              </span>
+              <span class="text-gray-500">
+                <i class="fas fa-users mr-1"></i> 8.9k followers
+              </span>
+            </div>
+            <div class="flex items-center gap-3 text-xs text-gray-500">
+              <span><i class="fas fa-route mr-1"></i> 32 tours</span>
+              <span><i class="fas fa-star text-yellow-500"></i> 4.8</span>
+              <span><i class="fas fa-map-marker-alt mr-1"></i> Barcelona, Spain</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- More creators would continue here... -->
+      <!-- Creator 4 -->
+      <div class="creator-card bg-white rounded-xl border border-gray-100 p-4 hover:shadow-md transition" data-verified="true" data-official="false" data-category="new">
+        <div class="flex gap-3">
+          <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Sarah Lee" class="h-16 w-16 object-cover rounded-full border-2 border-blue-400 flex-shrink-0" />
+          <div class="flex-1 min-w-0">
+            <div class="flex items-start justify-between mb-1">
+              <div class="flex-1 min-w-0">
+                <h3 class="font-semibold text-gray-900 truncate">Sarah Lee</h3>
+                <p class="text-xs text-gray-500 truncate">@sarahlee_art</p>
+              </div>
+              <button class="text-blue-600 hover:text-blue-700 transition flex-shrink-0">
+                <i class="fas fa-plus-circle text-xl"></i>
+              </button>
+            </div>
+            <div class="flex items-center gap-3 text-xs mb-2">
+              <span class="bg-blue-100 text-blue-700 px-2 py-0.5 rounded font-semibold">
+                <i class="fas fa-shield-alt mr-1"></i> Verified
+              </span>
+              <span class="text-gray-500">
+                <i class="fas fa-users mr-1"></i> 2.1k followers
+              </span>
+            </div>
+            <div class="flex items-center gap-3 text-xs text-gray-500">
+              <span><i class="fas fa-route mr-1"></i> 8 tours</span>
+              <span><i class="fas fa-star text-yellow-500"></i> 4.7</span>
+              <span><i class="fas fa-map-marker-alt mr-1"></i> Tokyo, Japan</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Creator 5 -->
+      <div class="creator-card bg-white rounded-xl border border-gray-100 p-4 hover:shadow-md transition" data-verified="true" data-official="true" data-category="popular">
+        <div class="flex gap-3">
+          <img src="https://randomuser.me/api/portraits/men/75.jpg" alt="Michael Chen" class="h-16 w-16 object-cover rounded-full border-2 border-blue-400 flex-shrink-0" />
+          <div class="flex-1 min-w-0">
+            <div class="flex items-start justify-between mb-1">
+              <div class="flex-1 min-w-0">
+                <h3 class="font-semibold text-gray-900 truncate">Michael Chen</h3>
+                <p class="text-xs text-gray-500 truncate">@mchen_museums</p>
+              </div>
+              <button class="text-blue-600 hover:text-blue-700 transition flex-shrink-0">
+                <i class="fas fa-plus-circle text-xl"></i>
+              </button>
+            </div>
+            <div class="flex items-center gap-3 text-xs mb-2">
+              <span class="bg-blue-100 text-blue-700 px-2 py-0.5 rounded font-semibold">
+                <i class="fas fa-shield-alt mr-1"></i> Verified
+              </span>
+              <span class="bg-purple-100 text-purple-700 px-2 py-0.5 rounded font-semibold">
+                <i class="fas fa-university mr-1"></i> Official
+              </span>
+            </div>
+            <div class="flex items-center gap-3 text-xs text-gray-500">
+              <span><i class="fas fa-route mr-1"></i> 52 tours</span>
+              <span><i class="fas fa-star text-yellow-500"></i> 4.9</span>
+              <span><i class="fas fa-map-marker-alt mr-1"></i> New York, USA</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Creator 6 -->
+      <div class="creator-card bg-white rounded-xl border border-gray-100 p-4 hover:shadow-md transition" data-verified="true" data-official="false" data-category="new">
+        <div class="flex gap-3">
+          <img src="https://randomuser.me/api/portraits/women/45.jpg" alt="Emma Thompson" class="h-16 w-16 object-cover rounded-full border-2 border-blue-400 flex-shrink-0" />
+          <div class="flex-1 min-w-0">
+            <div class="flex items-start justify-between mb-1">
+              <div class="flex-1 min-w-0">
+                <h3 class="font-semibold text-gray-900 truncate">Emma Thompson</h3>
+                <p class="text-xs text-gray-500 truncate">@emma_nature</p>
+              </div>
+              <button class="text-blue-600 hover:text-blue-700 transition flex-shrink-0">
+                <i class="fas fa-plus-circle text-xl"></i>
+              </button>
+            </div>
+            <div class="flex items-center gap-3 text-xs mb-2">
+              <span class="bg-blue-100 text-blue-700 px-2 py-0.5 rounded font-semibold">
+                <i class="fas fa-shield-alt mr-1"></i> Verified
+              </span>
+              <span class="text-gray-500">
+                <i class="fas fa-users mr-1"></i> 5.6k followers
+              </span>
+            </div>
+            <div class="flex items-center gap-3 text-xs text-gray-500">
+              <span><i class="fas fa-route mr-1"></i> 28 tours</span>
+              <span><i class="fas fa-star text-yellow-500"></i> 4.6</span>
+              <span><i class="fas fa-map-marker-alt mr-1"></i> Edinburgh, UK</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </section>
+
+    <!-- Load More Button -->
+    <button class="w-full py-3 bg-gray-100 text-gray-700 rounded-xl font-medium hover:bg-gray-200 transition mt-4 mb-6">
+      Load More Creators
+    </button>
+
+  </main>
+
+  <style>
+    .no-scrollbar::-webkit-scrollbar { display: none; }
+    .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+  </style>
+
+  <script>
+    const filterButtons = document.querySelectorAll('.filter-btn');
+    const creatorCards = document.querySelectorAll('.creator-card');
+    const resultCount = document.getElementById('resultCount');
+    const sortLabel = document.getElementById('sortLabel');
+    
+    let currentFilter = 'verified';
+    let sortBy = 'tours';
+
+    // Filter functionality
+    filterButtons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        // Update active state
+        filterButtons.forEach(b => {
+          b.classList.remove('active', 'bg-blue-600', 'text-white');
+          b.classList.add('bg-gray-100', 'text-gray-700');
+        });
+        btn.classList.add('active', 'bg-blue-600', 'text-white');
+        btn.classList.remove('bg-gray-100', 'text-gray-700');
+
+        // Get filter type
+        currentFilter = btn.id.replace('filter', '').toLowerCase();
+        
+        // Apply filter
+        applyFilter(currentFilter);
+      });
+    });
+
+    function applyFilter(filter) {
+      let visibleCount = 0;
+      
+      creatorCards.forEach(card => {
+        let show = false;
+        
+        switch(filter) {
+          case 'verified':
+            show = card.dataset.verified === 'true';
+            break;
+          case 'official':
+            show = card.dataset.official === 'true';
+            break;
+          case 'popular':
+            show = card.dataset.category === 'popular';
+            break;
+          case 'new':
+            show = card.dataset.category === 'new';
+            break;
+        }
+        
+        if (show) {
+          card.style.display = 'block';
+          visibleCount++;
+        } else {
+          card.style.display = 'none';
+        }
+      });
+      
+      resultCount.textContent = `Showing ${visibleCount} creators`;
+    }
+
+    // Initial filter
+    applyFilter('verified');
+  </script>
+</body>
+</html>
+
